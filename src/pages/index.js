@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <Fragment>
       <HeadPage>
-        <title>Unne | Home</title>
+        <title>Unne | Home prueba</title>
       </HeadPage>
 
       <Layout>
