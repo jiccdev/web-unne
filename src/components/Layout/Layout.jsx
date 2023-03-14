@@ -1,16 +1,22 @@
 import React from 'react';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 const Layout = ({ children }) => {
   return (
-    <div className="relative w-100 bg-white">
-      {/* HEADER PAGE */}
-      <Header />
+    <div className="relative z-10 w-100 bg-white">
+      <div className="px-4 xl:px-32">
+        {/* HEADER PAGE */}
+        <Header />
 
-      {/* MAIN CONTENT */}
-      {children}
+        {/* MAIN CONTENT */}
+        {children}
 
-      {/* FOOTER PAGE */}
+        {/* FOOTER PAGE */}
+        <div className="mt-96">
+          <Footer />
+        </div>
+      </div>
     </div>
   );
 };
