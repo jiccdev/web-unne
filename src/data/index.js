@@ -11,35 +11,67 @@ export const navigationData = [
     children: [
       {
         id: 1,
-        name: 'SubItem1',
-        href: '/soy-propietario/subItem1',
+        name: 'Quiero vender',
+        href: '/soy-propietario/quiero-vender',
       },
-    ],
-  },
-  {
-    id: 2,
-    name: 'Soy Inversionista',
-    href: '/soy-inversionista',
-    children: [
       {
-        id: 1,
-        name: 'SubItem1',
-        href: '/soy-inversionista/subItem1',
+        id: 2,
+        name: 'Quiero arrendar',
+        href: '/soy-propietario/quiero-arrendar',
       },
     ],
   },
   {
     id: 3,
+    name: 'Soy Inversionista',
+    href: '/soy-inversionista',
+    children: [
+      {
+        id: 1,
+        name: 'Unidades de remate',
+        href: '/soy-inversionista/unidades-de-remate',
+      },
+      {
+        id: 2,
+        name: 'Unidades nuevas',
+        href: '/soy-inversionista/unidades-nuevas',
+      },
+      {
+        id: 3,
+        name: 'Administración de arriendo',
+        href: '/soy-inversionista/administracion-de-arriendo',
+      },
+    ],
+  },
+  {
+    id: 4,
     name: 'Propiedades',
     href: '/propiedades',
   },
   {
-    id: 4,
+    id: 5,
     name: '¿Eres corredor?',
     href: '/eres-corredor',
+    children: [
+      {
+        id: 1,
+        name: 'Asociate',
+        href: '/eres-corredor/asociate',
+      },
+      {
+        id: 2,
+        name: 'Servicios legales',
+        href: '/eres-corredor/servicios-legales',
+      },
+      {
+        id: 3,
+        name: 'Academia Unne',
+        href: '/eres-corredor/academia-unne',
+      },
+    ],
   },
   {
-    id: 5,
+    id: 6,
     name: 'Mi cuenta',
     href: '/mi-cuenta',
   },
