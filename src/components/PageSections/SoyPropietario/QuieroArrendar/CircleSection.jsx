@@ -44,7 +44,7 @@ const CircleSection = () => {
                 <p className='pl-4 text-white text-sm'>Arrendamos y recibe tu arriendo!</p>
             </div>
 
-            <div className='bg-yellow-300 flex justify-center'>
+            <div className='bg-red-300 flex'>
                 <div className='w-96 h-96 border-slate-600 border-dashed border-4 rounded-full flex justify-center items-center'>
                     <div className='w-72 h-72 border-slate-600 border-solid border-2 rounded-full flex justify-center items-center'>
                         <div className='w-60 h-60 bg-slate-600 rounded-full text-center flex justify-center items-center'>
