@@ -30,6 +30,11 @@ const Home = () => {
           seccion 3
           <PropertiesList />
         </section>
+
+        <section className="my-10 bg-gray-50">
+          seccion 4
+          <Carousel />
+        </section>
       </Layout>
     </Fragment>
   );
