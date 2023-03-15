@@ -10,11 +10,6 @@ module.exports = {
     extend: {
       container: {
         center: true,
-        // padding: {
-        //   DEFAULT: '1rem',
-        //   xl: '40px',
-        //   '2xl': '128px',
-        // },
       },
     },
   },

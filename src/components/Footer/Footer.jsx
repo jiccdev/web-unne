@@ -3,7 +3,7 @@ import Button from '../Button/Button';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 pt-10 pb-20">
+    <footer className="bg-gray-100 pt-10 pb-20 px-4 xl:px-32">
       <div className="flex flex-wrap mx-2">
         <div className="w-full flex justify-center items-start flex-col px-4 sm:w-1/2 lg:w-4/12">
           <div className="w-5/6">

@@ -16,22 +16,22 @@ const Home = () => {
 
       <Layout>
         {/* COMPONENT SECTIONS HERE */}
-        <section className="my-10 bg-gray-50">
+        <section className="my-10 bg-gray-50 px-4 xl:px-32">
           seccion 1
           <Carousel />
         </section>
 
-        <section className="my-10 bg-gray-50">
+        <section className="my-10 bg-gray-50 px-4 xl:px-32">
           seccion 2
           <SearchProperties />
         </section>
 
-        <section className="my-10 bg-gray-50">
+        <section className="my-10 bg-gray-50 px-4 xl:px-32">
           seccion 3
           <PropertiesList />
         </section>
 
-        <section className="my-10 bg-gray-50">
+        <section className="my-10 bg-gray-50 px-4 xl:px-32">
           seccion 4
           <Carousel />
         </section>
