@@ -5,18 +5,14 @@ import Footer from '../Footer/Footer';
 const Layout = ({ children }) => {
   return (
     <div className="relative overflow-hidden z-10 w-100 bg-white">
-      <div className="px-4 xl:px-32">
-        {/* HEADER PAGE */}
-        <Header />
+      {/* HEADER PAGE */}
+      <Header />
 
-        {/* MAIN CONTENT */}
-        {children}
+      {/* MAIN CONTENT */}
+      {children}
 
-        {/* FOOTER PAGE */}
-        <div className="mt-96">
-          <Footer />
-        </div>
-      </div>
+      {/* FOOTER PAGE */}
+      <Footer />
     </div>
   );
 };

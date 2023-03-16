@@ -1,3 +1,7 @@
+import Slide1 from '../assets/img/carousel/slide1.jpg';
+import Slide4 from '../assets/img/carousel/slide4.jpg';
+
+/* Navigation Data */
 export const navigationData = [
   {
     id: 1,
@@ -76,3 +80,21 @@ export const navigationData = [
     href: '/mi-cuenta',
   },
 ];
+
+/** Main Carousel Data */
+export const mainCarouselData = [
+  {
+    id: 1,
+    title: 'Asegura tú inversión con Remate seguro',
+    desc: 'Garantizamos hasta un 15% de retorno por tu inversión',
+    img: Slide1,
+  },
+  {
+    id: 2,
+    title: 'Invierte con expertos en Unidades Nuevas',
+    desc: 'Contamos con una amplia cartera de propiedades de inversión',
+    img: Slide4,
+  },
+];
+
+export const webServicesTabs = ['Arriendo', 'Venta ', 'Inversion'];

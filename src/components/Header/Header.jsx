@@ -3,7 +3,7 @@ import MainNav from './MainNav';
 
 const Header = () => {
   return (
-    <header className="">
+    <header className="px-4 xl:px-32">
       <MainNav />
     </header>
   );
