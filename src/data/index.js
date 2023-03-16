@@ -97,8 +97,6 @@ export const mainCarouselData = [
   },
 ];
 
-export const webServicesTabs = ['Arriendo', 'Venta ', 'Inversion'];
-
 /* Informacion del circulo en quiero-arrendar.js */
 export const CircleArrendarData = [
   {
@@ -178,3 +176,5 @@ export const CircleVenderData = [
       'xl:bottom-0 xl:left-3/4 md:left-2/4 md:-bottom-8 max-[765px]:top-80',
   },
 ];
+
+export const webServicesTabs = ['Arriendo', 'Venta ', 'Inversion'];
