@@ -77,6 +77,28 @@ export const navigationData = [
   },
 ];
 
+
+
+
+
+/** Main Carousel Data */
+export const mainCarouselData = [
+  {
+    id: 1,
+    title: 'Asegura tú inversión con Remate seguro',
+    desc: 'Garantizamos hasta un 15% de retorno por tu inversión',
+    img: Slide1,
+  },
+  {
+    id: 2,
+    title: 'Invierte con expertos en Unidades Nuevas',
+    desc: 'Contamos con una amplia cartera de propiedades de inversión',
+    img: Slide4,
+  },
+];
+
+export const webServicesTabs = ['Arriendo', 'Venta ', 'Inversion'];
+
 /* Informacion del circulo en quiero-arrendar.js */
 export const CircleArrendarData = [
   {
