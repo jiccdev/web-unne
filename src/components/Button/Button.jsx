@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-const Button = ({ href, children }) => {
+const Button = ({ href, type, children, className }) => {
   const btnStyles = {
     primary:
       'py-2 px-3 rounded-full bg-blue-500 text-white uppercase font-bold text-lg bg-orange-500 hover:bg-orange-600 transition ease-in-out',
@@ -15,7 +15,15 @@ const Button = ({ href, children }) => {
       </Link>
     );
   } else {
-    return <button className={`${btnStyles.secondary}`}>{children}</button>;
+    if (type === 'submit') {
+      return (
+        <button type="submit" className={`${className}`}>
+          {children}
+        </button>
+      );
+    } else {
+      return <button className={`${btnStyles.primary}`}>{children}</button>;
+    }
   }
 };
 

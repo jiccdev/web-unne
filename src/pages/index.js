@@ -19,13 +19,11 @@ const Home = () => {
           <CarouselSection />
         </section>
 
-        <section className="my-10 bg-gray-50 px-4 xl:px-32">
-          seccion 2
+        <section className="my-10 px-4 xl:px-32">
           <SearchProperties />
         </section>
 
         <section className="my-10 bg-gray-50 px-4 xl:px-32">
-          seccion 3
           <PropertiesList />
         </section>
 

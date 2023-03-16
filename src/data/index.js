@@ -96,3 +96,5 @@ export const mainCarouselData = [
     img: Slide4,
   },
 ];
+
+export const webServicesTabs = ['Arriendo', 'Venta ', 'Inversion'];
