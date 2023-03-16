@@ -81,6 +81,7 @@ export const navigationData = [
   },
 ];
 
+
 /** Main Carousel Data */
 export const mainCarouselData = [
   {
@@ -99,82 +100,3 @@ export const mainCarouselData = [
 
 export const webServicesTabs = ['Arriendo', 'Venta ', 'Inversion'];
 
-/* Informacion del circulo en quiero-arrendar.js */
-export const CircleArrendarData = [
-  {
-    id: 1,
-    text: 'Llena el formulario',
-    position:
-      'xl:top-0 xl:right-3/4 md:max-xl:left-2/4 md:max-xl:-top-8 max-[765px]:top-0',
-  },
-  {
-    id: 2,
-    text: 'Te asignamos a tu objetivo',
-    position:
-      'xl:right-full md:max-xl:top-10 md:max-xl:left-3/4 max-[765px]:top-16',
-  },
-  {
-    id: 3,
-    text: 'Evaluacion Comercial',
-    position:
-      'xl:right-3/4 xl:bottom-0 md:max-xl:top-1/4 md:max-xl:-right-72 max-[765px]:top-32',
-  },
-  {
-    id: 4,
-    text: 'Definicion de estrategias',
-    position:
-      'xl:top-0 xl:left-3/4 md:max-xl:bottom-1/4 md:max-xl:-right-72 max-[765px]:top-48',
-  },
-  {
-    id: 5,
-    text: 'Gestion Comercial',
-    position:
-      'xl:left-full md:max-xl:bottom-10 md:max-xl:left-3/4 max-[765px]:top-64',
-  },
-  {
-    id: 6,
-    text: '¡Arrendamos y recibe tu arriendo!',
-    position:
-      'xl:bottom-0 xl:left-3/4 md:left-2/4 md:-bottom-8 max-[765px]:top-80',
-  },
-];
-
-/* Informacion del circulo en quiero-vender.js */
-export const CircleVenderData = [
-  {
-    id: 1,
-    text: 'Llena el formulario',
-    position:
-      'xl:top-0 xl:right-3/4 md:max-xl:left-2/4 md:max-xl:-top-8 max-[765px]:top-0',
-  },
-  {
-    id: 2,
-    text: 'Te asignamos a tu Ejecutivo',
-    position:
-      'xl:right-full md:max-xl:top-10 md:max-xl:left-3/4 max-[765px]:top-16',
-  },
-  {
-    id: 3,
-    text: 'Evaluación Comercial',
-    position:
-      'xl:right-3/4 xl:bottom-0 md:max-xl:top-1/4 md:max-xl:-right-72 max-[765px]:top-32',
-  },
-  {
-    id: 4,
-    text: 'Definicion de estrategias',
-    position:
-      'xl:top-0 xl:left-3/4 md:max-xl:bottom-1/4 md:max-xl:-right-72 max-[765px]:top-48',
-  },
-  {
-    id: 5,
-    text: 'Gestión Comercial y legal',
-    position:
-      'xl:left-full md:max-xl:bottom-10 md:max-xl:left-3/4 max-[765px]:top-64',
-  },
-  {
-    id: 6,
-    text: 'vende y recibe tu pago!',
-    position:
-      'xl:bottom-0 xl:left-3/4 md:left-2/4 md:-bottom-8 max-[765px]:top-80',
-  },
-];
