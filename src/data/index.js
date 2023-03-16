@@ -85,14 +85,14 @@ export const navigationData = [
 export const mainCarouselData = [
   {
     id: 1,
-    title: 'Properties 123',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Asegura tú inversión con Remate seguro',
+    desc: 'Garantizamos hasta un 15% de retorno por tu inversión',
     img: Slide1,
   },
   {
     id: 2,
-    title: 'Properties 345',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Invierte con expertos en Unidades Nuevas',
+    desc: 'Contamos con una amplia cartera de propiedades de inversión',
     img: Slide4,
   },
 ];

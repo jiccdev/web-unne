@@ -71,23 +71,3 @@ a {
     color-scheme: dark;
   }
 }
-
-.aws-btn {
-  --slider-height-percentage: 60%;
-  --slider-transition-duration: 1000ms;
-  --organic-arrow-thickness: 3px;
-  --organic-arrow-border-radius: 30px;
-  --organic-arrow-height: 11px;
-  --organic-arrow-color: #d5d5d5;
-  --control-button-width: 11%;
-  --control-button-height: 25%;
-  --control-button-background: transparent;
-  --control-bullet-color: #fafafa;
-  --control-bullet-active-color: #d5d5d5;
-  --loader-bar-color: #ffffff;
-  --loader-bar-height: 2px;
-}
-
-.awssld__content {
-  background-color: #fff !important;
-}
