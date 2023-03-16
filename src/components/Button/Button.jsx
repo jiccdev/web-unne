@@ -10,7 +10,7 @@ const Button = ({ href, type, children, className }) => {
 
   if (!!href) {
     return (
-      <Link href={href} className={`${btnStyles.primary}`}>
+      <Link href={href} className={`${className} ${btnStyles.primary}`}>
         {children}
       </Link>
     );
@@ -22,7 +22,11 @@ const Button = ({ href, type, children, className }) => {
         </button>
       );
     } else {
-      return <button className={`${btnStyles.primary}`}>{children}</button>;
+      return (
+        <button className={`${className} ${btnStyles.primary}`}>
+          {children}
+        </button>
+      );
     }
   }
 };

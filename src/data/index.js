@@ -81,7 +81,6 @@ export const navigationData = [
   },
 ];
 
-
 /** Main Carousel Data */
 export const mainCarouselData = [
   {
@@ -179,3 +178,41 @@ export const CircleVenderData = [
 ];
 
 export const webServicesTabs = ['Arriendo', 'Venta ', 'Inversion'];
+
+/** Company Qualities */
+export const companyQualities = [
+  {
+    id: 1,
+    title: 'Especialista',
+    desc: 'Te brindamos la mejor atención de la mano de especialistas del corretaje inmobiliario y profesionales del area legal.',
+  },
+  {
+    id: 2,
+    title: 'Rapidez',
+    desc: 'Arrendamos tu propiedad en tiempo record, para que no tengas perdidas por tu inversión.',
+  },
+  {
+    id: 3,
+    title: 'Tranquilidad',
+    desc: 'Desde el primer paso, nos encargamos de gestionar tu propiedad de inversión, para que ocupes tu tiempo en lo que te gusta.',
+  },
+];
+
+/** Property Managment steps */
+export const propertyManagmentData = [
+  {
+    id: 1,
+    span: 'Escoge tu plan',
+    desc: 'Administración Inteligente o con Garantía',
+  },
+  {
+    id: 2,
+    span: 'Disfruta de los beneficios',
+    desc: 'y la tranquilidad, que nosotros nos encargamos del resto',
+  },
+  {
+    id: 3,
+    span: 'Comienza a recibir tu arriendo',
+    desc: 'sin falta los primeros 5 dias del mes',
+  },
+];
