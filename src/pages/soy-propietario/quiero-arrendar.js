@@ -4,6 +4,10 @@ import Layout from '@/components/Layout/Layout';
 import HeroSection from '@/components/PageSections/SoyPropietario/QuieroArrendar/HeroSection';
 import CircleSection from '@/components/PageSections/SoyPropietario/QuieroArrendar/CircleSection';
 
+/* Data */
+import { CircleArrendarData } from '../../data/index';
+
+
 const QuieroArrendar = () => {
   return (
     <Fragment>
@@ -14,13 +18,11 @@ const QuieroArrendar = () => {
       {/* HERO SECTION */}
       <Layout>
         <section>
-          seccion 1
+          seccion 1 - HeroSection
           <HeroSection />
         </section>
-
         <section>
-          seccion 2
-          <CircleSection />
+          <CircleSection  ubicationData={CircleArrendarData} ColorBorder='border-slate-600' ColorBg='bg-slate-600' ColorNumberBG='bg-[#F3AA88]' ColorTextBG='bg-[#E85512]'/>
         </section>
       </Layout>
     </Fragment>
