@@ -1,3 +1,7 @@
+import Slide1 from '../assets/img/carousel/slide1.jpg';
+import Slide4 from '../assets/img/carousel/slide4.jpg';
+
+/* Navigation Data */
 export const navigationData = [
   {
     id: 1,
@@ -76,9 +80,6 @@ export const navigationData = [
     href: '/mi-cuenta',
   },
 ];
-
-
-
 
 
 /** Main Carousel Data */
