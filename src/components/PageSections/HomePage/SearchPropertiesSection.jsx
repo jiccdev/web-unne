@@ -49,7 +49,7 @@ const SearchPropertiesSection = () => {
             <select
               {...register('propertyType', { required: false })}
               className="select select-ghost bg-white w-full max-w-xs rounded-full border-gray-300"
-              defualtValue={'DEFAULT'}
+              defaultValue={'DEFAULT'}
               placeholder="Tipo de Propiedad"
             >
               <option>Tipo de Propiedad</option>
@@ -63,7 +63,7 @@ const SearchPropertiesSection = () => {
             <select
               {...register('propertyType', { required: false })}
               className="select select-ghost bg-white w-full max-w-xs rounded-full border-gray-300"
-              defualtValue={'DEFAULT2'}
+              defaultValue={'DEFAULT2'}
               placeholder="Region"
             >
               <option>Region</option>
@@ -77,7 +77,7 @@ const SearchPropertiesSection = () => {
             <select
               {...register('propertyType', { required: false })}
               className="select select-ghost bg-white w-full max-w-xs rounded-full border-gray-300"
-              defualtValue={'DEFAULT3'}
+              defaultValue={'DEFAULT3'}
               placeholder="Comuna"
             >
               <option>Comuna</option>
