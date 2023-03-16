@@ -1,3 +1,7 @@
+import Slide1 from '../assets/img/carousel/slide1.jpg';
+import Slide4 from '../assets/img/carousel/slide4.jpg';
+
+/* Navigation Data */
 export const navigationData = [
   {
     id: 1,
@@ -74,5 +78,21 @@ export const navigationData = [
     id: 6,
     name: 'Mi cuenta',
     href: '/mi-cuenta',
+  },
+];
+
+/** Main Carousel Data */
+export const mainCarouselData = [
+  {
+    id: 1,
+    title: 'Properties 123',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    img: Slide1,
+  },
+  {
+    id: 2,
+    title: 'Properties 345',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    img: Slide4,
   },
 ];
