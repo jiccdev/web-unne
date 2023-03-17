@@ -217,7 +217,6 @@ export const propertyManagmentData = [
   },
 ];
 
-
 /** Objetives Auction page icons */
 export const ObjetivesAuctionData = [
   {
@@ -244,10 +243,9 @@ export const ObjetivesAuctionData = [
     icon: 'D',
     title: 'El dinero retorna con la rentabilidad pactada',
     desc: 'Obtén las ganancias esperadas por tu inversión',
-  }
-
+  },
 ];
-=======
+
 /** Plans card data */
 export const plansCardData = [
   {
@@ -278,7 +276,6 @@ export const plansCardData = [
   },
 ];
 
-
 /** New Property Qualities */
 export const NewPropertyQualities = [
   {
@@ -295,10 +292,10 @@ export const NewPropertyQualities = [
     id: 3,
     title: 'Relajate',
     desc: 'Gestionamos el crédito hipotecario, promesa de compra y escrituración por ti.',
-  },{
+  },
+  {
     id: 4,
     title: 'Gana por tu inversion',
     desc: 'Administramos el arriendo de tu propiedad para que comiences a ganar por tu inversión.',
-  }
+  },
 ];
-
