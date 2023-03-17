@@ -217,7 +217,7 @@ export const propertyManagmentData = [
   },
 ];
 
-/** Objetives Auction page icons */
+/** Objetives Auction page icons,title,desc */
 export const ObjetivesAuctionData = [
   {
     id: 1,
