@@ -216,3 +216,33 @@ export const propertyManagmentData = [
     desc: 'sin falta los primeros 5 dias del mes',
   },
 ];
+
+/** Plans card data */
+export const plansCardData = [
+  {
+    id: 1,
+    title: 'Administración Inteligente',
+    commission: '25%',
+    benefits: [
+      '5% del valor del arriendo',
+      'Publicación en 43 portales inmobiliarios',
+      'Ofertas formales con garantía Asesoría legal',
+      'Acta de entrega con respaldo fotográfico',
+      'Verificación de pago de servicios y GGCC',
+      'Gestión de reparaciones y mantención',
+    ],
+  },
+  {
+    id: 2,
+    title: 'Administración Inteligente',
+    commission: '25%',
+    benefits: [
+      '5% del valor del arriendo',
+      'Publicación en 43 portales inmobiliarios',
+      'Ofertas formales con garantía Asesoría legal',
+      'Acta de entrega con respaldo fotográfico',
+      'Verificación de pago de servicios y GGCC',
+      'Gestión de reparaciones y mantención',
+    ],
+  },
+];

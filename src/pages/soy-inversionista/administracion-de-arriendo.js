@@ -5,6 +5,7 @@ import HeadPage from '@/components/Head/HeadPage';
 import Layout from '@/components/Layout/Layout';
 import InvestmentInfo from '@/components/PageSections/SoyInversionista/AdministracionDeArriendo/InvestmentInfo';
 import PropertyManagmentSteps from '@/components/PageSections/SoyInversionista/AdministracionDeArriendo/PropertyManagmentSteps';
+import Plans from '@/components/PageSections/SoyInversionista/AdministracionDeArriendo/Plans';
 
 const AdministracionDeArriendo = () => {
   return (
@@ -14,12 +15,16 @@ const AdministracionDeArriendo = () => {
       </HeadPage>
 
       <Layout>
-        <section className="my-10 px-4 xl:px-56">
+        <section className="relative my-10 px-4 xl:px-56">
           <InvestmentInfo />
         </section>
 
-        <section className="my-10 px-4 xl:px-56">
+        <section className="relative my-10 px-4 xl:px-56">
           <PropertyManagmentSteps />
+        </section>
+
+        <section className="relative my-10 px-4 xl:px-56">
+          <Plans />
         </section>
       </Layout>
     </Fragment>

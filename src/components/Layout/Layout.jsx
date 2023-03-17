@@ -4,7 +4,7 @@ import Footer from '../Footer/Footer';
 
 const Layout = ({ children }) => {
   return (
-    <div className="relative overflow-hidden z-10 w-100 bg-white">
+    <div className="relative mt-16 xl:mt-24 overflow-hidden w-100 bg-white">
       {/* HEADER PAGE */}
       <Header />
 
