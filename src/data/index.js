@@ -217,6 +217,7 @@ export const propertyManagmentData = [
   },
 ];
 
+
 /** Objetives Auction page icons */
 export const ObjetivesAuctionData = [
   {
@@ -246,3 +247,58 @@ export const ObjetivesAuctionData = [
   }
 
 ];
+=======
+/** Plans card data */
+export const plansCardData = [
+  {
+    id: 1,
+    title: 'Administración Inteligente',
+    commission: '25%',
+    benefits: [
+      '5% del valor del arriendo',
+      'Publicación en 43 portales inmobiliarios',
+      'Ofertas formales con garantía Asesoría legal',
+      'Acta de entrega con respaldo fotográfico',
+      'Verificación de pago de servicios y GGCC',
+      'Gestión de reparaciones y mantención',
+    ],
+  },
+  {
+    id: 2,
+    title: 'Administración Inteligente',
+    commission: '25%',
+    benefits: [
+      '5% del valor del arriendo',
+      'Publicación en 43 portales inmobiliarios',
+      'Ofertas formales con garantía Asesoría legal',
+      'Acta de entrega con respaldo fotográfico',
+      'Verificación de pago de servicios y GGCC',
+      'Gestión de reparaciones y mantención',
+    ],
+  },
+];
+
+
+/** New Property Qualities */
+export const NewPropertyQualities = [
+  {
+    id: 1,
+    title: 'Descubre',
+    desc: 'Encuentra el activo que calce mejor con tu perfil financiero.',
+  },
+  {
+    id: 2,
+    title: 'Simula',
+    desc: 'Elige el activo inmobiliario que mas te guste y simula tu inversión de manera personalizada para proceder con la reserva de la propiedad.',
+  },
+  {
+    id: 3,
+    title: 'Relajate',
+    desc: 'Gestionamos el crédito hipotecario, promesa de compra y escrituración por ti.',
+  },{
+    id: 4,
+    title: 'Gana por tu inversion',
+    desc: 'Administramos el arriendo de tu propiedad para que comiences a ganar por tu inversión.',
+  }
+];
+
