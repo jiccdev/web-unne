@@ -216,3 +216,33 @@ export const propertyManagmentData = [
     desc: 'sin falta los primeros 5 dias del mes',
   },
 ];
+
+/** Objetives Auction page icons */
+export const ObjetivesAuctionData = [
+  {
+    id: 1,
+    icon: 'A',
+    title: 'Denición de objetivos y necesidades',
+    desc: 'Establecemos el capital que dispones para tu inversión mediante una reunión de trabajo',
+  },
+  {
+    id: 2,
+    icon: 'B',
+    title: 'Nos encargamos de todo el proceso',
+    desc: 'Legal, pago de servicios básicos e impuestos sobre la renta, reparaciones o remodelaciòn de la propiedad',
+  },
+  {
+    id: 3,
+    icon: 'C',
+    title: 'Buscamos la mejor propiedad en remate para ti',
+    desc: 'Se realiza el remate y se adjudica el inmueble para posteriormente pactar la rentabilidad que generara.',
+  },
+
+  {
+    id: 4,
+    icon: 'D',
+    title: 'El dinero retorna con la rentabilidad pactada',
+    desc: 'Obtén las ganancias esperadas por tu inversión',
+  }
+
+];

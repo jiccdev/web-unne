@@ -30,9 +30,6 @@ const AuctionProcess =() => {
     //test test test
     <div className=''>    
         <div className='flex flex-wrap flex-row items-center justify-center w-full'>
-            
-            
-            
             <div className='w-full sm:w-1/3 lg:w-max mb-8 sm:mb-0'>
                 <div className='max-w-xl h-50 sm:h-auto bg-white rounded-lg overflow-hidden shadow-md'>
                     <div className='p-14'>

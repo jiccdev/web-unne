@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import HeadPage from '@/components/Head/HeadPage';
 import Layout from '@/components/Layout/Layout';
 import AuctionProcess from '@/components/PageSections/SoyInversionista/UnidadesRemate/AuctionProcess';
+import AuctionObjetives from '@/components/PageSections/SoyInversionista/UnidadesRemate/AuctionObjetives';
 
 
 
@@ -17,6 +18,7 @@ const UnidadesRemates = () => {
       <Layout>
         <section>
           <AuctionProcess/>
+          <AuctionObjetives/>
         </section>
 
       </Layout>
