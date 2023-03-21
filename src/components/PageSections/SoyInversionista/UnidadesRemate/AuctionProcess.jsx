@@ -12,7 +12,7 @@ const AuctionProcess =() => {
         const [isMobile, setIsMobile] = useState(false)
         useEffect(() => {
             const handleResize = () => {
-            if (window.innerWidth <= 1567  ) {
+            if (window.innerWidth <= 1535  ) {
                 setIsMobile(true)
             } else {
                 setIsMobile(false)
@@ -30,7 +30,7 @@ const AuctionProcess =() => {
     //test test test
     <div className=''>    
         <div className='flex flex-wrap flex-row items-center justify-center w-full'>
-            <div className='w-full sm:w-1/3 lg:w-max mb-8 sm:mb-0'>
+            <div className='w-full sm:w-1/3 lg:w-max mb-8 sm:mb-0 hover:scale-105 transition duration-500'>
                 <div className='max-w-xl h-50 sm:h-auto bg-white rounded-lg overflow-hidden shadow-md'>
                     <div className='p-14'>
                         <h2 className='text-3xl md:text-2xl font-bold'>
@@ -43,7 +43,7 @@ const AuctionProcess =() => {
                 </div>
             </div>
 
-            <div className='w-80 sm:max-2xl:w-full flex-row 2xl:w-max lg:px-4 mb-8 sm:mb-4 flex items-center justify-center'>
+            <div className='w-80 sm:max-2xl:w-full flex-row 2xl:w-max lg:px-4 mb-8 sm:mb-4 flex items-center justify-center hover:scale-110 transition duration-500'>
                 {isMobile ? (
                     <TbArrowBigDownFilled size={'8rem'} color='orange' />
                 ) : (
@@ -51,7 +51,7 @@ const AuctionProcess =() => {
                 )}
             </div>
 
-            <div className='w-full sm:w-1/3 lg:w-max mb-8 sm:mb-0'>
+            <div className='w-full sm:w-1/3 lg:w-max mb-8 sm:mb-0 hover:scale-110 transition duration-500'>
                 <div className='max-w-xl h-50 sm:h-auto bg-white rounded-lg overflow-hidden shadow-md'>
                     <div className='p-14'>
                         <h2 className='text-3xl md:text-2xl font-bold'>
@@ -67,7 +67,7 @@ const AuctionProcess =() => {
             
         
             <div className='flex flex-wrap justify-center p-10 m-2 text-center items-end'>    
-                <div className="card w-80 h-80 m-6  bg-gray-200 shadow-xl">
+                <div className="card w-80 h-80 m-6  bg-gray-200 shadow-xl hover:scale-110 transition duration-500">
                     <figure className="px-10 pt-10">
                         <RiUserSearchFill size="6rem" color='grey'/>
                     </figure>
@@ -77,7 +77,7 @@ const AuctionProcess =() => {
                     </div>
                 </div>     
                 
-                <div className="card w-80 h-80 m-6 bg-gray-200 shadow-xl">
+                <div className="card w-80 h-80 m-6 bg-gray-200 shadow-xl hover:scale-110 transition duration-500">
                     <figure className="px-10 pt-10">
                         <BsBarChartFill size="6rem" color='grey'/>
                     </figure>
@@ -87,7 +87,7 @@ const AuctionProcess =() => {
                     </div>
                 </div>  
 
-                <div className="card w-80 h-80 m-6 bg-gray-200 shadow-xl">
+                <div className="card w-80 h-80 m-6 bg-gray-200 shadow-xl hover:scale-110 transition duration-500">
                     <figure className="px-10 pt-10">
                         <GiMoneyStack size="6rem" color='grey'/>
                     </figure>

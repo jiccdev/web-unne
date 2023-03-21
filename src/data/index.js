@@ -222,7 +222,7 @@ export const ObjetivesAuctionData = [
   {
     id: 1,
     icon: 'A',
-    title: 'Denición de objetivos y necesidades',
+    title: 'Defenición de objetivos y necesidades',
     desc: 'Establecemos el capital que dispones para tu inversión mediante una reunión de trabajo',
   },
   {

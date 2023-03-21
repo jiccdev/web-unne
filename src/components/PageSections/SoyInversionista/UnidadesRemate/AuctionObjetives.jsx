@@ -8,20 +8,54 @@ const AuctionObjetives =() => {
     const { TbSquareRoundedNumber1Filled,TbSquareRoundedNumber2Filled,TbSquareRoundedNumber3Filled,TbSquareRoundedNumber4Filled } = iconsList;
     
     return (
-        <div class="flex flex-col 2xl:flex-row">
-            <div class="w-full md:w-1/2 flex items-center justify-center">
+    <div>
+        <div class="grid grid-cols-1 md:grid-cols-1 2xl:flex flex-row mt-80">
+            <div class="flex items-center justify-center ml-8 hover:scale-110 transition duration-500">
                 <h2 class="text-6xl font-bold text-black text-left pl-8">¡Invertir es así de fácil!</h2>
-            </div>
-            
-            <div class="container mx-auto mt-4 pl-8 w-full md:w-1/2">
-                <div class="flex flex-wrap justify-end items-center">
-                    <div class="grid gap-2 sm:grid-cols-2 grid-cols-1 ">
-                        {/* Section map*/}
-                        {ObjetivesAuctionData.length > 0 ? ObjetivesAuctionData.map((e) => <Objetives key={e.id} data={e}/>) : null}
-                    </div>
+            </div> 
+                    
+            <div class="container mx-auto pl-8 ">
+                <div class="grid grid-cols-1 gap-2 sm:gap-4 md:grid-cols-2 justify-center">
+                {/* Section map*/}
+                {ObjetivesAuctionData.length > 0 ? ObjetivesAuctionData.map((e) => <Objetives key={e.id} data={e}/>) : null}
                 </div>
             </div>
+
+            
+            
         </div>
+
+        <div className="flex flex-col justify-center items-center min-h-screen  mt-10 bg-[url('https://fastly.picsum.photos/id/143/1920/1080.jpg?hmac=9EUIy7G5weTG16Xl1wRe24V4TISUOovqS1z6wWgw1ew')]">
+            <h1 className="text-4xl font-bold mb-4 text-center">Te ayudamos a elegir la mejor opción de inversión para ti</h1>
+            <h2 className="text-lg text-gray-600 mb-8 text-center">Déjanos tus datos y trabajaremos juntos para encontrar la mejor alternativa de inversión para ti.</h2>
+            <form className="w-full max-w-md">
+
+                <div className="mb-8 shadow border-l-gray-600 rounded-3xl">
+                <input className="bg-white shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" name="" type="" placeholder="Nombre y apellidos" />
+                </div>
+
+                <div className="mb-8 shadow border-l-gray-600 rounded">
+                <input className="bg-white shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" name="" type="" placeholder="Email" />
+                </div>
+
+
+                <div className="mb-8 shadow border-l-gray-600 rounded">
+                <input className="bg-white shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" name="" type="" placeholder="Teléfono" />
+                </div>
+
+                <div className="flex items-center justify-center">
+
+                    
+                <button className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-2xl focus:outline-none focus:shadow-outline hover:scale-110 hover:shadow-xl hover:cursor-pointer transition-all ease-in" type="submit">
+                    Enviar
+                </button>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+
     )
 }
 export default AuctionObjetives
