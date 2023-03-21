@@ -6,7 +6,12 @@ const Footer = () => (
     <div className="flex flex-wrap mx-4 lg:mx-0">
       <div className="w-full flex justify-center items-start flex-col sm:w-1/2 lg:w-4/12">
         <div className="w-5/6">
-          <Button href="/">¿Quiénes somos?</Button>
+          <Button
+            href="/"
+            className="w-96 py-2 px-3 text-xl text-center my-6 bg-orange-500 hover:bg-orange-600 hover:shadow-md"
+          >
+            ¿Quiénes somos?
+          </Button>
           <div className="h-48">
             <p className="text-md text-gray-900 mt-5">
               Unne es una plataforma de corretaje, donde los corredores puedan
@@ -19,7 +24,12 @@ const Footer = () => (
 
       <div className="w-full flex justify-center items-start flex-col sm:w-1/2 lg:w-4/12">
         <div className="w-5/6">
-          <Button href="/">¿Quiénes somos?</Button>
+          <Button
+            href="/"
+            className="w-96 py-2 px-3 text-xl text-center my-6 bg-orange-500 hover:bg-orange-600 hover:shadow-md"
+          >
+            ¿Quiénes somos?
+          </Button>
           <div className="h-48">
             <p className="text-md text-gray-800 mt-5">
               <span className="font-bold text-gray-900">Dirección:</span>{' '}
@@ -85,7 +95,12 @@ const Footer = () => (
 
       <div className="w-full flex justify-center items-start flex-col sm:w-1/2 lg:w-4/12">
         <div className="w-5/6">
-          <Button href="/">Menú</Button>
+          <Button
+            href="/"
+            className="w-96 py-2 px-3 text-xl text-center my-6 bg-orange-500 hover:bg-orange-600 hover:shadow-md"
+          >
+            Menú
+          </Button>
           <div className="h-48">
             <p className="text-md text-gray-900 mt-5">
               Contáctanos Soy Propietario ¿Eres corredor? Quiero invertir
