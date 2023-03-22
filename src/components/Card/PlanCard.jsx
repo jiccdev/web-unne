@@ -19,8 +19,11 @@ const PlanCard = ({ data }) => {
 
       <ul className="pb-8 pt-5 flex justify-center flex-col">
         {benefits &&
-          benefits.map((benefit) => (
-            <li className="mx:4 xl:mx-14 py-2 text-lg xl:text-xl font-semibold list-disc text-gray-100">
+          benefits.map((benefit, idx) => (
+            <li
+              key={idx}
+              className="mx:4 xl:mx-14 py-2 text-lg xl:text-xl font-semibold list-disc text-gray-100"
+            >
               {benefit}
             </li>
           ))}
