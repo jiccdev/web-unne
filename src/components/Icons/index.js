@@ -13,7 +13,9 @@ import { TbSquareRoundedNumber1Filled } from 'react-icons/tb';
 import { TbSquareRoundedNumber2Filled } from 'react-icons/tb';
 import { TbSquareRoundedNumber3Filled } from 'react-icons/tb';
 import { TbSquareRoundedNumber4Filled } from 'react-icons/tb';
-
+import { FaUserAlt } from 'react-icons/fa';
+import { BsFillTelephoneFill } from 'react-icons/bs';
+import { FiMail } from 'react-icons/fi';
 
 export const iconsList = {
   IoIosArrowDown,
@@ -26,5 +28,8 @@ export const iconsList = {
   TbSquareRoundedNumber1Filled,
   TbSquareRoundedNumber2Filled,
   TbSquareRoundedNumber3Filled,
-  TbSquareRoundedNumber4Filled
+  TbSquareRoundedNumber4Filled,
+  FaUserAlt,
+  BsFillTelephoneFill,
+  FiMail,
 };

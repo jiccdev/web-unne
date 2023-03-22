@@ -263,8 +263,8 @@ export const plansCardData = [
   },
   {
     id: 2,
-    title: 'Administración Inteligente',
-    commission: '25%',
+    title: 'Administración con garantía',
+    commission: '50%',
     benefits: [
       '5% del valor del arriendo',
       'Publicación en 43 portales inmobiliarios',
