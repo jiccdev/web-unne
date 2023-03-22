@@ -8,19 +8,19 @@ export const Objetives = ({data}) => {
   
   
   return (
-    
-    <div className='flex pt-14 flex-nowrap h-30'>
-        <div className='h-max'> 
+
+    <div className='flex pt-14 flex-nowrap h-30 md:flex-col hover:scale-110 transition duration-500'>
+        <div className='h-auto'> 
         <span className="rounded-full py-2 px-5 relative text-3xl font-bold bg-orange-500 text-white">
-        {icon}
-      </span>
+          {icon}
+        </span>
         </div>
         <div className='max-w-xl h-50 sm:h-auto bg-white rounded-lg overflow-hidden '>
             <div className='p-14 pt-0'>
-                <h2 className='text-3xl md:text-2xl font-bold'>
+                <h2 className='text-1xl md:text-2xl font-bold'>
                 {title}
                 </h2>
-                <p className='text-sm'>
+                <p className='text-sm pt-4'>
                 {desc}
                 </p>
             </div>
