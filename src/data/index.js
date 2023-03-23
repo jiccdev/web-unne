@@ -103,37 +103,37 @@ export const CircleArrendarData = [
     id: 1,
     text: 'Llena el formulario',
     position:
-      'xl:top-0 xl:right-3/4 md:max-xl:left-2/4 md:max-xl:-top-8 max-[765px]:top-0',
+      '2xl:top-0 2xl:right-3/4 xl:max-2xl:left-2/4 xl:max-2xl:-top-8 lg:max-xl:top-0 lg:max-xl:right-3/4 md:max-lg:left-2/4 md:max-lg:-top-8 max-[765px]:top-0',
   },
   {
     id: 2,
     text: 'Te asignamos a tu objetivo',
     position:
-      'xl:right-full md:max-xl:top-10 md:max-xl:left-3/4 max-[765px]:top-16',
+      '2xl:right-full xl:max-2xl:top-10 xl:max-2xl:left-3/4 lg:max-xl:right-full md:max-lg:top-10 md:max-lg:left-3/4 max-[765px]:top-16',
   },
   {
     id: 3,
     text: 'Evaluacion Comercial',
     position:
-      'xl:right-3/4 xl:bottom-0 md:max-xl:top-1/4 md:max-xl:-right-72 max-[765px]:top-32',
+      '2xl:right-3/4 2xl:bottom-0 xl:max-2xl:top-1/4 xl:max-2xl:-right-72 lg:max-xl:right-3/4 lg:max-xl:bottom-0 md:max-lg:top-1/4 md:max-lg:-right-72 max-[765px]:top-32',
   },
   {
     id: 4,
     text: 'Definicion de estrategias',
     position:
-      'xl:top-0 xl:left-3/4 md:max-xl:bottom-1/4 md:max-xl:-right-72 max-[765px]:top-48',
+      '2xl:top-0 2xl:left-3/4 xl:max-2xl:bottom-1/4 xl:max-2xl:-right-72 lg:max-xl:top-0 lg:max-xl:left-3/4 md:max-lg:bottom-1/4 md:max-lg:-right-72 max-[765px]:top-48',
   },
   {
     id: 5,
     text: 'Gestion Comercial',
     position:
-      'xl:left-full md:max-xl:bottom-10 md:max-xl:left-3/4 max-[765px]:top-64',
+      '2xl:left-full xl:max-2xl:bottom-10 xl:max-2xl:left-3/4 lg:max-xl:left-full md:max-lg:bottom-10 md:max-lg:left-3/4 max-[765px]:top-64',
   },
   {
     id: 6,
     text: '¡Arrendamos y recibe tu arriendo!',
     position:
-      'xl:bottom-0 xl:left-3/4 md:left-2/4 md:-bottom-8 max-[765px]:top-80',
+      '2xl:bottom-0 2xl:left-3/4 xl:max-2xl:left-2/4 xl:max-2xl:-bottom-8 lg:max-xl:bottom-0 lg:max-xl:left-3/4 md:max-lg:left-2/4 md:max-lg:-bottom-8 max-[765px]:top-80',
   },
 ];
 
@@ -143,37 +143,37 @@ export const CircleVenderData = [
     id: 1,
     text: 'Llena el formulario',
     position:
-      'xl:top-0 xl:right-3/4 md:max-xl:left-2/4 md:max-xl:-top-8 max-[765px]:top-0',
+      '2xl:top-0 2xl:right-3/4 xl:max-2xl:left-2/4 xl:max-2xl:-top-8 lg:max-xl:top-0 lg:max-xl:right-3/4 md:max-lg:left-2/4 md:max-lg:-top-8 max-[765px]:top-0',
   },
   {
     id: 2,
     text: 'Te asignamos a tu Ejecutivo',
     position:
-      'xl:right-full md:max-xl:top-10 md:max-xl:left-3/4 max-[765px]:top-16',
+      '2xl:right-full xl:max-2xl:top-10 xl:max-2xl:left-3/4 lg:max-xl:right-full md:max-lg:top-10 md:max-lg:left-3/4 max-[765px]:top-16',
   },
   {
     id: 3,
     text: 'Evaluación Comercial',
     position:
-      'xl:right-3/4 xl:bottom-0 md:max-xl:top-1/4 md:max-xl:-right-72 max-[765px]:top-32',
+      '2xl:right-3/4 2xl:bottom-0 xl:max-2xl:top-1/4 xl:max-2xl:-right-72 lg:max-xl:right-3/4 lg:max-xl:bottom-0 md:max-lg:top-1/4 md:max-lg:-right-72 max-[765px]:top-32',
   },
   {
     id: 4,
     text: 'Definicion de estrategias',
     position:
-      'xl:top-0 xl:left-3/4 md:max-xl:bottom-1/4 md:max-xl:-right-72 max-[765px]:top-48',
+      '2xl:top-0 2xl:left-3/4 xl:max-2xl:bottom-1/4 xl:max-2xl:-right-72 lg:max-xl:top-0 lg:max-xl:left-3/4 md:max-lg:bottom-1/4 md:max-lg:-right-72 max-[765px]:top-48',
   },
   {
     id: 5,
     text: 'Gestión Comercial y legal',
     position:
-      'xl:left-full md:max-xl:bottom-10 md:max-xl:left-3/4 max-[765px]:top-64',
+      '2xl:left-full xl:max-2xl:bottom-10 xl:max-2xl:left-3/4 lg:max-xl:left-full md:max-lg:bottom-10 md:max-lg:left-3/4 max-[765px]:top-64',
   },
   {
     id: 6,
     text: 'vende y recibe tu pago!',
     position:
-      'xl:bottom-0 xl:left-3/4 md:left-2/4 md:-bottom-8 max-[765px]:top-80',
+      '2xl:bottom-0 2xl:left-3/4 xl:max-2xl:left-2/4 xl:max-2xl:-bottom-8 lg:max-xl:bottom-0 lg:max-xl:left-3/4 md:max-lg:left-2/4 md:max-lg:-bottom-8 max-[765px]:top-80',
   },
 ];
 
@@ -297,5 +297,69 @@ export const NewPropertyQualities = [
     id: 4,
     title: 'Gana por tu inversion',
     desc: 'Administramos el arriendo de tu propiedad para que comiences a ganar por tu inversión.',
+  },
+];
+
+
+/** Main Carousel - Arrendar Data */
+export const mainCarouselLeaseData = [
+  {
+    id: 1,
+    title: 'Arrienda tu propiedad sin complicaciones',
+    desc: '',
+    img: Slide1,
+  },
+  {
+    id: 2,
+    title: 'Arrienda tu propiedad sin complicaciones',
+    desc: '',
+    img: Slide4,
+  },
+];
+
+/** porque unne - Arrendar Data */
+export const whyUnneLeaseData = [
+  {
+    id: 1,
+    title: '¿Por qué Unne?',
+    benefits: [
+      'Te acompañamos en toda la gestión.',
+      'Tu propiedad en manos del arrendatario correcto.',
+      'Publicamos en los portales mas reconocidos de Chile.',
+      'Asesoria Legal.',
+      'Agenda tu sesión de fotos y video profesional de manera gratuita.',
+    ],
+  }
+];
+
+/** porque unne - vender Data */
+export const whyUnneSellData = [
+  {
+    id: 1,
+    title: '¿Por qué Unne?',
+    benefits: [
+      'Te asesoramos de principio a fin.',
+      'Tenemos la base  de clientes compradores más grande del país.',
+      'Publicamos en 43 portales inmobiliarios Servicios legales.',
+      'Servicios legales.',
+      'Agenda tu sesión de fotos y video profesional de manera gratuita.',
+    ],
+  },
+];
+
+
+/** Main Carousel - Vender Data */
+export const mainCarouselSellData = [
+  {
+    id: 1,
+    title: 'Vende fácil y rápido',
+    desc: '',
+    img: Slide1,
+  },
+  {
+    id: 2,
+    title: 'Vende fácil y rápido',
+    desc: '',
+    img: Slide4,
   },
 ];
