@@ -363,3 +363,109 @@ export const mainCarouselSellData = [
     img: Slide4,
   },
 ];
+
+
+/* Asociate.js Data */
+export const AssociateData = [
+  {
+    id: 1,
+    title: 'Asóciate a la red lider de corredores en Chile',
+    children: [
+      {
+        id: 1,
+        name: 'Mas de 30 cursos mensuales en el área legal y comercial',
+        status: '',
+      },
+      {
+        id: 2,
+        name: 'Adelanta tu comisión con nuestro Pronto Pago',
+        status: 'Nuevo',
+      },
+      {
+        id: 3,
+        name: 'Sesiones de Coaching comercial',
+        status: 'Nuevo',
+      },
+      {
+        id: 4,
+        name: 'Alianzas con bancos y mutuarias',
+        status: 'Nuevo',
+      },
+      {
+        id: 5,
+        name: 'Alianza con Assetplan, para aumentar tu cartera',
+        status: 'Nuevo',
+      },
+      {
+        id: 6,
+        name: 'Servicios Legales',
+        status: '',
+      },
+      {
+        id: 7,
+        name: 'Cuentas con un Vendeid para que las consultas te lleguen directamente',
+        status: '',
+      },
+      {
+        id: 8,
+        name: 'Sistema de canje inteligente',
+        status: '',
+      },
+      {
+        id: 9,
+        name: 'Conserva el 100% de tu comisión',
+        status: '',
+      },
+    ],
+  }
+]
+
+/* Asociate.js Data */
+export const AssociateCardData = [
+  {
+    id: 1,
+    title: 'Contrata nuestros servicios legales',
+    desc:'Contamos con abogados especialistas en asesorias inmobiliarias que te guiaran en todo el proceso de la venta o arriendo de tu propiedad.',
+    children: [
+      {
+        id: 1,
+        name: 'Adelanta tu comision con pronto pago',
+      },{
+        id: 2,
+        name: 'Alianzas con bancos y mutuarias',
+      },{
+        id: 3,
+        name: 'Banco de canje avanzado',
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: 'Academia Unne',
+    desc:'Tenemos un programa dirigido por especialista del área del corretaje, que te brindara los conocimientos necesarios para ser un profesional',
+    children: [
+      {
+        id: 1,
+        name: 'Capacitaciones comerciales',
+      },{
+        id: 2,
+        name: 'Capacitaciones legales',
+      },{
+        id: 3,
+        name: 'Capacitaciones de sistema',
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: 'Cuentas con el respaldo de un Vendeid',
+    desc:'Contacto directo con los clientes interesados en tu propiedad ¡sin intermediarios!. De esta forma podrás minimizar los tiempos de espera',
+    children: [],
+  },
+  {
+    id: 4,
+    title: 'Oportunidades de Inversión',
+    desc:'Tus clientes contaran con productos de inversión de remate seguro y unidades nuevas',
+    children: [],
+  }
+]
