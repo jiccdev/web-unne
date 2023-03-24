@@ -2,7 +2,6 @@ import React from 'react';
 
 const PlanCard = ({ data }) => {
   const { title, commission, benefits } = data;
-  console.log(title);
 
   return (
     <div className="block max-w-full xl:max-w-md p-8 rounded-[50px] shadow bg-orange-500 border border-gray-200 hover:bg-amber-400 hover:shadow-xl transition ease-in-out hover:-translate-y-1 xl:hover:scale-100 duration-300">
