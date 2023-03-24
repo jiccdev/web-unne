@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext, useEffect } from 'react';
+import { ClientsContext } from '@/context/clients/ClientsContext';
 
 /** Components */
 import HeadPage from '@/components/Head/HeadPage';
@@ -7,9 +8,19 @@ import InvestmentInfo from '@/components/PageSections/SoyInversionista/Administr
 import PropertyManagmentSteps from '@/components/PageSections/SoyInversionista/AdministracionDeArriendo/PropertyManagmentSteps';
 import PlanCard from '@/components/Card/PlanCard';
 import ContactForm from '@/components/Form/ContactForm';
+import ClientsCarousel from '../../components/Carousel/ClientsCarousel';
 import { plansCardData } from '../../data';
 
 const AdministracionDeArriendo = () => {
+  const { contextData } = useContext(ClientsContext);
+  const [clients, setClients, getClientList] = contextData;
+
+  useEffect(() => {
+    getClientList();
+  }, []);
+
+  console.log(clients);
+
   return (
     <Fragment>
       <HeadPage>
@@ -37,6 +48,10 @@ const AdministracionDeArriendo = () => {
             title="¡Despreocúpate por tu propiedad de inversión!"
             subtitle="COMPLETA EL FORMULARIO Y ENTÉRATE CÓMO"
           />
+        </section>
+
+        <section className="relative my-10 px-4 xl:px-56">
+          <ClientsCarousel data={clients} sm={1} md={3} lg={3} xl={3} />
         </section>
       </Layout>
     </Fragment>
