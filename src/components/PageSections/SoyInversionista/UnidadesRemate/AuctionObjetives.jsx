@@ -34,9 +34,10 @@ const AuctionObjetives = () => {
       </div>
 
       <div className="flex flex-col justify-center items-center min-h-screen  mt-10 bg-[url('https://fastly.picsum.photos/id/143/1920/1080.jpg?hmac=9EUIy7G5weTG16Xl1wRe24V4TISUOovqS1z6wWgw1ew')]">
-        <h1 className="text-4xl font-bold mb-4 text-center">
+        <h2 className="text-4xl font-bold mb-4 text-center">
           Te ayudamos a elegir la mejor opción de inversión para ti
-        </h1>
+        </h2>
+        
         <h2 className="text-lg text-gray-600 mb-8 text-center">
           Déjanos tus datos y trabajaremos juntos para encontrar la mejor
           alternativa de inversión para ti.
