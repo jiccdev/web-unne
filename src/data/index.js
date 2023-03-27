@@ -1,6 +1,18 @@
 import Slide1 from '../assets/img/carousel/slide1.jpg';
 import Slide4 from '../assets/img/carousel/slide4.jpg';
 
+import BancoChile from '../assets/img/bancos/BancoChile.png';
+import BancoSecurity from '../assets/img/bancos/BANCOSECURITY.png';
+import BancoBci from '../assets/img/bancos/bci.png';
+import BancoMetlife from '../assets/img/bancos/metlife.png';
+import BancoScotiabank from '../assets/img/bancos/Scotiabank.png';
+import BancoTrueCapital from '../assets/img/bancos/TrueCapital.png';
+
+import PortalYapo from '../assets/img/portal/yapo.png';
+import Portalinmobiliario from '../assets/img/portal/portalinmobiliario.png';
+import PortalToctoc from '../assets/img/portal/toctoc.png';
+import PortalTopPropiedades from '../assets/img/portal/topPropiedades.png';
+
 /* Navigation Data */
 export const navigationData = [
   {
@@ -103,37 +115,37 @@ export const CircleArrendarData = [
     id: 1,
     text: 'Llena el formulario',
     position:
-      'xl:top-0 xl:right-3/4 md:max-xl:left-2/4 md:max-xl:-top-8 max-[765px]:top-0',
+      '2xl:top-0 2xl:right-3/4 xl:max-2xl:left-2/4 xl:max-2xl:-top-8 lg:max-xl:top-0 lg:max-xl:right-3/4 md:max-lg:left-2/4 md:max-lg:-top-8 max-[765px]:top-0',
   },
   {
     id: 2,
     text: 'Te asignamos a tu objetivo',
     position:
-      'xl:right-full md:max-xl:top-10 md:max-xl:left-3/4 max-[765px]:top-16',
+      '2xl:right-full xl:max-2xl:top-10 xl:max-2xl:left-3/4 lg:max-xl:right-full md:max-lg:top-10 md:max-lg:left-3/4 max-[765px]:top-16',
   },
   {
     id: 3,
     text: 'Evaluacion Comercial',
     position:
-      'xl:right-3/4 xl:bottom-0 md:max-xl:top-1/4 md:max-xl:-right-72 max-[765px]:top-32',
+      '2xl:right-3/4 2xl:bottom-0 xl:max-2xl:top-1/4 xl:max-2xl:-right-72 lg:max-xl:right-3/4 lg:max-xl:bottom-0 md:max-lg:top-1/4 md:max-lg:-right-72 max-[765px]:top-32',
   },
   {
     id: 4,
     text: 'Definicion de estrategias',
     position:
-      'xl:top-0 xl:left-3/4 md:max-xl:bottom-1/4 md:max-xl:-right-72 max-[765px]:top-48',
+      '2xl:top-0 2xl:left-3/4 xl:max-2xl:bottom-1/4 xl:max-2xl:-right-72 lg:max-xl:top-0 lg:max-xl:left-3/4 md:max-lg:bottom-1/4 md:max-lg:-right-72 max-[765px]:top-48',
   },
   {
     id: 5,
     text: 'Gestion Comercial',
     position:
-      'xl:left-full md:max-xl:bottom-10 md:max-xl:left-3/4 max-[765px]:top-64',
+      '2xl:left-full xl:max-2xl:bottom-10 xl:max-2xl:left-3/4 lg:max-xl:left-full md:max-lg:bottom-10 md:max-lg:left-3/4 max-[765px]:top-64',
   },
   {
     id: 6,
     text: '¡Arrendamos y recibe tu arriendo!',
     position:
-      'xl:bottom-0 xl:left-3/4 md:left-2/4 md:-bottom-8 max-[765px]:top-80',
+      '2xl:bottom-0 2xl:left-3/4 xl:max-2xl:left-2/4 xl:max-2xl:-bottom-8 lg:max-xl:bottom-0 lg:max-xl:left-3/4 md:max-lg:left-2/4 md:max-lg:-bottom-8 max-[765px]:top-80',
   },
 ];
 
@@ -143,37 +155,37 @@ export const CircleVenderData = [
     id: 1,
     text: 'Llena el formulario',
     position:
-      'xl:top-0 xl:right-3/4 md:max-xl:left-2/4 md:max-xl:-top-8 max-[765px]:top-0',
+      '2xl:top-0 2xl:right-3/4 xl:max-2xl:left-2/4 xl:max-2xl:-top-8 lg:max-xl:top-0 lg:max-xl:right-3/4 md:max-lg:left-2/4 md:max-lg:-top-8 max-[765px]:top-0',
   },
   {
     id: 2,
     text: 'Te asignamos a tu Ejecutivo',
     position:
-      'xl:right-full md:max-xl:top-10 md:max-xl:left-3/4 max-[765px]:top-16',
+      '2xl:right-full xl:max-2xl:top-10 xl:max-2xl:left-3/4 lg:max-xl:right-full md:max-lg:top-10 md:max-lg:left-3/4 max-[765px]:top-16',
   },
   {
     id: 3,
     text: 'Evaluación Comercial',
     position:
-      'xl:right-3/4 xl:bottom-0 md:max-xl:top-1/4 md:max-xl:-right-72 max-[765px]:top-32',
+      '2xl:right-3/4 2xl:bottom-0 xl:max-2xl:top-1/4 xl:max-2xl:-right-72 lg:max-xl:right-3/4 lg:max-xl:bottom-0 md:max-lg:top-1/4 md:max-lg:-right-72 max-[765px]:top-32',
   },
   {
     id: 4,
     text: 'Definicion de estrategias',
     position:
-      'xl:top-0 xl:left-3/4 md:max-xl:bottom-1/4 md:max-xl:-right-72 max-[765px]:top-48',
+      '2xl:top-0 2xl:left-3/4 xl:max-2xl:bottom-1/4 xl:max-2xl:-right-72 lg:max-xl:top-0 lg:max-xl:left-3/4 md:max-lg:bottom-1/4 md:max-lg:-right-72 max-[765px]:top-48',
   },
   {
     id: 5,
     text: 'Gestión Comercial y legal',
     position:
-      'xl:left-full md:max-xl:bottom-10 md:max-xl:left-3/4 max-[765px]:top-64',
+      '2xl:left-full xl:max-2xl:bottom-10 xl:max-2xl:left-3/4 lg:max-xl:left-full md:max-lg:bottom-10 md:max-lg:left-3/4 max-[765px]:top-64',
   },
   {
     id: 6,
     text: 'vende y recibe tu pago!',
     position:
-      'xl:bottom-0 xl:left-3/4 md:left-2/4 md:-bottom-8 max-[765px]:top-80',
+      '2xl:bottom-0 2xl:left-3/4 xl:max-2xl:left-2/4 xl:max-2xl:-bottom-8 lg:max-xl:bottom-0 lg:max-xl:left-3/4 md:max-lg:left-2/4 md:max-lg:-bottom-8 max-[765px]:top-80',
   },
 ];
 
@@ -297,5 +309,214 @@ export const NewPropertyQualities = [
     id: 4,
     title: 'Gana por tu inversion',
     desc: 'Administramos el arriendo de tu propiedad para que comiences a ganar por tu inversión.',
+  },
+];
+
+
+/** Main Carousel - Arrendar Data */
+export const mainCarouselLeaseData = [
+  {
+    id: 1,
+    title: 'Arrienda tu propiedad sin complicaciones',
+    desc: '',
+    img: Slide1,
+  },
+  {
+    id: 2,
+    title: 'Arrienda tu propiedad sin complicaciones',
+    desc: '',
+    img: Slide4,
+  },
+];
+
+/** porque unne - Arrendar Data */
+export const whyUnneLeaseData = [
+  {
+    id: 1,
+    title: '¿Por qué Unne?',
+    benefits: [
+      'Te acompañamos en toda la gestión.',
+      'Tu propiedad en manos del arrendatario correcto.',
+      'Publicamos en los portales mas reconocidos de Chile.',
+      'Asesoria Legal.',
+      'Agenda tu sesión de fotos y video profesional de manera gratuita.',
+    ],
+  }
+];
+
+/** porque unne - vender Data */
+export const whyUnneSellData = [
+  {
+    id: 1,
+    title: '¿Por qué Unne?',
+    benefits: [
+      'Te asesoramos de principio a fin.',
+      'Tenemos la base  de clientes compradores más grande del país.',
+      'Publicamos en 43 portales inmobiliarios Servicios legales.',
+      'Servicios legales.',
+      'Agenda tu sesión de fotos y video profesional de manera gratuita.',
+    ],
+  },
+];
+
+
+/** Main Carousel - Vender Data */
+export const mainCarouselSellData = [
+  {
+    id: 1,
+    title: 'Vende fácil y rápido',
+    desc: '',
+    img: Slide1,
+  },
+  {
+    id: 2,
+    title: 'Vende fácil y rápido',
+    desc: '',
+    img: Slide4,
+  },
+];
+
+
+/* Asociate.js Data */
+export const AssociateData = [
+  {
+    id: 1,
+    title: 'Asóciate a la red lider de corredores en Chile',
+    children: [
+      {
+        id: 1,
+        name: 'Mas de 30 cursos mensuales en el área legal y comercial',
+        status: '',
+      },
+      {
+        id: 2,
+        name: 'Adelanta tu comisión con nuestro Pronto Pago',
+        status: 'Nuevo',
+      },
+      {
+        id: 3,
+        name: 'Sesiones de Coaching comercial',
+        status: 'Nuevo',
+      },
+      {
+        id: 4,
+        name: 'Alianzas con bancos y mutuarias',
+        status: 'Nuevo',
+      },
+      {
+        id: 5,
+        name: 'Alianza con Assetplan, para aumentar tu cartera',
+        status: 'Nuevo',
+      },
+      {
+        id: 6,
+        name: 'Servicios Legales',
+        status: '',
+      },
+      {
+        id: 7,
+        name: 'Cuentas con un Vendeid para que las consultas te lleguen directamente',
+        status: '',
+      },
+      {
+        id: 8,
+        name: 'Sistema de canje inteligente',
+        status: '',
+      },
+      {
+        id: 9,
+        name: 'Conserva el 100% de tu comisión',
+        status: '',
+      },
+    ],
+  }
+]
+
+/* Asociate.js Data */
+export const AssociateCardData = [
+  {
+    id: 1,
+    title: 'Contrata nuestros servicios legales',
+    desc:'Contamos con abogados especialistas en asesorias inmobiliarias que te guiaran en todo el proceso de la venta o arriendo de tu propiedad.',
+    icon: 'AiTwotoneGold',
+    children: [
+      {
+        id: 1,
+        name: 'Adelanta tu comision con pronto pago',
+      },{
+        id: 2,
+        name: 'Alianzas con bancos y mutuarias',
+      },{
+        id: 3,
+        name: 'Banco de canje avanzado',
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: 'Academia Unne',
+    desc:'Tenemos un programa dirigido por especialista del área del corretaje, que te brindara los conocimientos necesarios para ser un profesional',
+    icon: 'BiBookOpen',
+    children: [
+      {
+        id: 1,
+        name: 'Capacitaciones comerciales',
+      },{
+        id: 2,
+        name: 'Capacitaciones legales',
+      },{
+        id: 3,
+        name: 'Capacitaciones de sistema',
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: 'Cuentas con el respaldo de un Vendeid',
+    desc:'Contacto directo con los clientes interesados en tu propiedad ¡sin intermediarios!. De esta forma podrás minimizar los tiempos de espera',
+    icon: 'AiOutlineShareAlt',
+    children: [],
+  },
+  {
+    id: 4,
+    title: 'Oportunidades de Inversión',
+    desc:'Tus clientes contaran con productos de inversión de remate seguro y unidades nuevas',
+    icon: 'BsFillHouseAddFill',
+    children: [],
+  },
+]
+
+
+/* Imagenes de banco - Data */
+export const BankData = [
+  {
+    id: 1,
+    title:'Portal Inmobiliario',
+    images: Portalinmobiliario,
+  },
+  {
+    id: 2,
+    title: 'Yapo',
+    images: PortalYapo,
+  },
+  {
+    id: 3,
+    title: 'Top Propiedades',
+    images: PortalTopPropiedades,
+  },
+  {
+    id: 4,
+    title: 'Toc toc',
+    images: PortalToctoc,
+  },
+  {
+    id: 5,
+    title: 'Banco Scotiabank',
+    images: BancoScotiabank,
+  },
+  {
+    id: 6,
+    title: 'Banco TrueCapital',
+    images: BancoTrueCapital,
   },
 ];

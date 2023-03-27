@@ -16,7 +16,6 @@ const SearchPropertiesSection = () => {
   const [operationType, setOperationType] = useState('');
 
   const onSubmit = (data) => console.log(data);
-  console.log(errors);
 
   return (
     <div className="bg-gray-100 rounded-2xl w-100 xl:w-3/5 mx-auto text-black p-4 xl:px-10">
