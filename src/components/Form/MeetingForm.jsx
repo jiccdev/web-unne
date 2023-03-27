@@ -26,7 +26,7 @@ const MeetingForm = ({ title, subtitle }) => {
       <form onSubmit={handleSubmit(onSubmit)} className="py-6 px-4">
         <div className='grid grid-cols-1 sm:grid-cols-2 gap-x-20 gap-y-3 py-5 max-sm:divide-y-2 max-sm:divide-[#d8d8da]'>
           <div className="max-sm:py-2">
-            <label for="name" className='block text-base font-semibold'>Nombre:</label>
+            <label htmlFor="name" className='block text-base font-semibold'>Nombre:</label>
             <input
               type="text"
               className="block w-full rounded-xl bg-slate-50 py-2 px-2"
@@ -43,7 +43,7 @@ const MeetingForm = ({ title, subtitle }) => {
           </div>
 
           <div className="max-sm:py-2">
-            <label for="lastname" className='block text-base font-semibold'>Apellido:</label>
+            <label htmlFor="lastname" className='block text-base font-semibold'>Apellido:</label>
             <input
               type="text"
               className="block w-full rounded-xl bg-slate-50 py-2 px-2"
@@ -60,7 +60,7 @@ const MeetingForm = ({ title, subtitle }) => {
           </div>
 
           <div className="max-sm:py-2">
-            <label for="email" className='block text-base font-semibold'>Email:</label>
+            <label htmlFor="email" className='block text-base font-semibold'>Email:</label>
             <input
               type="email"
               className="block w-full rounded-xl bg-slate-50 py-2 px-2"
@@ -77,7 +77,7 @@ const MeetingForm = ({ title, subtitle }) => {
           </div>
 
           <div className="max-sm:py-2">
-            <label for="phone" className='block text-base font-semibold'>Telefono:</label>
+            <label htmlFor="phone" className='block text-base font-semibold'>Telefono:</label>
             <input
               type="number"
               className="block w-full rounded-xl bg-slate-50 py-2 px-2"
@@ -93,7 +93,7 @@ const MeetingForm = ({ title, subtitle }) => {
             )}
           </div>
           <div className="max-sm:py-2">
-            <label for="date" className='block text-base font-semibold'>Fecha:</label>
+            <label htmlFor="date" className='block text-base font-semibold'>Fecha:</label>
             <input
               type="date"
               className="block w-full rounded-xl py-2 px-2 bg-slate-50"
@@ -109,7 +109,7 @@ const MeetingForm = ({ title, subtitle }) => {
             )}
           </div>
           <div className="max-sm:py-2">
-            <label for="tel" className='block text-base font-semibold'>Hora:</label>
+            <label htmlFor="tel" className='block text-base font-semibold'>Hora:</label>
             <input
               type="time"
               className="block w-full rounded-xl bg-slate-50 py-2 px-2"
