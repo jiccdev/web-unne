@@ -11,7 +11,7 @@ const UnidadesRemates = () => {
   return (
     <Fragment>
       <HeadPage>
-        <title>Unne | Unidades en Remates</title>
+        <title>Unne | Unidades de Remates</title>
       </HeadPage>
 
       {/* Auction Secction */}
