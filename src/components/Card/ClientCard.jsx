@@ -9,9 +9,9 @@ const ClientCard = ({ item }) => {
 
   return (
     <div
-      className={`${getRadmonColor} flex justify-center items-center w-full rounded-[50px] h-96 xl:h-[600px] cursor-pointer`}
+      className={`${getRadmonColor} flex justify-center items-center w-[95%] mx-auto rounded-[50px] h-[500px] xl:h-[600px] cursor-pointer`}
     >
-      <div>
+      <div className="">
         <div className="flex justify-center items-center mb-12">
           <Image
             src={avatar}

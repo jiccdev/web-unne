@@ -9,7 +9,7 @@ import InvestmentInfo from '@/components/PageSections/SoyInversionista/Administr
 import PropertyManagmentSteps from '@/components/PageSections/SoyInversionista/AdministracionDeArriendo/PropertyManagmentSteps';
 import PlanCard from '@/components/Card/PlanCard';
 import ContactForm from '@/components/Form/ContactForm';
-import ClientsCarousel from '../../components/Carousel/ClientsCarousel';
+import ReactSlickComponent from '@/components/Carousel/ReactSlickComponent';
 
 const AdministracionDeArriendo = () => {
   const { contextData } = useContext(ClientsContext);
@@ -49,7 +49,7 @@ const AdministracionDeArriendo = () => {
         </section>
 
         <section className="relative my-24 xl:my-40 px-4 xl:px-56">
-          <ClientsCarousel data={clients} sm={1} md={3} lg={3} xl={3} />
+          <ReactSlickComponent data={clients} />
         </section>
       </Layout>
     </Fragment>
