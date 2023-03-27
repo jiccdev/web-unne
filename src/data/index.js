@@ -1,6 +1,18 @@
 import Slide1 from '../assets/img/carousel/slide1.jpg';
 import Slide4 from '../assets/img/carousel/slide4.jpg';
 
+import BancoChile from '../assets/img/bancos/BancoChile.png';
+import BancoSecurity from '../assets/img/bancos/BANCOSECURITY.png';
+import BancoBci from '../assets/img/bancos/bci.png';
+import BancoMetlife from '../assets/img/bancos/metlife.png';
+import BancoScotiabank from '../assets/img/bancos/Scotiabank.png';
+import BancoTrueCapital from '../assets/img/bancos/TrueCapital.png';
+
+import PortalYapo from '../assets/img/portal/yapo.png';
+import Portalinmobiliario from '../assets/img/portal/portalinmobiliario.png';
+import PortalToctoc from '../assets/img/portal/toctoc.png';
+import PortalTopPropiedades from '../assets/img/portal/topPropiedades.png';
+
 /* Navigation Data */
 export const navigationData = [
   {
@@ -426,6 +438,7 @@ export const AssociateCardData = [
     id: 1,
     title: 'Contrata nuestros servicios legales',
     desc:'Contamos con abogados especialistas en asesorias inmobiliarias que te guiaran en todo el proceso de la venta o arriendo de tu propiedad.',
+    icon: 'AiTwotoneGold',
     children: [
       {
         id: 1,
@@ -443,6 +456,7 @@ export const AssociateCardData = [
     id: 2,
     title: 'Academia Unne',
     desc:'Tenemos un programa dirigido por especialista del área del corretaje, que te brindara los conocimientos necesarios para ser un profesional',
+    icon: 'BiBookOpen',
     children: [
       {
         id: 1,
@@ -460,12 +474,49 @@ export const AssociateCardData = [
     id: 3,
     title: 'Cuentas con el respaldo de un Vendeid',
     desc:'Contacto directo con los clientes interesados en tu propiedad ¡sin intermediarios!. De esta forma podrás minimizar los tiempos de espera',
+    icon: 'AiOutlineShareAlt',
     children: [],
   },
   {
     id: 4,
     title: 'Oportunidades de Inversión',
     desc:'Tus clientes contaran con productos de inversión de remate seguro y unidades nuevas',
+    icon: 'BsFillHouseAddFill',
     children: [],
-  }
+  },
 ]
+
+
+/* Imagenes de banco - Data */
+export const BankData = [
+  {
+    id: 1,
+    title:'Portal Inmobiliario',
+    images: Portalinmobiliario,
+  },
+  {
+    id: 2,
+    title: 'Yapo',
+    images: PortalYapo,
+  },
+  {
+    id: 3,
+    title: 'Top Propiedades',
+    images: PortalTopPropiedades,
+  },
+  {
+    id: 4,
+    title: 'Toc toc',
+    images: PortalToctoc,
+  },
+  {
+    id: 5,
+    title: 'Banco Scotiabank',
+    images: BancoScotiabank,
+  },
+  {
+    id: 6,
+    title: 'Banco TrueCapital',
+    images: BancoTrueCapital,
+  },
+];

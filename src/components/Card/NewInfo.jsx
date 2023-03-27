@@ -1,11 +1,30 @@
 import React from 'react'
+import { iconsList } from '../Icons';
 
 const NewInfo = ({ data }) => {
-    const { title, desc, children } = data;
+    const { title, desc, icon, children } = data;
+    const {
+        BsFillHouseAddFill,
+        BiBookOpen,
+        AiTwotoneGold,
+        AiOutlineShareAlt,
+    } = iconsList;
+
+    const renderIcon=()=>{
+        const mapIcon={
+            'BsFillHouseAddFill':<BsFillHouseAddFill size="5rem" color='black'/>,
+            'BiBookOpen':<BiBookOpen size="5rem" color='black'/>,
+            'AiTwotoneGold':<AiTwotoneGold size="5rem" color='black'/>,
+            'AiOutlineShareAlt':<AiOutlineShareAlt size="5rem" color='black'/>,
+        }
+        return mapIcon[data.icon];
+    }
+    
+
     return (
         <div className='relative min-h-[480px] pb-14 h-full rounded-xl border-slate-200 border-solid border-2 p-3'>
-            <div className='w-16 h-16 bg-black text-white'>
-                Icono
+            <div className='w-20 h-20 text-white'>
+                {renderIcon()}
             </div>
             <h2 className='text-2xl text-orange-500 font-bold'>{title}</h2>
             <p className='pb-3'>{desc}</p>

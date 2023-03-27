@@ -1,6 +1,6 @@
 import { IoIosArrowDown } from 'react-icons/io';
 import { RiUserSearchFill } from 'react-icons/ri';
-import { BsBarChartFill } from 'react-icons/bs';
+import { BsBarChartFill, BsFillHouseCheckFill } from 'react-icons/bs';
 import { GiMoneyStack } from 'react-icons/gi';
 import { TbPigMoney } from 'react-icons/tb';
 import { TbArrowBigRightFilled } from 'react-icons/tb';
@@ -17,6 +17,12 @@ import { FaUserAlt } from 'react-icons/fa';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import { FiMail } from 'react-icons/fi';
 
+import { BsFillHouseAddFill } from 'react-icons/bs';
+import { BiBookOpen } from "react-icons/bi";
+import { AiOutlineShareAlt } from "react-icons/ai";
+import { AiTwotoneGold } from "react-icons/ai";
+
+
 export const iconsList = {
   IoIosArrowDown,
   RiUserSearchFill,
@@ -32,4 +38,8 @@ export const iconsList = {
   FaUserAlt,
   BsFillTelephoneFill,
   FiMail,
+  BsFillHouseAddFill,
+  BiBookOpen,
+  AiOutlineShareAlt,
+  AiTwotoneGold,
 };
