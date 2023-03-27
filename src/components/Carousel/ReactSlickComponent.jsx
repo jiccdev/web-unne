@@ -1,12 +1,11 @@
 import React from 'react';
 import Slider from 'react-slick';
-import ClientCard from '../Card/ClientCard';
 
-const ReactSlickComponent = ({ data }) => {
+const ReactSlickComponent = ({ data, RenderComponent, slidesToShow, xl }) => {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     autoplay: true,
     speed: 4000,
@@ -19,31 +18,10 @@ const ReactSlickComponent = ({ data }) => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: xl,
+          slidesToScroll: xl,
           infinite: true,
           dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 320,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
         },
       },
     ],
@@ -52,7 +30,7 @@ const ReactSlickComponent = ({ data }) => {
     <div>
       <Slider {...settings} className="flex items-center">
         {data.length > 0 &&
-          data.map((item) => <ClientCard key={item.id} item={item} />)}
+          data.map((item) => <RenderComponent key={item.id} item={item} />)}
       </Slider>
     </div>
   );

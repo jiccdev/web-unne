@@ -10,6 +10,7 @@ import PropertyManagmentSteps from '@/components/PageSections/SoyInversionista/A
 import PlanCard from '@/components/Card/PlanCard';
 import ContactForm from '@/components/Form/ContactForm';
 import ReactSlickComponent from '@/components/Carousel/ReactSlickComponent';
+import ClientCard from '@/components/Card/ClientCard';
 
 const AdministracionDeArriendo = () => {
   const { contextData } = useContext(ClientsContext);
@@ -49,7 +50,12 @@ const AdministracionDeArriendo = () => {
         </section>
 
         <section className="relative my-24 xl:my-40 px-4 xl:px-56">
-          <ReactSlickComponent data={clients} />
+          <ReactSlickComponent
+            RenderComponent={ClientCard}
+            data={clients}
+            slidesToShow={3}
+            xl={1}
+          />
         </section>
       </Layout>
     </Fragment>
