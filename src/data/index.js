@@ -567,3 +567,117 @@ export const slideData = [
     img: 'https://wallpapercave.com/dwp1x/wp2860498.jpg',
   },
 ];
+
+
+
+/** Main Carousel Data */
+export const CarouselLegalServicesData = [
+  {
+    id: 1,
+    title: 'Enfócate en vender, alivia tu carga con Servicios Legales Unne',
+    desc: 'No pierdas una venta por no tener la asesoría necesaria y entrega un servicio profesional.',
+    img: Slide1,
+  },
+  {
+    id: 2,
+    title: 'Enfócate en vender, alivia tu carga con Servicios Legales Unne',
+    desc: 'No pierdas una venta por no tener la asesoría necesaria y entrega un servicio profesional.',
+    img: Slide4,
+  },
+];
+
+/** porque unne - vender Data */
+export const TradingProcessHeroData = [
+  {
+    id: 1,
+    title: 'Proceso de Compraventa de inmuebles',
+    doc: 'Sin documentación',
+    uf: '6,8',
+    process: [
+      'Redacción de promesa e instrucciones notariales.',
+      'Coordinación bancaria.',
+      'Revisión de escritura publica de compraventa redactada por banco.',
+      'Redacción de instrucciones notariales de compraventa.',
+      'Coordinación notarial.',
+      'Monitorieo en CBR respectivo.',
+      'Orientacion legal en horario hábil.',
+    ],
+  },
+];
+
+/** porque unne - vender Data */
+export const LegalServicesData = [
+  {
+    id: 1,
+    title: 'Profesionales',
+    desc: 'Contamos con un equipo de profesionales que te guiaran y apoyaran en todo el proceso legal.',
+    color: 'bg-[#FDDC97]',
+  },
+  {
+    id: 2,
+    title: 'Gestión',
+    desc: 'Nuestro equipo gestionara cada paso del proceso del credito hipotecario hasta el retiro del pago del vale vista.',
+    color:'bg-[#F7B092]',
+  },
+  {
+    id: 3,
+    title: 'Cero Filas',
+    desc: 'Firma programada en notaria, para que tu tiempo lo utilices en otras cosas importantes.',
+    color: 'bg-[#D6D5D5]',
+  },
+];
+
+/** porque unne - vender Data */
+export const TradingProcessData = [
+  {
+    id: 1,
+    title: 'Proceso de Compraventa de inmuebles',
+    doc: 'Sin documentación',
+    uf: '6,8',
+    process: [
+      'Redacción de promesa e instrucciones notariales.',
+      'Coordinación bancaria.',
+      'Revisión de escritura publica de compraventa redactada por banco.',
+      'Redacción de instrucciones notariales de compraventa.',
+      'Coordinación notarial.',
+      'Monitorieo en CBR respectivo.',
+      'Orientacion legal en horario hábil.',
+    ],
+  },
+];
+
+/** porque unne - vender Data */
+export const MoreServicesData = [
+  {
+    id: 1,
+    title: 'Nuestros Servicios',
+    process: [
+      'Proceso de Compraventa de inmuebles',
+      'Proceso de Compraventa de inmuebles al Contado',
+      'Redacción de Promesa de compraventa e instrucciones notariales',
+      'Revision de promesa de compraventa',
+      'Informe de Estudio de Títulos',
+      'Solución de reparos',
+      'Redacción de poder especial de venta o compraventa',
+      'Redacción escrituras de cancelación, transacción, renuncia de gananciales, etc.',
+      'Redacción escritura publica de Compraventa',
+      'Revisión escritura publica Compraventa redactada por banco',
+      'Redacción instrucciones notariales de Compraventa',
+      'Redacción contrato de arrendamiento estándar',
+      'Redacción carta de termino de contrato de arrendamiento',
+    ],
+  },
+  {
+    id: 2,
+    title: 'Juicios',
+    process: [
+      'Cobro de honorarios correspondientes a la comisión del corredor',
+      'Terminación de contratos de arrendamiento por no pagos de las rentas ',
+      'Restitución de inmuebles por abandono del arrendatario',
+      'Precario',
+      'Incumplimientos de contrato de promesa',
+      'Conflictos a la Ley No 19.537 de Copropiedad Inmobiliaria',
+      'Representación en segunda instancia',
+    ],
+  },
+];
