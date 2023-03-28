@@ -4,7 +4,10 @@ import Layout from '@/components/Layout/Layout';
 import Capacitation from '@/components/PageSections/EresCorredor/AcademiaUnne/Capacitation';
 import About from '@/components/PageSections/EresCorredor/AcademiaUnne/About';
 import ContactUs from '@/components/PageSections/EresCorredor/AcademiaUnne/ContactUs';
-
+import ReactSlickComponent from '@/components/Carousel/ReactSlickComponent';
+import { BankData } from '../../data';
+import ImgCarouselCard from '@/components/Card/ImgCarouselCard';
+import TittleAcademy from '@/components/PageSections/EresCorredor/AcademiaUnne/TittleAcademy';
 
 const AcademiaUnne= () => {
     return (
@@ -21,6 +24,11 @@ const AcademiaUnne= () => {
 
         <section>
           <About/>
+        </section>
+
+        <section>
+          <TittleAcademy/>
+          <ReactSlickComponent data={BankData} RenderComponent={ImgCarouselCard} slidesToShow={4} xl={1}/>
         </section>
 
         <section>

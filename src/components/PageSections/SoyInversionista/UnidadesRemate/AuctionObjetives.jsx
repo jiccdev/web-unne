@@ -14,15 +14,15 @@ const AuctionObjetives = () => {
 
   return (
     <div>
-      <div class="grid grid-cols-1 md:grid-cols-1 2xl:flex flex-row mt-80">
-        <div class="flex items-center justify-center ml-8 hover:scale-110 transition duration-500">
-          <h2 class="text-6xl font-bold text-black text-left pl-8">
+      <div className="grid grid-cols-1 md:grid-cols-1 2xl:flex flex-row mt-80">
+        <div className="flex items-center justify-center ml-8 hover:scale-110 transition duration-500">
+          <h2 className="text-6xl font-bold text-black text-left pl-8">
             ¡Invertir es así de fácil!
           </h2>
         </div>
 
-        <div class="container mx-auto pl-8 ">
-          <div class="grid grid-cols-1 gap-2 sm:gap-4 md:grid-cols-2 justify-center">
+        <div className="container mx-auto pl-8 ">
+          <div className="grid grid-cols-1 gap-2 sm:gap-4 md:grid-cols-2 justify-center">
             {/* Section map*/}
             {ObjetivesAuctionData.length > 0
               ? ObjetivesAuctionData.map((e) => (
@@ -33,7 +33,7 @@ const AuctionObjetives = () => {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center items-center min-h-screen  mt-10 bg-[url('https://fastly.picsum.photos/id/143/1920/1080.jpg?hmac=9EUIy7G5weTG16Xl1wRe24V4TISUOovqS1z6wWgw1ew')]">
+      <div className="flex flex-col justify-center items-center min-h-screen  mt-10 bg-[url('https://dummyimage.com/1920x1080/fce58a/fce58a')]">
         <h2 className="text-4xl font-bold mb-4 text-center">
           Te ayudamos a elegir la mejor opción de inversión para ti
         </h2>

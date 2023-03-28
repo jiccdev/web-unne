@@ -31,7 +31,7 @@ const Contact = ({}) => {
       <form onSubmit={handleSubmit(onSubmit)} className="py-10">
         <div className="flex mb-5">
           <div className="w-1/5 flex justify-start items-center">
-            <i className="p-4 rounded-full bg-white ml-40">
+            <i className="p-2 rounded-full bg-white ml-40">
               <FaUserAlt className="text-xl text-gray-300 " />
             </i>
           </div>
@@ -57,7 +57,7 @@ const Contact = ({}) => {
 
         <div className="flex mb-5">
           <div className="w-1/5 flex justify-start items-center">
-            <i className="p-4 rounded-full bg-white  ml-40">
+            <i className="p-2 rounded-full bg-white  ml-40">
               <FiMail className="text-xl text-gray-300" />
             </i>
           </div>
