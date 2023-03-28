@@ -4,7 +4,7 @@ import Contact from '@/components/Form/Contact'
 
 const ContactUs =() =>  {
   return (
-
+    <div className='2xl:mx-60 '>
     <div className='grid grid-cols-1 sm:grid-cols-2 pt-2 pr-4 pl-4 pb-8'>
         <div className='flex flex-col'>
             <Contact/> 
@@ -66,6 +66,7 @@ const ContactUs =() =>  {
         </div>
 
                 
+    </div>
     </div>
   )
 }
