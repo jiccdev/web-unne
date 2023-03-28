@@ -18,11 +18,6 @@ const ImgCarouselCard = ({ item }) => {
             height={200}
           />
         </div>
-
-        <div className="text-center w-4/6 mx-auto">
-          <p className="text-md font-semibold">{title}</p>
-          <p>{id}</p>
-        </div>
       </div>
     </div>
   );
