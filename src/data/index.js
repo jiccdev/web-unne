@@ -492,32 +492,32 @@ export const BankData = [
   {
     id: 1,
     title: 'Banco de Chile',
-    img: 'https://dummyimage.com/300x200/000/fff&text=example',
+    img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/BancoChile_rseopu.png',
   },
   {
     id: 2,
     title: 'Banco Security',
-    img: 'https://dummyimage.com/300x200/000/fff&text=example',
+    img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/BANCOSECURITY_hs4t1l.png',
   },
   {
     id: 3,
     title: 'BCI',
-    img: 'https://dummyimage.com/300x200/000/fff&text=example',
+    img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/bci_zefpfw.png',
   },
   {
     id: 4,
     title: 'Met Life',
-    img: 'https://dummyimage.com/300x200/000/fff&text=example',
+    img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/metlife_isrjth.png',
   },
   {
     id: 5,
     title: 'Banco Scotiabank',
-    img: 'https://dummyimage.com/300x200/000/fff&text=example',
+    img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/Scotiabank_nrdmel.png',
   },
   {
     id: 6,
     title: 'Banco TrueCapital',
-    img: 'https://dummyimage.com/300x200/000/fff&text=example',
+    img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/TrueCapital_yuwaip.png',
   },
 ];
 
@@ -526,22 +526,22 @@ export const PortalData = [
   {
     id: 1,
     title: 'Portal Inmobiliario',
-    img: 'https://dummyimage.com/300x200/000/fff&text=example',
+    img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680028999/unne-media/portal/portalinmobiliario_x6nndy.png',
   },
   {
     id: 2,
     title: 'Yapo',
-    img: 'https://dummyimage.com/300x200/000/fff&text=example',
+    img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680028998/unne-media/portal/yapo_iyqynp.png',
   },
   {
     id: 3,
     title: 'Top Propiedades',
-    img: 'https://dummyimage.com/300x200/000/fff&text=example',
+    img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680028998/unne-media/portal/topPropiedades_yu50t1.png',
   },
   {
     id: 4,
     title: 'Toc toc',
-    img: 'https://dummyimage.com/300x200/000/fff&text=example',
+    img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680028998/unne-media/portal/toctoc_ll3lza.png',
   },
 ];
 
@@ -567,8 +567,6 @@ export const slideData = [
     img: 'https://wallpapercave.com/dwp1x/wp2860498.jpg',
   },
 ];
-
-
 
 /** Main Carousel Data */
 export const CarouselLegalServicesData = [
@@ -617,7 +615,7 @@ export const LegalServicesData = [
     id: 2,
     title: 'Gestión',
     desc: 'Nuestro equipo gestionara cada paso del proceso del credito hipotecario hasta el retiro del pago del vale vista.',
-    color:'bg-[#F7B092]',
+    color: 'bg-[#F7B092]',
   },
   {
     id: 3,
