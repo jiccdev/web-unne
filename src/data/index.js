@@ -312,7 +312,6 @@ export const NewPropertyQualities = [
   },
 ];
 
-
 /** Main Carousel - Arrendar Data */
 export const mainCarouselLeaseData = [
   {
@@ -341,7 +340,7 @@ export const whyUnneLeaseData = [
       'Asesoria Legal.',
       'Agenda tu sesión de fotos y video profesional de manera gratuita.',
     ],
-  }
+  },
 ];
 
 /** porque unne - vender Data */
@@ -359,7 +358,6 @@ export const whyUnneSellData = [
   },
 ];
 
-
 /** Main Carousel - Vender Data */
 export const mainCarouselSellData = [
   {
@@ -375,7 +373,6 @@ export const mainCarouselSellData = [
     img: Slide4,
   },
 ];
-
 
 /* Asociate.js Data */
 export const AssociateData = [
@@ -429,24 +426,26 @@ export const AssociateData = [
         status: '',
       },
     ],
-  }
-]
+  },
+];
 
 /* Asociate.js Data */
 export const AssociateCardData = [
   {
     id: 1,
     title: 'Contrata nuestros servicios legales',
-    desc:'Contamos con abogados especialistas en asesorias inmobiliarias que te guiaran en todo el proceso de la venta o arriendo de tu propiedad.',
+    desc: 'Contamos con abogados especialistas en asesorias inmobiliarias que te guiaran en todo el proceso de la venta o arriendo de tu propiedad.',
     icon: 'AiTwotoneGold',
     children: [
       {
         id: 1,
         name: 'Adelanta tu comision con pronto pago',
-      },{
+      },
+      {
         id: 2,
         name: 'Alianzas con bancos y mutuarias',
-      },{
+      },
+      {
         id: 3,
         name: 'Banco de canje avanzado',
       },
@@ -455,16 +454,18 @@ export const AssociateCardData = [
   {
     id: 2,
     title: 'Academia Unne',
-    desc:'Tenemos un programa dirigido por especialista del área del corretaje, que te brindara los conocimientos necesarios para ser un profesional',
+    desc: 'Tenemos un programa dirigido por especialista del área del corretaje, que te brindara los conocimientos necesarios para ser un profesional',
     icon: 'BiBookOpen',
     children: [
       {
         id: 1,
         name: 'Capacitaciones comerciales',
-      },{
+      },
+      {
         id: 2,
         name: 'Capacitaciones legales',
-      },{
+      },
+      {
         id: 3,
         name: 'Capacitaciones de sistema',
       },
@@ -473,25 +474,24 @@ export const AssociateCardData = [
   {
     id: 3,
     title: 'Cuentas con el respaldo de un Vendeid',
-    desc:'Contacto directo con los clientes interesados en tu propiedad ¡sin intermediarios!. De esta forma podrás minimizar los tiempos de espera',
+    desc: 'Contacto directo con los clientes interesados en tu propiedad ¡sin intermediarios!. De esta forma podrás minimizar los tiempos de espera',
     icon: 'AiOutlineShareAlt',
     children: [],
   },
   {
     id: 4,
     title: 'Oportunidades de Inversión',
-    desc:'Tus clientes contaran con productos de inversión de remate seguro y unidades nuevas',
+    desc: 'Tus clientes contaran con productos de inversión de remate seguro y unidades nuevas',
     icon: 'BsFillHouseAddFill',
     children: [],
   },
-]
-
+];
 
 /* Imagenes de banco - Data */
 export const BankData = [
   {
     id: 1,
-    title:'Portal Inmobiliario',
+    title: 'Portal Inmobiliario',
     images: Portalinmobiliario,
   },
   {
@@ -518,5 +518,28 @@ export const BankData = [
     id: 6,
     title: 'Banco TrueCapital',
     images: BancoTrueCapital,
+  },
+];
+
+export const slideData = [
+  {
+    id: 1,
+    title: 'Arrienda tu propiedad sin complicaciones',
+    img: 'https://wallpapercave.com/dwp1x/wp2860498.jpg',
+  },
+  {
+    id: 2,
+    title: 'Arrienda tu propiedad sin complicaciones',
+    img: 'https://wallpapercave.com/dwp1x/wp2860498.jpg',
+  },
+  {
+    id: 3,
+    title: 'Arrienda tu propiedad sin complicaciones',
+    img: 'https://wallpapercave.com/dwp1x/wp2860498.jpg',
+  },
+  {
+    id: 4,
+    title: 'Arrienda tu propiedad sin complicaciones',
+    img: 'https://wallpapercave.com/dwp1x/wp2860498.jpg',
   },
 ];
