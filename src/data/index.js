@@ -493,31 +493,37 @@ export const BankData = [
     id: 1,
     title: 'Banco de Chile',
     img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/BancoChile_rseopu.png',
+    href: 'https://portales.bancochile.cl/personas'
   },
   {
     id: 2,
     title: 'Banco Security',
     img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/BANCOSECURITY_hs4t1l.png',
+    href: 'https://personas.bancosecurity.cl/'
   },
   {
     id: 3,
     title: 'BCI',
     img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/bci_zefpfw.png',
+    href: 'https://www.bci.cl/personas'
   },
   {
     id: 4,
     title: 'Met Life',
     img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/metlife_isrjth.png',
+    href: 'https://w3.metlife.cl/'
   },
   {
     id: 5,
     title: 'Banco Scotiabank',
     img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/Scotiabank_nrdmel.png',
+    href: 'https://www.scotiabankchile.cl/'
   },
   {
     id: 6,
     title: 'Banco TrueCapital',
     img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/TrueCapital_yuwaip.png',
+    href: 'https://www.truecapital.cl/'
   },
 ];
 
@@ -527,21 +533,25 @@ export const PortalData = [
     id: 1,
     title: 'Portal Inmobiliario',
     img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680028999/unne-media/portal/portalinmobiliario_x6nndy.png',
+    href: 'https://www.portalinmobiliario.com/'
   },
   {
     id: 2,
     title: 'Yapo',
     img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680028998/unne-media/portal/yapo_iyqynp.png',
+    href: 'https://new.yapo.cl/'
   },
   {
     id: 3,
     title: 'Top Propiedades',
     img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680028998/unne-media/portal/topPropiedades_yu50t1.png',
+    href: 'https://www.toppropiedades.cl/'
   },
   {
     id: 4,
     title: 'Toc toc',
     img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680028998/unne-media/portal/toctoc_ll3lza.png',
+    href: 'https://www.toctoc.com/'
   },
 ];
 
