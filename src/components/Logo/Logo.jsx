@@ -6,10 +6,8 @@ import UnneLogo from '../../assets/img/logo/unne-logo.png';
 const Logo = () => {
   return (
     <Link href="/">
-      {UnneLogo ? (
+      {UnneLogo && (
         <Image src={UnneLogo} alt="unne-logo" width={170} height={100} />
-      ) : (
-        'Not found unne-logo'
       )}
     </Link>
   );

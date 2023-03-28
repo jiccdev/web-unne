@@ -312,7 +312,6 @@ export const NewPropertyQualities = [
   },
 ];
 
-
 /** Main Carousel - Arrendar Data */
 export const mainCarouselLeaseData = [
   {
@@ -341,7 +340,7 @@ export const whyUnneLeaseData = [
       'Asesoria Legal.',
       'Agenda tu sesión de fotos y video profesional de manera gratuita.',
     ],
-  }
+  },
 ];
 
 /** porque unne - vender Data */
@@ -359,7 +358,6 @@ export const whyUnneSellData = [
   },
 ];
 
-
 /** Main Carousel - Vender Data */
 export const mainCarouselSellData = [
   {
@@ -375,7 +373,6 @@ export const mainCarouselSellData = [
     img: Slide4,
   },
 ];
-
 
 /* Asociate.js Data */
 export const AssociateData = [
@@ -429,24 +426,26 @@ export const AssociateData = [
         status: '',
       },
     ],
-  }
-]
+  },
+];
 
 /* Asociate.js Data */
 export const AssociateCardData = [
   {
     id: 1,
     title: 'Contrata nuestros servicios legales',
-    desc:'Contamos con abogados especialistas en asesorias inmobiliarias que te guiaran en todo el proceso de la venta o arriendo de tu propiedad.',
+    desc: 'Contamos con abogados especialistas en asesorias inmobiliarias que te guiaran en todo el proceso de la venta o arriendo de tu propiedad.',
     icon: 'AiTwotoneGold',
     children: [
       {
         id: 1,
         name: 'Adelanta tu comision con pronto pago',
-      },{
+      },
+      {
         id: 2,
         name: 'Alianzas con bancos y mutuarias',
-      },{
+      },
+      {
         id: 3,
         name: 'Banco de canje avanzado',
       },
@@ -455,16 +454,18 @@ export const AssociateCardData = [
   {
     id: 2,
     title: 'Academia Unne',
-    desc:'Tenemos un programa dirigido por especialista del área del corretaje, que te brindara los conocimientos necesarios para ser un profesional',
+    desc: 'Tenemos un programa dirigido por especialista del área del corretaje, que te brindara los conocimientos necesarios para ser un profesional',
     icon: 'BiBookOpen',
     children: [
       {
         id: 1,
         name: 'Capacitaciones comerciales',
-      },{
+      },
+      {
         id: 2,
         name: 'Capacitaciones legales',
-      },{
+      },
+      {
         id: 3,
         name: 'Capacitaciones de sistema',
       },
@@ -473,50 +474,210 @@ export const AssociateCardData = [
   {
     id: 3,
     title: 'Cuentas con el respaldo de un Vendeid',
-    desc:'Contacto directo con los clientes interesados en tu propiedad ¡sin intermediarios!. De esta forma podrás minimizar los tiempos de espera',
+    desc: 'Contacto directo con los clientes interesados en tu propiedad ¡sin intermediarios!. De esta forma podrás minimizar los tiempos de espera',
     icon: 'AiOutlineShareAlt',
     children: [],
   },
   {
     id: 4,
     title: 'Oportunidades de Inversión',
-    desc:'Tus clientes contaran con productos de inversión de remate seguro y unidades nuevas',
+    desc: 'Tus clientes contaran con productos de inversión de remate seguro y unidades nuevas',
     icon: 'BsFillHouseAddFill',
     children: [],
   },
-]
-
+];
 
 /* Imagenes de banco - Data */
 export const BankData = [
   {
     id: 1,
-    title:'Portal Inmobiliario',
-    images: Portalinmobiliario,
+    title: 'Banco de Chile',
+    img: 'https://dummyimage.com/300x200/000/fff&text=example',
   },
   {
     id: 2,
-    title: 'Yapo',
-    images: PortalYapo,
+    title: 'Banco Security',
+    img: 'https://dummyimage.com/300x200/000/fff&text=example',
   },
   {
     id: 3,
-    title: 'Top Propiedades',
-    images: PortalTopPropiedades,
+    title: 'BCI',
+    img: 'https://dummyimage.com/300x200/000/fff&text=example',
   },
   {
     id: 4,
-    title: 'Toc toc',
-    images: PortalToctoc,
+    title: 'Met Life',
+    img: 'https://dummyimage.com/300x200/000/fff&text=example',
   },
   {
     id: 5,
     title: 'Banco Scotiabank',
-    images: BancoScotiabank,
+    img: 'https://dummyimage.com/300x200/000/fff&text=example',
   },
   {
     id: 6,
     title: 'Banco TrueCapital',
-    images: BancoTrueCapital,
+    img: 'https://dummyimage.com/300x200/000/fff&text=example',
+  },
+];
+
+/* Imagenes de los portales - Data */
+export const PortalData = [
+  {
+    id: 1,
+    title: 'Portal Inmobiliario',
+    img: 'https://dummyimage.com/300x200/000/fff&text=example',
+  },
+  {
+    id: 2,
+    title: 'Yapo',
+    img: 'https://dummyimage.com/300x200/000/fff&text=example',
+  },
+  {
+    id: 3,
+    title: 'Top Propiedades',
+    img: 'https://dummyimage.com/300x200/000/fff&text=example',
+  },
+  {
+    id: 4,
+    title: 'Toc toc',
+    img: 'https://dummyimage.com/300x200/000/fff&text=example',
+  },
+];
+
+export const slideData = [
+  {
+    id: 1,
+    title: 'Arrienda tu propiedad sin complicaciones',
+    img: 'https://wallpapercave.com/dwp1x/wp2860498.jpg',
+  },
+  {
+    id: 2,
+    title: 'Arrienda tu propiedad sin complicaciones',
+    img: 'https://wallpapercave.com/dwp1x/wp2860498.jpg',
+  },
+  {
+    id: 3,
+    title: 'Arrienda tu propiedad sin complicaciones',
+    img: 'https://wallpapercave.com/dwp1x/wp2860498.jpg',
+  },
+  {
+    id: 4,
+    title: 'Arrienda tu propiedad sin complicaciones',
+    img: 'https://wallpapercave.com/dwp1x/wp2860498.jpg',
+  },
+];
+
+
+
+/** Main Carousel Data */
+export const CarouselLegalServicesData = [
+  {
+    id: 1,
+    title: 'Enfócate en vender, alivia tu carga con Servicios Legales Unne',
+    desc: 'No pierdas una venta por no tener la asesoría necesaria y entrega un servicio profesional.',
+    img: Slide1,
+  },
+  {
+    id: 2,
+    title: 'Enfócate en vender, alivia tu carga con Servicios Legales Unne',
+    desc: 'No pierdas una venta por no tener la asesoría necesaria y entrega un servicio profesional.',
+    img: Slide4,
+  },
+];
+
+/** porque unne - vender Data */
+export const TradingProcessHeroData = [
+  {
+    id: 1,
+    title: 'Proceso de Compraventa de inmuebles',
+    doc: 'Sin documentación',
+    uf: '6,8',
+    process: [
+      'Redacción de promesa e instrucciones notariales.',
+      'Coordinación bancaria.',
+      'Revisión de escritura publica de compraventa redactada por banco.',
+      'Redacción de instrucciones notariales de compraventa.',
+      'Coordinación notarial.',
+      'Monitorieo en CBR respectivo.',
+      'Orientacion legal en horario hábil.',
+    ],
+  },
+];
+
+/** porque unne - vender Data */
+export const LegalServicesData = [
+  {
+    id: 1,
+    title: 'Profesionales',
+    desc: 'Contamos con un equipo de profesionales que te guiaran y apoyaran en todo el proceso legal.',
+    color: 'bg-[#FDDC97]',
+  },
+  {
+    id: 2,
+    title: 'Gestión',
+    desc: 'Nuestro equipo gestionara cada paso del proceso del credito hipotecario hasta el retiro del pago del vale vista.',
+    color:'bg-[#F7B092]',
+  },
+  {
+    id: 3,
+    title: 'Cero Filas',
+    desc: 'Firma programada en notaria, para que tu tiempo lo utilices en otras cosas importantes.',
+    color: 'bg-[#D6D5D5]',
+  },
+];
+
+/** porque unne - vender Data */
+export const TradingProcessData = [
+  {
+    id: 1,
+    title: 'Proceso de Compraventa de inmuebles',
+    doc: 'Sin documentación',
+    uf: '6,8',
+    process: [
+      'Redacción de promesa e instrucciones notariales.',
+      'Coordinación bancaria.',
+      'Revisión de escritura publica de compraventa redactada por banco.',
+      'Redacción de instrucciones notariales de compraventa.',
+      'Coordinación notarial.',
+      'Monitorieo en CBR respectivo.',
+      'Orientacion legal en horario hábil.',
+    ],
+  },
+];
+
+/** porque unne - vender Data */
+export const MoreServicesData = [
+  {
+    id: 1,
+    title: 'Nuestros Servicios',
+    process: [
+      'Proceso de Compraventa de inmuebles',
+      'Proceso de Compraventa de inmuebles al Contado',
+      'Redacción de Promesa de compraventa e instrucciones notariales',
+      'Revision de promesa de compraventa',
+      'Informe de Estudio de Títulos',
+      'Solución de reparos',
+      'Redacción de poder especial de venta o compraventa',
+      'Redacción escrituras de cancelación, transacción, renuncia de gananciales, etc.',
+      'Redacción escritura publica de Compraventa',
+      'Revisión escritura publica Compraventa redactada por banco',
+      'Redacción instrucciones notariales de Compraventa',
+      'Redacción contrato de arrendamiento estándar',
+      'Redacción carta de termino de contrato de arrendamiento',
+    ],
+  },
+  {
+    id: 2,
+    title: 'Juicios',
+    process: [
+      'Cobro de honorarios correspondientes a la comisión del corredor',
+      'Terminación de contratos de arrendamiento por no pagos de las rentas ',
+      'Restitución de inmuebles por abandono del arrendatario',
+      'Precario',
+      'Incumplimientos de contrato de promesa',
+      'Conflictos a la Ley No 19.537 de Copropiedad Inmobiliaria',
+      'Representación en segunda instancia',
+    ],
   },
 ];
