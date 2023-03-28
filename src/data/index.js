@@ -491,33 +491,57 @@ export const AssociateCardData = [
 export const BankData = [
   {
     id: 1,
-    title: 'Portal Inmobiliario',
-    images: Portalinmobiliario,
+    title: 'Banco de Chile',
+    img: 'https://dummyimage.com/300x200/000/fff&text=example',
   },
   {
     id: 2,
-    title: 'Yapo',
-    images: PortalYapo,
+    title: 'Banco Security',
+    img: 'https://dummyimage.com/300x200/000/fff&text=example',
   },
   {
     id: 3,
-    title: 'Top Propiedades',
-    images: PortalTopPropiedades,
+    title: 'BCI',
+    img: 'https://dummyimage.com/300x200/000/fff&text=example',
   },
   {
     id: 4,
-    title: 'Toc toc',
-    images: PortalToctoc,
+    title: 'Met Life',
+    img: 'https://dummyimage.com/300x200/000/fff&text=example',
   },
   {
     id: 5,
     title: 'Banco Scotiabank',
-    images: BancoScotiabank,
+    img: 'https://dummyimage.com/300x200/000/fff&text=example',
   },
   {
     id: 6,
     title: 'Banco TrueCapital',
-    images: BancoTrueCapital,
+    img: 'https://dummyimage.com/300x200/000/fff&text=example',
+  },
+];
+
+/* Imagenes de los portales - Data */
+export const PortalData = [
+  {
+    id: 1,
+    title: 'Portal Inmobiliario',
+    img: 'https://dummyimage.com/300x200/000/fff&text=example',
+  },
+  {
+    id: 2,
+    title: 'Yapo',
+    img: 'https://dummyimage.com/300x200/000/fff&text=example',
+  },
+  {
+    id: 3,
+    title: 'Top Propiedades',
+    img: 'https://dummyimage.com/300x200/000/fff&text=example',
+  },
+  {
+    id: 4,
+    title: 'Toc toc',
+    img: 'https://dummyimage.com/300x200/000/fff&text=example',
   },
 ];
 
