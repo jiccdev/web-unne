@@ -22,10 +22,10 @@ const PropertyManagmentSteps = () => {
         ))}
       </div>
 
-      <div className="d-flex flex-center items-center text-center my-2">
+      <div className="d-flex flex-center items-center text-center mt-10">
         <Button
           href="/"
-          className="px-4 py-2 capitalize font-medium bg-amber-400 hover:bg-amber-500"
+          className="px-5 py-3 capitalize font-medium text-gray-800 bg-amber-400 hover:bg-amber-500"
         >
           Ver planes
         </Button>
