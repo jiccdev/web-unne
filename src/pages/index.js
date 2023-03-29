@@ -7,6 +7,7 @@ import CarouselSection from '@/components/PageSections/HomePage/CarouselSection'
 import SearchProperties from '@/components/PageSections/HomePage/SearchPropertiesSection';
 import ServicesContactSection from '@/components/PageSections/HomePage/ServicesContactSection';
 import About from '@/components/PageSections/EresCorredor/AcademiaUnne/About';
+import ContactUs from '@/components/PageSections/EresCorredor/AcademiaUnne/ContactUs';
 
 const Home = () => {
   return (
@@ -30,6 +31,10 @@ const Home = () => {
 
         <section className="my-20 px-4 xl:px-32">
           <About />
+        </section>
+
+        <section className="my-20 px-4 xl:px-32">
+          <ContactUs />
         </section>
       </Layout>
     </Fragment>
