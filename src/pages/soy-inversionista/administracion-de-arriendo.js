@@ -1,6 +1,6 @@
 import React, { Fragment, useContext, useEffect } from 'react';
 import { ClientsContext } from '@/context/clients/ClientsContext';
-import { plansCardData, slideData } from '../../data';
+import { plansCardData } from '../../data';
 
 /** Components */
 import HeadPage from '@/components/Head/HeadPage';
@@ -11,7 +11,6 @@ import PlanCard from '@/components/Card/PlanCard';
 import ContactForm from '@/components/Form/ContactForm';
 import ReactSlickComponent from '@/components/Carousel/ReactSlickComponent';
 import ClientCard from '@/components/Card/ClientCard';
-import SlideCard from '@/components/Card/SlideCard';
 
 const AdministracionDeArriendo = () => {
   const { contextData } = useContext(ClientsContext);
@@ -54,15 +53,6 @@ const AdministracionDeArriendo = () => {
           <ReactSlickComponent
             RenderComponent={ClientCard}
             data={clients}
-            slidesToShow={3}
-            xl={1}
-          />
-        </section>
-
-        <section className="relative my-24 xl:my-40 px-4 xl:px-56">
-          <ReactSlickComponent
-            RenderComponent={SlideCard}
-            data={slideData}
             slidesToShow={3}
             xl={1}
           />
