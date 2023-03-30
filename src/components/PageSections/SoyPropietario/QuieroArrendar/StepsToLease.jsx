@@ -12,31 +12,31 @@ const StepsToLease = () => {
           onClick={() => setIsTabActive(0)}
           className={`${
             isTabActive === 0
-              ? 'text-white bg-primary'
+              ? 'text-white bg-orange-500 rounded-tl-[25px]'
               : 'text-gray-500 hover:text-gray-700'
           } w-full py-4 px-1 text-center border-t-2 font-medium text-sm border-transparent cursor-pointer`}
         >
-          Paso 1
+          Datos de Propiedad
         </Tab>
         <Tab
           onClick={() => setIsTabActive(1)}
           className={`${
             isTabActive === 1
-              ? 'text-white bg-primary'
+              ? 'text-white bg-orange-500 rounded-tl-[25px] rounded-tr-[25px]'
               : 'text-gray-500 hover:text-gray-700'
           } w-full py-4 px-1 text-center border-t-2 font-medium text-sm border-transparent cursor-pointer`}
         >
-          Paso 2
+          Datos personales
         </Tab>
         <Tab
           onClick={() => setIsTabActive(2)}
           className={`${
             isTabActive === 2
-              ? 'text-white bg-primary'
+              ? 'text-white bg-orange-500 rounded-tr-[25px]'
               : 'text-gray-500 hover:text-gray-700'
           } w-full py-4 px-1 text-center border-t-2 font-medium text-sm border-transparent cursor-pointer`}
         >
-          Paso 3
+          Validación de usuario
         </Tab>
       </Fragment>
     );
@@ -102,7 +102,7 @@ const StepsToLease = () => {
             </div>
           </form>
 
-          <div className="w-full h-96 mt-5">
+          <div className="w-full xl:w-5/6 h-96 mt-5">
             <iframe
               className="w-full h-full"
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13321.083909707775!2d-70.585684!3d-33.416179!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf182be3e047%3A0x6cd33f25cf7a92dc!2sAsturias%20171%2C%20Of.%20101%2C%207550130%20Las%20Condes%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1679881853426!5m2!1ses-419!2scl"
