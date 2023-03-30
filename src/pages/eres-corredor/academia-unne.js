@@ -9,36 +9,30 @@ import { BankData } from '../../data';
 import ImgCarouselCard from '@/components/Card/ImgCarouselCard';
 import TittleAcademy from '@/components/PageSections/EresCorredor/AcademiaUnne/TittleAcademy';
 
-const AcademiaUnne= () => {
-    return (
-      <Fragment>
-        <HeadPage>
-          <title>Unne | Academia Unne</title>
-        </HeadPage>
+const AcademiaUnne = () => {
+  return (
+    <Fragment>
+      <HeadPage>
+        <title>Unne | Academia Unne</title>
+      </HeadPage>
 
-        <Layout>
-        
+      <Layout>
         <section>
-          <Capacitation/>
+          <Capacitation />
         </section>
 
         <section>
-          <About/>
+          <TittleAcademy />
+          <ReactSlickComponent
+            data={BankData}
+            RenderComponent={ImgCarouselCard}
+            slidesToShow={4}
+            xl={1}
+          />
         </section>
+      </Layout>
+    </Fragment>
+  );
+};
 
-        <section>
-          <TittleAcademy/>
-          <ReactSlickComponent data={BankData} RenderComponent={ImgCarouselCard} slidesToShow={4} xl={1}/>
-        </section>
-
-        <section>
-          <ContactUs/>
-        </section>
-
-        </Layout>
-        
-      </Fragment>
-    );
-  };
-  
-  export default AcademiaUnne;
+export default AcademiaUnne;
