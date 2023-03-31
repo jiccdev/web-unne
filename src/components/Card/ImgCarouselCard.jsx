@@ -2,14 +2,14 @@ import React from 'react';
 import Image from 'next/image';
 
 const ImgCarouselCard = ({ item }) => {
-  const { id, title, img, href} = item;
+  const { id, title, img, href } = item;
   return (
     <div
       className={` flex justify-center items-center w-[95%] mx-auto rounded-[50px]`}
     >
       <div className="">
         <div className="flex justify-center items-center mb-12 cursor-pointer">
-          <a href={href} target="_blank" >
+          <a href={href} target="_blank">
             <Image
               src={img}
               alt={`avatar-${title}`}
