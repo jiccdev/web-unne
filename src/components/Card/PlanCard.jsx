@@ -4,7 +4,7 @@ const PlanCard = ({ data }) => {
   const { title, commission, benefits } = data;
 
   return (
-    <div className="block max-w-full xl:max-w-md p-8 rounded-[50px] shadow bg-orange-500 border border-gray-200 hover:bg-amber-400 hover:shadow-xl transition ease-in-out hover:-translate-y-1 xl:hover:scale-100 duration-300">
+    <div className="block max-w-full xl:max-w-md p-6 rounded-[50px] shadow bg-orange-500 border border-gray-200 hover:bg-amber-400 hover:shadow-xl transition ease-in-out hover:-translate-y-1 xl:hover:scale-100 duration-300">
       <h5 className="mb-5 text-lg xl:text-4xl font-bold tracking-tight text-center text-gray-900 dark:text-white">
         {title}
       </h5>

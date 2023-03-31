@@ -18,7 +18,10 @@ const UnidadesRemates = () => {
       <Layout>
         <section>
           <AuctionProcess/>
-          <AuctionObjetives/>
+        </section>
+
+        <section>
+        <AuctionObjetives/>
         </section>
 
       </Layout>

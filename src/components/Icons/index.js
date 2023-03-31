@@ -18,10 +18,11 @@ import { BsFillTelephoneFill } from 'react-icons/bs';
 import { FiMail } from 'react-icons/fi';
 
 import { BsFillHouseAddFill } from 'react-icons/bs';
-import { BiBookOpen } from "react-icons/bi";
-import { AiOutlineShareAlt } from "react-icons/ai";
-import { AiTwotoneGold } from "react-icons/ai";
-
+import { BiBookOpen } from 'react-icons/bi';
+import { AiOutlineShareAlt } from 'react-icons/ai';
+import { AiTwotoneGold } from 'react-icons/ai';
+import { GrClose } from 'react-icons/gr';
+import { MdOutlineArrowDropDown } from 'react-icons/md';
 
 export const iconsList = {
   IoIosArrowDown,
@@ -42,4 +43,6 @@ export const iconsList = {
   BiBookOpen,
   AiOutlineShareAlt,
   AiTwotoneGold,
+  GrClose,
+  MdOutlineArrowDropDown,
 };

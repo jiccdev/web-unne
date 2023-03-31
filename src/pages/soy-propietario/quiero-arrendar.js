@@ -5,12 +5,14 @@ import CircleSection from '@/components/PageSections/SoyPropietario/QuieroArrend
 import WhyUnneSection from '@/components/PageSections/SoyPropietario/QuieroArrendar/whyUnneSection';
 import MainCarousel from '@/components/Carousel/MainCarousel';
 import SimpleButton from '@/components/Button/SimpleButton';
+import StepsToLease from '@/components/PageSections/SoyPropietario/QuieroArrendar/StepsToLease';
 
 /* Data */
-import { CircleArrendarData, mainCarouselLeaseData, whyUnneLeaseData } from '../../data/index';
-
-
-
+import {
+  CircleArrendarData,
+  mainCarouselLeaseData,
+  whyUnneLeaseData,
+} from '../../data/index';
 
 const QuieroArrendar = () => {
   return (
@@ -24,14 +26,39 @@ const QuieroArrendar = () => {
         <section>
           <MainCarousel data={mainCarouselLeaseData} />
         </section>
+
         <section>
           {whyUnneLeaseData?.length > 0 && whyUnneLeaseData?.map((e) => (<WhyUnneSection key={e.id} data={e} />))}
         </section>
         <section>
           <CircleSection ubicationData={CircleArrendarData} ColorBorder='border-[#2E3641]' ColorBg='bg-[#2E3641]' ColorNumberBG='bg-[#F7B092]' ColorTextBG='bg-[#EF6025]' ColorText='text-white'/>
+
+        <section className="grid grid-cols-1 xl:grid-cols-3">
+          <div className="xl:col-start-1">
+            {whyUnneLeaseData?.length > 0 &&
+              whyUnneLeaseData?.map((e) => (
+                <WhyUnneSection key={e.id} data={e} />
+              ))}
+          </div>
+          <div className="col-auto xl:col-start-2 xl:col-end-4">
+            <CircleSection
+              ubicationData={CircleArrendarData}
+              ColorBorder="border-slate-600"
+              ColorBg="bg-slate-600"
+              ColorNumberBG="bg-[#F3AA88]"
+              ColorTextBG="bg-[#E85512]"
+            />
+          </div>
+
         </section>
-        <section className='flex justify-center my-5'>
+        <section className="flex justify-center my-5">
           <SimpleButton></SimpleButton>
+        </section>
+
+
+
+        <section className="my-20 px-4 xl:px-32">
+          <StepsToLease />
         </section>
 
       </Layout>
