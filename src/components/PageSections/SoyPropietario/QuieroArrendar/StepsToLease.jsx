@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { Tab } from '@headlessui/react';
 import TabComponent from '@/components/Tab/TabComponent';
 import PropertyData from './TabsContent/PropertyData';
@@ -30,16 +30,42 @@ const StepsToLease = () => {
     },
   });
 
+  console.log('FormData desde stpesToLease', formData);
+
+  const isTopTabActive =
+    Object.values(formData.propertyData).includes('') ||
+    Object.values(formData.propertyData).includes(0);
+
+  console.log(isTopTabActive);
+
+  // useEffect(() => {
+  //   if (
+  //     Object.values(formData.propertyData).includes('') ||
+  //     Object.values(formData.propertyData).includes(0)
+  //   ) {
+  //     setIsTabActive(0);
+  //   } else {
+  //     setIsTabActive(1);
+  //   }
+  // }, [formData.propertyData]);
+
   const renderTabs = () => {
     return (
-      <Fragment>
+      <Tab.Group>
         <Tab
+          data-headlessui-state="selected"
           onClick={() => setIsTabActive(0)}
+          // className={`${
+          //   isTabActive === 0
+          //     ? 'text-white bg-orange-500 rounded-tl-[25px] focus:putline-none outline-none'
+          //     : 'text-gray-500 hover:text-gray-700'
+          // } w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
           className={`${
-            isTabActive === 0
+            isTopTabActive
               ? 'text-white bg-orange-500 rounded-tl-[25px] focus:putline-none outline-none'
-              : 'text-gray-500 hover:text-gray-700'
-          } w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
+              : 'bg-gray-300 text-gray-600 rounded-tl-[25px] focus:putline-none outline-none'
+          }`}
+          disabled={isTopTabActive}
         >
           Datos de Propiedad
         </Tab>
@@ -50,6 +76,7 @@ const StepsToLease = () => {
               ? 'text-white bg-orange-500 rounded-tl-[25px] rounded-tr-[25px] focus:putline-none outline-none'
               : 'text-gray-500 hover:text-gray-700'
           } w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
+          disabled={isTopTabActive}
         >
           Datos personales
         </Tab>
@@ -60,10 +87,11 @@ const StepsToLease = () => {
               ? 'text-white bg-orange-500 rounded-tr-[25px] border-l border-r focus:putline-none outline-none'
               : 'text-gray-500 hover:text-gray-700'
           } w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
+          disabled={isTopTabActive}
         >
           Validación de usuario
         </Tab>
-      </Fragment>
+      </Tab.Group>
     );
   };
 
