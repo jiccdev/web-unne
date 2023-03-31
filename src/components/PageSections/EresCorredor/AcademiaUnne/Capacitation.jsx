@@ -1,4 +1,6 @@
 import React from 'react'
+import styles from '../../../../styles/components/AcademyStyles/CardStyles.module.css'
+
 
 const Capacitation =() =>  {
   return (
@@ -22,13 +24,22 @@ const Capacitation =() =>  {
 
             <div className='flex flex-col justify-center items-center'>
                 <div className='pb-10'> 
-                    <div>
-                        <h2 className='text-3xl text-orange-500 font-bold pt-14'>Sistemas</h2>
-                        <p>Sistemas y correo electrónico</p>
-                        <p>Estudios y seguimiento de las publicaciones</p>
-                        <p>Guía de publicación</p>
+                    <div className={`${styles.card} hover:shadow-2xl`}>
+                        <h2 className='text-3xl text-orange-500 font-bold pt-4 p-24'>Sistemas</h2>
+                        
+                        <div className={`${styles.details}`}>
+                            <p>Sistemas y correo electrónico</p>
+                            <p>Estudios y seguimiento de las publicaciones</p>
+                            <p>Guía de publicación</p>
+                        </div>
+                        
 
                     </div>
+
+                    
+                    
+                  
+
 
 
 
@@ -53,9 +64,35 @@ const Capacitation =() =>  {
                     </div>
 
 
-                    <div>
-                        <h2 className='text-2xl text-orange-500 font-bold  pt-14'>Capacítate junto a Unne</h2>
-                        
+                    <div className={`${styles.flipCard}`}>
+                        <div className={`${styles.flipCardInner}`}>
+                            <div className={`${styles.flipCardFront}`}>
+                                <h2>Área Legal</h2>
+                            </div>
+
+                            <div className={`${styles.flipCardBack}`}>
+                            <p>Ley de Arrendamiento</p>
+                            <p>Ley de Copropiedad</p>
+                            <p>Herencias e inmuebles</p>
+                            <p>FEA: ¿Qué es y para que sirve?</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div className={`${styles.flipCard}`}>
+                        <div className={`${styles.flipCardInner}`}>
+                            <div className={`${styles.flipCardFront}`}>
+                                <h2>Área Legal</h2>
+                            </div>
+
+                            <div className={`${styles.flipCardBack}`}>
+                            <p>Ley de Arrendamiento</p>
+                            <p>Ley de Copropiedad</p>
+                            <p>Herencias e inmuebles</p>
+                            <p>FEA: ¿Qué es y para que sirve?</p>
+                            </div>
+                        </div>
                     </div>
 
                 

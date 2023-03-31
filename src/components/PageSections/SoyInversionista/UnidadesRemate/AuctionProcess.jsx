@@ -29,7 +29,7 @@ const AuctionProcess =() => {
 
     //test test test
     <div className=''>    
-        <div className='flex flex-wrap flex-row items-center justify-center w-full'>
+        <div className='flex flex-wrap flex-row items-center justify-center mt-7 w-full'>
             <div className='w-full sm:w-1/3 lg:w-max mb-8 sm:mb-0 hover:scale-105 transition duration-500'>
                 <div className='max-w-xl h-50 sm:h-auto bg-white rounded-lg overflow-hidden shadow-md'>
                     <div className='p-14'>
@@ -43,6 +43,8 @@ const AuctionProcess =() => {
                 </div>
             </div>
 
+            
+
             <div className='w-80 sm:max-2xl:w-full flex-row 2xl:w-max lg:px-4 mb-8 sm:mb-4 flex items-center justify-center hover:scale-110 transition duration-500'>
                 {isMobile ? (
                     <TbArrowBigDownFilled size={'8rem'} color='orange' />
@@ -51,7 +53,7 @@ const AuctionProcess =() => {
                 )}
             </div>
 
-            <div className='w-full sm:w-1/3 lg:w-max mb-8 sm:mb-0 hover:scale-110 transition duration-500'>
+            <div className='w-full sm:w-1/3 lg:w-max mb-8 sm:mb-0 hover:scale-105 transition duration-500'>
                 <div className='max-w-xl h-50 sm:h-auto bg-white rounded-lg overflow-hidden shadow-md'>
                     <div className='p-14'>
                         <h2 className='text-3xl md:text-2xl font-bold'>
