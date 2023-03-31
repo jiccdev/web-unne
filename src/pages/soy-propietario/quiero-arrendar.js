@@ -24,18 +24,16 @@ const QuieroArrendar = () => {
         <section>
           <MainCarousel data={mainCarouselLeaseData} />
         </section>
-        <section className='grid grid-cols-1 xl:grid-cols-3'>
-          <div className='xl:col-start-1'>
-            {whyUnneLeaseData?.length > 0 && whyUnneLeaseData?.map((e) => (<WhyUnneSection key={e.id} data={e} />))}
-          </div>
-          <div className='col-auto xl:col-start-2 xl:col-end-4'>
-          <CircleSection ubicationData={CircleArrendarData} ColorBorder='border-slate-600' ColorBg='bg-slate-600' ColorNumberBG='bg-[#F3AA88]' ColorTextBG='bg-[#E85512]' />
-          </div>
+        <section>
+          {whyUnneLeaseData?.length > 0 && whyUnneLeaseData?.map((e) => (<WhyUnneSection key={e.id} data={e} />))}
+        </section>
+        <section>
+          <CircleSection ubicationData={CircleArrendarData} ColorBorder='border-[#2E3641]' ColorBg='bg-[#2E3641]' ColorNumberBG='bg-[#F7B092]' ColorTextBG='bg-[#EF6025]' ColorText='text-white'/>
         </section>
         <section className='flex justify-center my-5'>
           <SimpleButton></SimpleButton>
         </section>
-        
+
       </Layout>
     </Fragment>
   );

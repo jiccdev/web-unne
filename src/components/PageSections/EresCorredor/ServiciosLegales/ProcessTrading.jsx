@@ -3,7 +3,7 @@ import React from 'react'
 const ProcessTrading = ({ data }) => {
     const { id, title, doc, uf, process } = data;
     return (
-        <div>
+        <div className='cursor-default'>
             <div className='flex justify-center items-center gap-5 flex-wrap'>
                 <div className='max-w-xs text-center'>
                     <h2 className='text-3xl font-bold'>{title}</h2>
@@ -28,9 +28,7 @@ const ProcessTrading = ({ data }) => {
                     <h2 className='text-4xl font-bold text-orange-500'>UF. {uf}</h2>
                 </div>
             </div>
-            <div className='flex justify-center pb-1 pt-5'>
-                <button className="text-white text-xl px-5 bg-orange-600 border-none rounded-full hover:bg-orange-700">Ver más servicios</button>
-            </div>
+            
 
         </div>
     )

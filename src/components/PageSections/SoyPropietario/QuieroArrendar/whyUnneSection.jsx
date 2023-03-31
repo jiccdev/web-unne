@@ -1,24 +1,16 @@
 import React from 'react'
+import WhyUnneList from './WhyUnneList';
 
 const whyUnneSection = ({ data }) => {
     const { title, benefits } = data;
     return (
-        <div className='flex flex-col items-center justify-center h-full'>
-            <div className='py-5 xl:max-w-lg'>
-                <h5 className='text-3xl xl:text-4xl font-bold'>
-                    {title}
-                </h5>
-                <ul className="py-1 flex justify-center flex-col font-semibold">
-                    {benefits &&
-                        benefits.map((benefit, idx) => (
-                            <li
-                                key={idx}
-                                className="mx-6 xl:mx-14 py-1 list-disc"
-                            >
-                                {benefit}
-                            </li>
-                        ))}
-                </ul>
+        <div className='flex justify-center items-center flex-col'>
+            <h3 className='my-10 text-center text-4xl md:text-5xl font-bold'>{title}</h3>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl'>
+                {benefits &&
+                    benefits.map((benefit, idx) => (
+                        <WhyUnneList key={idx} data={benefit}></WhyUnneList>
+                    ))}
             </div>
         </div>
     )

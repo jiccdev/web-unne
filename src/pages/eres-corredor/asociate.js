@@ -18,7 +18,7 @@ const Asociate = () => {
             </HeadPage>
 
             <Layout>
-                <section>
+                <section className='mt-20'>
                     {AssociateData?.length > 0 && AssociateData?.map((e) => (<MainInformation key={e.id} data={e} />))}
                 </section>
                 <section>

@@ -334,11 +334,31 @@ export const whyUnneLeaseData = [
     id: 1,
     title: '¿Por qué Unne?',
     benefits: [
-      'Te acompañamos en toda la gestión.',
-      'Tu propiedad en manos del arrendatario correcto.',
-      'Publicamos en los portales mas reconocidos de Chile.',
-      'Asesoria Legal.',
-      'Agenda tu sesión de fotos y video profesional de manera gratuita.',
+      {
+        id: 1,
+        name: 'Te acompañamos en toda la gestión.',
+        icon:'before:content-["1"]',
+      },
+      {
+        id: 2,
+        name: 'Tu propiedad en manos del arrendatario correcto.',
+        icon:'before:content-["2"]',
+      },
+      {
+        id: 3,
+        name: 'Publicamos en los portales mas reconocidos de Chile.',
+        icon:'before:content-["3"]',
+      },
+      {
+        id: 4,
+        name: 'Asesoria Legal.',
+        icon:'before:content-["4"]',
+      },
+      {
+        id: 5,
+        name: 'Agenda tu sesión de fotos y video profesional de manera gratuita.',
+        icon:'before:content-["5"]',
+      },
     ],
   },
 ];
@@ -349,11 +369,31 @@ export const whyUnneSellData = [
     id: 1,
     title: '¿Por qué Unne?',
     benefits: [
-      'Te asesoramos de principio a fin.',
-      'Tenemos la base  de clientes compradores más grande del país.',
-      'Publicamos en 43 portales inmobiliarios Servicios legales.',
-      'Servicios legales.',
-      'Agenda tu sesión de fotos y video profesional de manera gratuita.',
+      {
+        id: 1,
+        name: 'Te asesoramos de principio a fin.',
+        icon:'before:content-["1"]',
+      },
+      {
+        id: 1,
+        name: 'Tenemos la base  de clientes compradores más grande del país.',
+        icon:'before:content-["2"]',
+      },
+      {
+        id: 1,
+        name: 'Publicamos en 43 portales inmobiliarios Servicios legales.',
+        icon:'before:content-["3"]',
+      },
+      {
+        id: 1,
+        name: 'Servicios legales.',
+        icon:'before:content-["4"]',
+      },
+      {
+        id: 1,
+        name: 'Agenda tu sesión de fotos y video profesional de manera gratuita.',
+        icon:'before:content-["5"]',
+      },
     ],
   },
 ];

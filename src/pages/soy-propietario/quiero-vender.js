@@ -21,15 +21,12 @@ const QuieroVender = () => {
         <section>
           <MainCarousel data={mainCarouselSellData} />
         </section>
+        <section>
+          {whyUnneSellData?.length > 0 && whyUnneSellData?.map((e) => (<WhyUnneSection key={e.id} data={e} />))}
+        </section>
 
-
-        <section className='grid grid-cols-1 xl:grid-cols-3'>
-          <div className='xl:col-start-1'>
-            {whyUnneSellData?.length > 0 && whyUnneSellData?.map((e) => (<WhyUnneSection key={e.id} data={e} />))}
-          </div>
-          <div className='col-auto xl:col-start-2 xl:col-end-4'>
-          <CircleSection ubicationData={CircleVenderData} ColorBorder='border-amber-400' ColorBg='bg-amber-400' ColorNumberBG='bg-[#9A9BA1]' ColorTextBG='bg-[#353843]' />
-          </div>
+        <section className=''>
+          <CircleSection ubicationData={CircleVenderData} ColorBorder='border-[#FBB916]' ColorBg='bg-[#FBB916]' ColorNumberBG='bg-[#fb923c]' ColorTextBG='bg-[#e5e7eb]' ColorText='text-black'/>
         </section>
         
         <section className='flex justify-center my-5'>

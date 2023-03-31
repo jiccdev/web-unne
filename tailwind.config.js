@@ -8,9 +8,20 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        'heart':{
+          '0%':{transform: 'none'},
+          '50%':{transform: 'scale(1.04)'},
+          '100%':{transform: 'none'}
+        }
+      },
+      animation: {
+        'heart':'heart 1.5s infinite'
+      },
       container: {
         center: true,
       },
+
     },
   },
   plugins: [require('daisyui')],

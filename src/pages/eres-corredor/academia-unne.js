@@ -28,7 +28,7 @@ const AcademiaUnne= () => {
 
         <section>
           <TittleAcademy/>
-          <ReactSlickComponent data={BankData} RenderComponent={ImgCarouselCard} slidesToShow={4} xl={1}/>
+          <ReactSlickComponent data={BankData} RenderComponent={ImgCarouselCard} slidesToShow={5} xl={1}/>
         </section>
 
         <section>

@@ -1,12 +1,13 @@
 import React from 'react'
+import styles from '../../styles/components/NewProperty.module.css';
 
 const InvestToday = ({title}) => {
   return (
-    <div className="card w-56 rounded-xl hover:bg-[#fffbf1] border-gray-400 hover:border-gray-500 border-solid border cursor-pointer hover:scale-105 hover:shadow-2xl trasition duration-300 ease-in-out">
-      <div className="card-body items-center text-center py-0 pt-5">
-        <h2 className="card-title">{title}</h2>
-      </div>
-      <figure><img src="https://fastly.picsum.photos/id/737/150/150.jpg?hmac=iAVmb4Q2lB0LSYSbBIhjq8jJSt_c-n_vUsMqa5_mWDg" width={150} height={150} alt="Shoes" className='rounded-full my-5' /></figure>
+    <div className={`${styles.card} hover:shadow-2xl`}>
+        <div className={`${styles.blob} bg-[#f0f0f0]`}></div>
+        <h2 className={`${styles.titles} text-xl py-4 font-semibold`} >{title}</h2>
+        <span className={styles.img} >
+        </span>
     </div>
   )
 }
