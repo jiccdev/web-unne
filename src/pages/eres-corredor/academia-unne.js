@@ -35,4 +35,23 @@ const AcademiaUnne = () => {
   );
 };
 
+
+        <section>
+          <TittleAcademy/>
+          <ReactSlickComponent data={BankData} RenderComponent={ImgCarouselCard} slidesToShow={5} xl={1}/>
+        </section>
+
+        <section>
+          <ContactUs/>
+        </section>
+
+        </Layout>
+        
+      </Fragment>
+    );
+  };
+  
+  export default AcademiaUnne;
+
 export default AcademiaUnne;
+

@@ -26,6 +26,13 @@ const QuieroArrendar = () => {
         <section>
           <MainCarousel data={mainCarouselLeaseData} />
         </section>
+
+        <section>
+          {whyUnneLeaseData?.length > 0 && whyUnneLeaseData?.map((e) => (<WhyUnneSection key={e.id} data={e} />))}
+        </section>
+        <section>
+          <CircleSection ubicationData={CircleArrendarData} ColorBorder='border-[#2E3641]' ColorBg='bg-[#2E3641]' ColorNumberBG='bg-[#F7B092]' ColorTextBG='bg-[#EF6025]' ColorText='text-white'/>
+
         <section className="grid grid-cols-1 xl:grid-cols-3">
           <div className="xl:col-start-1">
             {whyUnneLeaseData?.length > 0 &&
@@ -42,14 +49,18 @@ const QuieroArrendar = () => {
               ColorTextBG="bg-[#E85512]"
             />
           </div>
+
         </section>
         <section className="flex justify-center my-5">
           <SimpleButton></SimpleButton>
         </section>
 
+
+
         <section className="my-20 px-4 xl:px-32">
           <StepsToLease />
         </section>
+
       </Layout>
     </Fragment>
   );

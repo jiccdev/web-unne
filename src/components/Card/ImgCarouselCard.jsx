@@ -5,18 +5,18 @@ const ImgCarouselCard = ({ item }) => {
   const { id, title, img, href} = item;
   return (
     <div
-      className={` flex justify-center items-center w-[95%] mx-auto rounded-[50px]  cursor-pointer`}
+      className={` flex justify-center items-center w-[95%] mx-auto rounded-[50px]`}
     >
       <div className="">
-        <div className="flex justify-center items-center mb-12">
-          <a href={href}>
+        <div className="flex justify-center items-center mb-12 cursor-pointer">
+          <a href={href} target="_blank" >
             <Image
               src={img}
               alt={`avatar-${title}`}
               loader={() => img}
               className=""
-              width={300}
-              height={200}
+              width={200}
+              height={150}
             />
           </a>
         </div>

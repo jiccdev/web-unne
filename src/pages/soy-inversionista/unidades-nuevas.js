@@ -14,7 +14,7 @@ const UnidadesNuevas = () => {
 
       {/* HERO SECTION */}
       <Layout>
-        <section>
+        <section className='my-20'>
           <NewProperty />
         </section>
         <section>

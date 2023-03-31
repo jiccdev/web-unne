@@ -7,7 +7,7 @@ import { NewPropertyQualities } from '../../../../data/index';
 
 const NewProperty = () => {
   return (
-    <div className='py-10'>
+    <div className=''>
       <div className='text-center pb-10'>
         <h3 className='text-4xl lg:text-5xl font-bold'>Es momento de invertir en tu nueva propiedad</h3>
         <p className='text-sm pt-2 font-medium'>Invierte en Propiedades nuevas en blanco, verde o de entrega inmediata, para que tu activo pueda generar ganancias luego de arrendarla y con el tiempo plusvalia</p>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import CircleSteps from './CircleSteps';
 
-const CircleSection = ({ ubicationData, ColorBorder, ColorBg, ColorNumberBG, ColorTextBG }) => {
+const CircleSection = ({ ubicationData, ColorBorder, ColorBg, ColorNumberBG, ColorTextBG, ColorText }) => {
 
 
     return (
@@ -21,7 +21,7 @@ const CircleSection = ({ ubicationData, ColorBorder, ColorBg, ColorNumberBG, Col
                         </div>
 
                         {/* Section Info Steps */}
-                        {ubicationData.length > 0 ? ubicationData.map((e) => <CircleSteps stepData={e} key={e.id} ColorNumberBG={ColorNumberBG} ColorTextBG={ColorTextBG} />) : null}
+                        {ubicationData.length > 0 ? ubicationData.map((e) => <CircleSteps stepData={e} key={e.id} ColorNumberBG={ColorNumberBG} ColorTextBG={ColorTextBG} ColorText={ColorText}/>) : null}
                     </div>
                 </div>
             </div>
