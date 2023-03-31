@@ -7,6 +7,28 @@ import ValidateUser from './TabsContent/ValidateUser';
 
 const StepsToLease = () => {
   const [isTabActive, setIsTabActive] = useState(0);
+  const [formData, setFormData] = useState({
+    propertyData: {
+      propertyType: '',
+      bedrooms: 0,
+      bathrooms: 0,
+      surfaceM2: 0,
+      commonExpenses: 0,
+      parkingLots: 0,
+      haveWarehouse: false,
+    },
+    personalData: {
+      name: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      rut: '',
+    },
+    validateUser: {
+      email: '',
+      password: '',
+    },
+  });
 
   const renderTabs = () => {
     return (
@@ -48,19 +70,14 @@ const StepsToLease = () => {
   const renderTabPanel = () => {
     return (
       <Fragment>
-        {/* Step 1 */}
         <Tab.Panel>
-          <PropertyData />
+          <PropertyData formData={formData} setFormData={setFormData} />
         </Tab.Panel>
-
-        {/* Step 2 */}
         <Tab.Panel>
-          <PersonalData />
+          <PersonalData formData={formData} setFormData={setFormData} />
         </Tab.Panel>
-
-        {/* Step 3 */}
         <Tab.Panel>
-          <ValidateUser />
+          <ValidateUser formData={formData} setFormData={setFormData} />
         </Tab.Panel>
       </Fragment>
     );
