@@ -22,13 +22,13 @@ const Asociate = () => {
                     {AssociateData?.length > 0 && AssociateData?.map((e) => (<MainInformation key={e.id} data={e} />))}
                 </section>
                 <section>
-                    <Banner/>
+                    <Banner />
                 </section>
-                <section>
+                <section className='my-20'>
                     <InfoCardSection/>
                 </section>
                 <section>
-                    <OurPartners/>
+                    <OurPartners />
                 </section>
             </Layout>
         </Fragment>

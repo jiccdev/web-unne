@@ -32,7 +32,7 @@ const ServiciosLegales = () => {
                 <section>
                     <MainCarousel data={CarouselLegalServicesData} />
                 </section>
-                <section>
+                <section className='mt-20'>
                     <WhyServicesUnne/>
                 </section>
                 <section>
@@ -41,7 +41,7 @@ const ServiciosLegales = () => {
                 <section>
                     <MoreServices/>
                 </section>
-                <section>
+                <section className='mt-20'>
                     <TitleSection title={"Nuestros clientes cuentan su experiencia"}/>
                 </section>
                 

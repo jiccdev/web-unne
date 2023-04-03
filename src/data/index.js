@@ -115,37 +115,37 @@ export const CircleArrendarData = [
     id: 1,
     text: 'Llena el formulario',
     position:
-      '2xl:top-0 2xl:right-3/4 xl:max-2xl:left-2/4 xl:max-2xl:-top-8 lg:max-xl:top-0 lg:max-xl:right-3/4 md:max-lg:left-2/4 md:max-lg:-top-8 max-[765px]:top-0',
+      'lg:top-0 lg:right-[19rem] md:max-lg:left-2/4 md:-top-8',
   },
   {
     id: 2,
     text: 'Te asignamos a tu objetivo',
     position:
-      '2xl:right-full xl:max-2xl:top-10 xl:max-2xl:left-3/4 lg:max-xl:right-full md:max-lg:top-10 md:max-lg:left-3/4 max-[765px]:top-16',
+      'lg:right-full md:max-lg:top-10 md:max-lg:left-[24rem]',
   },
   {
     id: 3,
     text: 'Evaluacion Comercial',
     position:
-      '2xl:right-3/4 2xl:bottom-0 xl:max-2xl:top-1/4 xl:max-2xl:-right-72 lg:max-xl:right-3/4 lg:max-xl:bottom-0 md:max-lg:top-1/4 md:max-lg:-right-72 max-[765px]:top-32',
+      'lg:right-[19rem] lg:bottom-0 md:max-lg:top-[9rem] md:max-lg:left-[28rem] ',
   },
   {
     id: 4,
     text: 'Definicion de estrategias',
     position:
-      '2xl:top-0 2xl:left-3/4 xl:max-2xl:bottom-1/4 xl:max-2xl:-right-72 lg:max-xl:top-0 lg:max-xl:left-3/4 md:max-lg:bottom-1/4 md:max-lg:-right-72 max-[765px]:top-48',
+      'lg:top-0 lg:left-[19rem] md:max-lg:bottom-[9rem] md:max-lg:left-[28rem] ',
   },
   {
     id: 5,
     text: 'Gestion Comercial',
     position:
-      '2xl:left-full xl:max-2xl:bottom-10 xl:max-2xl:left-3/4 lg:max-xl:left-full md:max-lg:bottom-10 md:max-lg:left-3/4 max-[765px]:top-64',
+      'lg:left-full md:max-lg:bottom-10 md:max-lg:left-[24rem]',
   },
   {
     id: 6,
     text: '¡Arrendamos y recibe tu arriendo!',
     position:
-      '2xl:bottom-0 2xl:left-3/4 xl:max-2xl:left-2/4 xl:max-2xl:-bottom-8 lg:max-xl:bottom-0 lg:max-xl:left-3/4 md:max-lg:left-2/4 md:max-lg:-bottom-8 max-[765px]:top-80',
+      'lg:bottom-0 lg:left-[19rem] md:max-lg:left-2/4 md:max-lg:-bottom-8 ',
   },
 ];
 
@@ -155,37 +155,37 @@ export const CircleVenderData = [
     id: 1,
     text: 'Llena el formulario',
     position:
-      '2xl:top-0 2xl:right-3/4 xl:max-2xl:left-2/4 xl:max-2xl:-top-8 lg:max-xl:top-0 lg:max-xl:right-3/4 md:max-lg:left-2/4 md:max-lg:-top-8 max-[765px]:top-0',
+      'lg:top-0 lg:right-[19rem] md:max-lg:left-2/4 md:-top-8',
   },
   {
     id: 2,
     text: 'Te asignamos a tu Ejecutivo',
     position:
-      '2xl:right-full xl:max-2xl:top-10 xl:max-2xl:left-3/4 lg:max-xl:right-full md:max-lg:top-10 md:max-lg:left-3/4 max-[765px]:top-16',
+      'lg:right-full md:max-lg:top-10 md:max-lg:left-[24rem]',
   },
   {
     id: 3,
     text: 'Evaluación Comercial',
     position:
-      '2xl:right-3/4 2xl:bottom-0 xl:max-2xl:top-1/4 xl:max-2xl:-right-72 lg:max-xl:right-3/4 lg:max-xl:bottom-0 md:max-lg:top-1/4 md:max-lg:-right-72 max-[765px]:top-32',
+      'lg:right-[19rem] lg:bottom-0 md:max-lg:top-[9rem] md:max-lg:left-[28rem]',
   },
   {
     id: 4,
     text: 'Definicion de estrategias',
     position:
-      '2xl:top-0 2xl:left-3/4 xl:max-2xl:bottom-1/4 xl:max-2xl:-right-72 lg:max-xl:top-0 lg:max-xl:left-3/4 md:max-lg:bottom-1/4 md:max-lg:-right-72 max-[765px]:top-48',
+      'lg:top-0 lg:left-[19rem] md:max-lg:bottom-[9rem] md:max-lg:left-[28rem]',
   },
   {
     id: 5,
     text: 'Gestión Comercial y legal',
     position:
-      '2xl:left-full xl:max-2xl:bottom-10 xl:max-2xl:left-3/4 lg:max-xl:left-full md:max-lg:bottom-10 md:max-lg:left-3/4 max-[765px]:top-64',
+      'lg:left-full md:max-lg:bottom-10 md:max-lg:left-[24rem]',
   },
   {
     id: 6,
     text: 'vende y recibe tu pago!',
     position:
-      '2xl:bottom-0 2xl:left-3/4 xl:max-2xl:left-2/4 xl:max-2xl:-bottom-8 lg:max-xl:bottom-0 lg:max-xl:left-3/4 md:max-lg:left-2/4 md:max-lg:-bottom-8 max-[765px]:top-80',
+      'lg:bottom-0 lg:left-[19rem] md:max-lg:left-2/4 md:max-lg:-bottom-8',
   },
 ];
 
@@ -476,6 +476,7 @@ export const AssociateCardData = [
     title: 'Contrata nuestros servicios legales',
     desc: 'Contamos con abogados especialistas en asesorias inmobiliarias que te guiaran en todo el proceso de la venta o arriendo de tu propiedad.',
     icon: 'AiTwotoneGold',
+    href: 'href',
     children: [
       {
         id: 1,
@@ -489,6 +490,7 @@ export const AssociateCardData = [
         id: 3,
         name: 'Banco de canje avanzado',
       },
+      
     ],
   },
   {
@@ -496,6 +498,7 @@ export const AssociateCardData = [
     title: 'Academia Unne',
     desc: 'Tenemos un programa dirigido por especialista del área del corretaje, que te brindara los conocimientos necesarios para ser un profesional',
     icon: 'BiBookOpen',
+    href: 'href',
     children: [
       {
         id: 1,
@@ -516,6 +519,7 @@ export const AssociateCardData = [
     title: 'Cuentas con el respaldo de un Vendeid',
     desc: 'Contacto directo con los clientes interesados en tu propiedad ¡sin intermediarios!. De esta forma podrás minimizar los tiempos de espera',
     icon: 'AiOutlineShareAlt',
+    href: '',
     children: [],
   },
   {
@@ -523,6 +527,7 @@ export const AssociateCardData = [
     title: 'Oportunidades de Inversión',
     desc: 'Tus clientes contaran con productos de inversión de remate seguro y unidades nuevas',
     icon: 'BsFillHouseAddFill',
+    href: 'href',
     children: [],
   },
 ];

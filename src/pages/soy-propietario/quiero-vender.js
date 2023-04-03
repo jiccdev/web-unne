@@ -25,11 +25,11 @@ const QuieroVender = () => {
           {whyUnneSellData?.length > 0 && whyUnneSellData?.map((e) => (<WhyUnneSection key={e.id} data={e} />))}
         </section>
 
-        <section className=''>
+        <section className='mt-20'>
           <CircleSection ubicationData={CircleVenderData} ColorBorder='border-[#FBB916]' ColorBg='bg-[#FBB916]' ColorNumberBG='bg-[#fb923c]' ColorTextBG='bg-[#e5e7eb]' ColorText='text-black'/>
         </section>
         
-        <section className='flex justify-center my-5'>
+        <section className='flex justify-center mt-5 mb-20'>
           <SimpleButton></SimpleButton>
         </section>
       </Layout>
