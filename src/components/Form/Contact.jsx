@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { iconsList } from '../Icons';
 import Button from '../Button/Button';
 
-const Contact = ({}) => {
+const Contact = ({ }) => {
   const {
     register,
     handleSubmit,
@@ -146,7 +146,7 @@ const Contact = ({}) => {
         <div className="flex mb-5 justify-center items-center">
           <Button
             type="submit"
-            className="bg-orange-400 rounded-full text-white pl-2 pr-4 py-2 hover:bg-orange-600 w-2/4"
+            className="bg-orange-400  text-white pl-2 pr-4 py-2 hover:bg-orange-600 w-2/4 rounded-lg"
           >
             <div className="text-xl font-medium capitalize w-5/6 mx-auto text-center">
               Enviar

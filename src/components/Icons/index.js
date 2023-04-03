@@ -16,13 +16,15 @@ import { TbSquareRoundedNumber4Filled } from 'react-icons/tb';
 import { FaUserAlt } from 'react-icons/fa';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import { FiMail } from 'react-icons/fi';
-
 import { BsFillHouseAddFill } from 'react-icons/bs';
 import { BiBookOpen } from 'react-icons/bi';
 import { AiOutlineShareAlt } from 'react-icons/ai';
 import { AiTwotoneGold } from 'react-icons/ai';
 import { GrClose } from 'react-icons/gr';
 import { MdOutlineArrowDropDown } from 'react-icons/md';
+import { BsFacebook } from 'react-icons/bs';
+import { BsInstagram } from 'react-icons/bs';
+import { BsYoutube }  from 'react-icons/bs'
 
 export const iconsList = {
   IoIosArrowDown,
@@ -45,4 +47,8 @@ export const iconsList = {
   AiTwotoneGold,
   GrClose,
   MdOutlineArrowDropDown,
+  BsFacebook,
+  BsInstagram,
+  BsYoutube
+  
 };

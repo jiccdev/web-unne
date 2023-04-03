@@ -19,7 +19,7 @@
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
 .flipCard:hover .flipCardInner {
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
 }
 
 /* Position the front and back side */
@@ -33,13 +33,13 @@
 
 /* Style the front side (fallback if image is missing) */
 .flipCardFront {
-  background-color: #bbb;
+  background-color: #ffffff;
   color: black;
 }
 
 /* Style the back side */
 .flipCardBack {
-  background-color: dodgerblue;
-  color: white;
+  background-color: #ffffff;
+  color: black;
   transform: rotateY(180deg);
 }

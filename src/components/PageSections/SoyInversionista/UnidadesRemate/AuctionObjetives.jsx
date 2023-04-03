@@ -26,8 +26,8 @@ const AuctionObjetives = () => {
             {/* Section map*/}
             {ObjetivesAuctionData.length > 0
               ? ObjetivesAuctionData.map((e) => (
-                  <Objetives key={e.id} data={e} />
-                ))
+                <Objetives key={e.id} data={e} />
+              ))
               : null}
           </div>
         </div>
@@ -37,7 +37,7 @@ const AuctionObjetives = () => {
         <h2 className="text-4xl font-bold mb-4 text-center">
           Te ayudamos a elegir la mejor opción de inversión para ti
         </h2>
-        
+
         <h2 className="text-lg text-gray-600 mb-8 text-center">
           Déjanos tus datos y trabajaremos juntos para encontrar la mejor
           alternativa de inversión para ti.
@@ -45,7 +45,7 @@ const AuctionObjetives = () => {
         <form className="w-full max-w-md">
           <div className="mb-8 shadow border-l-gray-600 rounded-3xl">
             <input
-              className="bg-white shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="bg-white shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id=""
               name=""
               type=""
@@ -55,7 +55,7 @@ const AuctionObjetives = () => {
 
           <div className="mb-8 shadow border-l-gray-600 rounded">
             <input
-              className="bg-white shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="bg-white shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id=""
               name=""
               type=""
@@ -65,7 +65,7 @@ const AuctionObjetives = () => {
 
           <div className="mb-8 shadow border-l-gray-600 rounded">
             <input
-              className="bg-white shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="bg-white shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id=""
               name=""
               type=""
@@ -75,7 +75,7 @@ const AuctionObjetives = () => {
 
           <div className="flex items-center justify-center">
             <button
-              className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-2xl focus:outline-none focus:shadow-outline hover:scale-110 hover:shadow-xl hover:cursor-pointer transition-all ease-in"
+              className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline hover:scale-110 hover:shadow-xl hover:cursor-pointer transition-all ease-in"
               type="submit"
             >
               Enviar
