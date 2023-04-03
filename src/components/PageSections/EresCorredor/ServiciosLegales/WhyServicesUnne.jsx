@@ -6,7 +6,7 @@ const WhyServicesUnne = () => {
 
 
     return (
-        <div className='my-6'>
+        <div className='mb-6'>
 
             {/* ¿Por que contratar servicios legales Unne? */}
             <div className='flex justify-center text-center'>

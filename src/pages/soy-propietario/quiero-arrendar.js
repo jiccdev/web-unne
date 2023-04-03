@@ -33,7 +33,7 @@ const QuieroArrendar = () => {
               <WhyUnneSection key={e.id} data={e} />
             ))}
         </section>
-        <section>
+        <section className='mt-20'>
           <CircleSection
             ubicationData={CircleArrendarData}
             ColorBorder="border-[#2E3641]"
@@ -43,7 +43,7 @@ const QuieroArrendar = () => {
             ColorText="text-white"
           />
         </section>
-        <section className="flex justify-center my-5">
+        <section className="flex justify-center mt-5 mb-20">
           <SimpleButton></SimpleButton>
         </section>
 
