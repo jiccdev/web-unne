@@ -47,7 +47,7 @@ const StepsToLease = () => {
         break;
     }
     return;
-  }, [formData.propertyData, formData.personalData]);
+  }, [formData.propertyData, formData.personalData, isTabActive]);
 
   const renderTabs = () => {
     return (
@@ -71,16 +71,9 @@ const StepsToLease = () => {
         </Tab>
         <Tab
           onClick={() => setIsTabActive(1)}
-          // className={`${
-          //   isTabActive
-          //     ? `${isStepCompleted} rounded-tl-[25px]`
-          //     : 'text-gray-500'
-          // }  ${isStepCompleted} text-white rounded-tl-[25px] focus:putline-none outline-none w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
           className={`${
-            isTabActive === 1
-              ? `${isStepCompleted} text-white border-white focus:putline-none outline-none `
-              : 'text-gray-500 hover:text-gray-700'
-          } w-full py-1 xl:py-4 px-1 text-center border-white font-medium text-lg border-transparent cursor-pointer`}
+            isTabActive ? `${isStepCompleted}` : 'text-gray-500'
+          }  ${isStepCompleted} text-white focus:putline-none outline-none w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
           disabled={
             Object.values(formData.propertyData).includes(0) ||
             formData.propertyData.propertyType === ''
