@@ -8,7 +8,10 @@ import CheckedStep from './TabsContent/components/CheckedStep';
 
 const StepsToLease = () => {
   const [isTabActive, setIsTabActive] = useState(0);
-  const [isStepCompleted, setIsStepCompleted] = useState('');
+  const [bgTab1, setBgTab1] = useState('bg-orange-500 text-white');
+  const [bgTab2, setBgTab2] = useState('');
+  const [bgTab3, setBgTab3] = useState('');
+
   const [formData, setFormData] = useState({
     propertyData: {
       propertyType: '',
@@ -35,67 +38,44 @@ const StepsToLease = () => {
       case 0:
         Object.values(formData.propertyData).includes(0) ||
         formData.propertyData.propertyType === ''
-          ? setIsStepCompleted('bg-orange-500')
-          : setIsStepCompleted('bg-orange-500');
-        break;
+          ? setBgTab1('bg-orange-500 text-white')
+          : setBgTab1('bg-green-500 text-white') && setIsTabActive(1);
       case 1:
         Object.values(formData.personalData).includes('')
-          ? setIsStepCompleted('bg-orange-500')
-          : setIsStepCompleted('bg-green-500');
-        break;
-      default:
-        break;
+          ? setBgTab2('bg-gray-300 text-gray-700')
+          : setBgTab2('bg-green-500 text-white') && setIsTabActive(2);
     }
     return;
-  }, [formData.propertyData, formData.personalData, isTabActive]);
+  }, [
+    formData.propertyData,
+    formData.personalData,
+    bgTab1,
+    bgTab2,
+    isTabActive,
+  ]);
 
   const renderTabs = () => {
     return (
       <Fragment>
         <Tab
-          data-headlessui-state="selected"
-          onClick={() => setIsTabActive(0)}
-          className={`${
-            isTabActive
-              ? `${isStepCompleted} rounded-tl-[25px]`
-              : 'text-gray-500'
-          }  ${isStepCompleted} text-white rounded-tl-[25px] focus:putline-none outline-none w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
+          data-headlessui-state={isTabActive === 0 ? 'selected' : 'inactive'}
+          className={`${bgTab1} rounded-tl-[25px] rounded-tr-[5px] border-2 border-white focus:bg-orange-500 focus:text-white focus:putline-none outline-none w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
         >
           <span className="flex items-center justify-center w-full">
+            {bgTab1 === 'bg-green-500 text-white' && <CheckedStep />}
             Datos de Propiedad
-            {Object.values(formData.propertyData).includes(0) ||
-            formData.propertyData.propertyType === '' ? null : (
-              <CheckedStep />
-            )}
           </span>
         </Tab>
+
         <Tab
-          onClick={() => setIsTabActive(1)}
-          className={`${
-            isTabActive ? `${isStepCompleted}` : 'text-gray-500'
-          }  ${isStepCompleted} text-white focus:putline-none outline-none w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
-          disabled={
-            Object.values(formData.propertyData).includes(0) ||
-            formData.propertyData.propertyType === ''
-          }
+          data-headlessui-state="selected"
+          className={`${bgTab2} border-2 border-white rounded-md focus:bg-orange-500 focus:text-white focus:putline-none outline-none w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
+          disabled={bgTab1 === 'bg-green-500 text-white' ? false : true}
         >
           <span className="flex items-center justify-center w-full">
-            Datos personales
-            {Object.values(formData.personalData).includes('') ? null : (
-              <CheckedStep />
-            )}
+            {bgTab2 === 'bg-green-500 text-white' && <CheckedStep />}
+            Datos Personales
           </span>
-        </Tab>
-        <Tab
-          onClick={() => setIsTabActive(2)}
-          className={`${
-            isTabActive === 2
-              ? 'text-white bg-orange-500 rounded-tr-[25px] border-l border-r focus:putline-none outline-none'
-              : 'text-gray-500 hover:text-gray-700'
-          } w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
-          disabled={Object.values(formData.personalData).includes('')}
-        >
-          Validación de usuario
         </Tab>
       </Fragment>
     );
@@ -116,6 +96,10 @@ const StepsToLease = () => {
       </Fragment>
     );
   };
+
+  // className={`${
+  //   isTabActive ? `${isStepCompleted} rounded-tl-[25px] text-white` : ''
+  // } ${isStepCompleted} `}
 
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2">
