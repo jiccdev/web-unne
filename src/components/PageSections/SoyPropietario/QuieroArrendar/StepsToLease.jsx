@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Tab } from '@headlessui/react';
 import TabComponent from '@/components/Tab/TabComponent';
 import PropertyData from './TabsContent/PropertyData';
@@ -7,6 +7,7 @@ import ValidateUser from './TabsContent/ValidateUser';
 
 const StepsToLease = () => {
   const [isTabActive, setIsTabActive] = useState(0);
+  const [isStepCompleted, setIsStepCompleted] = useState('');
   const [formData, setFormData] = useState({
     propertyData: {
       propertyType: '',
@@ -30,22 +31,14 @@ const StepsToLease = () => {
     },
   });
 
-  // const isTopTabActive =
-  //   Object.values(formData.propertyData).includes('') ||
-  //   Object.values(formData.propertyData).includes(0);
+  useEffect(() => {
+    Object.values(formData.propertyData).includes(0) ||
+    formData.propertyData.propertyType === ''
+      ? setIsStepCompleted('bg-orange-500')
+      : setIsStepCompleted('bg-green-500');
+  }, [Object.values(formData.propertyData)]);
 
-  // console.log(isTopTabActive);
-
-  // useEffect(() => {
-  //   if (
-  //     Object.values(formData.propertyData).includes('') ||
-  //     Object.values(formData.propertyData).includes(0)
-  //   ) {
-  //     setIsTabActive(0);
-  //   } else {
-  //     setIsTabActive(1);
-  //   }
-  // }, [formData.propertyData]);
+  console.log(Object.values(formData.propertyData));
 
   const renderTabs = () => {
     return (
@@ -55,17 +48,18 @@ const StepsToLease = () => {
           onClick={() => setIsTabActive(0)}
           className={`${
             isTabActive === 0
-              ? 'text-white bg-orange-500 rounded-tl-[25px] focus:putline-none outline-none'
+              ? `${isStepCompleted} text-white rounded-tl-[25px] focus:putline-none outline-none`
               : 'text-gray-500 hover:text-gray-700'
-          } w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
+          }  ${isStepCompleted} text-white rounded-tl-[25px] focus:putline-none outline-none w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
         >
           Datos de Propiedad
+          {isStepCompleted ? 'Completado' : null}
         </Tab>
         <Tab
           onClick={() => setIsTabActive(1)}
           className={`${
             isTabActive === 1
-              ? 'text-white bg-orange-500 rounded-tl-[25px] rounded-tr-[25px] focus:putline-none outline-none'
+              ? `${isStepCompleted} text-white rounded-tl-[25px] focus:putline-none outline-none `
               : 'text-gray-500 hover:text-gray-700'
           } w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
         >
