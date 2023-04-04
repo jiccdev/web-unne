@@ -122,7 +122,7 @@ const PropertyData = ({ formData, setFormData }) => {
       ...formData,
       propertyData: {
         ...formData.propertyData,
-        bedrooms: bedroomId,
+        bedrooms: Number(bedroomId),
       },
     });
   };
@@ -133,7 +133,7 @@ const PropertyData = ({ formData, setFormData }) => {
       ...formData,
       propertyData: {
         ...formData.propertyData,
-        bathrooms: bathroomId,
+        bathrooms: Number(bathroomId),
       },
     });
   };
@@ -288,7 +288,7 @@ const PropertyData = ({ formData, setFormData }) => {
             <div className="flex mt-3">
               <input
                 className="w-full p-4 bg-white rounded-full border-gray-300 outline-none focus:outline-none"
-                type="text"
+                type="number"
                 placeholder="1"
                 name="parkingLots"
                 value={formData?.propertyData?.parkingLots}

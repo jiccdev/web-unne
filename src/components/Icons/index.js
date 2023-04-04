@@ -1,6 +1,10 @@
 import { IoIosArrowDown } from 'react-icons/io';
 import { RiUserSearchFill } from 'react-icons/ri';
-import { BsBarChartFill, BsFillHouseCheckFill } from 'react-icons/bs';
+import {
+  BsBarChartFill,
+  BsFillHouseCheckFill,
+  BsCheckCircle,
+} from 'react-icons/bs';
 import { GiMoneyStack } from 'react-icons/gi';
 import { TbPigMoney } from 'react-icons/tb';
 import { TbArrowBigRightFilled } from 'react-icons/tb';
@@ -24,7 +28,7 @@ import { GrClose } from 'react-icons/gr';
 import { MdOutlineArrowDropDown } from 'react-icons/md';
 import { BsFacebook } from 'react-icons/bs';
 import { BsInstagram } from 'react-icons/bs';
-import { BsYoutube }  from 'react-icons/bs'
+import { BsYoutube } from 'react-icons/bs';
 
 export const iconsList = {
   IoIosArrowDown,
@@ -49,6 +53,6 @@ export const iconsList = {
   MdOutlineArrowDropDown,
   BsFacebook,
   BsInstagram,
-  BsYoutube
-  
+  BsYoutube,
+  BsCheckCircle,
 };
