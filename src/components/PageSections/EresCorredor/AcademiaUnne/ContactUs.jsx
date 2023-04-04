@@ -41,15 +41,15 @@ const ContactUs = () => {
                 <div className={`${styles.card} rounded-lg`}>
                   <span className={`${styles.span}`}>Redes</span>
 
-                  <a className={`${styles.social} hover:animate-bounce`}>
+                  <a className={`${styles.social} hover:animate-bounce2`}>
                     <BsFacebook color='#0F8EF2 ' />
                   </a>
 
-                  <a href='https://www.instagram.com/unne.cl/?hl=es' target='_blank' className={`${styles.social} hover:animate-bounce`}>
+                  <a href='https://www.instagram.com/unne.cl/?hl=es' target='_blank' className={`${styles.social} hover:animate-bounce2`}>
                     <BsInstagram color='#FB00AD' />
                   </a>
 
-                  <a className={`${styles.social} hover:animate-bounce `}>
+                  <a className={`${styles.social} hover:animate-bounce2 `}>
                     <BsYoutube color='#ff0000' />
                   </a>
 

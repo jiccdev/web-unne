@@ -18,9 +18,9 @@ module.exports = {
           '100%':{transform: 'none'}
         },
         
-        'bounce':{
-          '40%':{transform: 'scale(1.4)'},
-          '60%':{transform: 'scale(0.8)'},
+        'bounce2':{
+          '40%':{transform: 'scale(1.3)'},
+          '60%':{transform: 'scale(0.9)'},
           '80%':{transform: 'scale(1.2)'},
           '100%':{transform: 'scale(1)'}
         }
@@ -29,7 +29,7 @@ module.exports = {
 
       animation: {
         'heart':'heart 1.5s infinite',
-        'bounce':'bounce 0.4s linear'
+        'bounce2':'bounce2 0.4s linear'
       },
 
       container: {
