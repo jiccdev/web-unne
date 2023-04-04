@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const PersonalData = ({ formData, setFormData }) => {
   /** Handle Form Data inputs */
@@ -34,8 +34,6 @@ const PersonalData = ({ formData, setFormData }) => {
       },
     });
   };
-
-  console.log('FormData', formData);
 
   return (
     <div className="w-full">

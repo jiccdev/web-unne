@@ -36,13 +36,18 @@ const StepsToLease = () => {
         Object.values(formData.propertyData).includes(0) ||
         formData.propertyData.propertyType === ''
           ? setIsStepCompleted('bg-orange-500')
+          : setIsStepCompleted('bg-orange-500');
+        break;
+      case 1:
+        Object.values(formData.personalData).includes('')
+          ? setIsStepCompleted('bg-orange-500')
           : setIsStepCompleted('bg-green-500');
         break;
       default:
         break;
     }
     return;
-  }, [formData.propertyData]);
+  }, [formData.propertyData, formData.personalData]);
 
   const renderTabs = () => {
     return (
@@ -66,17 +71,27 @@ const StepsToLease = () => {
         </Tab>
         <Tab
           onClick={() => setIsTabActive(1)}
+          // className={`${
+          //   isTabActive
+          //     ? `${isStepCompleted} rounded-tl-[25px]`
+          //     : 'text-gray-500'
+          // }  ${isStepCompleted} text-white rounded-tl-[25px] focus:putline-none outline-none w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
           className={`${
             isTabActive === 1
-              ? `${isStepCompleted} text-white rounded-tl-[25px] focus:putline-none outline-none `
+              ? `${isStepCompleted} text-white border-white focus:putline-none outline-none `
               : 'text-gray-500 hover:text-gray-700'
-          } w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
-          // disabled={
-          //   Object.values(formData.propertyData).includes(0) ||
-          //   formData.propertyData.propertyType === ''
-          // }
+          } w-full py-1 xl:py-4 px-1 text-center border-white font-medium text-lg border-transparent cursor-pointer`}
+          disabled={
+            Object.values(formData.propertyData).includes(0) ||
+            formData.propertyData.propertyType === ''
+          }
         >
-          Datos personales
+          <span className="flex items-center justify-center w-full">
+            Datos personales
+            {Object.values(formData.personalData).includes('') ? null : (
+              <CheckedStep />
+            )}
+          </span>
         </Tab>
         <Tab
           onClick={() => setIsTabActive(2)}
@@ -85,10 +100,7 @@ const StepsToLease = () => {
               ? 'text-white bg-orange-500 rounded-tr-[25px] border-l border-r focus:putline-none outline-none'
               : 'text-gray-500 hover:text-gray-700'
           } w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
-          // disabled={
-          //   Object.values(formData.propertyData).includes(0) ||
-          //   formData.propertyData.propertyType === ''
-          // }
+          disabled={Object.values(formData.personalData).includes('')}
         >
           Validación de usuario
         </Tab>
