@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from '@/components/Button/Button';
 
 function ValidateUser({ formData, setFormData }) {
-  const [inputValues, setInputValues] = useState(['', '', '', '']);
+  const [inputValues, setInputValues] = useState(formData.validateUser);
   const [verificationCode, setVerificationCode] = useState('');
 
   const handleInputChange = (event, index) => {
@@ -37,8 +37,6 @@ function ValidateUser({ formData, setFormData }) {
     setVerificationCode(code.toString());
   };
 
-  console.log(inputValues);
-
   return (
     <div className="w-full xl:w-4/6 mx-auto my-14">
       <h3 className="text-2xl xl:text-4xl font-bold text-center mb-5">
@@ -46,7 +44,7 @@ function ValidateUser({ formData, setFormData }) {
       </h3>
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-4 g-0">
-          <div className="p-4 mx-auto w-full flex justify-center items-center">
+          <div className="p-2.5 xl:p-1.5 mx-auto w-full flex justify-center items-center">
             <input
               type="text"
               id="input-0"
@@ -57,7 +55,7 @@ function ValidateUser({ formData, setFormData }) {
             />
           </div>
 
-          <div className="p-4 mx-auto w-full flex justify-center items-center">
+          <div className="p-2.5 xl:p-1.5 mx-auto w-full flex justify-center items-center">
             <input
               type="text"
               id="input-1"
@@ -67,7 +65,7 @@ function ValidateUser({ formData, setFormData }) {
             />
           </div>
 
-          <div className="p-4 mx-auto w-full flex justify-center items-center">
+          <div className="p-2.5 xl:p-1.5 mx-auto w-full flex justify-center items-center">
             <input
               type="text"
               id="input-2"
@@ -77,7 +75,7 @@ function ValidateUser({ formData, setFormData }) {
             />
           </div>
 
-          <div className="p-4 mx-auto w-full flex justify-center items-center">
+          <div className="p-2.5 xl:p-1.5 mx-auto w-full flex justify-center items-center">
             <input
               type="text"
               id="input-3"
@@ -94,7 +92,7 @@ function ValidateUser({ formData, setFormData }) {
             id="submit-button"
             className="bg-orange-500 w-4/6 text-white text-2xl text-center rounded-full py-1 pb-2 px-4 hover:bg-orange-600"
           >
-            Validar codigo
+            Validar código
           </Button>
         </div>
       </form>

@@ -85,12 +85,12 @@ const StepsToLease = () => {
 
         <Tab
           data-headlessui-state="selected"
-          className={`${bgTab3} border-2 border-white rounded-md focus:bg-orange-500 focus:text-white focus:putline-none outline-none w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
-          disabled={bgTab3 === 'bg-green-500 text-white' ? false : true}
+          className={`${bgTab3} border-2 border-white rounded-md rounded-tr-[25px] focus:bg-orange-500 focus:text-white focus:putline-none outline-none w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
+          disabled={bgTab2 === 'bg-green-500 text-white' ? false : true}
         >
           <span className="flex items-center justify-center w-full">
             {bgTab3 === 'bg-green-500 text-white' && <CheckedStep />}
-            Validacion de Usuario
+            Validación de Usuario
           </span>
         </Tab>
       </Fragment>

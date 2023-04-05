@@ -182,8 +182,6 @@ const PropertyData = ({ formData, setFormData }) => {
     });
   };
 
-  console.log('FormData', formData);
-
   return (
     <div className="w-full">
       <div>
