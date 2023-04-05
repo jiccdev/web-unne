@@ -27,10 +27,7 @@ const StepsToLease = () => {
       email: '',
       phone: '',
     },
-    validateUser: {
-      email: '',
-      password: '',
-    },
+    validateUser: ['', '', '', ''],
   });
 
   useEffect(() => {
@@ -44,13 +41,21 @@ const StepsToLease = () => {
         Object.values(formData.personalData).includes('')
           ? setBgTab2('bg-gray-300 text-gray-700')
           : setBgTab2('bg-green-500 text-white') && setIsTabActive(2);
+      case 2:
+        formData.validateUser.includes('')
+          ? setBgTab3('bg-gray-300 text-gray-700')
+          : setBgTab3('bg-green-500 text-white') && setIsTabActive(3);
+      default:
+        break;
     }
     return;
   }, [
     formData.propertyData,
     formData.personalData,
+    formData.validateUser,
     bgTab1,
     bgTab2,
+    bgTab3,
     isTabActive,
   ]);
 
@@ -75,6 +80,17 @@ const StepsToLease = () => {
           <span className="flex items-center justify-center w-full">
             {bgTab2 === 'bg-green-500 text-white' && <CheckedStep />}
             Datos Personales
+          </span>
+        </Tab>
+
+        <Tab
+          data-headlessui-state="selected"
+          className={`${bgTab3} border-2 border-white rounded-md focus:bg-orange-500 focus:text-white focus:putline-none outline-none w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
+          disabled={bgTab3 === 'bg-green-500 text-white' ? false : true}
+        >
+          <span className="flex items-center justify-center w-full">
+            {bgTab3 === 'bg-green-500 text-white' && <CheckedStep />}
+            Validacion de Usuario
           </span>
         </Tab>
       </Fragment>
