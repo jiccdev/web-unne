@@ -113,13 +113,42 @@ const StepsToLease = () => {
     );
   };
 
-  // className={`${
-  //   isTabActive ? `${isStepCompleted} rounded-tl-[25px] text-white` : ''
-  // } ${isStepCompleted} `}
-
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2">
-      <div className="">
+      <div className="w-full">
+        <ul className="steps w-full pb-10">
+          <li
+            className={
+              bgTab1 === 'bg-green-500 text-white'
+                ? 'step step-success step-active'
+                : 'step step-neutral'
+            }
+            data-content={bgTab1 === 'bg-green-500 text-white' ? '✓' : '1'}
+          >
+            Datos de propiedad
+          </li>
+          <li
+            className={
+              bgTab2 === 'bg-green-500 text-white'
+                ? 'step step-success'
+                : 'step step-neutral'
+            }
+            data-content={bgTab2 === 'bg-green-500 text-white' ? '✓' : '2'}
+          >
+            Datos personales
+          </li>
+          <li
+            className={
+              bgTab3 === 'bg-green-500 text-white'
+                ? 'step step-success'
+                : 'step step-neutral'
+            }
+            data-content={bgTab3 === 'bg-green-500 text-white' ? '✓' : '3'}
+          >
+            Validación de usuario
+          </li>
+        </ul>
+
         <div className="flex items-center justify-start">
           <span className="text-white bg-orange-500 text-center text-2xl xl:text-3xl px-5 py-2.5 rounded-full font-bold mr-2">
             1
