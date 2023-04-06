@@ -6,7 +6,6 @@ import Map, {
   GeolocateControl,
   FullscreenControl,
 } from 'react-map-gl';
-import styles from '../../styles/components/Maps/MapNavigation.module.css';
 
 const MapNavigation = () => {
   return (
@@ -14,7 +13,6 @@ const MapNavigation = () => {
       style={{
         height: 'auto',
         width: '100%',
-        marginTop: '125px',
       }}
     >
       <div>
@@ -37,7 +35,7 @@ const MapNavigation = () => {
           mapStyle={'mapbox://styles/mapbox/streets-v12'}
           style={{
             width: 'auto',
-            height: '500px',
+            height: '450px',
             borderRadius: '15px',
           }}
         >
