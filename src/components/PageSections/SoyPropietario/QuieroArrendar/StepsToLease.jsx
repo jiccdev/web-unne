@@ -66,8 +66,14 @@ const StepsToLease = () => {
           data-headlessui-state={isTabActive === 0 ? 'selected' : 'inactive'}
           className={`${bgTab1} rounded-tl-[25px] rounded-tr-[5px] border-2 border-white focus:bg-orange-500 focus:text-white focus:putline-none outline-none w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
         >
-          <span className="flex items-center justify-center w-full">
-            {bgTab1 === 'bg-green-500 text-white' && <CheckedStep />}
+          <span className="flex items-center text-[15px] justify-center w-full">
+            {bgTab1 === 'bg-green-500 text-white' ? (
+              <CheckedStep />
+            ) : (
+              <div class="mr-1.5 h-7 w-7 bg-transparent rounded-full border-2 border-white flex justify-center items-center">
+                <span class="text-white text-lg font-semibold">1</span>
+              </div>
+            )}
             Datos de Propiedad
           </span>
         </Tab>
@@ -77,8 +83,14 @@ const StepsToLease = () => {
           className={`${bgTab2} border-2 border-white rounded-md focus:bg-orange-500 focus:text-white focus:putline-none outline-none w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
           disabled={bgTab1 === 'bg-green-500 text-white' ? false : true}
         >
-          <span className="flex items-center justify-center w-full">
-            {bgTab2 === 'bg-green-500 text-white' && <CheckedStep />}
+          <span className="flex items-center text-[15px] justify-center w-full">
+            {bgTab2 === 'bg-green-500 text-white text' ? (
+              <CheckedStep />
+            ) : (
+              <div class="mr-1.5 h-7 w-7 bg-transparent rounded-full border-2 border-white flex justify-center items-center">
+                <span class="text-white text-lg font-semibold">2</span>
+              </div>
+            )}
             Datos Personales
           </span>
         </Tab>
@@ -88,8 +100,14 @@ const StepsToLease = () => {
           className={`${bgTab3} border-2 border-white rounded-md rounded-tr-[25px] focus:bg-orange-500 focus:text-white focus:putline-none outline-none w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
           disabled={bgTab2 === 'bg-green-500 text-white' ? false : true}
         >
-          <span className="flex items-center justify-center w-full">
-            {bgTab3 === 'bg-green-500 text-white' && <CheckedStep />}
+          <span className="flex items-center text-[15px] justify-center w-full">
+            {bgTab3 === 'bg-green-500 text-white' ? (
+              <CheckedStep />
+            ) : (
+              <div class="mr-1.5 h-7 w-7 bg-transparent rounded-full border-2 border-white flex justify-center items-center">
+                <span class="text-white text-lg font-semibold">3</span>
+              </div>
+            )}
             Validación de Usuario
           </span>
         </Tab>
