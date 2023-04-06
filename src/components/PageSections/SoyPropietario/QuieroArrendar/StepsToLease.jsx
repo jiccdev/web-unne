@@ -6,6 +6,7 @@ import PersonalData from './TabsContent/PersonalData';
 import ValidateUser from './TabsContent/ValidateUser';
 import CheckedStep from './TabsContent/components/CheckedStep';
 import Button from '@/components/Button/Button';
+import MapNavigation from '@/components/Maps/MapNavigation';
 
 const StepsToLease = () => {
   const [isTabActive, setIsTabActive] = useState(0);
@@ -192,13 +193,14 @@ const StepsToLease = () => {
           </form>
 
           <div className="w-full xl:w-5/6 h-96 mt-5">
-            <iframe
+            <MapNavigation />
+            {/* <iframe
               className="w-full h-full"
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13321.083909707775!2d-70.585684!3d-33.416179!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf182be3e047%3A0x6cd33f25cf7a92dc!2sAsturias%20171%2C%20Of.%20101%2C%207550130%20Las%20Condes%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1679881853426!5m2!1ses-419!2scl"
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+            ></iframe> */}
           </div>
         </div>
       </div>
