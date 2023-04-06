@@ -7,6 +7,7 @@ import ValidateUser from './TabsContent/ValidateUser';
 import CheckedStep from './TabsContent/components/CheckedStep';
 import Button from '@/components/Button/Button';
 import MapNavigation from '@/components/Maps/MapNavigation';
+import AddLocation from '@/components/Maps/AddLocation';
 
 const StepsToLease = () => {
   const [isTabActive, setIsTabActive] = useState(0);
@@ -72,8 +73,8 @@ const StepsToLease = () => {
             {bgTab1 === 'bg-green-500 text-white' ? (
               <CheckedStep />
             ) : (
-              <div class="mr-1.5 h-7 w-7 bg-transparent rounded-full border-2 border-white flex justify-center items-center">
-                <span class="text-white text-lg font-semibold">1</span>
+              <div className="mr-1.5 h-7 w-7 bg-transparent rounded-full border-2 border-white flex justify-center items-center">
+                <span className="text-white text-lg font-semibold">1</span>
               </div>
             )}
             Datos de Propiedad
@@ -89,8 +90,8 @@ const StepsToLease = () => {
             {bgTab2 === 'bg-green-500 text-white text' ? (
               <CheckedStep />
             ) : (
-              <div class="mr-1.5 h-7 w-7 bg-transparent rounded-full border-2 border-white flex justify-center items-center">
-                <span class="text-white text-lg font-semibold">2</span>
+              <div className="mr-1.5 h-7 w-7 bg-transparent rounded-full border-2 border-white flex justify-center items-center">
+                <span className="text-white text-lg font-semibold">2</span>
               </div>
             )}
             Datos Personales
@@ -106,8 +107,8 @@ const StepsToLease = () => {
             {bgTab3 === 'bg-green-500 text-white' ? (
               <CheckedStep />
             ) : (
-              <div class="mr-1.5 h-7 w-7 bg-transparent rounded-full border-2 border-white flex justify-center items-center">
-                <span class="text-white text-lg font-semibold">3</span>
+              <div className="mr-1.5 h-7 w-7 bg-transparent rounded-full border-2 border-white flex justify-center items-center">
+                <span className="text-white text-lg font-semibold">3</span>
               </div>
             )}
             Validación de Usuario
@@ -193,7 +194,8 @@ const StepsToLease = () => {
           </form>
 
           <div className="w-full xl:w-5/6 h-96 mt-5">
-            <MapNavigation />
+            <AddLocation />
+            {/* <MapNavigation /> */}
             {/* <iframe
               className="w-full h-full"
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13321.083909707775!2d-70.585684!3d-33.416179!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf182be3e047%3A0x6cd33f25cf7a92dc!2sAsturias%20171%2C%20Of.%20101%2C%207550130%20Las%20Condes%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1679881853426!5m2!1ses-419!2scl"
