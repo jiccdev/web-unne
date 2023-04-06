@@ -70,13 +70,13 @@ const StepsToLease = () => {
           className={`${bgTab1} rounded-tl-[25px] rounded-tr-[5px] border-2 border-white focus:bg-orange-500 focus:text-white focus:putline-none outline-none w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
         >
           <span className="flex items-center text-[15px] justify-center w-full">
-            {bgTab1 === 'bg-green-500 text-white' ? (
-              <CheckedStep />
-            ) : (
-              <div className="mr-1.5 h-7 w-7 bg-transparent rounded-full border-2 border-white flex justify-center items-center">
-                <span className="text-white text-lg font-semibold">1</span>
-              </div>
-            )}
+            {bgTab1 === 'bg-green-500 text-white' && <CheckedStep />}
+            {/* // ) : ( //{' '}
+            <div className="mr-1.5 h-7 w-7 bg-transparent rounded-full border-2 border-white flex justify-center items-center">
+              // <span className="text-white text-lg font-semibold">1</span>
+              //{' '}
+            </div>
+            // )}  */}
             Datos de Propiedad
           </span>
         </Tab>
@@ -87,13 +87,13 @@ const StepsToLease = () => {
           disabled={bgTab1 === 'bg-green-500 text-white' ? false : true}
         >
           <span className="flex items-center text-[15px] justify-center w-full">
-            {bgTab2 === 'bg-green-500 text-white text' ? (
-              <CheckedStep />
-            ) : (
-              <div className="mr-1.5 h-7 w-7 bg-transparent rounded-full border-2 border-white flex justify-center items-center">
-                <span className="text-white text-lg font-semibold">2</span>
-              </div>
-            )}
+            {bgTab2 === 'bg-green-500 text-white' && <CheckedStep />}
+            {/* // ) : ( //{' '}
+            <div className="mr-1.5 h-7 w-7 bg-transparent rounded-full border-2 border-white flex justify-center items-center">
+              // <span className="text-white text-lg font-semibold">2</span>
+              //{' '}
+            </div>
+            // )}  */}
             Datos Personales
           </span>
         </Tab>
@@ -104,13 +104,13 @@ const StepsToLease = () => {
           disabled={bgTab2 === 'bg-green-500 text-white' ? false : true}
         >
           <span className="flex items-center text-[15px] justify-center w-full">
-            {bgTab3 === 'bg-green-500 text-white' ? (
-              <CheckedStep />
-            ) : (
-              <div className="mr-1.5 h-7 w-7 bg-transparent rounded-full border-2 border-white flex justify-center items-center">
-                <span className="text-white text-lg font-semibold">3</span>
-              </div>
-            )}
+            {bgTab3 === 'bg-green-500 text-white' && <CheckedStep />}
+            {/* // ) : ( //{' '}
+            <div className="mr-1.5 h-7 w-7 bg-transparent rounded-full border-2 border-white flex justify-center items-center">
+              // <span className="text-white text-lg font-semibold">3</span>
+              //{' '}
+            </div>
+            // )}  */}
             Validación de Usuario
           </span>
         </Tab>
