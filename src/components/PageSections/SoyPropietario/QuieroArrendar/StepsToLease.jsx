@@ -5,6 +5,7 @@ import PropertyData from './TabsContent/PropertyData';
 import PersonalData from './TabsContent/PersonalData';
 import ValidateUser from './TabsContent/ValidateUser';
 import CheckedStep from './TabsContent/components/CheckedStep';
+import Button from '@/components/Button/Button';
 
 const StepsToLease = () => {
   const [isTabActive, setIsTabActive] = useState(0);

@@ -33,7 +33,7 @@ const QuieroArrendar = () => {
               <WhyUnneSection key={e.id} data={e} />
             ))}
         </section>
-        <section className='mt-20'>
+        <section className="mt-20">
           <CircleSection
             ubicationData={CircleArrendarData}
             ColorBorder="border-[#2E3641]"
@@ -47,7 +47,7 @@ const QuieroArrendar = () => {
           <SimpleButton></SimpleButton>
         </section>
 
-        <section className="my-20 px-4 xl:px-32">
+        <section className="my-20 xl:my-64 px-4 xl:px-32">
           <StepsToLease />
         </section>
       </Layout>
