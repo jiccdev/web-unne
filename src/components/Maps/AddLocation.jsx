@@ -6,14 +6,17 @@ import ReactMapGl, {
 } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import Geocoder from './Geocoder';
+import { useValue } from '@/context/ContextProvider';
 
 const AddLocation = () => {
-  const [lng, setLng] = useState(0);
-  const [lat, setLat] = useState(0);
+  const { state, dispatch } = useValue();
+  const { location } = state;
   const mapRef = useRef();
 
+  console.log('Map Location', state.location.text);
+
   useEffect(() => {
-    if (!lng && !lat) {
+    if (!location.lng && !location.lat) {
       fetch('https://ipapi.co/json/')
         .then((res) => {
           return res.json();
@@ -22,8 +25,13 @@ const AddLocation = () => {
           mapRef.current.flyTo({
             center: [data.longitude, data.latitude],
           });
-          setLng(data.longitude);
-          setLat(data.latitude);
+          dispatch({
+            type: 'UPDATE_LOCATION',
+            payload: {
+              lng: data.longitude,
+              lat: data.latitude,
+            },
+          });
         });
     }
   }, []);
@@ -34,27 +42,40 @@ const AddLocation = () => {
         ref={mapRef}
         mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
         initialViewState={{
-          longitude: lng,
-          latitude: lat,
-          zoom: 8,
+          longitude: location.lng,
+          latitude: location.lat,
+          zoom: 14,
         }}
-        mapStyle="mapbox://styles/mapbox/streets-v11"
+        mapStyle="mapbox://styles/mapbox/streets-v12"
       >
         <Marker
           longitude={0}
           latitude={0}
           draggable
-          onDragEnd={(event) => {
-            console.log(event.lngLat);
-          }}
+          onDragEnd={(ev) =>
+            dispatch({
+              type: 'UPDATE_LOCATION',
+              payload: {
+                lng: ev.lngLat.lng,
+                lat: ev.lngLat.lat,
+              },
+            })
+          }
         />
+
         <NavigationControl position="bottom-right" />
         <GeolocateControl
           position="top-left"
-          trackUserLocation={true}
-          onGeolocate={(event) => {
-            console.log(event);
-          }}
+          trackUserLocation
+          onGeolocate={(ev) =>
+            dispatch({
+              type: 'UPDATE_LOCATION',
+              payload: {
+                lng: ev.coords.longitude,
+                lat: ev.coords.latitude,
+              },
+            })
+          }
         />
         <Geocoder />
       </ReactMapGl>
