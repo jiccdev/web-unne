@@ -191,6 +191,16 @@ const StepsToLease = () => {
           <div className="w-full h-[400px] sm:h-[450px] xl:h-[600px] mt-10">
             <AddLocation />
           </div>
+
+          <div
+            className="bg-orange-100 border-l-4 mt-1.5 border-orange-500 text-orange-700 p-4"
+            role="alert"
+          >
+            <p className="font-bold">Advertencia</p>
+            <p>
+              Para completar el campo Ubicación debes seleccionar en el mapa.
+            </p>
+          </div>
         </div>
       </div>
       <div>
