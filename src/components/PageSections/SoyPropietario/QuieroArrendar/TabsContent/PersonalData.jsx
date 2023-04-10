@@ -1,10 +1,12 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import ToastComponent from '@/components/Toastify/ToastifyComponent';
 import { toast } from 'react-toastify';
 
 const PersonalData = ({ formData, setFormData }) => {
   const form = useRef();
+  const [verificationCode, setVerificationCode] = useState('');
+
   /** Handle Form Data inputs */
   /** Update Name */
   const handleName = (name) => {
@@ -37,6 +39,20 @@ const PersonalData = ({ formData, setFormData }) => {
         phone: phone,
       },
     });
+  };
+
+  const handleVerification = () => {
+    const code = [
+      formData?.personalData?.name,
+      formData?.personalData.email,
+      formData?.personalData?.phone,
+    ].join('');
+    return code === verificationCode;
+  };
+
+  const handleCodeGeneration = () => {
+    const code = Math.floor(1000 + Math.random() * 9000);
+    setVerificationCode(code.toString());
   };
 
   /** On toast success */
@@ -92,6 +108,7 @@ const PersonalData = ({ formData, setFormData }) => {
         showToastSuccessMsg(
           `Mensaje enviado con éxito, revise el correo ${formData.personalData?.email}`
         );
+      handleVerification();
       // resetForm();
     } catch (error) {
       showToastErrorMsg('Ha ocurrido un error al enviar el formulario');
@@ -159,13 +176,29 @@ const PersonalData = ({ formData, setFormData }) => {
           </div>
         </div>
 
+        <div
+          style={{
+            display: 'none',
+          }}
+        >
+          <input
+            type="text"
+            id="verificationCode"
+            name="verificationCode"
+            value={verificationCode}
+          />
+        </div>
+
         <div className="w-full flex items-center justify-center my-10">
           <button
+            onClick={handleCodeGeneration}
             type="submit"
             className="bg-orange-500 py-2 px-8 rounded-full text-white font-bold"
           >
             Enviar codigo de verificacion
           </button>
+
+          <p>{verificationCode}</p>
         </div>
       </form>
     </div>
