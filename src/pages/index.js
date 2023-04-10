@@ -29,13 +29,13 @@ const Home = () => {
           <ServicesContactSection />
         </section>
 
-        <section className="my-20 px-4 xl:px-32">
+      <section className="my-20 px-4 xl:px-32">
           <About />
-        </section>
+        </section> 
 
         <section className="my-20 px-4 xl:px-32">
           <ContactUs />
-        </section>
+        </section>  
       </Layout>
     </Fragment>
   );
