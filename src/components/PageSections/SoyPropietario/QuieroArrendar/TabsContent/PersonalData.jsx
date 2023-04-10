@@ -35,6 +35,13 @@ const PersonalData = ({ formData, setFormData }) => {
     });
   };
 
+  const onSubmit = (ev) => {
+    ev.preventDefault();
+    console.log('Enviando...');
+  };
+
+  console.log(formData.personalData);
+
   return (
     <div className="w-full">
       <div>
@@ -43,7 +50,7 @@ const PersonalData = ({ formData, setFormData }) => {
         </h1>
       </div>
 
-      <form className="w-full">
+      <form onSubmit={onSubmit} className="w-full">
         <div className="w-full xl:w-6/6 my-5">
           <label className="text-gray-500 font-bold">Nombre y Apellidos</label>
           <div className="flex mt-3">
@@ -57,7 +64,6 @@ const PersonalData = ({ formData, setFormData }) => {
             />
           </div>
         </div>
-
         <div className="w-full xl:w-6/6 my-5">
           <label className="text-gray-500 font-bold">Email</label>
           <div className="flex mt-3">
@@ -71,7 +77,6 @@ const PersonalData = ({ formData, setFormData }) => {
             />
           </div>
         </div>
-
         <div className="w-full xl:w-6/6 my-5">
           <label className="text-gray-500 font-bold">Teléfono</label>
           <div className="flex mt-3">
@@ -84,6 +89,15 @@ const PersonalData = ({ formData, setFormData }) => {
               onChange={(ev) => handlePhone(ev.target.value)}
             />
           </div>
+        </div>
+
+        <div className="w-full flex items-center justify-end my-10">
+          <button
+            type="submit"
+            className="bg-orange-500 py-2 px-8 rounded-full text-white font-bold"
+          >
+            Enviar
+          </button>
         </div>
       </form>
     </div>

@@ -8,9 +8,10 @@ const Geocoder = () => {
   const { dispatch } = useValue();
   const ctrl = new MapboxGeocoder({
     accessToken: process.env.NEXT_PUBLIC_MAPBOX_TOKEN,
-    marker: false,
+    marker: true,
     collapsed: false,
   });
+
   useControl(() => ctrl);
 
   ctrl.on('result', (e) => {

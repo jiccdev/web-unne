@@ -104,3 +104,10 @@ a {
 .mapboxgl-ctrl-geocoder--button {
   margin-top: 0.25rem !important;
 }
+
+.geocoder-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
