@@ -4,6 +4,7 @@ import Layout from '@/components/Layout/Layout';
 import NewProperty from '@/components/PageSections/SoyInversionista/UnidadesNuevas/NewProperty';
 import Banner from '@/components/PageSections/SoyInversionista/UnidadesNuevas/Banner';
 import MeetingForm from '@/components/Form/MeetingForm';
+import { Fade } from 'react-awesome-reveal';
 
 const UnidadesNuevas = () => {
   return (
@@ -15,7 +16,9 @@ const UnidadesNuevas = () => {
       {/* HERO SECTION */}
       <Layout>
         <section className='my-20'>
-          <NewProperty />
+          <Fade delay={300} cascade>
+            <NewProperty />
+          </Fade>
         </section>
         <section>
           <Banner />

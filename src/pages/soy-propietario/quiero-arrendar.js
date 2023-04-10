@@ -13,6 +13,7 @@ import {
   mainCarouselLeaseData,
   whyUnneLeaseData,
 } from '../../data/index';
+import { Fade } from 'react-awesome-reveal';
 
 const QuieroArrendar = () => {
   return (
@@ -28,20 +29,26 @@ const QuieroArrendar = () => {
         </section>
 
         <section>
-          {whyUnneLeaseData?.length > 0 &&
-            whyUnneLeaseData?.map((e) => (
-              <WhyUnneSection key={e.id} data={e} />
-            ))}
+          <Fade delay={300} cascade>
+            {whyUnneLeaseData?.length > 0 &&
+              whyUnneLeaseData?.map((e) => (
+                <WhyUnneSection key={e.id} data={e} />
+              ))}
+          </Fade>
         </section>
-        <section className="mt-20">
-          <CircleSection
-            ubicationData={CircleArrendarData}
-            ColorBorder="border-[#2E3641]"
-            ColorBg="bg-[#2E3641]"
-            ColorNumberBG="bg-[#F7B092]"
-            ColorTextBG="bg-[#EF6025]"
-            ColorText="text-white"
-          />
+        
+        <section className='mt-20 bg-gray-50 py-8'>
+          <Fade delay={300} cascade>
+            <CircleSection
+              ubicationData={CircleArrendarData}
+              ColorBorder="border-[#2E3641]"
+              ColorBg="bg-[#2E3641]"
+              ColorNumberBG="bg-[#F7B092]"
+              ColorTextBG="bg-[#EF6025]"
+              ColorText="text-white"
+            />
+          </Fade>
+
         </section>
         <section className="flex justify-center mt-5 mb-20">
           <SimpleButton></SimpleButton>

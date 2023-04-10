@@ -5,6 +5,7 @@ const NewInfo = ({ data }) => {
 
     const { title, desc, icon,href, children } = data;
     
+    
     const {
         BsFillHouseAddFill,
         BiBookOpen,
@@ -13,11 +14,13 @@ const NewInfo = ({ data }) => {
     } = iconsList;
 
     const renderIcon=()=>{
+        const colorIcon  = '#6b7280';
+        const sizeIcon = '5rem';
         const mapIcon={
-            'BsFillHouseAddFill':<BsFillHouseAddFill size="5rem" color='black'/>,
-            'BiBookOpen':<BiBookOpen size="5rem" color='black'/>,
-            'AiTwotoneGold':<AiTwotoneGold size="5rem" color='black'/>,
-            'AiOutlineShareAlt':<AiOutlineShareAlt size="5rem" color='black'/>,
+            'BsFillHouseAddFill':<BsFillHouseAddFill size={sizeIcon} color={colorIcon}/>,
+            'BiBookOpen':<BiBookOpen size={sizeIcon} color={colorIcon}/>,
+            'AiTwotoneGold':<AiTwotoneGold size={sizeIcon} color={colorIcon}/>,
+            'AiOutlineShareAlt':<AiOutlineShareAlt size={sizeIcon} color={colorIcon}/>,
         }
         
         return mapIcon[data.icon];
@@ -30,7 +33,7 @@ const NewInfo = ({ data }) => {
             group border-slate-300 border
             shadow-lg'>
 
-            <div className='flex justify-center items-center flex-col text-center mt-24'>
+            <div className='overflow-hidden flex justify-center items-center flex-col text-center mt-24'>
                 <div className='w-20 h-20 text-white'>
                     {renderIcon()}
                 </div>
@@ -39,7 +42,7 @@ const NewInfo = ({ data }) => {
 
 
             <div className='absolute left-0 bottom-0 w-full bg-gray-100 
-                translate-y-[410px] transition-all duration-500
+                translate-y-[110%] transition-all duration-500
                 group-hover:translate-y-0
                 rounded-xl h-full p-4
                 flex flex-col justify-between'>
