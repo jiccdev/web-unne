@@ -7,7 +7,8 @@ import MainCarousel from '@/components/Carousel/MainCarousel';
 import SimpleButton from '@/components/Button/SimpleButton';
 
 /* Data */
-import { CircleVenderData,mainCarouselSellData,whyUnneSellData } from '../../data/index';
+import { CircleVenderData, mainCarouselSellData, whyUnneSellData } from '../../data/index';
+import { Fade } from 'react-awesome-reveal';
 
 const QuieroVender = () => {
   return (
@@ -22,13 +23,17 @@ const QuieroVender = () => {
           <MainCarousel data={mainCarouselSellData} />
         </section>
         <section>
-          {whyUnneSellData?.length > 0 && whyUnneSellData?.map((e) => (<WhyUnneSection key={e.id} data={e} />))}
+          <Fade delay={300} cascade>
+            {whyUnneSellData?.length > 0 && whyUnneSellData?.map((e) => (<WhyUnneSection key={e.id} data={e} />))}
+          </Fade>
         </section>
 
-        <section className='mt-20'>
-          <CircleSection ubicationData={CircleVenderData} ColorBorder='border-[#FBB916]' ColorBg='bg-[#FBB916]' ColorNumberBG='bg-[#fb923c]' ColorTextBG='bg-[#e5e7eb]' ColorText='text-black'/>
+        <section className='mt-20 bg-gray-50 py-8'>
+          <Fade delay={300} cascade>
+            <CircleSection ubicationData={CircleVenderData} ColorBorder='border-[#FBB916]' ColorBg='bg-[#FBB916]' ColorNumberBG='bg-[#fb923c]' ColorTextBG='bg-[#e5e7eb]' ColorText='text-black' />
+          </Fade>
         </section>
-        
+
         <section className='flex justify-center mt-5 mb-20'>
           <SimpleButton></SimpleButton>
         </section>
