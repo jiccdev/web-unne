@@ -21,6 +21,13 @@ const Contact = ({ }) => {
     setSelectedCheckbox(event.target.value);
   };
 
+
+
+
+
+
+
+
   return (
     <div className="bg-gray-200 rounded-[50px] p-4 my-10 xl:py-5 xl:px-10 xl:m-4">
       <div className="text-center">
@@ -31,7 +38,7 @@ const Contact = ({ }) => {
       <form onSubmit={handleSubmit(onSubmit)} className="py-10">
         <div className="flex mb-5">
           <div className="w-1/5 flex justify-start items-center">
-            <i className="p-4 rounded-full bg-white ml-5 xl:ml-8">
+            <i className="p-4 rounded-full bg-white ml-2 xl:ml-8">
               <FaUserAlt className="text-xl text-gray-300" />
             </i>
           </div>
@@ -56,7 +63,7 @@ const Contact = ({ }) => {
 
         <div className="flex mb-5">
           <div className="w-1/5 flex justify-start items-center">
-            <i className="p-4 rounded-full bg-white ml-5 xl:ml-8">
+            <i className="p-4 rounded-full bg-white ml-2 xl:ml-8">
               <FiMail className="text-xl text-gray-300" />
             </i>
           </div>
@@ -77,6 +84,8 @@ const Contact = ({ }) => {
             )}
           </div>
         </div>
+
+
 
         <div className="flex w-5/6 mx-auto my-14 mb-10">
           <div className="w-full flex justify-center gap-10">
@@ -121,6 +130,8 @@ const Contact = ({ }) => {
             <textarea
               placeholder="Escriba su mensaje"
               className="textarea textarea-bordered  bg-white textarea-lg w-full h-full rounded-[20px]"
+              {...register('text', { required: true, maxLength: 500 })}
+
             ></textarea>
           </div>
         </div>

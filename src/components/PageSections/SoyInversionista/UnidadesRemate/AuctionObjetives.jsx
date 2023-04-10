@@ -3,6 +3,7 @@ import { iconsList } from '@/components/Icons';
 import { Objetives } from '@/components/Card/Objetives';
 
 import { ObjetivesAuctionData } from '@/data';
+import { Fade } from 'react-awesome-reveal';
 
 const AuctionObjetives = () => {
   const {
@@ -13,27 +14,32 @@ const AuctionObjetives = () => {
   } = iconsList;
 
   return (
-    <div>
-      <div className="grid grid-cols-1 md:grid-cols-1 2xl:flex flex-row mt-20">
-        <div className="flex items-center justify-center ml-8 hover:scale-110 transition duration-500">
-          <h2 className="text-6xl font-bold text-black text-left pl-8">
-            ¡Invertir es así de fácil!
-          </h2>
-        </div>
 
-        <div className="container mx-auto pl-8 ">
-          <div className="grid grid-cols-1 gap-2 sm:gap-4 md:grid-cols-2 justify-center">
-            {/* Section map*/}
-            {ObjetivesAuctionData.length > 0
-              ? ObjetivesAuctionData.map((e) => (
-                <Objetives key={e.id} data={e} />
-              ))
-              : null}
+    <div className=''>
+      <Fade delay={300} direction='left'>
+        <div className="grid grid-cols-1 md:grid-cols-1 2xl:flex flex-row mt-20">
+          <div className="flex items-center justify-center ml-8 hover:scale-110 transition duration-500">
+            <h2 className="text-6xl font-bold text-black text-left pl-8">
+              ¡Invertir es así de fácil!
+            </h2>
+          </div>
+
+          <div className="container mx-auto pl-8 ">
+            <div className="grid grid-cols-1 gap-2 sm:gap-4 md:grid-cols-2 justify-center">
+              {/* Section map*/}
+              {ObjetivesAuctionData.length > 0
+                ? ObjetivesAuctionData.map((e) => (
+                  <Objetives key={e.id} data={e} />
+                ))
+                : null}
+            </div>
           </div>
         </div>
-      </div>
+      </Fade>
 
-      <div className="flex flex-col justify-center items-center min-h-screen  mt-10 bg-[url('https://dummyimage.com/1920x1080/fce58a/fce58a')]">
+
+
+      <div className="flex flex-col justify-center items-center min-h-screen  mt-10 bg-[url('https://dummyimage.com/1920x1080/fce58a/fce58a')] ">
         <h2 className="text-4xl font-bold mb-4 text-center">
           Te ayudamos a elegir la mejor opción de inversión para ti
         </h2>
@@ -42,10 +48,10 @@ const AuctionObjetives = () => {
           Déjanos tus datos y trabajaremos juntos para encontrar la mejor
           alternativa de inversión para ti.
         </h2>
-        <form className="w-full max-w-md">
+        <form className="w-full max-w-md ">
           <div className="mb-8 shadow border-l-gray-600 rounded-3xl">
             <input
-              className="bg-white shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="bg-white bg-opacity-60  backdrop-filter backdrop-blur-md  shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id=""
               name=""
               type=""
@@ -55,7 +61,7 @@ const AuctionObjetives = () => {
 
           <div className="mb-8 shadow border-l-gray-600 rounded">
             <input
-              className="bg-white shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="bg-white  bg-opacity-60  backdrop-filter backdrop-blur-md  shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id=""
               name=""
               type=""
@@ -65,7 +71,7 @@ const AuctionObjetives = () => {
 
           <div className="mb-8 shadow border-l-gray-600 rounded">
             <input
-              className="bg-white shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="bg-white  bg-opacity-60  backdrop-filter backdrop-blur-md  shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id=""
               name=""
               type=""
@@ -83,7 +89,9 @@ const AuctionObjetives = () => {
           </div>
         </form>
       </div>
-    </div>
+
+    </div >
+
   );
 };
 export default AuctionObjetives;

@@ -5,7 +5,7 @@ import styles from '../../../../styles/components/AcademyStyles/CardStyles.modul
 const Capacitation = () => {
     return (
         <div className='mx-10 2xl:mx-60 my-12'>
-            <div className='grid grid-cols-1 sm:grid-cols-2 pb-20 '>
+            <div className='grid grid-cols-1 sm:grid-cols-2 pb-20'>
                 <div className='flex flex-col'>
                     <div className='pt-12 pb-10'>
                         <h2 className='text-4xl text-orange-500 font-bold pt-5'>Capacítate junto a Unne</h2>
@@ -30,10 +30,9 @@ const Capacitation = () => {
                                 <h2 className='text-3xl text-orange-500 font-bold pt-16 p-24'>Sistemas</h2>
                             </div>
                             <div className={`${styles.flipCardBack} pt-10`}>
-                                <p>Ley de Arrendamiento</p>
-                                <p>Ley de Copropiedad</p>
-                                <p>Herencias e inmuebles</p>
-                                <p>FEA: ¿Qué es y para que sirve?</p>
+                                <p>Sistemas y correo electrónico</p>
+                                <p>Estudios y seguimiento de las publicaciones</p>
+                                <p>Guía de publicación</p>
                             </div>
                         </div>
                     </div>
