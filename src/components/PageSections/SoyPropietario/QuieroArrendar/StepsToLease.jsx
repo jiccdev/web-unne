@@ -8,15 +8,20 @@ import CheckedStep from './TabsContent/components/CheckedStep';
 import Button from '@/components/Button/Button';
 import MapNavigation from '@/components/Maps/MapNavigation';
 import AddLocation from '@/components/Maps/AddLocation';
+import { useValue } from '@/context/ContextProvider';
 
 const StepsToLease = () => {
+  const { state, dispatch } = useValue();
   const [isTabActive, setIsTabActive] = useState(0);
   const [bgTab1, setBgTab1] = useState('bg-orange-500 text-white');
   const [bgTab2, setBgTab2] = useState('');
   const [bgTab3, setBgTab3] = useState('');
 
+  console.log('Map Location', state.location.text);
+
   const [formData, setFormData] = useState({
     propertyData: {
+      address: '',
       propertyType: '',
       bedrooms: 0,
       bathrooms: 0,
@@ -183,26 +188,8 @@ const StepsToLease = () => {
         </div>
 
         <div className="w-full flex flex-col">
-          <form className="py-5">
-            <div>
-              <input
-                type="text"
-                placeholder="Asturias 171, oficina 101"
-                className="w-full xl:w-3/5 xl:ml-16 mx-auto bg-gray-100 text-gray-500 placeholder:text-gray-500 p-3.5 px-7 text-xl rounded-full focus:outline-none outline-none"
-              />
-            </div>
-          </form>
-
-          <div className="w-full xl:w-5/6 h-96 mt-5">
+          <div className="w-full h-[400px] sm:h-[450px] xl:h-[600px] mt-10">
             <AddLocation />
-            {/* <MapNavigation /> */}
-            {/* <iframe
-              className="w-full h-full"
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13321.083909707775!2d-70.585684!3d-33.416179!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf182be3e047%3A0x6cd33f25cf7a92dc!2sAsturias%20171%2C%20Of.%20101%2C%207550130%20Las%20Condes%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1679881853426!5m2!1ses-419!2scl"
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe> */}
           </div>
         </div>
       </div>

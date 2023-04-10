@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useValue } from '@/context/ContextProvider';
 import { bedroomsList, bathroomsList } from '../../../../../data';
 
 const PropertyData = ({ formData, setFormData }) => {
+  const { state, dispatch } = useValue();
   const [bedrooms, setBedrooms] = useState(bedroomsList);
   const [bathrooms, setBathrooms] = useState(bathroomsList);
 
@@ -126,6 +128,20 @@ const PropertyData = ({ formData, setFormData }) => {
       </div>
 
       <form className="w-full">
+        <div className="w-full my-5">
+          <label className="text-gray-500 font-bold">Ubicación</label>
+          <div className="flex mt-3">
+            <input
+              className="w-full p-4 bg-white rounded-full border-gray-300 outline-none focus:outline-none"
+              type="text"
+              placeholder="Ubicación de la Propiedad"
+              name="address"
+              value={`${state.location.text || ''}`}
+              disabled
+            />
+          </div>
+        </div>
+
         <div className="w-full  my-5">
           <label className="text-gray-500 font-bold">Tipo de Propiedad</label>
           <select

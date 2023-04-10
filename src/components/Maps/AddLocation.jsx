@@ -1,19 +1,17 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import ReactMapGl, {
   Marker,
   NavigationControl,
   GeolocateControl,
 } from 'react-map-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
 import Geocoder from './Geocoder';
 import { useValue } from '@/context/ContextProvider';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 const AddLocation = () => {
   const { state, dispatch } = useValue();
   const { location } = state;
   const mapRef = useRef();
-
-  console.log('Map Location', state.location.text);
 
   useEffect(() => {
     if (!location.lng && !location.lat) {
@@ -44,7 +42,7 @@ const AddLocation = () => {
         initialViewState={{
           longitude: location.lng,
           latitude: location.lat,
-          zoom: 14,
+          zoom: 8,
         }}
         mapStyle="mapbox://styles/mapbox/streets-v12"
       >

@@ -3,7 +3,7 @@ export const reducer = (state, action) => {
 
   switch (type) {
     case 'UPDATE_LOCATION':
-      return { ...state, location: action.payload };
+      return { ...state, location: payload };
 
     default:
       throw new Error('Sin ubicacion encontrada');
