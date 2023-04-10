@@ -114,14 +114,12 @@ export const CircleArrendarData = [
   {
     id: 1,
     text: 'Llena el formulario',
-    position:
-      'lg:top-0 lg:right-[19rem] md:max-lg:left-2/4 md:-top-8',
+    position: 'lg:top-0 lg:right-[19rem] md:max-lg:left-2/4 md:-top-8',
   },
   {
     id: 2,
     text: 'Te asignamos a tu objetivo',
-    position:
-      'lg:right-full md:max-lg:top-10 md:max-lg:left-[24rem]',
+    position: 'lg:right-full md:max-lg:top-10 md:max-lg:left-[24rem]',
   },
   {
     id: 3,
@@ -138,8 +136,7 @@ export const CircleArrendarData = [
   {
     id: 5,
     text: 'Gestion Comercial',
-    position:
-      'lg:left-full md:max-lg:bottom-10 md:max-lg:left-[24rem]',
+    position: 'lg:left-full md:max-lg:bottom-10 md:max-lg:left-[24rem]',
   },
   {
     id: 6,
@@ -154,14 +151,12 @@ export const CircleVenderData = [
   {
     id: 1,
     text: 'Llena el formulario',
-    position:
-      'lg:top-0 lg:right-[19rem] md:max-lg:left-2/4 md:-top-8',
+    position: 'lg:top-0 lg:right-[19rem] md:max-lg:left-2/4 md:-top-8',
   },
   {
     id: 2,
     text: 'Te asignamos a tu Ejecutivo',
-    position:
-      'lg:right-full md:max-lg:top-10 md:max-lg:left-[24rem]',
+    position: 'lg:right-full md:max-lg:top-10 md:max-lg:left-[24rem]',
   },
   {
     id: 3,
@@ -178,8 +173,7 @@ export const CircleVenderData = [
   {
     id: 5,
     text: 'Gestión Comercial y legal',
-    position:
-      'lg:left-full md:max-lg:bottom-10 md:max-lg:left-[24rem]',
+    position: 'lg:left-full md:max-lg:bottom-10 md:max-lg:left-[24rem]',
   },
   {
     id: 6,
@@ -337,27 +331,27 @@ export const whyUnneLeaseData = [
       {
         id: 1,
         name: 'Te acompañamos en toda la gestión.',
-        icon:'before:content-["1"]',
+        icon: 'before:content-["1"]',
       },
       {
         id: 2,
         name: 'Tu propiedad en manos del arrendatario correcto.',
-        icon:'before:content-["2"]',
+        icon: 'before:content-["2"]',
       },
       {
         id: 3,
         name: 'Publicamos en los portales mas reconocidos de Chile.',
-        icon:'before:content-["3"]',
+        icon: 'before:content-["3"]',
       },
       {
         id: 4,
         name: 'Asesoria Legal.',
-        icon:'before:content-["4"]',
+        icon: 'before:content-["4"]',
       },
       {
         id: 5,
         name: 'Agenda tu sesión de fotos y video profesional de manera gratuita.',
-        icon:'before:content-["5"]',
+        icon: 'before:content-["5"]',
       },
     ],
   },
@@ -372,27 +366,27 @@ export const whyUnneSellData = [
       {
         id: 1,
         name: 'Te asesoramos de principio a fin.',
-        icon:'before:content-["1"]',
+        icon: 'before:content-["1"]',
       },
       {
         id: 1,
         name: 'Tenemos la base  de clientes compradores más grande del país.',
-        icon:'before:content-["2"]',
+        icon: 'before:content-["2"]',
       },
       {
         id: 1,
         name: 'Publicamos en 43 portales inmobiliarios Servicios legales.',
-        icon:'before:content-["3"]',
+        icon: 'before:content-["3"]',
       },
       {
         id: 1,
         name: 'Servicios legales.',
-        icon:'before:content-["4"]',
+        icon: 'before:content-["4"]',
       },
       {
         id: 1,
         name: 'Agenda tu sesión de fotos y video profesional de manera gratuita.',
-        icon:'before:content-["5"]',
+        icon: 'before:content-["5"]',
       },
     ],
   },
@@ -490,7 +484,6 @@ export const AssociateCardData = [
         id: 3,
         name: 'Banco de canje avanzado',
       },
-      
     ],
   },
   {
@@ -538,37 +531,37 @@ export const BankData = [
     id: 1,
     title: 'Banco de Chile',
     img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/BancoChile_rseopu.png',
-    href: 'https://portales.bancochile.cl/personas'
+    href: 'https://portales.bancochile.cl/personas',
   },
   {
     id: 2,
     title: 'Banco Security',
     img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/BANCOSECURITY_hs4t1l.png',
-    href: 'https://personas.bancosecurity.cl/'
+    href: 'https://personas.bancosecurity.cl/',
   },
   {
     id: 3,
     title: 'BCI',
     img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/bci_zefpfw.png',
-    href: 'https://www.bci.cl/personas'
+    href: 'https://www.bci.cl/personas',
   },
   {
     id: 4,
     title: 'Met Life',
     img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/metlife_isrjth.png',
-    href: 'https://w3.metlife.cl/'
+    href: 'https://w3.metlife.cl/',
   },
   {
     id: 5,
     title: 'Banco Scotiabank',
     img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/Scotiabank_nrdmel.png',
-    href: 'https://www.scotiabankchile.cl/'
+    href: 'https://www.scotiabankchile.cl/',
   },
   {
     id: 6,
     title: 'Banco TrueCapital',
     img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/TrueCapital_yuwaip.png',
-    href: 'https://www.truecapital.cl/'
+    href: 'https://www.truecapital.cl/',
   },
 ];
 
@@ -578,25 +571,25 @@ export const PortalData = [
     id: 1,
     title: 'Portal Inmobiliario',
     img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680028999/unne-media/portal/portalinmobiliario_x6nndy.png',
-    href: 'https://www.portalinmobiliario.com/'
+    href: 'https://www.portalinmobiliario.com/',
   },
   {
     id: 2,
     title: 'Yapo',
     img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680028998/unne-media/portal/yapo_iyqynp.png',
-    href: 'https://new.yapo.cl/'
+    href: 'https://new.yapo.cl/',
   },
   {
     id: 3,
     title: 'Top Propiedades',
     img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680028998/unne-media/portal/topPropiedades_yu50t1.png',
-    href: 'https://www.toppropiedades.cl/'
+    href: 'https://www.toppropiedades.cl/',
   },
   {
     id: 4,
     title: 'Toc toc',
     img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680028998/unne-media/portal/toctoc_ll3lza.png',
-    href: 'https://www.toctoc.com/'
+    href: 'https://www.toctoc.com/',
   },
 ];
 
@@ -732,5 +725,71 @@ export const MoreServicesData = [
       'Conflictos a la Ley No 19.537 de Copropiedad Inmobiliaria',
       'Representación en segunda instancia',
     ],
+  },
+];
+
+export const bedroomsList = [
+  {
+    id: 1,
+    name: '1',
+    selected: false,
+  },
+  {
+    id: 2,
+    name: '2',
+    selected: false,
+  },
+  {
+    id: 3,
+    name: '3',
+    selected: false,
+  },
+  {
+    id: 4,
+    name: '4',
+    selected: false,
+  },
+  {
+    id: 5,
+    name: '5',
+    selected: false,
+  },
+  {
+    id: 6,
+    name: '6',
+    selected: false,
+  },
+];
+
+export const bathroomsList = [
+  {
+    id: 1,
+    name: '1',
+    selected: false,
+  },
+  {
+    id: 2,
+    name: '2',
+    selected: false,
+  },
+  {
+    id: 3,
+    name: '3',
+    selected: false,
+  },
+  {
+    id: 4,
+    name: '4',
+    selected: false,
+  },
+  {
+    id: 5,
+    name: '5',
+    selected: false,
+  },
+  {
+    id: 6,
+    name: '6',
+    selected: false,
   },
 ];

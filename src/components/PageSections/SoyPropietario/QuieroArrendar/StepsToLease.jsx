@@ -5,15 +5,23 @@ import PropertyData from './TabsContent/PropertyData';
 import PersonalData from './TabsContent/PersonalData';
 import ValidateUser from './TabsContent/ValidateUser';
 import CheckedStep from './TabsContent/components/CheckedStep';
+import Button from '@/components/Button/Button';
+import MapNavigation from '@/components/Maps/MapNavigation';
+import AddLocation from '@/components/Maps/AddLocation';
+import { useValue } from '@/context/ContextProvider';
 
 const StepsToLease = () => {
+  const { state, dispatch } = useValue();
   const [isTabActive, setIsTabActive] = useState(0);
   const [bgTab1, setBgTab1] = useState('bg-orange-500 text-white');
   const [bgTab2, setBgTab2] = useState('');
   const [bgTab3, setBgTab3] = useState('');
 
+  console.log('Map Location', state.location.text);
+
   const [formData, setFormData] = useState({
     propertyData: {
+      address: '',
       propertyType: '',
       bedrooms: 0,
       bathrooms: 0,
@@ -66,8 +74,14 @@ const StepsToLease = () => {
           data-headlessui-state={isTabActive === 0 ? 'selected' : 'inactive'}
           className={`${bgTab1} rounded-tl-[25px] rounded-tr-[5px] border-2 border-white focus:bg-orange-500 focus:text-white focus:putline-none outline-none w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
         >
-          <span className="flex items-center justify-center w-full">
+          <span className="flex items-center text-[15px] justify-center w-full">
             {bgTab1 === 'bg-green-500 text-white' && <CheckedStep />}
+            {/* // ) : ( //{' '}
+            <div className="mr-1.5 h-7 w-7 bg-transparent rounded-full border-2 border-white flex justify-center items-center">
+              // <span className="text-white text-lg font-semibold">1</span>
+              //{' '}
+            </div>
+            // )}  */}
             Datos de Propiedad
           </span>
         </Tab>
@@ -77,8 +91,14 @@ const StepsToLease = () => {
           className={`${bgTab2} border-2 border-white rounded-md focus:bg-orange-500 focus:text-white focus:putline-none outline-none w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
           disabled={bgTab1 === 'bg-green-500 text-white' ? false : true}
         >
-          <span className="flex items-center justify-center w-full">
+          <span className="flex items-center text-[15px] justify-center w-full">
             {bgTab2 === 'bg-green-500 text-white' && <CheckedStep />}
+            {/* // ) : ( //{' '}
+            <div className="mr-1.5 h-7 w-7 bg-transparent rounded-full border-2 border-white flex justify-center items-center">
+              // <span className="text-white text-lg font-semibold">2</span>
+              //{' '}
+            </div>
+            // )}  */}
             Datos Personales
           </span>
         </Tab>
@@ -88,8 +108,14 @@ const StepsToLease = () => {
           className={`${bgTab3} border-2 border-white rounded-md rounded-tr-[25px] focus:bg-orange-500 focus:text-white focus:putline-none outline-none w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
           disabled={bgTab2 === 'bg-green-500 text-white' ? false : true}
         >
-          <span className="flex items-center justify-center w-full">
+          <span className="flex items-center text-[15px] justify-center w-full">
             {bgTab3 === 'bg-green-500 text-white' && <CheckedStep />}
+            {/* // ) : ( //{' '}
+            <div className="mr-1.5 h-7 w-7 bg-transparent rounded-full border-2 border-white flex justify-center items-center">
+              // <span className="text-white text-lg font-semibold">3</span>
+              //{' '}
+            </div>
+            // )}  */}
             Validación de Usuario
           </span>
         </Tab>
@@ -162,24 +188,18 @@ const StepsToLease = () => {
         </div>
 
         <div className="w-full flex flex-col">
-          <form className="py-5">
-            <div>
-              <input
-                type="text"
-                placeholder="Asturias 171, oficina 101"
-                className="w-full xl:w-3/5 xl:ml-16 mx-auto bg-gray-100 text-gray-500 placeholder:text-gray-500 p-3.5 px-7 text-xl rounded-full focus:outline-none outline-none"
-              />
-            </div>
-          </form>
+          <div className="w-full h-[400px] sm:h-[450px] xl:h-[600px] mt-10">
+            <AddLocation />
+          </div>
 
-          <div className="w-full xl:w-5/6 h-96 mt-5">
-            <iframe
-              className="w-full h-full"
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13321.083909707775!2d-70.585684!3d-33.416179!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf182be3e047%3A0x6cd33f25cf7a92dc!2sAsturias%20171%2C%20Of.%20101%2C%207550130%20Las%20Condes%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1679881853426!5m2!1ses-419!2scl"
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+          <div
+            className="bg-orange-100 border-l-4 mt-1.5 border-orange-500 text-orange-700 p-4"
+            role="alert"
+          >
+            <p className="font-bold">Advertencia</p>
+            <p>
+              Para completar el campo Ubicación debes seleccionar en el mapa.
+            </p>
           </div>
         </div>
       </div>
