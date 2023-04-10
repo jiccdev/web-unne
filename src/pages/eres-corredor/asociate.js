@@ -2,12 +2,12 @@ import HeadPage from '@/components/Head/HeadPage';
 import Layout from '@/components/Layout/Layout';
 import MainInformation from '@/components/PageSections/EresCorredor/Asociate/MainInformation';
 
-import { AssociateData } from '../../data/index';
 import InfoCardSection from '@/components/PageSections/EresCorredor/Asociate/InfoCardSection';
 import OurPartners from '@/components/PageSections/EresCorredor/Asociate/OurPartners';
 
 import React, { Fragment, useContext, useEffect } from 'react';
 import Banner from '@/components/PageSections/EresCorredor/Asociate/Banner';
+import { Fade } from 'react-awesome-reveal';
 
 const Asociate = () => {
 
@@ -19,16 +19,22 @@ const Asociate = () => {
 
             <Layout>
                 <section className='mt-20'>
-                    {AssociateData?.length > 0 && AssociateData?.map((e) => (<MainInformation key={e.id} data={e} />))}
+                    <Fade delay={300} cascade>
+                        <MainInformation />
+                    </Fade>
                 </section>
                 <section>
                     <Banner />
                 </section>
-                <section className='my-20'>
-                    <InfoCardSection/>
+                <section className='my-20 bg-gray-50 py-8'>
+                    <Fade direction='left' delay={200} cascade>
+                        <InfoCardSection />
+                    </Fade>
                 </section>
                 <section>
-                    <OurPartners />
+                    <Fade delay={300} cascade>
+                        <OurPartners />
+                    </Fade>
                 </section>
             </Layout>
         </Fragment>
