@@ -71,3 +71,43 @@ a {
     color-scheme: dark;
   }
 }
+
+.mapboxgl-ctrl-attrib-inner {
+  display: none !important;
+}
+
+.mapboxgl-ctrl-logo {
+  display: none !important;
+}
+
+.mapboxgl-ctrl-geocoder--input {
+  background-color: white !important;
+  padding: 1.5rem 2.1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-center: center !important;
+  border-radius: 50px !important;
+  border: none !important;
+}
+
+.mapboxgl-ctrl-geocoder--input:focus {
+  border: none !important;
+}
+
+.suggestions {
+}
+
+.mapboxgl-ctrl svg {
+  margin-top: 0.4rem !important;
+}
+
+.mapboxgl-ctrl-geocoder--button {
+  margin-top: 0.25rem !important;
+}
+
+.geocoder-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}

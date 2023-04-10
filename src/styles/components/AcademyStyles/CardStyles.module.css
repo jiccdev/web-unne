@@ -39,7 +39,7 @@
 
 /* Style the back side */
 .flipCardBack {
-  background-color: #ffffff;
-  color: black;
+  background-color: #ff994f;
+  color: white;
   transform: rotateY(180deg);
 }

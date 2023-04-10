@@ -8,7 +8,7 @@ import ReactSlickComponent from '@/components/Carousel/ReactSlickComponent';
 import { BankData } from '../../data';
 import ImgCarouselCard from '@/components/Card/ImgCarouselCard';
 import TittleAcademy from '@/components/PageSections/EresCorredor/AcademiaUnne/TittleAcademy';
-
+import { Fade } from 'react-awesome-reveal';
 const AcademiaUnne = () => {
   return (
     <Fragment>
@@ -17,20 +17,26 @@ const AcademiaUnne = () => {
       </HeadPage>
 
       <Layout>
+
         <section>
-          <Capacitation />
+          <Fade delay={300} direction='right'>
+            <Capacitation />
+          </Fade>
         </section>
 
         <section>
-          <TittleAcademy />
-          <ReactSlickComponent
-            data={BankData}
-            RenderComponent={ImgCarouselCard}
-            slidesToShow={4}
-            xl={1}
-          />
+          <Fade delay={300} direction='left'>
+            <TittleAcademy />
+            <ReactSlickComponent
+              data={BankData}
+              RenderComponent={ImgCarouselCard}
+              slidesToShow={4}
+              xl={1}
+            />
+          </Fade>
         </section>
       </Layout>
+      
     </Fragment>
   );
 };

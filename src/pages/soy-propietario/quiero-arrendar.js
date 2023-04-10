@@ -48,12 +48,13 @@ const QuieroArrendar = () => {
               ColorText="text-white"
             />
           </Fade>
+
         </section>
         <section className="flex justify-center mt-5 mb-20">
           <SimpleButton></SimpleButton>
         </section>
 
-        <section className="my-20 px-4 xl:px-32">
+        <section className="my-20 xl:my-64 px-4 xl:px-32">
           <StepsToLease />
         </section>
       </Layout>
