@@ -17,7 +17,7 @@ const StepsToLease = () => {
   const [bgTab2, setBgTab2] = useState('');
   const [bgTab3, setBgTab3] = useState('');
 
-  console.log('Map Location', state.location.text);
+  // console.log('Map Location', state.location.text);
 
   const [formData, setFormData] = useState({
     propertyData: {
@@ -76,12 +76,6 @@ const StepsToLease = () => {
         >
           <span className="flex items-center text-[15px] justify-center w-full">
             {bgTab1 === 'bg-green-500 text-white' && <CheckedStep />}
-            {/* // ) : ( //{' '}
-            <div className="mr-1.5 h-7 w-7 bg-transparent rounded-full border-2 border-white flex justify-center items-center">
-              // <span className="text-white text-lg font-semibold">1</span>
-              //{' '}
-            </div>
-            // )}  */}
             Datos de Propiedad
           </span>
         </Tab>
@@ -89,16 +83,10 @@ const StepsToLease = () => {
         <Tab
           data-headlessui-state="selected"
           className={`${bgTab2} border-2 border-white rounded-md focus:bg-orange-500 focus:text-white focus:putline-none outline-none w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
-          disabled={bgTab1 === 'bg-green-500 text-white' ? false : true}
+          // disabled={bgTab1 === 'bg-green-500 text-white' ? false : true}
         >
           <span className="flex items-center text-[15px] justify-center w-full">
             {bgTab2 === 'bg-green-500 text-white' && <CheckedStep />}
-            {/* // ) : ( //{' '}
-            <div className="mr-1.5 h-7 w-7 bg-transparent rounded-full border-2 border-white flex justify-center items-center">
-              // <span className="text-white text-lg font-semibold">2</span>
-              //{' '}
-            </div>
-            // )}  */}
             Datos Personales
           </span>
         </Tab>
@@ -106,16 +94,10 @@ const StepsToLease = () => {
         <Tab
           data-headlessui-state="selected"
           className={`${bgTab3} border-2 border-white rounded-md rounded-tr-[25px] focus:bg-orange-500 focus:text-white focus:putline-none outline-none w-full py-1 xl:py-4 px-1 text-center border-t-2 font-medium text-lg border-transparent cursor-pointer`}
-          disabled={bgTab2 === 'bg-green-500 text-white' ? false : true}
+          // disabled={bgTab2 === 'bg-green-500 text-white' ? false : true}
         >
           <span className="flex items-center text-[15px] justify-center w-full">
             {bgTab3 === 'bg-green-500 text-white' && <CheckedStep />}
-            {/* // ) : ( //{' '}
-            <div className="mr-1.5 h-7 w-7 bg-transparent rounded-full border-2 border-white flex justify-center items-center">
-              // <span className="text-white text-lg font-semibold">3</span>
-              //{' '}
-            </div>
-            // )}  */}
             Validación de Usuario
           </span>
         </Tab>

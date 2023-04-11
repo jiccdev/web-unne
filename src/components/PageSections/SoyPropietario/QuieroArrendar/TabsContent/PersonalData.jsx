@@ -2,8 +2,10 @@ import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import ToastComponent from '@/components/Toastify/ToastifyComponent';
 import { toast } from 'react-toastify';
+import { useValue } from '@/context/ContextProvider';
 
 const PersonalData = ({ formData, setFormData }) => {
+  const { state, dispatch } = useValue();
   const form = useRef();
   const [verificationCode, setVerificationCode] = useState('');
 
@@ -41,18 +43,27 @@ const PersonalData = ({ formData, setFormData }) => {
     });
   };
 
+  console.log('VerificaionCode', state.verificationCode.code);
+
   const handleVerification = () => {
     const code = [
       formData?.personalData?.name,
       formData?.personalData.email,
       formData?.personalData?.phone,
     ].join('');
-    return code === verificationCode;
+    return code === state.verificationCode.code;
+    // return code === verificationCode;
   };
 
   const handleCodeGeneration = () => {
     const code = Math.floor(1000 + Math.random() * 9000);
-    setVerificationCode(code.toString());
+    dispatch({
+      type: 'UPDATE_VERIFICATION_CODE',
+      payload: {
+        code: code.toString(),
+      },
+    });
+    // setVerificationCode(code.toString());
   };
 
   /** On toast success */
@@ -197,8 +208,9 @@ const PersonalData = ({ formData, setFormData }) => {
           >
             Enviar codigo de verificacion
           </button>
+          <p>{state.verificationCode.code}</p>
 
-          <p>{verificationCode}</p>
+          {/* <p>{verificationCode}</p> */}
         </div>
       </form>
     </div>
