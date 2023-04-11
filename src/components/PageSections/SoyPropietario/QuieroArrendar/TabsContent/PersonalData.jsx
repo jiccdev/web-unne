@@ -96,6 +96,11 @@ const PersonalData = ({ formData, setFormData }) => {
 
   const sendEmail = async (ev) => {
     ev.preventDefault();
+
+    const serviceId = 'service_qcvmtdr';
+    const templateId = 'template_bdbxch9';
+    const apiKey = process.env.NEXT_PUBLIC_API_KEY_EMAILJS;
+
     if (
       [
         formData?.personalData?.name,
@@ -106,21 +111,21 @@ const PersonalData = ({ formData, setFormData }) => {
       showToastErrorMsg('Todos los campos son obligatorios');
       return;
     }
+
     try {
       const response = emailjs.sendForm(
-        'service_qcvmtdr',
-        'template_jm043df',
+        serviceId,
+        templateId,
         form.current,
-        'wXqVGHSMVQRyuvyJK'
+        apiKey
       );
 
       const responseStatus = await response;
       responseStatus.status === 200 &&
         showToastSuccessMsg(
-          `Mensaje enviado con éxito, revise el correo ${formData.personalData?.email}`
+          `Verifique su correo electrónico ${formData.personalData?.email}`
         );
       handleVerification();
-      // resetForm();
     } catch (error) {
       showToastErrorMsg('Ha ocurrido un error al enviar el formulario');
     }
