@@ -7,7 +7,6 @@ import { useValue } from '@/context/ContextProvider';
 const PersonalData = ({ formData, setFormData }) => {
   const { state, dispatch } = useValue();
   const form = useRef();
-  const [verificationCode, setVerificationCode] = useState('');
 
   /** Handle Form Data inputs */
   /** Update Name */
@@ -97,6 +96,7 @@ const PersonalData = ({ formData, setFormData }) => {
   const sendEmail = async (ev) => {
     ev.preventDefault();
 
+    // EMAILJS GMAIL (workspace & client email code verification)
     const serviceId = 'service_qcvmtdr';
     const templateId = 'template_bdbxch9';
     const apiKey = process.env.NEXT_PUBLIC_API_KEY_EMAILJS;
@@ -125,12 +125,9 @@ const PersonalData = ({ formData, setFormData }) => {
         showToastSuccessMsg(
           `Verifique su correo electrónico ${formData.personalData?.email}`
         );
-      handleVerification();
     } catch (error) {
       showToastErrorMsg('Ha ocurrido un error al enviar el formulario');
     }
-
-    console.log('Enviando...');
   };
 
   console.log(formData.personalData);

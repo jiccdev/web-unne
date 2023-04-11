@@ -20,7 +20,7 @@ const AddLocation = () => {
           return res.json();
         })
         .then((data) => {
-          mapRef.current.flyTo({
+          mapRef?.current?.flyTo({
             center: [data.longitude, data.latitude],
           });
           dispatch({

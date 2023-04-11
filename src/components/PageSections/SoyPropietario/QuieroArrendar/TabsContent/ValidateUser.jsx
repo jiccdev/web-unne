@@ -8,6 +8,8 @@ import { useValue } from '@/context/ContextProvider';
 function ValidateUser({ formData, setFormData }) {
   const { state } = useValue();
   const form = useRef();
+  const formToEjecutive = useRef();
+
   const [inputValues, setInputValues] = useState(formData.validateUser);
   const [verificationCode, setVerificationCode] = useState('');
   const [isValidEmailCode, setIsValidEmailCode] = useState('');
@@ -61,40 +63,46 @@ function ValidateUser({ formData, setFormData }) {
 
   console.log('Is valid', handleVerificationCode());
 
-  const sendEmail = async (event) => {
-    event.preventDefault();
-    const service_id = 'service_aak4cxa';
+  const validateVerificationCode = (ev) => {
+    ev.preventDefault();
+
+    handleVerificationCode()
+      ? showToastSuccessMsg(`Verificacion realizada con exito`)
+      : showToastErrorMsg('Codigo no valido');
+  };
+
+  const sendForm = async (ev) => {
+    ev.preventDefault();
+
+    // OUTLOOK
+    const serviceId = 'service_qcvmtdr';
+    const templateId = 'template_jm043df';
+    const apiKey = process.env.NEXT_PUBLIC_API_KEY_EMAILJS;
 
     try {
-      if (handleVerificationCode()) {
-        const response = emailjs.sendForm(
-          service_id,
-          'template_jm043df',
-          form.current,
-          'wXqVGHSMVQRyuvyJK'
-        );
+      const response = await emailjs.sendForm(
+        serviceId,
+        templateId,
+        formToEjecutive.current,
+        apiKey
+      );
 
-        const responseStatus = await response;
-        responseStatus.status === 200 &&
-          showToastSuccessMsg(
-            `Revise el correo ${formData.personalData?.email}`
-          );
-      }
+      const responseStatus = await response;
+      responseStatus.status === 200 &&
+        showToastSuccessMsg(`Solicitud enviada correctamente`);
+      console.log('enviado');
     } catch (error) {
-      showToastErrorMsg('Todos los campos son obligatorios');
-      console.log('El código de verificación no coincide');
+      showToastErrorMsg('Ha ocurrido un error al enviar la solicitud');
     }
-
-    // aca la logica del formulario de personal data
-    console.log('Formulario enviado con éxito');
   };
 
   return (
     <div className="w-full xl:w-4/6 mx-auto my-14">
+      <ToastComponent />
       <h3 className="text-2xl xl:text-4xl font-bold text-center mb-5">
         Excelente! Solo falta validar tu teléfono!
       </h3>
-      <form onSubmit={sendEmail}>
+      <form ref={form} onSubmit={validateVerificationCode}>
         <div className="grid grid-cols-4 g-0">
           <div className="p-2.5 xl:p-1.5 mx-auto w-full flex justify-center items-center">
             <input
@@ -148,11 +156,43 @@ function ValidateUser({ formData, setFormData }) {
           </Button>
         </div>
       </form>
-      {/* <div>
-        <p>Código de verificación:</p>
-        <p>{verificationCode}</p>
-        <button onClick={handleCodeGeneration}>Generar código</button>
-      </div> */}
+
+      <form ref={formToEjecutive} onSubmit={sendForm}>
+        <div className="w-full mx-auto flex justify-center my-10">
+          
+          
+          {/* SENDING HIDDEN DATA */}
+
+          <input
+              className="w-full p-4 bg-white rounded-full border-gray-300 outline-none focus:outline-none"
+              type="text"
+              placeholder="Ingres tu nombre y apellidos"
+              // name="name"
+              name="from_name"
+              id="from_name"
+              value={formData?.personalData?.name}
+              onChange={(ev) => handleName(ev.target.value)}
+            />
+
+          <div>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData?.personalData?.email}
+              onChange={()=>{formData?.personalData?.email}}
+            />
+          </div>
+
+          <Button
+            type="submit"
+            id="submit-button"
+            className="bg-orange-500 w-4/6 text-white text-2xl text-center rounded-full py-1 pb-2 px-4 hover:bg-orange-600"
+          >
+            Enviar a Solicitud
+          </Button>
+        </div>
+      </form>
     </div>
   );
 }
