@@ -1,17 +1,36 @@
-import React from 'react';
 import { iconsList } from '@/components/Icons';
 import { Objetives } from '@/components/Card/Objetives';
-
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { ObjetivesAuctionData } from '@/data';
 import { Fade } from 'react-awesome-reveal';
 
 const AuctionObjetives = () => {
+
+  /* Iconos a ocupar */
   const {
     TbSquareRoundedNumber1Filled,
     TbSquareRoundedNumber2Filled,
     TbSquareRoundedNumber3Filled,
     TbSquareRoundedNumber4Filled,
   } = iconsList;
+
+
+  /* Esta es la func de el form emailjs */
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_56n67rp', 'template_fgk7hm7', form.current, 'VNBSmj2Aykv9fczH0')
+      .then((result) => {
+        console.log(result.text);
+
+      }, (error) => {
+        console.log(error.text);
+      });
+  };
+
 
   return (
 
@@ -48,12 +67,12 @@ const AuctionObjetives = () => {
           Déjanos tus datos y trabajaremos juntos para encontrar la mejor
           alternativa de inversión para ti.
         </h2>
-        <form className="w-full max-w-md ">
+        <form className="w-full max-w-md " ref={form} onSubmit={sendEmail}>
           <div className="mb-8 shadow border-l-gray-600 rounded-3xl">
             <input
               className="bg-white bg-opacity-60  backdrop-filter backdrop-blur-md  shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id=""
-              name=""
+              id="user_name"
+              name="user_name"
               type=""
               placeholder="Nombre y apellidos"
             />
@@ -62,8 +81,8 @@ const AuctionObjetives = () => {
           <div className="mb-8 shadow border-l-gray-600 rounded">
             <input
               className="bg-white  bg-opacity-60  backdrop-filter backdrop-blur-md  shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id=""
-              name=""
+              id="user_email"
+              name="user_email"
               type=""
               placeholder="Email"
             />
@@ -72,8 +91,8 @@ const AuctionObjetives = () => {
           <div className="mb-8 shadow border-l-gray-600 rounded">
             <input
               className="bg-white  bg-opacity-60  backdrop-filter backdrop-blur-md  shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id=""
-              name=""
+              id="user_phone"
+              name="user_phone"
               type=""
               placeholder="Teléfono"
             />
@@ -83,11 +102,14 @@ const AuctionObjetives = () => {
             <button
               className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline hover:scale-110 hover:shadow-xl hover:cursor-pointer transition-all ease-in"
               type="submit"
+              value="Send"
             >
               Enviar
             </button>
           </div>
+
         </form>
+
       </div>
 
     </div >
