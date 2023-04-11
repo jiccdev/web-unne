@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import ToastComponent from '@/components/Toastify/ToastifyComponent';
 import Button from '@/components/Button/Button';
+import { toast } from 'react-toastify';
+import { useValue } from '@/context/ContextProvider';
 
 function ValidateUser({ formData, setFormData }) {
+  const { state } = useValue();
+  const form = useRef();
   const [inputValues, setInputValues] = useState(formData.validateUser);
   const [verificationCode, setVerificationCode] = useState('');
+  const [isValidEmailCode, setIsValidEmailCode] = useState('');
 
   const handleInputChange = (event, index) => {
     const newValues = [...inputValues];
@@ -18,23 +25,68 @@ function ValidateUser({ formData, setFormData }) {
     }
   };
 
-  const handleVerification = () => {
-    const code = inputValues.join('');
-    return code === verificationCode;
+  /** On toast success */
+  const showToastSuccessMsg = (msg) => {
+    toast.success(msg, {
+      position: 'bottom-center',
+      autoClose: 2500,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
   };
 
-  const handleSubmit = (event) => {
+  /** On toast error */
+  const showToastErrorMsg = (msg) => {
+    toast.error(msg, {
+      position: 'bottom-center',
+      autoClose: 1000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
+  };
+
+  const handleVerificationCode = () => {
+    const validationCodeString = `${inputValues[0]}${inputValues[1]}${inputValues[2]}${inputValues[3]}`;
+    const isValidCode = validationCodeString === state?.verificationCode?.code;
+    return isValidCode;
+  };
+
+  console.log('Is valid', handleVerificationCode());
+
+  const sendEmail = async (event) => {
     event.preventDefault();
-    if (handleVerification()) {
-      console.log('Formulario enviado con éxito');
-    } else {
+    const service_id = 'service_aak4cxa';
+
+    try {
+      if (handleVerificationCode()) {
+        const response = emailjs.sendForm(
+          service_id,
+          'template_jm043df',
+          form.current,
+          'wXqVGHSMVQRyuvyJK'
+        );
+
+        const responseStatus = await response;
+        responseStatus.status === 200 &&
+          showToastSuccessMsg(
+            `Revise el correo ${formData.personalData?.email}`
+          );
+      }
+    } catch (error) {
+      showToastErrorMsg('Todos los campos son obligatorios');
       console.log('El código de verificación no coincide');
     }
-  };
 
-  const handleCodeGeneration = () => {
-    const code = Math.floor(1000 + Math.random() * 9000);
-    setVerificationCode(code.toString());
+    // aca la logica del formulario de personal data
+    console.log('Formulario enviado con éxito');
   };
 
   return (
@@ -42,7 +94,7 @@ function ValidateUser({ formData, setFormData }) {
       <h3 className="text-2xl xl:text-4xl font-bold text-center mb-5">
         Excelente! Solo falta validar tu teléfono!
       </h3>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={sendEmail}>
         <div className="grid grid-cols-4 g-0">
           <div className="p-2.5 xl:p-1.5 mx-auto w-full flex justify-center items-center">
             <input

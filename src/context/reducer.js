@@ -5,6 +5,9 @@ export const reducer = (state, action) => {
     case 'UPDATE_LOCATION':
       return { ...state, location: payload };
 
+    case 'UPDATE_VERIFICATION_CODE':
+      return { ...state, verificationCode: payload };
+
     default:
       throw new Error('Sin ubicacion encontrada');
   }

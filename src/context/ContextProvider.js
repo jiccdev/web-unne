@@ -7,6 +7,9 @@ const initialState = {
     lat: 0,
     text: '',
   },
+  verificationCode: {
+    code: 0,
+  },
 };
 
 const GlobalContext = createContext(initialState);
