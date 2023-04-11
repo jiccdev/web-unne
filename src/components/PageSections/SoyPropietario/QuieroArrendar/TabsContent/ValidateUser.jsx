@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import Button from '@/components/Button/Button';
+import { useValue } from '@/context/ContextProvider';
 
 function ValidateUser({ formData, setFormData }) {
+  const { state } = useValue();
   const [inputValues, setInputValues] = useState(formData.validateUser);
   const [verificationCode, setVerificationCode] = useState('');
+  const [isValidEmailCode, setIsValidEmailCode] = useState('');
 
   const handleInputChange = (event, index) => {
     const newValues = [...inputValues];
@@ -18,23 +21,21 @@ function ValidateUser({ formData, setFormData }) {
     }
   };
 
-  const handleVerification = () => {
-    const code = inputValues.join('');
-    return code === verificationCode;
+  const handleVerificationCode = () => {
+    const validationCodeString = `${inputValues[0]}${inputValues[1]}${inputValues[2]}${inputValues[3]}`;
+    const isValidCode = validationCodeString === state?.verificationCode?.code;
+    return isValidCode;
   };
+
+  console.log('Is valid', handleVerificationCode());
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (handleVerification()) {
+    if (handleVerificationCode()) {
       console.log('Formulario enviado con éxito');
     } else {
       console.log('El código de verificación no coincide');
     }
-  };
-
-  const handleCodeGeneration = () => {
-    const code = Math.floor(1000 + Math.random() * 9000);
-    setVerificationCode(code.toString());
   };
 
   return (

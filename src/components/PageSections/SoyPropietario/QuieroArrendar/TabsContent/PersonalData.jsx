@@ -196,7 +196,7 @@ const PersonalData = ({ formData, setFormData }) => {
             type="text"
             id="verificationCode"
             name="verificationCode"
-            value={verificationCode}
+            value={state.verificationCode.code}
           />
         </div>
 
