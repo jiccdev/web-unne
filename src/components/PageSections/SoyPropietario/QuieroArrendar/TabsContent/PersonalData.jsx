@@ -102,6 +102,7 @@ const PersonalData = ({ formData, setFormData }) => {
     const apiKey = process.env.NEXT_PUBLIC_API_KEY_EMAILJS;
 
     if (
+      formData?.personalData?.address === undefined ||
       [
         formData?.personalData?.name,
         formData?.personalData.email,

@@ -123,6 +123,8 @@ const PropertyData = ({ formData, setFormData }) => {
     });
   };
 
+  console.log(formData.propertyData);
+
   return (
     <div className="w-full">
       <div className="bg-gray-200 px-4 xl:px-10 rounded-sm w-full py-3.5 border-b border-gray-200">
@@ -138,9 +140,16 @@ const PropertyData = ({ formData, setFormData }) => {
             <input
               className="w-full p-4 bg-white rounded-full border-gray-300 outline-none focus:outline-none"
               type="text"
-              placeholder="Ubicación de la Propiedad sds"
+              placeholder="Ubicación de la Propiedad"
               name="address"
-              value={`${state.location.text || ''}`}
+              value={`${state.location.text}`}
+              onChange={(ev) =>
+                setFormData({
+                  propertyData: {
+                    address: 'prueba',
+                  },
+                })
+              }
               disabled
             />
           </div>
@@ -151,38 +160,16 @@ const PropertyData = ({ formData, setFormData }) => {
           <select
             className="select select-ghost mt-3 bg-white w-full rounded-full border-none text-lg font-semibold"
             placeholder="Tipo de Propiedad"
-            value={formData?.propertyData?.propertyType}
+            defaultValue={formData?.propertyData?.propertyType}
             onChange={handlePropertyType}
           >
-            <option value="" selected>
-              Seleccionar tipo de propiedad
-            </option>
             {propertyTypeData?.map((option) => (
               <option key={option.id} value={option?.value}>
                 {option.name}
               </option>
             ))}
-            {/* <option>Tipo de Propiedad</option>
-            <option value="tipo1">Tipo 1</option>
-            <option value="tipo2">Tipo 2</option>
-            <option value="tipo3">Tipo 3</option> */}
           </select>
         </div>
-
-        {/* <div className="w-full my-7">
-          <label className="text-gray-500 font-bold">Tipo de Propiedad</label>
-          <select
-            className="select select-ghost mt-3 bg-white w-full rounded-full border-none text-lg font-semibold"
-            placeholder="Tipo de Propiedad"
-            value={formData?.propertyData?.propertyType}
-            onChange={handlePropertyType}
-          >
-            <option>Tipo de Propiedad</option>
-            <option value="tipo1">Tipo 1</option>
-            <option value="tipo2">Tipo 2</option>
-            <option value="tipo3">Tipo 3</option>
-          </select>
-        </div> */}
 
         <div className="w-full xl:w-3/6 my-7">
           <label className="text-gray-500 font-bold">

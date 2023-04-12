@@ -6,8 +6,10 @@ import PersonalData from './TabsContent/PersonalData';
 import ValidateUser from './TabsContent/ValidateUser';
 import CheckedStep from './TabsContent/components/CheckedStep';
 import AddLocation from '@/components/Maps/AddLocation';
+import { useValue } from '@/context/ContextProvider';
 
 const StepsToLease = () => {
+  const { state } = useValue();
   const [isTabActive, setIsTabActive] = useState(0);
   const [bgTab1, setBgTab1] = useState('bg-orange-500 text-white');
   const [bgTab2, setBgTab2] = useState('');
