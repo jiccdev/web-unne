@@ -5,19 +5,13 @@ import PropertyData from './TabsContent/PropertyData';
 import PersonalData from './TabsContent/PersonalData';
 import ValidateUser from './TabsContent/ValidateUser';
 import CheckedStep from './TabsContent/components/CheckedStep';
-import Button from '@/components/Button/Button';
-import MapNavigation from '@/components/Maps/MapNavigation';
 import AddLocation from '@/components/Maps/AddLocation';
-import { useValue } from '@/context/ContextProvider';
 
 const StepsToLease = () => {
-  const { state, dispatch } = useValue();
   const [isTabActive, setIsTabActive] = useState(0);
   const [bgTab1, setBgTab1] = useState('bg-orange-500 text-white');
   const [bgTab2, setBgTab2] = useState('');
   const [bgTab3, setBgTab3] = useState('');
-
-  // console.log('Map Location', state.location.text);
 
   const [formData, setFormData] = useState({
     propertyData: {

@@ -121,10 +121,13 @@ const PropertyData = ({ formData, setFormData }) => {
 
   return (
     <div className="w-full">
-      <div>
-        <h1 className="text-xl xl:text-3xl font-bold text-gray-700">
+      <div className="bg-gray-200 px-2 rounded-md w-full py-5">
+        <h3 className="text-xl xl:text-3xl font-bold text-gray-700">
+          <span className="text-white bg-orange-500 text-center text-xl px-3 py-1 xl:px-4 xl:py-2 rounded-full font-bold mr-2">
+            1
+          </span>
           Atributos de la Propiedad
-        </h1>
+        </h3>
       </div>
 
       <form className="w-full">
