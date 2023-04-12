@@ -137,7 +137,7 @@ const PropertyData = ({ formData, setFormData }) => {
             <input
               className="w-full p-4 bg-white rounded-full border-gray-300 outline-none focus:outline-none"
               type="text"
-              placeholder="Ubicación de la Propiedad"
+              placeholder="Ubicación de la Propiedad sds"
               name="address"
               value={`${state.location.text || ''}`}
               disabled
