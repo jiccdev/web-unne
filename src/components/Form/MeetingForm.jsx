@@ -1,45 +1,165 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { iconsList } from '../Icons';
 import Button from '../Button/Button';
+import emailjs from '@emailjs/browser';
+import ToastComponent from '@/components/Toastify/ToastifyComponent';
+import { toast } from 'react-toastify';
 
-const MeetingForm = ({ title, subtitle }) => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const { FaUserAlt, BsFillTelephoneFill, FiMail } = iconsList;
+const MeetingForm = ({ title, subtitle, DataEmail }) => {
+
+  const [formData, setFormData] = useState({
+    name: '',
+    lastname: '',
+    email: '',
+    phone: '',
+    date: '',
+    time: '',
+  });
+
+  /** Handle Form Data inputs */
+  /** Update Name */
+  const handleName = (name) => {
+    setFormData({
+      ...formData,
+      name: name,
+    });
+  };
+  /** Update Lastname */
+  const handleLastname = (lastname) => {
+    setFormData({
+      ...formData,
+      lastname: lastname,
+    });
+  };
+  /** Update Email */
+  const handleEmail = (email) => {
+    setFormData({
+      ...formData,
+      email: email,
+    });
+  };
+
+  /** Update Phone */
+  const handlePhone = (phone) => {
+    setFormData({
+      ...formData,
+      phone: phone,
+    });
+  };
+  /** Update Date */
+  const handleDate = (date) => {
+    setFormData({
+      ...formData,
+      date: date,
+    });
+  };
+  /** Update Phone */
+  const handleTime = (time) => {
+    setFormData({
+      ...formData,
+      time: time,
+    });
+  };
 
   const onSubmit = (data) => {
     console.log(data);
   };
 
+  /** Toast Messages */
+  /** On toast success */
+  const showToastSuccessMsg = (msg) => {
+    toast.success(msg, {
+      position: 'bottom-center',
+      autoClose: 2500,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
+  };
+
+  /** On toast error */
+  const showToastErrorMsg = (msg) => {
+    toast.error(msg, {
+      position: 'bottom-center',
+      autoClose: 1000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
+  };
+
+
+  const { ServiceID, TemplateID, PublicKEY } = DataEmail;
+  const form = useRef();
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    /* console.log(formData) */
+    const serviceid = ServiceID;
+    const templateid = TemplateID;
+    const publickey = PublicKEY;
+    if (
+      [
+        formData?.name,
+        formData?.lastname,
+        formData?.email,
+        formData?.phone,
+        formData?.date,
+        formData?.time,
+      ].includes('')
+    ) {
+      showToastErrorMsg('Todos los campos son obligatorios');
+      return;
+    }
+
+    try {
+      const response = emailjs.sendForm(
+        serviceid,
+        templateid,
+        form.current,
+        publickey
+      );
+      const responseStatus = await response;
+      responseStatus.status === 200 &&
+        showToastSuccessMsg(
+          `Mensaje enviado con éxito, revise el correo | ${formData.email}`
+        );
+      console.log('Enviando...');
+
+    } catch (error) {
+      /* console.log(error); */
+      showToastErrorMsg('Ha ocurrido un error al enviar el formulario');
+    }
+
+  };
+
   return (
     <div className="bg-gray-200 rounded-[25px] p-4 my-10 xl:py-5 xl:px-10 xl:m-0 w-full ">{/* xl:w-3/5 */}
+      <ToastComponent />
       <div className="text-center">
         <h2 className="text-4xl font-bold py-2">{title}</h2>
         {subtitle && (
           <p className="text-xl font-semibold text-gray-700">{subtitle}</p>
         )}
       </div>
-      <form onSubmit={handleSubmit(onSubmit)} className="py-6 px-4">
+      <form onSubmit={sendEmail} ref={form} className="py-6 px-4">
         <div className='grid grid-cols-1 sm:grid-cols-2 gap-x-20 gap-y-3 py-5 max-sm:divide-y-2 max-sm:divide-[#d8d8da]'>
           <div className="max-sm:py-2">
             <label htmlFor="name" className='block text-base font-semibold'>Nombre:</label>
             <input
               type="text"
               className="block w-full rounded-xl bg-slate-50 py-2 px-2"
-              {...register('name', { required: true, maxLength: 100 })}
+              name='user_name'
+              value={formData?.name}
+              onChange={(ev) => handleName(ev.target.value)}
             />
-            {errors && errors.name && errors?.name?.type === 'required' && (
-              <div
-                className="mt-2 w-full rounded-lg bg-red-100 py-2 px-6 text-base text-red-700"
-                role="alert"
-              >
-                Este campo es requerido
-              </div>
-            )}
+
           </div>
 
           <div className="max-sm:py-2">
@@ -47,16 +167,11 @@ const MeetingForm = ({ title, subtitle }) => {
             <input
               type="text"
               className="block w-full rounded-xl bg-slate-50 py-2 px-2"
-              {...register('lastname', { required: true, maxLength: 100 })}
+              name='user_lastname'
+              value={formData?.lastname}
+              onChange={(ev) => handleLastname(ev.target.value)}
             />
-            {errors && errors.lastname && errors?.lastname?.type === 'required' && (
-              <div
-                className="mt-2 w-full rounded-lg bg-red-100 py-2 px-6 text-base text-red-700"
-                role="alert"
-              >
-                Este campo es requerido
-              </div>
-            )}
+
           </div>
 
           <div className="max-sm:py-2">
@@ -64,16 +179,11 @@ const MeetingForm = ({ title, subtitle }) => {
             <input
               type="email"
               className="block w-full rounded-xl bg-slate-50 py-2 px-2"
-              {...register('email', { required: true, maxLength: 100 })}
+              name='user_email'
+              value={formData?.email}
+              onChange={(ev) => handleEmail(ev.target.value)}
             />
-            {errors && errors.email && errors?.email?.type === 'required' && (
-              <div
-                className="mt-2 w-full rounded-lg bg-red-100 py-2 px-6 text-base text-red-700"
-                role="alert"
-              >
-                Este campo es requerido
-              </div>
-            )}
+
           </div>
 
           <div className="max-sm:py-2">
@@ -81,48 +191,32 @@ const MeetingForm = ({ title, subtitle }) => {
             <input
               type="number"
               className="block w-full rounded-xl bg-slate-50 py-2 px-2"
-              {...register('phone', { required: true, maxLength: 100 })}
+              name='user_phone'
+              value={formData?.personalData?.phone}
+              onChange={(ev) => handlePhone(ev.target.value)}
             />
-            {errors && errors.phone && errors?.phone?.type === 'required' && (
-              <div
-                className="mt-2 w-full rounded-lg bg-red-100 py-2 px-6 text-base text-red-700"
-                role="alert"
-              >
-                Este campo es requerido
-              </div>
-            )}
+
           </div>
           <div className="max-sm:py-2">
             <label htmlFor="date" className='block text-base font-semibold'>Fecha:</label>
             <input
               type="date"
               className="block w-full rounded-xl py-2 px-2 bg-slate-50"
-              {...register('date', { required: true, maxLength: 100 })}
+              name='user_date'
+              value={formData?.date}
+              onChange={(ev) => handleDate(ev.target.value)}
             />
-            {errors && errors.date && errors?.date?.type === 'required' && (
-              <div
-                className="mt-2 w-full rounded-lg bg-red-100 py-2 px-6 text-base text-red-700"
-                role="alert"
-              >
-                Este campo es requerido
-              </div>
-            )}
+
           </div>
           <div className="max-sm:py-2">
             <label htmlFor="tel" className='block text-base font-semibold'>Hora:</label>
             <input
               type="time"
               className="block w-full rounded-xl bg-slate-50 py-2 px-2"
-              {...register('time', { required: true, maxLength: 100 })}
+              name='user_time'
+              value={formData?.time}
+              onChange={(ev) => handleTime(ev.target.value)}
             />
-            {errors && errors.time && errors?.time?.type === 'required' && (
-              <div
-                className="mt-2 w-full rounded-lg bg-red-100 py-2 px-6 text-base text-red-700"
-                role="alert"
-              >
-                Este campo es requerido
-              </div>
-            )}
           </div>
         </div>
         <div className="flex justify-center items-center">

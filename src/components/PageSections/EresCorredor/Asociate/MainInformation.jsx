@@ -7,9 +7,16 @@ import { Fade } from 'react-awesome-reveal';
 
 const MainInformation = () => {
 
+    const DataEmailJS = [
+        {
+            ServiceID: "service_j0tf7sp",
+            TemplateID: "template_6amoogk",
+            PublicKEY: "ZWanVNmLr-iX_Op5K",
+        },
+    ];
+
     return (
         <div className='xl:mx-10 2xl:mx-48'>
-
 
             <div className='grid grid-cols-1 xl:grid-cols-3'>
 
@@ -22,7 +29,8 @@ const MainInformation = () => {
                 <Fade direction='right' delay={200} cascade>
                     <div className='px-10 w-full flex justify-center'>
                         <div className='max-w-2xl'>
-                            <ContactForm title="Comienza tu experiencia en Unne"></ContactForm>
+                        {DataEmailJS?.length > 0 && DataEmailJS?.map((e) => (<ContactForm key={e.ServiceID} title="Comienza tu experiencia en Unne" DataEmail={e}/>))}
+                            
                         </div>
                     </div>
                 </Fade>
