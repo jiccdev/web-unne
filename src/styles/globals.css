@@ -3,10 +3,17 @@
 @tailwind utilities;
 
 :root {
+  --color-black: '#000';
   --font-poppins-regular: 'Poppins-regular';
   --font-poppins-semobold: 'Poppins-semibold';
   --font-poppins-bold: 'Poppins-bold';
   --font-inter-regular: 'Inter-regular';
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: var(--color-black);
+  }
 }
 
 @font-face {
