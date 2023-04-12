@@ -2,6 +2,13 @@ import React from 'react'
 import MeetingForm from '@/components/Form/MeetingForm';
 
 const banner = () => {
+    const DataEmailJS = [
+        {
+            ServiceID: "service_j0tf7sp",
+            TemplateID: "template_nm2o4an",
+            PublicKEY: "ZWanVNmLr-iX_Op5K",
+        },
+    ];
     return (
         <div className='flex justify-center py-5'>
             <div className='collapse trasition duration-300 ease-in-out'>
@@ -15,7 +22,7 @@ const banner = () => {
                     </div>
                 </div>
                 <div className='collapse-content pt-4'>
-                    <MeetingForm title="¿Quieres agendar una reunión con nosotros?" subtitle="Un equipo de expertos se pondra en contacto contigo"></MeetingForm>
+                    {DataEmailJS?.length > 0 && DataEmailJS?.map((e) => (<MeetingForm key={e.ServiceID} title="¿Quieres agendar una reunión con nosotros?" subtitle="Un equipo de expertos se pondra en contacto contigo" DataEmail={e}/>))}
                 </div>
 
             </div>

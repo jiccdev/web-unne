@@ -8,7 +8,7 @@ const Info = ({data}) => {
 
             <ul className="">
                 {children?.map(({ id, name, status }) => (
-                    <li key={id} className="py-2 font-semibold list-none">
+                    <li key={id} className="py-2 font-semibold list-none text-lg">
                         - {name} {status && 
                         (<span className='animate-heart text-white text-xs
                          bg-orange-500 rounded-full mx-1 px-2 uppercase inline-block'> {status}</span>)}
