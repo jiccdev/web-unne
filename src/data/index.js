@@ -793,3 +793,36 @@ export const bathroomsList = [
     selected: false,
   },
 ];
+
+export const propertyTypeData = [
+  {
+    id: 1,
+    name: 'Departamento',
+    value: 'departamento',
+  },
+  {
+    id: 2,
+    name: 'Casa',
+    value: 'casa',
+  },
+  {
+    id: 3,
+    name: 'Parcela',
+    value: 'parcela',
+  },
+  {
+    id: 4,
+    name: 'Bodega',
+    value: 'bodega',
+  },
+  {
+    id: 5,
+    name: 'Terreno',
+    value: 'terreno',
+  },
+  {
+    id: 6,
+    name: 'Estacionamientos',
+    value: 'estacionamientos',
+  },
+];

@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useValue } from '@/context/ContextProvider';
-import { bedroomsList, bathroomsList } from '../../../../../data';
+import {
+  bedroomsList,
+  bathroomsList,
+  propertyTypeData,
+} from '../../../../../data';
 
 const PropertyData = ({ formData, setFormData }) => {
   const { state, dispatch } = useValue();
@@ -121,17 +125,14 @@ const PropertyData = ({ formData, setFormData }) => {
 
   return (
     <div className="w-full">
-      <div className="bg-gray-200 px-2 rounded-md w-full py-5">
-        <h3 className="text-xl xl:text-3xl font-bold text-gray-700">
-          <span className="text-white bg-orange-500 text-center text-xl px-3 py-1 xl:px-4 xl:py-2 rounded-full font-bold mr-2">
-            1
-          </span>
+      <div className="bg-gray-200 px-4 xl:px-10 rounded-sm w-full py-3.5 border-b border-gray-200">
+        <h3 className="text-lg xl:text-lg font-bold text-gray-500">
           Atributos de la Propiedad
         </h3>
       </div>
 
-      <form className="w-full">
-        <div className="w-full my-5">
+      <form className="w-full px-4 xl:px-10">
+        <div className="w-full my-7">
           <label className="text-gray-500 font-bold">Ubicación</label>
           <div className="flex mt-3">
             <input
@@ -145,10 +146,33 @@ const PropertyData = ({ formData, setFormData }) => {
           </div>
         </div>
 
-        <div className="w-full  my-5">
+        <div className="w-full my-7">
           <label className="text-gray-500 font-bold">Tipo de Propiedad</label>
           <select
-            className="select select-ghost mt-3 bg-white w-full rounded-full border-gray-300"
+            className="select select-ghost mt-3 bg-white w-full rounded-full border-none text-lg font-semibold"
+            placeholder="Tipo de Propiedad"
+            value={formData?.propertyData?.propertyType}
+            onChange={handlePropertyType}
+          >
+            <option value="" selected>
+              Seleccionar tipo de propiedad
+            </option>
+            {propertyTypeData?.map((option) => (
+              <option key={option.id} value={option?.value}>
+                {option.name}
+              </option>
+            ))}
+            {/* <option>Tipo de Propiedad</option>
+            <option value="tipo1">Tipo 1</option>
+            <option value="tipo2">Tipo 2</option>
+            <option value="tipo3">Tipo 3</option> */}
+          </select>
+        </div>
+
+        {/* <div className="w-full my-7">
+          <label className="text-gray-500 font-bold">Tipo de Propiedad</label>
+          <select
+            className="select select-ghost mt-3 bg-white w-full rounded-full border-none text-lg font-semibold"
             placeholder="Tipo de Propiedad"
             value={formData?.propertyData?.propertyType}
             onChange={handlePropertyType}
@@ -158,9 +182,9 @@ const PropertyData = ({ formData, setFormData }) => {
             <option value="tipo2">Tipo 2</option>
             <option value="tipo3">Tipo 3</option>
           </select>
-        </div>
+        </div> */}
 
-        <div className="w-full xl:w-3/6 my-5">
+        <div className="w-full xl:w-3/6 my-7">
           <label className="text-gray-500 font-bold">
             Numero de dormitorios
           </label>
@@ -183,7 +207,7 @@ const PropertyData = ({ formData, setFormData }) => {
           </div>
         </div>
 
-        <div className="w-full xl:w-3/6 my-5">
+        <div className="w-full xl:w-3/6 my-7">
           <label className="text-gray-500 font-bold">Numero de baños</label>
           <div className="flex mt-3">
             {bathrooms.length > 0 &&
@@ -204,7 +228,7 @@ const PropertyData = ({ formData, setFormData }) => {
           </div>
         </div>
 
-        <div className="w-full my-5">
+        <div className="w-full my-7">
           <label className="text-gray-500 font-bold">
             Superficie total en m2 (estimada)
           </label>
@@ -220,7 +244,7 @@ const PropertyData = ({ formData, setFormData }) => {
           </div>
         </div>
 
-        <div className="w-full my-5">
+        <div className="w-full my-7">
           <label className="text-gray-500 font-bold">Gastos Comunes</label>
           <div className="flex mt-3">
             <input
