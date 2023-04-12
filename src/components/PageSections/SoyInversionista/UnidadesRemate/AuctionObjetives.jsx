@@ -1,9 +1,11 @@
 import { iconsList } from '@/components/Icons';
 import { Objetives } from '@/components/Card/Objetives';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { ObjetivesAuctionData } from '@/data';
 import { Fade } from 'react-awesome-reveal';
+import ToastComponent from '@/components/Toastify/ToastifyComponent';
+import { toast } from 'react-toastify';
 
 const AuctionObjetives = () => {
 
@@ -19,17 +21,89 @@ const AuctionObjetives = () => {
   /* Esta es la func de el form emailjs */
   const form = useRef();
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
+    /* console.log(formData); */
 
-    emailjs.sendForm('service_56n67rp', 'template_fgk7hm7', form.current, 'VNBSmj2Aykv9fczH0')
-      .then((result) => {
-        console.log(result.text);
+    if ([formData?.name, formData?.email, formData?.phone].includes('')) {
+      showToastErrorMsg("Los campos deben ser obligatorios");
+      return;
+    }
 
-      }, (error) => {
-        console.log(error.text);
-      });
+    try {
+      const response = emailjs.sendForm('service_56n67rp', 'template_fgk7hm7', form.current, 'VNBSmj2Aykv9fczH0');
+      const responseStatus = await response;
+      responseStatus.status === 200 &&
+        showToastSuccessMsg("Mensaje envidado con exito, revise su correo")
+    } catch (error) {
+      showToastErrorMsg("Ha ocurrido un error al enviar el formulario")
+
+    }
+
   };
+
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+
+  });
+
+  /* Update name */
+  const handleName = (name) => {
+    setFormData({
+      ...formData,
+      name: name,
+    });
+  };
+
+  /* Update email */
+  const handleEmail = (email) => {
+    setFormData({
+      ...formData,
+      email: email,
+    });
+  };
+
+  /* Update phone */
+  const handlePhone = (phone) => {
+    setFormData({
+      ...formData,
+      phone: phone,
+    });
+  };
+
+  /* Mensajes toast*/
+  /* On toast success */
+  const showToastSuccessMsg = (msg) => {
+    toast.success(msg, {
+      position: 'bottom-center',
+      autoClose: 2500,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
+  };
+
+  /* On toast error */
+  const showToastErrorMsg = (msg) => {
+    toast.error(msg, {
+      position: 'bottom-center',
+      autoClose: 1000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
+  };
+
+
 
 
   return (
@@ -67,14 +141,16 @@ const AuctionObjetives = () => {
           Déjanos tus datos y trabajaremos juntos para encontrar la mejor
           alternativa de inversión para ti.
         </h2>
+
         <form className="w-full max-w-md " ref={form} onSubmit={sendEmail}>
           <div className="mb-8 shadow border-l-gray-600 rounded-3xl">
             <input
               className="bg-white bg-opacity-60  backdrop-filter backdrop-blur-md  shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="user_name"
               name="user_name"
-              type=""
+              type="text"
               placeholder="Nombre y apellidos"
+              onChange={(e) => handleName(e.target.value)}
             />
           </div>
 
@@ -83,8 +159,9 @@ const AuctionObjetives = () => {
               className="bg-white  bg-opacity-60  backdrop-filter backdrop-blur-md  shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="user_email"
               name="user_email"
-              type=""
+              type="email"
               placeholder="Email"
+              onChange={(e) => handleEmail(e.target.value)}
             />
           </div>
 
@@ -93,8 +170,9 @@ const AuctionObjetives = () => {
               className="bg-white  bg-opacity-60  backdrop-filter backdrop-blur-md  shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="user_phone"
               name="user_phone"
-              type=""
+              type="number"
               placeholder="Teléfono"
+              onChange={(e) => handlePhone(e.target.value)}
             />
           </div>
 
@@ -107,6 +185,8 @@ const AuctionObjetives = () => {
               Enviar
             </button>
           </div>
+
+          <ToastComponent />
 
         </form>
 
