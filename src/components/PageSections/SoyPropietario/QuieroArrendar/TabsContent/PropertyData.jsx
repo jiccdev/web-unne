@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useValue } from '@/context/ContextProvider';
+import { NumericFormat } from 'react-number-format';
 import {
   bedroomsList,
   bathroomsList,
@@ -7,7 +7,6 @@ import {
 } from '../../../../../data';
 
 const PropertyData = ({ formData, setFormData }) => {
-  const { state, dispatch } = useValue();
   const [bedrooms, setBedrooms] = useState(bedroomsList);
   const [bathrooms, setBathrooms] = useState(bathroomsList);
 
@@ -45,7 +44,6 @@ const PropertyData = ({ formData, setFormData }) => {
     setBathrooms(newBathrooms);
   };
 
-  /** Handle Form Data inputs */
   /** Update Property Type */
   const handlePropertyType = (ev) => {
     setFormData({
@@ -91,12 +89,12 @@ const PropertyData = ({ formData, setFormData }) => {
   };
 
   /** Update Common Expenses */
-  const handleCommonExpenses = (commonExpenses) => {
+  const handleCommonExpenses = (ev) => {
     setFormData({
       ...formData,
       propertyData: {
         ...formData.propertyData,
-        commonExpenses: Number(commonExpenses),
+        commonExpenses: parseInt(ev.target.value.replace(/\./g, '')),
       },
     });
   };
@@ -123,7 +121,6 @@ const PropertyData = ({ formData, setFormData }) => {
     });
   };
 
-  console.log(state.location.text);
   console.log('PropertyData', formData.propertyData);
 
   return (
@@ -229,13 +226,17 @@ const PropertyData = ({ formData, setFormData }) => {
         <div className="w-full my-7">
           <label className="text-gray-500 font-bold">Gastos Comunes</label>
           <div className="flex mt-3">
-            <input
-              className="w-full p-4 bg-white rounded-full border-gray-300 outline-none focus:outline-none"
+            <NumericFormat
               type="number"
-              placeholder="$62.000"
-              name="surfaceM2"
               value={formData?.propertyData?.commonExpenses}
-              onChange={(ev) => handleCommonExpenses(ev.target.value)}
+              onChange={handleCommonExpenses}
+              placeholder="$ Ingrese monto"
+              allowNegative={false}
+              decimalSeparator={','}
+              thousandSeparator={'.'}
+              name="commonExpenses"
+              id="commonExpenses"
+              className="w-full p-4 bg-white rounded-full border-gray-300 outline-none focus:outline-none"
             />
           </div>
         </div>
