@@ -10,7 +10,6 @@ const PropertyData = ({ formData, setFormData }) => {
   const { state, dispatch } = useValue();
   const [bedrooms, setBedrooms] = useState(bedroomsList);
   const [bathrooms, setBathrooms] = useState(bathroomsList);
-  const [addressLocation, setAddressLocation] = useState('');
 
   const handleSelectBedroom = (id) => {
     const newBedrooms = bedrooms.map((bedroom) => {
@@ -145,9 +144,8 @@ const PropertyData = ({ formData, setFormData }) => {
               placeholder="Ubicación de la Propiedad"
               name="address"
               id="address"
-              value={formData.propertyData.address}
-
-              // disabled
+              defaultValue={formData.propertyData.address}
+              disabled
             />
           </div>
         </div>

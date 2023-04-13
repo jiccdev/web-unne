@@ -18,7 +18,7 @@ const StepsToLease = () => {
   const [formData, setFormData] = useState({
     propertyData: {
       address: '',
-      propertyType: '',
+      propertyType: 'Departamento' ?? '',
       bedrooms: 0,
       bathrooms: 0,
       surfaceM2: 0,

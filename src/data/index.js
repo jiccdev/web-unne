@@ -798,31 +798,31 @@ export const propertyTypeData = [
   {
     id: 1,
     name: 'Departamento',
-    value: 'departamento',
+    value: 'Departamento',
   },
   {
     id: 2,
     name: 'Casa',
-    value: 'casa',
+    value: 'Casa',
   },
   {
     id: 3,
     name: 'Parcela',
-    value: 'parcela',
+    value: 'Parcela',
   },
   {
     id: 4,
     name: 'Bodega',
-    value: 'bodega',
+    value: 'Bodega',
   },
   {
     id: 5,
     name: 'Terreno',
-    value: 'terreno',
+    value: 'Terreno',
   },
   {
     id: 6,
     name: 'Estacionamientos',
-    value: 'estacionamientos',
+    value: 'Estacionamientos',
   },
 ];
