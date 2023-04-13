@@ -4,7 +4,7 @@ import { useValue } from '@/context/ContextProvider';
 import { useControl } from 'react-map-gl';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
-const Geocoder = () => {
+const Geocoder = ({ formData, setFormData }) => {
   const { dispatch } = useValue();
   const ctrl = new MapboxGeocoder({
     accessToken: process.env.NEXT_PUBLIC_MAPBOX_TOKEN,
@@ -23,6 +23,14 @@ const Geocoder = () => {
         lng: coords[0],
         lat: coords[1],
         text: e.result.place_name || e.result.text,
+      },
+    });
+
+    setFormData({
+      ...formData,
+      propertyData: {
+        ...formData.propertyData,
+        address: e.result.place_name || e.result.text,
       },
     });
   });

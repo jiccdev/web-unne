@@ -10,6 +10,7 @@ const PropertyData = ({ formData, setFormData }) => {
   const { state, dispatch } = useValue();
   const [bedrooms, setBedrooms] = useState(bedroomsList);
   const [bathrooms, setBathrooms] = useState(bathroomsList);
+  const [addressLocation, setAddressLocation] = useState('');
 
   const handleSelectBedroom = (id) => {
     const newBedrooms = bedrooms.map((bedroom) => {
@@ -123,7 +124,8 @@ const PropertyData = ({ formData, setFormData }) => {
     });
   };
 
-  console.log(formData.propertyData);
+  console.log(state.location.text);
+  console.log('PropertyData', formData.propertyData);
 
   return (
     <div className="w-full">
@@ -142,15 +144,10 @@ const PropertyData = ({ formData, setFormData }) => {
               type="text"
               placeholder="Ubicación de la Propiedad"
               name="address"
-              value={`${state.location.text}`}
-              onChange={(ev) =>
-                setFormData({
-                  propertyData: {
-                    address: 'prueba',
-                  },
-                })
-              }
-              disabled
+              id="address"
+              value={formData.propertyData.address}
+
+              // disabled
             />
           </div>
         </div>

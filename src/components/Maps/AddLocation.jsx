@@ -8,7 +8,7 @@ import Geocoder from './Geocoder';
 import { useValue } from '@/context/ContextProvider';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-const AddLocation = () => {
+const AddLocation = ({ formData, setFormData }) => {
   const { state, dispatch } = useValue();
   const { location } = state;
   const mapRef = useRef();
@@ -75,7 +75,7 @@ const AddLocation = () => {
             })
           }
         />
-        <Geocoder />
+        <Geocoder formData={formData} setFormData={setFormData} />
       </ReactMapGl>
     </div>
   );

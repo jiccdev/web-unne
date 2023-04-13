@@ -34,6 +34,8 @@ const StepsToLease = () => {
     validateUser: ['', '', '', ''],
   });
 
+  console.log('address: ', formData.propertyData.address);
+
   useEffect(() => {
     switch (isTabActive) {
       case 0:
@@ -167,7 +169,7 @@ const StepsToLease = () => {
 
         <div className="w-full flex flex-col">
           <div className="w-full h-[400px] sm:h-[450px] xl:h-[600px] mt-10">
-            <AddLocation />
+            <AddLocation formData={formData} setFormData={setFormData} />
           </div>
 
           <div
