@@ -4,6 +4,8 @@ import styles from '../../../../styles/components/ContactUsStyles/Social.module.
 import { iconsList } from '@/components/Icons';
 import ContainerSimple from './ComponentsAcademy/ContainerSimple';
 import { Fade } from 'react-awesome-reveal';
+import MapHome from '@/components/Maps/MapHome';
+
 
 const ContactUs = () => {
 
@@ -12,6 +14,8 @@ const ContactUs = () => {
     BsInstagram,
     BsYoutube
   } = iconsList;
+
+
 
   return (
     <Fade delay={300} direction='left'>
@@ -23,13 +27,8 @@ const ContactUs = () => {
 
           <div className="flex flex-col">
             <div className="w-full h-96 pt-8 pl-12 pr-12">
-              <iframe
-                className="w-full h-full"
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13321.083909707775!2d-70.585684!3d-33.416179!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf182be3e047%3A0x6cd33f25cf7a92dc!2sAsturias%20171%2C%20Of.%20101%2C%207550130%20Las%20Condes%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1679881853426!5m2!1ses-419!2scl"
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+
+              <MapHome />
             </div>
 
             <div className="flex flex-col justify-center items-center pt-20">
