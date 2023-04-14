@@ -16,7 +16,7 @@ const NavMobile = ({ data = navigationData, onClickClose }) => {
           <Disclosure key={i.href + index} as="li">
             <Link
               href={i.href || '/'}
-              className="flex px-4 py-2.5 text-neutral-900 dark:text-neutral-200 text-sm font-medium rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 mt-[2px]"
+              className="flex px-4 py-2.5 text-black text-sm font-medium rounded-lg hover:bg-[#e5e7eb] mt-[2px]"
             >
               <span
                 className={!i.children ? 'block w-full' : ''}
@@ -50,10 +50,10 @@ const NavMobile = ({ data = navigationData, onClickClose }) => {
       <Disclosure
         key={item.id}
         as="li"
-        className="text-neutral-900 dark:text-white"
+        className="text-neutral-900 dark:text-black"
       >
         <Link
-          className="flex w-full items-center py-2.5 px-4 font-medium uppercase tracking-wide text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg"
+          className="flex w-full items-center py-2.5 px-4 font-medium uppercase tracking-wide text-sm hover:bg-[#e5e7eb] rounded-lg"
           href={{
             pathname: item.href || undefined,
           }}
@@ -86,7 +86,7 @@ const NavMobile = ({ data = navigationData, onClickClose }) => {
   };
 
   return (
-    <div className="overflow-y-auto w-full max-w-sm h-screen py-2 transition transform shadow-lg ring-1 dark:ring-neutral-700 bg-white dark:bg-neutral-900 divide-y-2 divide-neutral-100 dark:divide-neutral-800">
+    <div className="overflow-y-auto w-full max-w-sm h-screen py-2 transition transform shadow-lg ring-1 ring-[#FAB916] bg-white dark:bg-white  divide-y-2 divide-[#d5d7db]">
       <div className="py-6 px-5">
         <Logo />
         <div className="flex flex-col mt-5 text-neutral-700 dark:text-neutral-300 text-sm">
@@ -106,14 +106,14 @@ const NavMobile = ({ data = navigationData, onClickClose }) => {
           <ButtonClose onClick={onClickClose} />
         </span>
       </div>
-      <ul className="flex flex-col py-6 px-2 space-y-1">
+      <ul className="flex flex-col py-6 px-2 space-y-1 ">
         {data.map(_renderItem)}
       </ul>
-      <div className="flex items-center justify-between py-6 px-5 space-x-2">
-        <ButtonPrimary href={'/page-upload-item'} className="!px-10">
+      <div className="flex items-center justify-between py-6 px-5 space-x-2 ">
+        <ButtonPrimary href={'/page-upload-item'} className="!px-10 bg-[#e5e7eb] hover:bg-[#cfd1d4]">
           Contacto
         </ButtonPrimary>
-        <ButtonPrimary href={'/page-upload-item'} className="!px-10">
+        <ButtonPrimary href={'/page-upload-item'} className="!px-10 bg-[#e5e7eb] hover:bg-[#cfd1d4]">
           Información
         </ButtonPrimary>
       </div>
