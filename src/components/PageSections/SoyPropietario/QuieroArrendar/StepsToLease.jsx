@@ -6,10 +6,8 @@ import PersonalData from './TabsContent/PersonalData';
 import ValidateUser from './TabsContent/ValidateUser';
 import CheckedStep from './TabsContent/components/CheckedStep';
 import AddLocation from '@/components/Maps/AddLocation';
-import { useValue } from '@/context/ContextProvider';
 
 const StepsToLease = () => {
-  const { state } = useValue();
   const [isTabActive, setIsTabActive] = useState(0);
   const [bgTab1, setBgTab1] = useState('bg-orange-500 text-white');
   const [bgTab2, setBgTab2] = useState('');
@@ -34,12 +32,11 @@ const StepsToLease = () => {
     validateUser: ['', '', '', ''],
   });
 
-  console.log('address: ', formData.propertyData.address);
-
   useEffect(() => {
     switch (isTabActive) {
       case 0:
         Object.values(formData.propertyData).includes(0) ||
+        formData.propertyData.address === '' ||
         formData.propertyData.propertyType === ''
           ? setBgTab1('bg-orange-500 text-white')
           : setBgTab1('bg-green-500 text-white') && setIsTabActive(1);
@@ -64,6 +61,8 @@ const StepsToLease = () => {
     bgTab3,
     isTabActive,
   ]);
+
+  console.log(formData.propertyData.address === '');
 
   const renderTabs = () => {
     return (

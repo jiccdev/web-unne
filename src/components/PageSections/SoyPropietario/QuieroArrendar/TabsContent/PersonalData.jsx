@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import ToastComponent from '@/components/Toastify/ToastifyComponent';
 import { toast } from 'react-toastify';
@@ -7,6 +7,7 @@ import { useValue } from '@/context/ContextProvider';
 const PersonalData = ({ formData, setFormData }) => {
   const { state, dispatch } = useValue();
   const form = useRef();
+  const [isDisabled, setIsDisabled] = useState(true);
 
   /** Handle Form Data inputs */
   /** Update Name */
@@ -41,8 +42,6 @@ const PersonalData = ({ formData, setFormData }) => {
       },
     });
   };
-
-  console.log('VerificaionCode', state.verificationCode.code);
 
   const handleVerification = () => {
     const code = [
@@ -102,7 +101,6 @@ const PersonalData = ({ formData, setFormData }) => {
     const apiKey = process.env.NEXT_PUBLIC_API_KEY_EMAILJS;
 
     if (
-      formData?.personalData?.address === undefined ||
       [
         formData?.personalData?.name,
         formData?.personalData.email,
@@ -131,20 +129,26 @@ const PersonalData = ({ formData, setFormData }) => {
     }
   };
 
-  console.log(formData.personalData);
+  console.log('PersonalData', formData.personalData);
+
+  useEffect(() => {
+    if (isDisabled) {
+      setIsDisabled(false);
+    }
+  }, [isDisabled]);
 
   return (
     <div className="w-full">
       <ToastComponent />
 
-      <div>
-        <h1 className="text-xl xl:text-3xl font-bold text-gray-700">
-          Datos Personales
-        </h1>
+      <div className="bg-gray-200 px-4 xl:px-10 rounded-sm w-full py-3.5 border-b border-gray-200">
+        <h3 className="text-lg xl:text-lg font-bold text-gray-500">
+          Datos personales
+        </h3>
       </div>
 
-      <form ref={form} onSubmit={sendEmail} className="w-full">
-        <div className="w-full xl:w-6/6 my-5">
+      <form ref={form} onSubmit={sendEmail} className="w-full px-4 xl:px-10">
+        <div className="w-full my-7">
           <label className="text-gray-500 font-bold">Nombre y Apellidos</label>
           <div className="flex mt-3">
             <input
@@ -159,7 +163,7 @@ const PersonalData = ({ formData, setFormData }) => {
             />
           </div>
         </div>
-        <div className="w-full xl:w-6/6 my-5">
+        <div className="w-full my-7">
           <label className="text-gray-500 font-bold">Email</label>
           <div className="flex mt-3">
             <input
@@ -174,14 +178,13 @@ const PersonalData = ({ formData, setFormData }) => {
             />
           </div>
         </div>
-        <div className="w-full xl:w-6/6 my-5">
+        <div className="w-full my-7">
           <label className="text-gray-500 font-bold">Teléfono</label>
           <div className="flex mt-3">
             <input
               className="w-full p-4 bg-white rounded-full border-gray-300 outline-none focus:outline-none"
               type="phone"
               placeholder="Ej: 569 XXXXXXXX"
-              // name="phone"
               name="phone"
               id="phone"
               value={formData?.personalData?.phone}
@@ -203,13 +206,28 @@ const PersonalData = ({ formData, setFormData }) => {
           />
         </div>
 
+        {/* [
+        formData?.personalData?.name,
+        formData?.personalData.email,
+        formData?.personalData?.phone,
+      ].includes('') */}
+
         <div className="w-full flex items-center justify-center my-10">
           <button
             onClick={handleCodeGeneration}
             type="submit"
-            className="bg-orange-500 py-2 px-8 rounded-full text-white font-bold"
+            className={`${
+              isDisabled
+                ? 'bg-orange-300 text-white'
+                : 'bg-orange-500 text-white'
+            } py-2 px-8 rounded-full font-bold`}
+            disabled={[
+              formData?.personalData?.name,
+              formData?.personalData.email,
+              formData?.personalData?.phone,
+            ].includes('')}
           >
-            Enviar codigo de verificacion
+            Enviar código al correo
           </button>
           <p>{state.verificationCode.code}</p>
 

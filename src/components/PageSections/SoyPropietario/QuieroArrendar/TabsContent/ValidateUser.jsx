@@ -61,7 +61,7 @@ function ValidateUser({ formData, setFormData }) {
     return isValidCode;
   };
 
-  console.log('Is valid', handleVerificationCode());
+  // console.log('Is valid', handleVerificationCode());
 
   const validateVerificationCode = (ev) => {
     ev.preventDefault();

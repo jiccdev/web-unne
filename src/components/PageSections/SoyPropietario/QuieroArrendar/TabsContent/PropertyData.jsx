@@ -227,7 +227,6 @@ const PropertyData = ({ formData, setFormData }) => {
           <label className="text-gray-500 font-bold">Gastos Comunes</label>
           <div className="flex mt-3">
             <NumericFormat
-              type="number"
               value={formData?.propertyData?.commonExpenses}
               onChange={handleCommonExpenses}
               placeholder="$ Ingrese monto"
