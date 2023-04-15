@@ -6,7 +6,7 @@ const ButtonClose = ({ className = '', onClick = () => {} }) => {
 
   return (
     <button
-      className={`w-8 h-8 flex items-center justify-center rounded-full dark:bg-gray-800 hover:bg-gray-100 text-gray-200 dark:hover:bg-gray-700 dark:text-gray-500 ${className} `}
+      className={`w-8 h-8 flex items-center justify-center rounded-full bg-white hover:bg-[#e5e7eb] ${className} `}
       onClick={onClick}
     >
       <span className="sr-only">Close</span>
