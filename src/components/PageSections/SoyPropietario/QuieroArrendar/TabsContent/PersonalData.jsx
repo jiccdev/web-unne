@@ -221,7 +221,7 @@ const PersonalData = ({ formData, setFormData }) => {
           >
             Enviar código al correo
           </button>
-          <p>{state.verificationCode.code}</p>
+          {/* <p>{state.verificationCode.code}</p> */}
         </div>
       </form>
     </div>

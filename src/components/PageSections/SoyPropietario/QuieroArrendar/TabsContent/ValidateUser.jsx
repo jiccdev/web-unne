@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/router';
 import emailjs from '@emailjs/browser';
 import ToastComponent from '@/components/Toastify/ToastifyComponent';
 import Button from '@/components/Button/Button';
@@ -20,9 +21,14 @@ function ValidateUser({ formData, setFormData }) {
   const [inputValues, setInputValues] = useState(formData.validateUser);
   const [isValidCode, setIsValidCode] = useState(false);
   const [responseStatus, setResponseStatus] = useState(null);
-
   const [bedrooms, setBedrooms] = useState(bedroomsList);
   const [bathrooms, setBathrooms] = useState(bathroomsList);
+
+  const router = useRouter();
+
+  function handleClick() {
+    router.reload(); // Actualiza la página actual
+  }
 
   const handleInputChange = (event, index) => {
     const newValues = [...inputValues];

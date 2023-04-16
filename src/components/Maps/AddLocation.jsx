@@ -42,13 +42,13 @@ const AddLocation = ({ formData, setFormData }) => {
         initialViewState={{
           longitude: location.lng,
           latitude: location.lat,
-          zoom: 8,
+          zoom: 14,
         }}
         mapStyle="mapbox://styles/mapbox/streets-v12"
       >
         <Marker
-          longitude={0}
-          latitude={0}
+          longitude={-70.5856444039788}
+          latitude={-33.41615765}
           draggable
           onDragEnd={(ev) =>
             dispatch({

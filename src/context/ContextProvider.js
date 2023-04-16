@@ -3,8 +3,8 @@ import { reducer } from './reducer';
 
 const initialState = {
   location: {
-    lng: 0,
-    lat: 0,
+    lng: -70.5856444039788,
+    lat: -33.41615765,
     text: '',
   },
   verificationCode: {
