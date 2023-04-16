@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import ToastComponent from '@/components/Toastify/ToastifyComponent';
 import Button from '@/components/Button/Button';
@@ -55,20 +55,22 @@ function ValidateUser({ formData, setFormData }) {
     });
   };
 
+  const [isValidCode, setIsValidCode] = useState(false);
+  const [responseStatus, setResponseStatus] = useState(null);
+
   const handleVerificationCode = () => {
     const validationCodeString = `${inputValues[0]}${inputValues[1]}${inputValues[2]}${inputValues[3]}`;
     const isValidCode = validationCodeString === state?.verificationCode?.code;
+    setIsValidCode(isValidCode);
     return isValidCode;
   };
-
-  // console.log('Is valid', handleVerificationCode());
 
   const validateVerificationCode = (ev) => {
     ev.preventDefault();
 
-    handleVerificationCode()
+    handleVerificationCode() || isValidCode
       ? showToastSuccessMsg(`Verificacion realizada con exito`)
-      : showToastErrorMsg('Codigo no valido');
+      : showToastErrorMsg('Código no válido ');
   };
 
   const sendForm = async (ev) => {
@@ -88,19 +90,32 @@ function ValidateUser({ formData, setFormData }) {
       );
 
       const responseStatus = await response;
-      responseStatus.status === 200 &&
+
+      if (responseStatus.status === 200) {
+        setResponseStatus(responseStatus.status);
         showToastSuccessMsg(`Solicitud enviada correctamente`);
-      console.log('enviado');
+      }
     } catch (error) {
       showToastErrorMsg('Ha ocurrido un error al enviar la solicitud');
     }
   };
 
+  console.log('responseStatus', responseStatus);
+  console.log('IsValidCode', isValidCode);
+
+  useEffect(() => {
+    isValidCode ? setIsValidCode(true) : setIsValidCode(false);
+
+    // setTimeout(() => {
+    //   setIsValidCode(false);
+    // }, 90000);
+  }, [isValidCode]);
+
   return (
     <div className="w-full xl:w-4/6 mx-auto my-14">
       <ToastComponent />
       <h3 className="text-2xl xl:text-4xl font-bold text-center mb-5">
-        Excelente! Solo falta validar tu teléfono!
+        ¡Excelente! Solo falta validar Tu email!
       </h3>
       <form ref={form} onSubmit={validateVerificationCode}>
         <div className="grid grid-cols-4 g-0">
@@ -146,51 +161,51 @@ function ValidateUser({ formData, setFormData }) {
           </div>
         </div>
 
-        <div className="w-full mx-auto flex justify-center my-10">
-          <Button
-            type="submit"
-            id="submit-button"
-            className="bg-orange-500 w-4/6 text-white text-2xl text-center rounded-full py-1 pb-2 px-4 hover:bg-orange-600"
-          >
-            Validar código
-          </Button>
-        </div>
+        {isValidCode ? null : (
+          <div className="w-full mx-auto flex justify-center my-10">
+            <Button
+              type="submit"
+              id="submit-button"
+              className="bg-orange-500 hover:bg-orange-600 text-white w-4/6 text-2xl text-center rounded-full py-1 pb-2 px-4"
+            >
+              Validar código
+            </Button>
+          </div>
+        )}
       </form>
 
       <form ref={formToEjecutive} onSubmit={sendForm}>
-        <div className="w-full mx-auto flex justify-center my-10">
-          
-          
-          {/* SENDING HIDDEN DATA */}
+        <div className="w-full mx-auto justify-center my-10">
+          <input
+            className="hidden w-full p-4 bg-white rounded-full border-gray-300 outline-none focus:outline-none"
+            type="text"
+            placeholder="Ingres tu nombre y apellidos"
+            name="from_name"
+            id="from_name"
+            value={formData?.personalData?.name}
+            onChange={(ev) => handleName(ev.target.value)}
+          />
 
           <input
-              className="w-full p-4 bg-white rounded-full border-gray-300 outline-none focus:outline-none"
-              type="text"
-              placeholder="Ingres tu nombre y apellidos"
-              // name="name"
-              name="from_name"
-              id="from_name"
-              value={formData?.personalData?.name}
-              onChange={(ev) => handleName(ev.target.value)}
-            />
+            type="email"
+            id="email"
+            name="email"
+            value={formData?.personalData?.email}
+            onChange={() => {
+              formData?.personalData?.email;
+            }}
+            className="hidden w-full p-4 bg-white rounded-full border-gray-300 outline-none focus:outline-none"
+          />
 
-          <div>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData?.personalData?.email}
-              onChange={()=>{formData?.personalData?.email}}
-            />
-          </div>
-
-          <Button
-            type="submit"
-            id="submit-button"
-            className="bg-orange-500 w-4/6 text-white text-2xl text-center rounded-full py-1 pb-2 px-4 hover:bg-orange-600"
-          >
-            Enviar a Solicitud
-          </Button>
+          {isValidCode ? (
+            <Button
+              type="submit"
+              id="submit-button"
+              className="mx-auto flex justify-center my-10 bg-orange-500 w-4/6 text-white text-2xl text-center rounded-full py-1 pb-2 px-4 hover:bg-orange-600"
+            >
+              Enviar Solicitud
+            </Button>
+          ) : null}
         </div>
       </form>
     </div>

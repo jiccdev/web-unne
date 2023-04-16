@@ -62,8 +62,6 @@ const StepsToLease = () => {
     isTabActive,
   ]);
 
-  console.log(formData.propertyData.address === '');
-
   const renderTabs = () => {
     return (
       <Fragment>

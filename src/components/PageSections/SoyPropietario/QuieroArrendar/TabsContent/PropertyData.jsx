@@ -121,8 +121,6 @@ const PropertyData = ({ formData, setFormData }) => {
     });
   };
 
-  console.log('PropertyData', formData.propertyData);
-
   return (
     <div className="w-full">
       <div className="bg-gray-200 px-4 xl:px-10 rounded-sm w-full py-3.5 border-b border-gray-200">

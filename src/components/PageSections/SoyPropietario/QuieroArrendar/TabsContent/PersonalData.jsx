@@ -129,8 +129,6 @@ const PersonalData = ({ formData, setFormData }) => {
     }
   };
 
-  console.log('PersonalData', formData.personalData);
-
   useEffect(() => {
     if (isDisabled) {
       setIsDisabled(false);
