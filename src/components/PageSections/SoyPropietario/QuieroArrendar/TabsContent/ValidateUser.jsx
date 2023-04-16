@@ -5,14 +5,24 @@ import Button from '@/components/Button/Button';
 import { toast } from 'react-toastify';
 import { useValue } from '@/context/ContextProvider';
 
+// ***** PROPERTYDATA FORM ***** //
+import { NumericFormat } from 'react-number-format';
+import {
+  bedroomsList,
+  bathroomsList,
+  propertyTypeData,
+} from '../../../../../data';
+
 function ValidateUser({ formData, setFormData }) {
   const { state } = useValue();
   const form = useRef();
   const formToEjecutive = useRef();
-
   const [inputValues, setInputValues] = useState(formData.validateUser);
-  const [verificationCode, setVerificationCode] = useState('');
-  const [isValidEmailCode, setIsValidEmailCode] = useState('');
+  const [isValidCode, setIsValidCode] = useState(false);
+  const [responseStatus, setResponseStatus] = useState(null);
+
+  const [bedrooms, setBedrooms] = useState(bedroomsList);
+  const [bathrooms, setBathrooms] = useState(bathroomsList);
 
   const handleInputChange = (event, index) => {
     const newValues = [...inputValues];
@@ -55,9 +65,6 @@ function ValidateUser({ formData, setFormData }) {
     });
   };
 
-  const [isValidCode, setIsValidCode] = useState(false);
-  const [responseStatus, setResponseStatus] = useState(null);
-
   const handleVerificationCode = () => {
     const validationCodeString = `${inputValues[0]}${inputValues[1]}${inputValues[2]}${inputValues[3]}`;
     const isValidCode = validationCodeString === state?.verificationCode?.code;
@@ -88,9 +95,7 @@ function ValidateUser({ formData, setFormData }) {
         formToEjecutive.current,
         apiKey
       );
-
       const responseStatus = await response;
-
       if (responseStatus.status === 200) {
         setResponseStatus(responseStatus.status);
         showToastSuccessMsg(`Solicitud enviada correctamente`);
@@ -100,16 +105,121 @@ function ValidateUser({ formData, setFormData }) {
     }
   };
 
-  console.log('responseStatus', responseStatus);
-  console.log('IsValidCode', isValidCode);
-
   useEffect(() => {
     isValidCode ? setIsValidCode(true) : setIsValidCode(false);
-
-    // setTimeout(() => {
-    //   setIsValidCode(false);
-    // }, 90000);
   }, [isValidCode]);
+
+  // ***** PROPERTYDATA FORM ***** //
+  const handleSelectBedroom = (id) => {
+    const newBedrooms = bedrooms.map((bedroom) => {
+      if (bedroom.id === id) {
+        return {
+          ...bedroom,
+          selected: true,
+        };
+      } else {
+        return {
+          ...bedroom,
+          selected: false,
+        };
+      }
+    });
+    setBedrooms(newBedrooms);
+  };
+
+  const handleSelectBathroom = (id) => {
+    const newBathrooms = bathrooms.map((bathroom) => {
+      if (bathroom.id === id) {
+        return {
+          ...bathroom,
+          selected: true,
+        };
+      } else {
+        return {
+          ...bathroom,
+          selected: false,
+        };
+      }
+    });
+    setBathrooms(newBathrooms);
+  };
+
+  /** Update Property Type */
+  const handlePropertyType = (ev) => {
+    setFormData({
+      ...formData,
+      propertyData: {
+        ...formData.propertyData,
+        propertyType: ev.target.value,
+      },
+    });
+  };
+
+  /** Update Bedrooms */
+  const handleBedrooms = (bedroomId) => {
+    setFormData({
+      ...formData,
+      propertyData: {
+        ...formData.propertyData,
+        bedrooms: Number(bedroomId),
+      },
+    });
+  };
+
+  /** Update Bathrooms */
+  const handleBathrooms = (bathroomId) => {
+    setFormData({
+      ...formData,
+      propertyData: {
+        ...formData.propertyData,
+        bathrooms: Number(bathroomId),
+      },
+    });
+  };
+
+  /** Update SurfaceM2 */
+  const handleSurfaceM2 = (surfaceM2) => {
+    setFormData({
+      ...formData,
+      propertyData: {
+        ...formData.propertyData,
+        surfaceM2: Number(surfaceM2),
+      },
+    });
+  };
+
+  /** Update Common Expenses */
+  const handleCommonExpenses = (ev) => {
+    setFormData({
+      ...formData,
+      propertyData: {
+        ...formData.propertyData,
+        commonExpenses: parseInt(ev.target.value.replace(/\./g, '')),
+      },
+    });
+  };
+
+  /** Update Parking Lots */
+  const handleParkingLots = (parkingLots) => {
+    setFormData({
+      ...formData,
+      propertyData: {
+        ...formData.propertyData,
+        parkingLots: Number(parkingLots),
+      },
+    });
+  };
+
+  /** Update Have warehouse */
+  const handleHaveWarehouse = (haveWarehouse) => {
+    setFormData({
+      ...formData,
+      propertyData: {
+        ...formData.propertyData,
+        haveWarehouse: haveWarehouse,
+      },
+    });
+  };
 
   return (
     <div className="w-full xl:w-4/6 mx-auto my-14">
@@ -174,16 +284,134 @@ function ValidateUser({ formData, setFormData }) {
         )}
       </form>
 
+      {/* SEND FORM TO REALTOR */}
       <form ref={formToEjecutive} onSubmit={sendForm}>
         <div className="w-full mx-auto justify-center my-10">
           <input
-            className="hidden w-full p-4 bg-white rounded-full border-gray-300 outline-none focus:outline-none"
+            className="hidden"
             type="text"
-            placeholder="Ingres tu nombre y apellidos"
-            name="from_name"
-            id="from_name"
-            value={formData?.personalData?.name}
-            onChange={(ev) => handleName(ev.target.value)}
+            name="address"
+            id="address"
+            defaultValue={formData.propertyData.address}
+            onChange={() =>
+              setFormData({
+                ...formData,
+                propertyData: {
+                  ...formData.propertyData,
+                  address: formData.propertyData.address,
+                },
+              })
+            }
+          />
+
+          <select
+            className="hidden"
+            value={formData?.propertyData?.propertyType}
+            onChange={handlePropertyType}
+            id="propertyType"
+            name="propertyType"
+          >
+            {propertyTypeData?.map((option) => (
+              <option key={option.id} value={option?.value}>
+                {option.name}
+              </option>
+            ))}
+          </select>
+
+          <input
+            className="hidden"
+            id="bedrooms"
+            name="bedrooms"
+            value={formData?.propertyData?.bedrooms}
+            onChange={() =>
+              setFormData({
+                ...formData,
+                propertyData: {
+                  ...formData.propertyData,
+                  bedrooms: formData.propertyData.bedrooms,
+                },
+              })
+            }
+          />
+
+          <input
+            className="hidden"
+            id="bathrooms"
+            name="bathrooms"
+            value={formData?.propertyData?.bathrooms}
+            onChange={() =>
+              setFormData({
+                ...formData,
+                propertyData: {
+                  ...formData.propertyData,
+                  bathrooms: formData.propertyData.bathrooms,
+                },
+              })
+            }
+          />
+
+          <input
+            className="hidden"
+            id="surfaceM2"
+            name="surfaceM2"
+            value={formData?.propertyData?.surfaceM2}
+            onChange={() =>
+              setFormData({
+                ...formData,
+                propertyData: {
+                  ...formData.propertyData,
+                  surfaceM2: formData.propertyData.surfaceM2,
+                },
+              })
+            }
+          />
+
+          <input
+            className="hidden"
+            id="commonExpenses"
+            name="commonExpenses"
+            value={formData?.propertyData?.commonExpenses}
+            onChange={() =>
+              setFormData({
+                ...formData,
+                propertyData: {
+                  ...formData.propertyData,
+                  commonExpenses: formData.propertyData.commonExpenses,
+                },
+              })
+            }
+          />
+
+          <input
+            className="hidden"
+            id="parkingLots"
+            name="parkingLots"
+            value={formData?.propertyData?.parkingLots}
+            onChange={() =>
+              setFormData({
+                ...formData,
+                propertyData: {
+                  ...formData.propertyData,
+                  parkingLots: formData.propertyData.parkingLots,
+                },
+              })
+            }
+          />
+
+          <input
+            className="hidden"
+            id="haveWarehouse"
+            name="haveWarehouse"
+            value={formData?.propertyData?.haveWarehouse ? 'Si' : 'No'}
+            onChange={() =>
+              setFormData({
+                ...formData,
+                propertyData: {
+                  ...formData.propertyData,
+                  haveWarehouse: formData.propertyData.haveWarehouse,
+                },
+              })
+            }
           />
 
           <input
@@ -194,7 +422,24 @@ function ValidateUser({ formData, setFormData }) {
             onChange={() => {
               formData?.personalData?.email;
             }}
-            className="hidden w-full p-4 bg-white rounded-full border-gray-300 outline-none focus:outline-none"
+            className="hidden"
+          />
+
+          <input
+            type="phone"
+            id="phone"
+            name="phone"
+            value={formData?.personalData?.phone}
+            onChange={() =>
+              setFormData({
+                ...formData,
+                personalData: {
+                  ...formData.personalData,
+                  phone: formData.personalData.phone,
+                },
+              })
+            }
+            className="hidden"
           />
 
           {isValidCode ? (

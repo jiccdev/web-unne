@@ -8,6 +8,7 @@ const PersonalData = ({ formData, setFormData }) => {
   const { state, dispatch } = useValue();
   const form = useRef();
   const [isDisabled, setIsDisabled] = useState(true);
+  const [verificationCode, setVerificationCode] = useState(0);
 
   /** Handle Form Data inputs */
   /** Update Name */
@@ -153,7 +154,6 @@ const PersonalData = ({ formData, setFormData }) => {
               className="w-full p-4 bg-white rounded-full border-gray-300 outline-none focus:outline-none"
               type="text"
               placeholder="Ingres tu nombre y apellidos"
-              // name="name"
               name="from_name"
               id="from_name"
               value={formData?.personalData?.name}
@@ -168,7 +168,6 @@ const PersonalData = ({ formData, setFormData }) => {
               className="w-full p-4 bg-white rounded-full border-gray-300 outline-none focus:outline-none"
               type="email"
               placeholder="Ej: mi.correo@email.com"
-              // name="name"
               name="email"
               id="email"
               value={formData?.personalData?.email}
@@ -201,14 +200,9 @@ const PersonalData = ({ formData, setFormData }) => {
             id="verificationCode"
             name="verificationCode"
             value={state.verificationCode.code}
+            onChange={() => setVerificationCode(state.verificationCode.code)}
           />
         </div>
-
-        {/* [
-        formData?.personalData?.name,
-        formData?.personalData.email,
-        formData?.personalData?.phone,
-      ].includes('') */}
 
         <div className="w-full flex items-center justify-center my-10">
           <button
@@ -228,8 +222,6 @@ const PersonalData = ({ formData, setFormData }) => {
             Enviar código al correo
           </button>
           <p>{state.verificationCode.code}</p>
-
-          {/* <p>{verificationCode}</p> */}
         </div>
       </form>
     </div>
