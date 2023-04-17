@@ -12,7 +12,7 @@ const PropertiesList = () => {
 
   return (
     <div className="">
-      <div className="p-2">
+      <div className="p-2 py-5">
         <h1 className="text-2xl">Propiedades</h1>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-2">
