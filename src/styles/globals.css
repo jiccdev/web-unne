@@ -59,13 +59,12 @@ span {
   font-family: var(--font-poppins-regular);
 }
 
-button,
-label,
-input {
+button {
   font-family: var(--font-poppins-semobold);
 }
 
 p,
+label,
 strong {
   font-family: var(--font-inter-regular);
 }

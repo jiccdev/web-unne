@@ -220,16 +220,126 @@ const AdvancedSearch = () => {
   };
 
   return (
-    <form>
-      <div className="mb-3">
-        <label className="">Tipo de operación</label>
+    <form className="border mx-4 p-5 rounded-md bg-white">
+      <div className="mb-3 mx-3">
+        <label className="text-sm text-gray-500">Tipo de operación</label>
         <RSelect
           options={getOperationTypeOptions()}
           // defaultValue={operationType[0]}
           // onChange={onOperationTypeChange}
           // className={styles.rSelect}
           placeholder="Seleccionar"
+          className="my-2"
         />
+      </div>
+
+      <div className="mb-3 mx-3">
+        <label className="text-sm text-gray-500">Tipo de propiedad</label>
+        <RSelect
+          options={getOperationTypeOptions()}
+          // defaultValue={operationType[0]}
+          // onChange={onOperationTypeChange}
+          // className={styles.rSelect}
+          placeholder="Seleccionar"
+          className="my-2"
+        />
+      </div>
+
+      <div className="mb-3 mx-3">
+        <label className="text-sm text-gray-500">Región</label>
+        <RSelect
+          options={getOperationTypeOptions()}
+          // defaultValue={operationType[0]}
+          // onChange={onOperationTypeChange}
+          // className={styles.rSelect}
+          placeholder="Seleccionar"
+          className="my-2"
+        />
+      </div>
+
+      <div className="mb-3 mx-3">
+        <label className="text-sm text-gray-500">Comuna</label>
+        <RSelect
+          options={getOperationTypeOptions()}
+          // defaultValue={operationType[0]}
+          // onChange={onOperationTypeChange}
+          // className={styles.rSelect}
+          placeholder="Seleccionar"
+          className="my-2"
+        />
+      </div>
+
+      <div className="mb-3 mx-3">
+        <label className="text-sm text-gray-500">Superficie</label>
+        <input
+          type="text"
+          placeholder="100"
+          className="block w-full my-2 px-3 py-1.5 rounded-md text-gray-500 focus:outline-none bg-white border border-gray-300"
+        />
+      </div>
+
+      <div className="grid grid-cols-2 g-4 mb-3 mx-3">
+        <div className="mr-2">
+          <label className="text-sm text-gray-500">Desde</label>
+          <input
+            type="text"
+            placeholder="Min"
+            className="block w-full my-2 px-3 py-1.5 rounded-md text-gray-500 focus:outline-none bg-white border border-gray-300"
+          />
+        </div>
+        <div className="ml-2">
+          <label className="text-sm text-gray-500">Hasta</label>
+          <input
+            type="text"
+            placeholder="Max"
+            className="block w-full my-2 px-3 py-1.5 rounded-md text-gray-500 focus:outline-none bg-white border border-gray-300"
+          />
+        </div>
+      </div>
+
+      <div className="mb-3 mx-3">
+        <label className="text-sm text-gray-500">Dormitorios</label>
+        <RSelect
+          options={getOperationTypeOptions()}
+          // defaultValue={operationType[0]}
+          // onChange={onOperationTypeChange}
+          // className={styles.rSelect}
+          placeholder="Seleccionar"
+          className="my-2"
+        />
+      </div>
+
+      <div className="mb-3 mx-3">
+        <label className="text-sm text-gray-500">Baños</label>
+        <RSelect
+          options={getOperationTypeOptions()}
+          // defaultValue={operationType[0]}
+          // onChange={onOperationTypeChange}
+          // className={styles.rSelect}
+          placeholder="Seleccionar"
+          className="my-2"
+        />
+      </div>
+
+      <div className="mb-3 mx-3">
+        <label className="text-sm text-gray-500">Estacionamientos</label>
+        <RSelect
+          options={getOperationTypeOptions()}
+          // defaultValue={operationType[0]}
+          // onChange={onOperationTypeChange}
+          // className={styles.rSelect}
+          placeholder="Seleccionar"
+          className="my-2"
+        />
+      </div>
+
+      <div className="mt-9 mb-5 mx-3">
+        <button
+          type="submit"
+          className="block w-full text-center items-center px-3 py-2 text-sm font-medium text-white bg-orange-500 rounded-lg hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300"
+        >
+          Buscar
+        </button>
       </div>
     </form>
   );

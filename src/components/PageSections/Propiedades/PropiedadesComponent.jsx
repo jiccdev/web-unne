@@ -5,7 +5,7 @@ import AdvancedSearch from './components/AdvancedSearch';
 const PropiedadesComponent = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-4">
-      <div className="col-span-3 bg-gray-100 h-[800px]">
+      <div className="col-span-3 h-auto">
         <PropertiesList />
       </div>
       <div className="col-span-1">

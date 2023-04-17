@@ -12,11 +12,11 @@ const PropertyCard = ({ data }) => {
       <div className="p-5">
         <a href="#">
           <span className="uppercase text-orange-500">Cod: {id}</span>
-          <h5 className="mb-2 text-lg xl:text-xl font-bold tracking-tight text-grey-800">
+          <h5 className="mb-2 text-lg xl:text-lg font-bold text-gray-800">
             {truncateString(title, 60)}
           </h5>
         </a>
-        <p className="mb-3 font-normal text-gray-400">
+        <p className="mb-3 font-normal text-sm text-gray-400">
           {address}, {commune}, {city}
         </p>
 
