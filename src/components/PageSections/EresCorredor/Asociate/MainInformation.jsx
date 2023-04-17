@@ -25,12 +25,10 @@ const MainInformation = () => {
                         {AssociateData?.length > 0 && AssociateData?.map((e) => (<Info key={e.id} data={e} />))}
                     </Fade>
                 </div>
-
                 <Fade direction='right' delay={200} cascade>
                     <div className='px-10 w-full flex justify-center'>
                         <div className='max-w-2xl'>
                         {DataEmailJS?.length > 0 && DataEmailJS?.map((e) => (<ContactForm key={e.ServiceID} title="Comienza tu experiencia en Unne" DataEmail={e}/>))}
-                            
                         </div>
                     </div>
                 </Fade>

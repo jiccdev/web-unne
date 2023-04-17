@@ -20,6 +20,14 @@ const AdministracionDeArriendo = () => {
     getClientList();
   }, []);
 
+  const DataEmailJS = [
+    {
+      ServiceID: "service_j0tf7sp",
+      TemplateID: "template_6amoogk",
+      PublicKEY: "ZWanVNmLr-iX_Op5K",
+    },
+  ];
+
   return (
     <Fragment>
       <HeadPage>
@@ -42,11 +50,12 @@ const AdministracionDeArriendo = () => {
                 <PlanCard key={plan.id} data={plan} />
               ))}
           </div>
-
-          <ContactForm
-            title="¡Despreocúpate por tu propiedad de inversión!"
-            subtitle="COMPLETA EL FORMULARIO Y ENTÉRATE CÓMO"
-          />
+          {DataEmailJS?.length > 0 && DataEmailJS?.map((e) => 
+          (<ContactForm 
+            key={e.ServiceID} 
+            title="¡Despreocúpate por tu propiedad de inversión!" 
+            subtitle="COMPLETA EL FORMULARIO Y ENTÉRATE CÓMO" 
+            DataEmail={e}/>))}
         </section>
 
         <section className="relative my-24 xl:mt-40 px-4 xl:px-56">
