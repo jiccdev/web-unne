@@ -19,6 +19,18 @@ export const navigationData = [
     id: 1,
     name: 'Inicio',
     href: '/',
+    children: [
+      {
+        id: 1,
+        name: 'Unne',
+        href: '/',
+      },
+      {
+        id: 2,
+        name: '¿Quiénes somos?',
+        href: '/quienes-somos',
+      },
+    ],
   },
   {
     id: 2,

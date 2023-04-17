@@ -28,14 +28,6 @@ const Home = () => {
         <section className="my-20 px-4 xl:px-32">
           <ServicesContactSection />
         </section>
-
-      <section className="my-20 px-4 xl:px-32">
-          <About />
-        </section> 
-
-        <section className="my-20 px-4 xl:px-32">
-          <ContactUs />
-        </section>  
       </Layout>
     </Fragment>
   );
