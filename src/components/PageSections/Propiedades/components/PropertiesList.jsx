@@ -21,7 +21,7 @@ const PropertiesList = () => {
             <PropertyCard key={property?.id} data={property} />
           ))
         ) : (
-          <p>Propiedades no encontradas</p>
+          <p>Obteniendo propiedades</p>
         )}
       </div>
     </div>
