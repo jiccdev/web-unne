@@ -35,7 +35,7 @@ const NavigationItem = ({ menuItem }) => {
                       href={href}
                       className={`${
                         route === href
-                          ? 'bg-amber-600 text-white flex items-center rounded-lg transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring'
+                          ? 'bg-orange-500 text-white flex items-center rounded-lg transition duration-150 ease-in-out hover:bg-orange-600 focus:outline-none focus-visible:ring'
                           : 'flex items-center rounded-lg transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring'
                       }`}
                     >
