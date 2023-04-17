@@ -11,7 +11,7 @@ const Propiedades = () => {
       </HeadPage>
 
       <Layout>
-        <section className="my-10 xl:px-32">
+        <section className="relative my-10 xl:px-32">
           <PropiedadesComponent />
         </section>
       </Layout>
