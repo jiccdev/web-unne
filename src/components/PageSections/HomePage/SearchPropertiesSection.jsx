@@ -1,12 +1,15 @@
 import React, { useState, useContext, useEffect } from 'react';
+import Link from 'next/link';
+import PropertiesContext from '@/context/properties/PropertiesContext';
+import SelectsContext from '@/context/selects/SelectsContext';
 import { Tab } from '@headlessui/react';
 import Button from '@/components/Button/Button';
 import { webServicesTabs } from '../../../data';
-import SelectsContext from '@/context/selects/SelectsContext';
 
 const classNames = (...classes) => classes.filter(Boolean).join(' ');
 
 const SearchPropertiesSection = () => {
+  const { contextDataProps } = useContext(PropertiesContext);
   const { contextData } = useContext(SelectsContext);
   const [
     filterSearchEntry,
@@ -16,6 +19,7 @@ const SearchPropertiesSection = () => {
     communes,
     getCommunesByRegion,
   ] = contextData;
+  const [, , getPropertiesOnFormSubmit] = contextDataProps;
   const [categories, setCategories] = useState([...webServicesTabs]);
 
   /** Handle Operation Type options */
@@ -57,6 +61,36 @@ const SearchPropertiesSection = () => {
   useEffect(() => {
     getCommunesByRegion(filterSearchEntry?.region);
   }, [filterSearchEntry?.region]);
+
+  const onFormSubmit = (
+    statusId,
+    companyId,
+    operationType,
+    typeOfProperty,
+    region,
+    commune,
+    surfaceM2,
+    minPrice,
+    maxPrice,
+    bedrooms,
+    bathrooms,
+    parkingLots
+  ) => {
+    return getPropertiesOnFormSubmit(
+      statusId,
+      companyId,
+      operationType,
+      typeOfProperty,
+      region,
+      commune,
+      surfaceM2,
+      minPrice,
+      maxPrice,
+      bedrooms,
+      bathrooms,
+      parkingLots
+    );
+  };
 
   console.log('formData', filterSearchEntry);
 
@@ -137,12 +171,29 @@ const SearchPropertiesSection = () => {
           </div>
 
           <div className="mx-1 flex justify-center items-center">
-            <Button
-              type="submit"
-              className="block bg-amber-400 w-full p-[.7rem] rounded-full border border-amber-300 hover:bg-amber-500"
+            <Link
+              href="/propiedades"
+              onClick={() => {
+               
+                onFormSubmit(
+                  1,
+                  1,
+                  filterSearchEntry?.operationType,
+                  filterSearchEntry?.typeOfProperty,
+                  filterSearchEntry?.region,
+                  filterSearchEntry?.commune,
+                  filterSearchEntry?.surfaceM2,
+                  filterSearchEntry?.minPrice,
+                  filterSearchEntry?.maxPrice,
+                  filterSearchEntry?.bedrooms,
+                  filterSearchEntry?.bathrooms,
+                  filterSearchEntry?.parkingLots
+                );
+              }}
+              className="block w-full p-[.7rem] text-center rounded-full border bg-amber-400 text-white border-amber-300 hover:bg-amber-500"
             >
               Buscar
-            </Button>
+            </Link>
           </div>
         </div>
 

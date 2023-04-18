@@ -1,14 +1,17 @@
 import React, { useContext, useEffect } from 'react';
 import PropertiesContext from '@/context/properties/PropertiesContext';
+import SelectsContext from '@/context/selects/SelectsContext';
 import PropertyCard from './PropertyCard';
 
 const PropertiesList = () => {
   const { contextDataProps } = useContext(PropertiesContext);
+  const { contextData } = useContext(SelectsContext);
   const [properties, getProperties] = contextDataProps;
+  const [filterSearchEntry] = contextData;
 
-  useEffect(() => {
-    getProperties();
-  }, []);
+  // useEffect(() => {
+  //   getProperties();
+  // }, [filterSearchEntry]);
 
   return (
     <div className="">
