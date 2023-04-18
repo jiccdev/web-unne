@@ -81,7 +81,7 @@ const AdvancedSearch = () => {
     });
   };
 
-  /** Handle Surface options */
+  /** Handle Surface */
   const onSurfaceChange = (ev) => {
     setFilterSearchEntry({
       ...filterSearchEntry,
@@ -93,78 +93,65 @@ const AdvancedSearch = () => {
     getCommunesByRegion(filterSearchEntry?.region);
   }, [filterSearchEntry?.region]);
 
-  // ===== From Price =====
-  // const onPriceFromChange = (ev) => {
-  //   setFiltredDataValue({
-  //     ...filtredDataValue,
-  //     priceFrom: Number(ev.target.value),
-  //   });
-  // };
-
-  // ===== From Price Up To =====
-  // const onPriceUpToChange = (ev) => {
-  //   setFiltredDataValue({
-  //     ...filtredDataValue,
-  //     priceUpTo: Number(ev.target.value),
-  //   });
-  // };
-
-  // const onSurfaceChange = (ev) => {
-  //   setFiltredDataValue({
-  //     ...filtredDataValue,
-  //     surface: ev.target.value,
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   getSelects();
-  // }, []);
-
-  // useEffect(() => {
-  //   getCommunesByRegion(filtredDataValue?.region);
-  // }, [filtredDataValue?.region]);
-
-  const onFormSubmit = (
-    statusId,
-    companyId,
-    operationType,
-    typeOfProperty,
-    region,
-    commune,
-    minPrice,
-    maxPrice,
-    coveredParkingLots,
-    bedrooms,
-    surfaceM2,
-    bathrooms,
-    installmentType
-  ) => {
-    // return getPropertiesOnFormSubmit(
-    //   statusId,
-    //   companyId,
-    //   operationType,
-    //   typeOfProperty,
-    //   region,
-    //   commune,
-    //   minPrice,
-    //   maxPrice,
-    //   coveredParkingLots,
-    //   bedrooms,
-    //   surfaceM2,
-    //   bathrooms,
-    //   installmentType
-    // );
+  /** Handle Min price */
+  const onMinPriceChange = (ev) => {
+    setFilterSearchEntry({
+      ...filterSearchEntry,
+      minPrice: Number(ev.target.value),
+    });
   };
+
+  /** Handle Max price */
+  const onMaxPriceChange = (ev) => {
+    setFilterSearchEntry({
+      ...filterSearchEntry,
+      maxPrice: Number(ev.target.value),
+    });
+  };
+
+  // const onFormSubmit = (
+  //   statusId,
+  //   companyId,
+  //   operationType,
+  //   typeOfProperty,
+  //   region,
+  //   commune,
+  //   minPrice,
+  //   maxPrice,
+  //   coveredParkingLots,
+  //   bedrooms,
+  //   surfaceM2,
+  //   bathrooms,
+  //   installmentType
+  // ) => {
+  //   return getPropertiesOnFormSubmit(
+  //     statusId,
+  //     companyId,
+  //     operationType,
+  //     typeOfProperty,
+  //     region,
+  //     commune,
+  //     minPrice,
+  //     maxPrice,
+  //     coveredParkingLots,
+  //     bedrooms,
+  //     surfaceM2,
+  //     bathrooms,
+  //     installmentType
+  //   );
+  // };
 
   useEffect(() => {
     getSelects();
   }, []);
 
-  console.log(filterSearchEntry?.operationType); // string
-  console.log(filterSearchEntry?.typeOfProperty); // string
-  console.log(filterSearchEntry?.region); // int
-  console.log(filterSearchEntry?.commune); // string
-  console.log(filterSearchEntry?.surfaceM2); // string
+  console.log(filterSearchEntry?.operationType); //-> string
+  console.log(filterSearchEntry?.typeOfProperty); //-> string
+  console.log(filterSearchEntry?.region); //-> number
+  console.log(filterSearchEntry?.commune); //-> string
+  console.log(filterSearchEntry?.surfaceM2); //-> string
+  console.log(filterSearchEntry?.minPrice); //-> number
+  console.log(filterSearchEntry?.maxPrice); //-> number
 
   return (
     <form className="border mx-4 p-5 rounded-md bg-white">
@@ -228,7 +215,9 @@ const AdvancedSearch = () => {
           <label className="text-sm text-gray-500">Desde</label>
           <input
             type="text"
-            placeholder="Min"
+            defaultValue={filterSearchEntry?.minPrice}
+            onChange={onMinPriceChange}
+            placeholder="precio minimo"
             className="block w-full my-2 px-3 py-1.5 rounded-md text-gray-500 focus:outline-none bg-white border border-gray-300"
           />
         </div>
@@ -236,6 +225,8 @@ const AdvancedSearch = () => {
           <label className="text-sm text-gray-500">Hasta</label>
           <input
             type="text"
+            defaultValue={filterSearchEntry?.maxPrice}
+            onChange={onMaxPriceChange}
             placeholder="Max"
             className="block w-full my-2 px-3 py-1.5 rounded-md text-gray-500 focus:outline-none bg-white border border-gray-300"
           />

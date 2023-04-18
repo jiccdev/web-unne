@@ -16,6 +16,8 @@ const SelectsProvider = ({ children }) => {
     region: '',
     commune: '',
     surfaceM2: '',
+    minPrice: 0,
+    maxPrice: 0,
   });
 
   const getSelects = async () => {
