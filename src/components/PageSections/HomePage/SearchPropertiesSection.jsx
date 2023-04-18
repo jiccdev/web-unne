@@ -213,10 +213,9 @@ const SearchPropertiesSection = () => {
               código de propiedad
             </button>
           </p>
-
-          {isOpenSearchCode && <SearchByPropertyCode />}
         </div>
       </form>
+      {isOpenSearchCode && <SearchByPropertyCode />}
     </div>
   );
 };
