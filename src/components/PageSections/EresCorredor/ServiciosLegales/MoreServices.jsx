@@ -24,7 +24,7 @@ const MoreServices = () => {
     return (
         <div>
             <div className='flex justify-center pb-1 pt-5 mb-10'>
-                <button className="text-white text-xl px-5 bg-orange-600 border-none rounded-full hover:bg-orange-700" onClick={ShowSection}>Ver más servicios</button>
+                <button className="text-white text-xl py-3 px-6 bg-orange-600 border-none rounded-full hover:bg-orange-700" onClick={ShowSection}>Ver más servicios</button>
             </div>
             <Fade delay={500}>
                 <div id='MoreServices' className='hidden mx-5 lg:mx-20 2xl:mx-72 mt-32 mb-20'>

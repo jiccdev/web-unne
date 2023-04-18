@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NumericFormat } from 'react-number-format';
+/* import * as NumberFormat from 'react-number-format' */
 import {
   bedroomsList,
   bathroomsList,

@@ -4,11 +4,8 @@ import Layout from '@/components/Layout/Layout';
 import Capacitation from '@/components/PageSections/EresCorredor/AcademiaUnne/Capacitation';
 import About from '@/components/PageSections/EresCorredor/AcademiaUnne/About';
 import ContactUs from '@/components/PageSections/EresCorredor/AcademiaUnne/ContactUs';
-import ReactSlickComponent from '@/components/Carousel/ReactSlickComponent';
-import { BankData } from '../../data';
-import ImgCarouselCard from '@/components/Card/ImgCarouselCard';
-import TittleAcademy from '@/components/PageSections/EresCorredor/AcademiaUnne/TittleAcademy';
 import { Fade } from 'react-awesome-reveal';
+
 const AcademiaUnne = () => {
   return (
     <Fragment>
@@ -24,17 +21,6 @@ const AcademiaUnne = () => {
           </Fade>
         </section>
 
-        <section>
-          <Fade delay={300} direction='left'>
-            <TittleAcademy />
-            <ReactSlickComponent
-              data={BankData}
-              RenderComponent={ImgCarouselCard}
-              slidesToShow={4}
-              xl={1}
-            />
-          </Fade>
-        </section>
       </Layout>
       
     </Fragment>
