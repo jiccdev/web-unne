@@ -35,7 +35,6 @@ export const navigationData = [
   {
     id: 2,
     name: 'Soy Propietario',
-    href: '/soy-propietario',
     children: [
       {
         id: 1,
@@ -52,7 +51,6 @@ export const navigationData = [
   {
     id: 3,
     name: 'Soy Inversionista',
-    href: '/soy-inversionista',
     children: [
       {
         id: 1,
@@ -79,7 +77,6 @@ export const navigationData = [
   {
     id: 5,
     name: '¿Eres corredor?',
-    href: '/eres-corredor',
     children: [
       {
         id: 1,
@@ -101,7 +98,7 @@ export const navigationData = [
   {
     id: 6,
     name: 'Mi cuenta',
-    href: '/mi-cuenta',
+    href: 'http://190.114.255.247:195/',
   },
 ];
 

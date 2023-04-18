@@ -54,6 +54,7 @@ const NavigationItem = ({ menuItem }) => {
   ) : (
     <Link
       href={href}
+      target='_blank'
       className={`${
         route === href
           ? 'bg-amber-500 text-white inline-flex items-center text-sm xl:text-base font-normal py-2 px-4 xl:px-5 rounded-full'
