@@ -9,9 +9,18 @@ const PropertiesList = () => {
   const [properties, getProperties] = contextDataProps;
   const [filterSearchEntry] = contextData;
 
-  // useEffect(() => {
-  //   getProperties();
-  // }, [filterSearchEntry]);
+  useEffect(() => {
+    if (
+      filterSearchEntry?.operationType == 'arriendo' &&
+      filterSearchEntry?.typeOfProperty == 'departamento'
+    ) {
+      return;
+    }
+  }, [
+    filterSearchEntry,
+    filterSearchEntry?.operationType,
+    filterSearchEntry?.typeOfProperty,
+  ]);
 
   return (
     <div className="">

@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import PropertiesContext from '@/context/properties/PropertiesContext';
 import SelectsContext from '@/context/selects/SelectsContext';
 import RSelect from '@/components/RSelect/RSelect';
@@ -18,11 +18,15 @@ const AdvancedSearch = () => {
   const [, , getPropertiesOnFormSubmit] = contextDataProps;
 
   /** Handle Operation Type options */
+
+  const [operationTypeDefault, setOperationTypeDefault] = useState([]);
+
   const getOperationTypeOptions = () => {
     const options = selects?.operationType?.map((type) => ({
       value: type.value,
       label: type.name,
     }));
+
     return options;
   };
 
@@ -189,7 +193,11 @@ const AdvancedSearch = () => {
         <label className="text-sm text-gray-500">Tipo de operación</label>
         <RSelect
           options={getOperationTypeOptions()}
-          defaultValue={filterSearchEntry?.operationType}
+          // defaultValue={filterSearchEntry?.operationType}
+          defaultValue={{
+            value: filterSearchEntry?.operationType,
+            label: filterSearchEntry?.operationType,
+          }}
           onChange={onOperationTypeChange}
           placeholder="Seleccionar"
           className="my-2"
@@ -200,7 +208,11 @@ const AdvancedSearch = () => {
         <label className="text-sm text-gray-500">Tipo de propiedad</label>
         <RSelect
           options={getTypeOfPropertyOptions()}
-          defaultValue={filterSearchEntry?.typeOfProperty}
+          // defaultValue={filterSearchEntry?.typeOfProperty}
+          defaultValue={{
+            value: filterSearchEntry?.typeOfProperty,
+            label: filterSearchEntry?.typeOfProperty,
+          }}
           onChange={onTypeOfPropertyChange}
           placeholder="Seleccionar"
           className="my-2"

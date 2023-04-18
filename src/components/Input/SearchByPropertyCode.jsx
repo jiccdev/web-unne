@@ -36,9 +36,9 @@ const SearchByPropertyCode = () => {
           />
           <button
             type="submit"
-            class="text-white absolute top-[0px] right-[1px] bottom-[0px] bg-gray-400 py-2.5 px-10 rounded-r-full"
+            class="text-white absolute top-[0px] right-[1px] bottom-[0px] bg-gray-400 hover:bg-gray-500 py-2.5 px-4 xl:px-7 rounded-r-full"
           >
-            Buscar por código
+            Buscar
           </button>
         </div>
       </form>
