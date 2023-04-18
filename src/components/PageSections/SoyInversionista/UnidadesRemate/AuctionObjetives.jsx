@@ -170,9 +170,11 @@ const AuctionObjetives = () => {
               className="bg-white  bg-opacity-60  backdrop-filter backdrop-blur-md  shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="user_phone"
               name="user_phone"
-              type="number"
-              placeholder="Teléfono"
+              type="text"
+              placeholder="Telefono ej: 9 11111111"
               onChange={(e) => handlePhone(e.target.value)}
+              pattern="[0-9]{9}"
+              maxLength="9"
             />
           </div>
 

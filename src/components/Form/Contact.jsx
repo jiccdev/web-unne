@@ -158,7 +158,7 @@ const Contact = ({ }) => {
               type="text"
               placeholder="Nombre"
               name='user_name'
-              className="w-full p-3 rounded-full bg-white text-lg text-gray-900 placeholder:text-gray-500 placeholder:font-bold outline-none focus:ring-4 focus:ring-slate-300"
+              className="w-full p-3 rounded-full bg-white text-lg text-gray-900 placeholder:text-gray-500 placeholder:font-bold outline-none focus:outline-none"
               onChange={(e) => handleName(e.target.value)}
             />
 
@@ -178,7 +178,7 @@ const Contact = ({ }) => {
               type="email"
               name='user_email'
               placeholder="Correo electrónico"
-              className="w-full p-3 rounded-full bg-white text-lg text-gray-900 placeholder:text-gray-500 placeholder:font-bold outline-none focus:ring-4 focus:ring-slate-300"
+              className="w-full p-3 rounded-full bg-white text-lg text-gray-900 placeholder:text-gray-500 placeholder:font-bold outline-none focus:outline-none"
               onChange={(e) => handleEmail(e.target.value)}
             />
           </div>
@@ -235,7 +235,7 @@ const Contact = ({ }) => {
             <textarea
               name='message'
               placeholder="Escriba su mensaje"
-              className="textarea textarea-bordered  bg-white textarea-lg w-full h-full rounded-[20px]"
+              className="textarea textarea-bordered  bg-white textarea-lg w-full h-full rounded-[20px] outline-none focus:outline-none"
               onChange={(e) => handleMessage(e.target.value)}
             ></textarea>
 
