@@ -1,56 +1,49 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import SelectsContext from '@/context/selects/SelectsContext';
 import Link from 'next/link';
+
 import RSelect from '@/components/RSelect/RSelect';
 import { parkingLotsList, bedroomsList, bathroomsList } from '@/data/selects';
 import { iconsList } from '@/components/Icons';
 
 const AdvancedSearch = () => {
-  const [loading, setLoading] = useState(false);
-  const [filtredDataValue, setFiltredDataValue] = useState({
-    operation: '',
-    typeOfProperty: '',
-    region: '',
-    commune: '',
-    surface: '',
-    priceCLP: false,
-    priceUF: false,
-    priceFrom: 0,
-    priceUpTo: 0,
-    bedrooms: '',
-    bathrooms: '',
-    parkingLots: '',
-    installmentType: '',
-  });
+  const { contextData } = useContext(SelectsContext);
+  const [filterSearchEntry, setFilterSearchEntry, getSelects, selects] =
+    contextData;
 
-  // ===== Operation Type =====
-  const onOperationTypeChange = (option) => {
-    // setFiltredDataValue({
-    //   ...filtredDataValue,
-    //   operation: option?.label,
-    // });
-  };
+  console.log('selects', selects);
 
+  /** Handle Operation Type options */
   const getOperationTypeOptions = () => {
-    // const options = operationType.map((operationType) => ({
-    //   value: operationType.value,
-    //   label: operationType.name,
-    // }));
-    // return options;
+    const options = selects?.operationType?.map((type) => ({
+      value: type.value,
+      label: type.name,
+    }));
+    return options;
   };
 
-  // ===== Type of Property =====
-  // const getTypeOfPropertyOptions = () =>
-  //   typeOfProperty?.map((typeOfProperty) => ({
-  //     value: typeOfProperty.value,
-  //     label: typeOfProperty.name,
-  //   }));
+  const onOperationTypeChange = (option) => {
+    setFilterSearchEntry({
+      ...filterSearchEntry,
+      operationType: option?.label,
+    });
+  };
 
-  // const onTypeOfPropertyChange = (option) => {
-  //   setFiltredDataValue({
-  //     ...filtredDataValue,
-  //     typeOfProperty: option?.value,
-  //   });
-  // };
+  /** Handle Property Type options */
+  const getTypeOfPropertyOptions = () => {
+    const options = selects?.typeOfProperty?.map((type) => ({
+      value: type.value,
+      label: type.name,
+    }));
+    return options;
+  };
+
+  const onTypeOfPropertyChange = (option) => {
+    setFilterSearchEntry({
+      ...filterSearchEntry,
+      typeOfProperty: option?.label,
+    });
+  };
 
   // ===== Parking Lots =====
   // const getParkingLotsOptions = () =>
@@ -208,16 +201,11 @@ const AdvancedSearch = () => {
   };
 
   useEffect(() => {
-    if (loading) {
-      setTimeout(() => {
-        setLoading(false);
-      }, 3600);
-    }
-  }, [loading]);
+    getSelects();
+  }, []);
 
-  const handleClick = () => {
-    setLoading(true);
-  };
+  console.log(filterSearchEntry?.operationType);
+  console.log(filterSearchEntry?.typeOfProperty);
 
   return (
     <form className="border mx-4 p-5 rounded-md bg-white">
@@ -225,9 +213,8 @@ const AdvancedSearch = () => {
         <label className="text-sm text-gray-500">Tipo de operación</label>
         <RSelect
           options={getOperationTypeOptions()}
-          // defaultValue={operationType[0]}
-          // onChange={onOperationTypeChange}
-          // className={styles.rSelect}
+          defaultValue={filterSearchEntry?.operationType}
+          onChange={onOperationTypeChange}
           placeholder="Seleccionar"
           className="my-2"
         />
@@ -236,10 +223,9 @@ const AdvancedSearch = () => {
       <div className="mb-3 mx-3">
         <label className="text-sm text-gray-500">Tipo de propiedad</label>
         <RSelect
-          options={getOperationTypeOptions()}
-          // defaultValue={operationType[0]}
-          // onChange={onOperationTypeChange}
-          // className={styles.rSelect}
+          options={getTypeOfPropertyOptions()}
+          defaultValue={filterSearchEntry?.typeOfProperty}
+          onChange={onTypeOfPropertyChange}
           placeholder="Seleccionar"
           className="my-2"
         />

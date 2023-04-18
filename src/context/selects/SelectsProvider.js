@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SelectsContext from './SelectsContext';
-
-/** Api services */
 import SelectsServices from '@/services/SelectsServices';
 
 const SelectsProvider = ({ children }) => {
@@ -12,6 +10,10 @@ const SelectsProvider = ({ children }) => {
   const [typeOfProperty, setTypeOfProperty] = useState([]);
   const [installmentType, setInstallmentType] = useState([]);
   const [errorServerMsg, setErrorServerMsg] = useState({});
+  const [filterSearchEntry, setFilterSearchEntry] = useState({
+    operationType: '',
+    typeOfProperty: '',
+  });
 
   const getSelects = async () => {
     try {
@@ -41,9 +43,11 @@ const SelectsProvider = ({ children }) => {
     <SelectsContext.Provider
       value={{
         contextData: [
+          filterSearchEntry,
+          setFilterSearchEntry,
           getSelects,
-          getCommunesByRegion,
           selects,
+          getCommunesByRegion,
           regions,
           communes,
           operationType,

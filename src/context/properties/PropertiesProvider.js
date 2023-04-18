@@ -13,7 +13,7 @@ const PropertiesProvider = ({ children }) => {
         statusId,
         companyId
       );
-      console.log(response);
+
       setProperties(response?.data);
     } catch (error) {
       const { statusCode } = error?.response?.data;
