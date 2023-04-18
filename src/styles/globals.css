@@ -114,3 +114,10 @@ h3 {
   right: 0;
   z-index: 1;
 }
+
+.rounded-t-lg {
+  object-fit: cover !important;
+  height: 15rem !important;
+  max-height: 15rem !important;
+  width: 100% !important;
+}
