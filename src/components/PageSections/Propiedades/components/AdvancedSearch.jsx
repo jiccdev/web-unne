@@ -5,8 +5,10 @@ import Link from 'next/link';
 import RSelect from '@/components/RSelect/RSelect';
 import { parkingLotsList, bedroomsList, bathroomsList } from '@/data/selects';
 import { iconsList } from '@/components/Icons';
+import PropertiesContext from '@/context/properties/PropertiesContext';
 
 const AdvancedSearch = () => {
+  const { contextDataProps } = useContext(PropertiesContext);
   const { contextData } = useContext(SelectsContext);
   const [
     filterSearchEntry,
@@ -16,8 +18,7 @@ const AdvancedSearch = () => {
     communes,
     getCommunesByRegion,
   ] = contextData;
-
-  console.log('selects', communes);
+  const [, , getPropertiesOnFormSubmit] = contextDataProps;
 
   /** Handle Operation Type options */
   const getOperationTypeOptions = () => {
@@ -89,10 +90,6 @@ const AdvancedSearch = () => {
     });
   };
 
-  useEffect(() => {
-    getCommunesByRegion(filterSearchEntry?.region);
-  }, [filterSearchEntry?.region]);
-
   /** Handle Min price */
   const onMinPriceChange = (ev) => {
     setFilterSearchEntry({
@@ -109,49 +106,85 @@ const AdvancedSearch = () => {
     });
   };
 
-  // const onFormSubmit = (
-  //   statusId,
-  //   companyId,
-  //   operationType,
-  //   typeOfProperty,
-  //   region,
-  //   commune,
-  //   minPrice,
-  //   maxPrice,
-  //   coveredParkingLots,
-  //   bedrooms,
-  //   surfaceM2,
-  //   bathrooms,
-  //   installmentType
-  // ) => {
-  //   return getPropertiesOnFormSubmit(
-  //     statusId,
-  //     companyId,
-  //     operationType,
-  //     typeOfProperty,
-  //     region,
-  //     commune,
-  //     minPrice,
-  //     maxPrice,
-  //     coveredParkingLots,
-  //     bedrooms,
-  //     surfaceM2,
-  //     bathrooms,
-  //     installmentType
-  //   );
-  // };
+  /** Handle Bedrooms options */
+  const getBedroomsOptions = () =>
+    bedroomsList?.map((bedroom) => ({
+      value: bedroom.value,
+      label: bedroom.label,
+    }));
+
+  const onBedroomChange = (option) => {
+    setFilterSearchEntry({
+      ...filterSearchEntry,
+      bedrooms: option?.value,
+    });
+  };
+
+  /** Handle Bathrooms options */
+  const getBathroomsOptions = () =>
+    bathroomsList?.map((bathroom) => ({
+      value: bathroom.value,
+      label: bathroom.label,
+    }));
+
+  const onBathroomChange = (option) => {
+    setFilterSearchEntry({
+      ...filterSearchEntry,
+      bathrooms: option?.value,
+    });
+  };
+
+  /** Handle Parking lots options */
+  const getParkingLotsOptions = () =>
+    parkingLotsList?.map((parkingLot) => ({
+      value: parkingLot.value,
+      label: parkingLot.label,
+    }));
+
+  const onParkingLotChange = (option) => {
+    setFilterSearchEntry({
+      ...filterSearchEntry,
+      parkingLots: option?.value,
+    });
+  };
+
+  const onFormSubmit = (
+    statusId,
+    companyId,
+    operationType,
+    typeOfProperty,
+    region,
+    commune,
+    surfaceM2,
+    minPrice,
+    maxPrice,
+    bedrooms,
+    bathrooms,
+    parkingLots
+  ) => {
+    return getPropertiesOnFormSubmit(
+      statusId,
+      companyId,
+      operationType,
+      typeOfProperty,
+      region,
+      commune,
+      surfaceM2,
+      minPrice,
+      maxPrice,
+      bedrooms,
+      bathrooms,
+      parkingLots
+    );
+  };
 
   useEffect(() => {
     getSelects();
   }, []);
 
-  console.log(filterSearchEntry?.operationType); //-> string
-  console.log(filterSearchEntry?.typeOfProperty); //-> string
-  console.log(filterSearchEntry?.region); //-> number
-  console.log(filterSearchEntry?.commune); //-> string
-  console.log(filterSearchEntry?.surfaceM2); //-> string
-  console.log(filterSearchEntry?.minPrice); //-> number
-  console.log(filterSearchEntry?.maxPrice); //-> number
+  useEffect(() => {
+    getCommunesByRegion(filterSearchEntry?.region);
+  }, [filterSearchEntry?.region]);
 
   return (
     <form className="border mx-4 p-5 rounded-md bg-white">
@@ -236,10 +269,9 @@ const AdvancedSearch = () => {
       <div className="mb-3 mx-3">
         <label className="text-sm text-gray-500">Dormitorios</label>
         <RSelect
-          options={getOperationTypeOptions()}
-          // defaultValue={operationType[0]}
-          // onChange={onOperationTypeChange}
-          // className={styles.rSelect}
+          options={getBedroomsOptions()}
+          defaultValue={bedroomsList[0]}
+          onChange={onBedroomChange}
           placeholder="Seleccionar"
           className="my-2"
         />
@@ -248,10 +280,9 @@ const AdvancedSearch = () => {
       <div className="mb-3 mx-3">
         <label className="text-sm text-gray-500">Baños</label>
         <RSelect
-          options={getOperationTypeOptions()}
-          // defaultValue={operationType[0]}
-          // onChange={onOperationTypeChange}
-          // className={styles.rSelect}
+          options={getBathroomsOptions()}
+          defaultValue={bathroomsList[0]}
+          onChange={onBathroomChange}
           placeholder="Seleccionar"
           className="my-2"
         />
@@ -260,10 +291,9 @@ const AdvancedSearch = () => {
       <div className="mb-3 mx-3">
         <label className="text-sm text-gray-500">Estacionamientos</label>
         <RSelect
-          options={getOperationTypeOptions()}
-          // defaultValue={operationType[0]}
-          // onChange={onOperationTypeChange}
-          // className={styles.rSelect}
+          options={getParkingLotsOptions()}
+          defaultValue={parkingLotsList[0]}
+          onChange={onParkingLotChange}
           placeholder="Seleccionar"
           className="my-2"
         />
@@ -272,6 +302,23 @@ const AdvancedSearch = () => {
       <div className="mt-9 mb-5 mx-3">
         <button
           type="submit"
+          onClick={(ev) => {
+            ev.preventDefault();
+            onFormSubmit(
+              1,
+              1,
+              filterSearchEntry?.operationType,
+              filterSearchEntry?.typeOfProperty,
+              filterSearchEntry?.region,
+              filterSearchEntry?.commune,
+              filterSearchEntry?.surfaceM2,
+              filterSearchEntry?.minPrice,
+              filterSearchEntry?.maxPrice,
+              filterSearchEntry?.bedrooms,
+              filterSearchEntry?.bathrooms,
+              filterSearchEntry?.parkingLots
+            );
+          }}
           className="block w-full text-center items-center px-3 py-2 text-sm font-medium text-white bg-orange-500 rounded-lg hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300"
         >
           Buscar

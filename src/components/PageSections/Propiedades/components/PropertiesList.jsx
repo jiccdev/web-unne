@@ -3,8 +3,8 @@ import PropertiesContext from '@/context/properties/PropertiesContext';
 import PropertyCard from './PropertyCard';
 
 const PropertiesList = () => {
-  const { contextData } = useContext(PropertiesContext);
-  const [properties, getProperties] = contextData;
+  const { contextDataProps } = useContext(PropertiesContext);
+  const [properties, getProperties] = contextDataProps;
 
   useEffect(() => {
     getProperties();

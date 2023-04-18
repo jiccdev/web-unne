@@ -18,6 +18,9 @@ const SelectsProvider = ({ children }) => {
     surfaceM2: '',
     minPrice: 0,
     maxPrice: 0,
+    bedrooms: '',
+    bathrooms: '',
+    parkingLots: '',
   });
 
   const getSelects = async () => {

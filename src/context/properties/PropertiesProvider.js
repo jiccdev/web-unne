@@ -21,10 +21,50 @@ const PropertiesProvider = ({ children }) => {
     }
   };
 
+  const getPropertiesOnFormSubmit = async (
+    statusId,
+    companyId,
+    operationType,
+    typeOfProperty,
+    region,
+    commune,
+    surfaceM2,
+    minPrice,
+    maxPrice,
+    bedrooms,
+    bathrooms,
+    parkingLots
+  ) => {
+    try {
+      const response = await PropertiesServices.getPropertiesOnFormSubmit(
+        statusId,
+        companyId,
+        operationType,
+        typeOfProperty,
+        region,
+        commune,
+        surfaceM2,
+        minPrice,
+        maxPrice,
+        bedrooms,
+        bathrooms,
+        parkingLots
+      );
+      setProperties(response?.data);
+    } catch (error) {
+      const { statusCode } = error?.response?.data;
+      setStatusCodeMsg(statusCode) && new Error(error?.response?.data);
+    }
+  };
+
   return (
     <PropertiesContext.Provider
       value={{
-        contextData: [properties, getProperties],
+        contextDataProps: [
+          properties,
+          getProperties,
+          getPropertiesOnFormSubmit,
+        ],
       }}
     >
       {children}
