@@ -177,7 +177,7 @@ export const CircleVenderData = [
     id: 4,
     text: 'Definicion de estrategias',
     position:
-      'lg:top-0 lg:left-[19rem] md:max-lg:bottom-[9rem] md:max-lg:left-[28rem]',
+      'lg:bottom-0 lg:left-[19rem] md:max-lg:left-2/4 md:max-lg:-bottom-8',
   },
   {
     id: 5,
@@ -188,7 +188,7 @@ export const CircleVenderData = [
     id: 6,
     text: 'vende y recibe tu pago!',
     position:
-      'lg:bottom-0 lg:left-[19rem] md:max-lg:left-2/4 md:max-lg:-bottom-8',
+      'lg:top-0 lg:left-[19rem] md:max-lg:bottom-[9rem] md:max-lg:left-[28rem]',
   },
 ];
 
