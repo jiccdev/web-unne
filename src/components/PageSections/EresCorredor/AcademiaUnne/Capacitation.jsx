@@ -27,7 +27,7 @@ const Capacitation = () => {
                     <div className={`${styles.flipCard} shadow-xl animate-[heart_5s_ease-in-out_infinite]`}>
                         <div className={`${styles.flipCardInner}`}>
                             <div className={`${styles.flipCardFront}`}>
-                                <h2 className='text-3xl text-orange-500 font-bold pt-16 p-24'>Sistemas</h2>
+                                <h2 className='text-3xl text-orange-500 font-bold pt-16 '>Sistemas</h2>
                             </div>
                             <div className={`${styles.flipCardBack} pt-10`}>
                                 <p>Sistemas y correo electrónico</p>
