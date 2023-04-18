@@ -7,7 +7,6 @@ import { toast } from 'react-toastify';
 import { useValue } from '@/context/ContextProvider';
 
 // ***** PROPERTYDATA FORM ***** //
-import { NumericFormat } from 'react-number-format';
 import {
   bedroomsList,
   bathroomsList,

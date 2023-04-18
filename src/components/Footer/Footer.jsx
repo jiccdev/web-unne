@@ -106,7 +106,14 @@ const Footer = () => (
               Contáctanos Soy Propietario ¿Eres corredor? Quiero invertir
               Iniciar sesión
             </p>
+            <p className="text-md text-gray-900 mt-5">
+            Quiero saber más sobre los
+            <a href='#' className='text-orange-500 hover:text-yellow-500'> términos y condiciones</a>
+          </p>
           </div>
+
+          
+
         </div>
       </div>
     </div>

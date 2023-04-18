@@ -104,6 +104,7 @@ const MeetingForm = ({ title, subtitle, DataEmail }) => {
     const serviceid = ServiceID;
     const templateid = TemplateID;
     const publickey = PublicKEY;
+
     if (
       [
         formData?.name,
@@ -117,6 +118,7 @@ const MeetingForm = ({ title, subtitle, DataEmail }) => {
       showToastErrorMsg('Todos los campos son obligatorios');
       return;
     }
+
 
     try {
       const response = emailjs.sendForm(
@@ -154,7 +156,7 @@ const MeetingForm = ({ title, subtitle, DataEmail }) => {
             <label htmlFor="name" className='block text-base font-semibold'>Nombre:</label>
             <input
               type="text"
-              className="block w-full rounded-xl bg-slate-50 py-2 px-2"
+              className="block w-full rounded-xl bg-slate-50 py-2 px-2 outline-none"
               name='user_name'
               value={formData?.name}
               onChange={(ev) => handleName(ev.target.value)}
@@ -166,7 +168,7 @@ const MeetingForm = ({ title, subtitle, DataEmail }) => {
             <label htmlFor="lastname" className='block text-base font-semibold'>Apellido:</label>
             <input
               type="text"
-              className="block w-full rounded-xl bg-slate-50 py-2 px-2"
+              className="block w-full rounded-xl bg-slate-50 py-2 px-2 outline-none"
               name='user_lastname'
               value={formData?.lastname}
               onChange={(ev) => handleLastname(ev.target.value)}
@@ -178,7 +180,7 @@ const MeetingForm = ({ title, subtitle, DataEmail }) => {
             <label htmlFor="email" className='block text-base font-semibold'>Email:</label>
             <input
               type="email"
-              className="block w-full rounded-xl bg-slate-50 py-2 px-2"
+              className="block w-full rounded-xl bg-slate-50 py-2 px-2 outline-none"
               name='user_email'
               value={formData?.email}
               onChange={(ev) => handleEmail(ev.target.value)}
@@ -189,11 +191,14 @@ const MeetingForm = ({ title, subtitle, DataEmail }) => {
           <div className="max-sm:py-2">
             <label htmlFor="phone" className='block text-base font-semibold'>Telefono:</label>
             <input
-              type="number"
-              className="block w-full rounded-xl bg-slate-50 py-2 px-2"
+              className="block w-full rounded-xl bg-slate-50 py-2 px-2 outline-none"
               name='user_phone'
               value={formData?.personalData?.phone}
               onChange={(ev) => handlePhone(ev.target.value)}
+              placeholder='Ej: 9 9999 9999'
+              type="text"
+              pattern="[0-9]{9}"
+              maxLength="9"
             />
 
           </div>
@@ -201,7 +206,7 @@ const MeetingForm = ({ title, subtitle, DataEmail }) => {
             <label htmlFor="date" className='block text-base font-semibold'>Fecha:</label>
             <input
               type="date"
-              className="block w-full rounded-xl py-2 px-2 bg-slate-50"
+              className="block w-full rounded-xl py-2 px-2 bg-slate-50 outline-none"
               name='user_date'
               value={formData?.date}
               onChange={(ev) => handleDate(ev.target.value)}
@@ -212,7 +217,7 @@ const MeetingForm = ({ title, subtitle, DataEmail }) => {
             <label htmlFor="tel" className='block text-base font-semibold'>Hora:</label>
             <input
               type="time"
-              className="block w-full rounded-xl bg-slate-50 py-2 px-2"
+              className="block w-full rounded-xl bg-slate-50 py-2 px-2 outline-none"
               name='user_time'
               value={formData?.time}
               onChange={(ev) => handleTime(ev.target.value)}
