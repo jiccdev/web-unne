@@ -57,6 +57,26 @@ const PropertiesProvider = ({ children }) => {
     }
   };
 
+  const getPropertiesByDefault = async (
+    statusId,
+    companyId,
+    operationType,
+    typeOfProperty
+  ) => {
+    try {
+      const response = await PropertiesServices.getPropertiesByDefault(
+        statusId,
+        companyId,
+        operationType,
+        typeOfProperty
+      );
+      setProperties(response?.data);
+    } catch (error) {
+      const { statusCode } = error?.response?.data;
+      setStatusCodeMsg(statusCode) && new Error(error?.response?.data);
+    }
+  };
+
   return (
     <PropertiesContext.Provider
       value={{
@@ -64,6 +84,7 @@ const PropertiesProvider = ({ children }) => {
           properties,
           getProperties,
           getPropertiesOnFormSubmit,
+          getPropertiesByDefault,
         ],
       }}
     >

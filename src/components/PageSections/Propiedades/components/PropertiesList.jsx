@@ -6,16 +6,19 @@ import PropertyCard from './PropertyCard';
 const PropertiesList = () => {
   const { contextDataProps } = useContext(PropertiesContext);
   const { contextData } = useContext(SelectsContext);
-  const [properties, getProperties] = contextDataProps;
+  const [
+    properties,
+    getProperties,
+    getPropertiesOnFormSubmit,
+    getPropertiesByDefault,
+  ] = contextDataProps;
   const [filterSearchEntry] = contextData;
 
   useEffect(() => {
-    if (
-      filterSearchEntry?.operationType == 'arriendo' &&
-      filterSearchEntry?.typeOfProperty == 'departamento'
-    ) {
-      return;
-    }
+    filterSearchEntry?.operationType === 'arriendo' &&
+    filterSearchEntry?.typeOfProperty === 'departamento'
+      ? getPropertiesByDefault()
+      : null;
   }, [
     filterSearchEntry,
     filterSearchEntry?.operationType,

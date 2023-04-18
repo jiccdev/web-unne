@@ -52,6 +52,25 @@ const PropertiesServices = {
     );
     return response.data;
   },
+
+  getPropertiesByDefault: async (
+    statusId = 1,
+    companyId = 1,
+    operationType = 'arriendo',
+    typeOfProperty = 'departamento'
+  ) => {
+    const _statusId = `${statusId}`;
+    const _companyId = `${companyId}`;
+    const _operationType = operationType.length > 0 ? operationType : false;
+    const _typeOfProperty = typeOfProperty?.length > 0 ? typeOfProperty : false;
+
+    const response = await api.get(
+      `properties?statusId=${_statusId}&companyId=${_companyId}${
+        _operationType ? `&operationType=${_operationType}` : ''
+      }${_typeOfProperty ? `&typeOfProperty=${_typeOfProperty}` : ''}`
+    );
+    return response.data;
+  },
 };
 
 export default PropertiesServices;
