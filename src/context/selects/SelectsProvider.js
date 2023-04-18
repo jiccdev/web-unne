@@ -13,6 +13,8 @@ const SelectsProvider = ({ children }) => {
   const [filterSearchEntry, setFilterSearchEntry] = useState({
     operationType: '',
     typeOfProperty: '',
+    region: '',
+    commune: '',
   });
 
   const getSelects = async () => {
@@ -34,6 +36,8 @@ const SelectsProvider = ({ children }) => {
     try {
       const response = await SelectsServices.getCommunesByRegion(stateId);
       setCommunes(response);
+
+      console.log(response);
     } catch (error) {
       setErrorServerMsg(error?.response);
     }
@@ -47,6 +51,7 @@ const SelectsProvider = ({ children }) => {
           setFilterSearchEntry,
           getSelects,
           selects,
+          communes,
           getCommunesByRegion,
           regions,
           communes,

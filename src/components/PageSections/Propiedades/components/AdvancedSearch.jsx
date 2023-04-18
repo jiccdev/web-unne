@@ -8,10 +8,16 @@ import { iconsList } from '@/components/Icons';
 
 const AdvancedSearch = () => {
   const { contextData } = useContext(SelectsContext);
-  const [filterSearchEntry, setFilterSearchEntry, getSelects, selects] =
-    contextData;
+  const [
+    filterSearchEntry,
+    setFilterSearchEntry,
+    getSelects,
+    selects,
+    communes,
+    getCommunesByRegion,
+  ] = contextData;
 
-  console.log('selects', selects);
+  console.log('selects', communes);
 
   /** Handle Operation Type options */
   const getOperationTypeOptions = () => {
@@ -45,55 +51,39 @@ const AdvancedSearch = () => {
     });
   };
 
-  // ===== Parking Lots =====
-  // const getParkingLotsOptions = () =>
-  //   parkingLotsList?.map((parkingLots) => ({
-  //     value: parkingLots.value,
-  //     label: parkingLots.label,
-  //   }));
+  /** Handle Regions options */
+  const getRegionsOptions = () => {
+    const options = selects?.regions?.map((region) => ({
+      value: region.id,
+      label: region.name,
+    }));
+    return options;
+  };
 
-  // const onParkingLotsChange = (option) => {
-  //   setFiltredDataValue({
-  //     ...filtredDataValue,
-  //     parkingLots: option?.value,
-  //   });
-  // };
+  const onRegionChange = (option) => {
+    setFilterSearchEntry({
+      ...filterSearchEntry,
+      region: option?.value,
+    });
+  };
 
-  // ===== Bedrooms =====
-  // const getBedroomsOptions = () =>
-  //   bedroomsList?.map((bedroom) => ({
-  //     value: bedroom.value,
-  //     label: bedroom.label,
-  //   }));
+  /** Handle Communes options */
+  const getCommunesOptions = () =>
+    communes?.map((comune) => ({
+      value: comune.id,
+      label: comune.name,
+    }));
 
-  // const onBedroomsChange = (option) => {
-  //   setFiltredDataValue({
-  //     ...filtredDataValue,
-  //     bedrooms: option?.value,
-  //   });
-  // };
+  const onCommuneChange = (comune) => {
+    setFilterSearchEntry({
+      ...filterSearchEntry,
+      commune: comune?.label,
+    });
+  };
 
-  // ===== Bathrooms =====
-  // const getBathroomsOptions = () =>
-  //   bathroomsList?.map((bathroom) => ({
-  //     value: bathroom.value,
-  //     label: bathroom.label,
-  //   }));
-
-  // const onBathroomsChange = (option) => {
-  //   setFiltredDataValue({
-  //     ...filtredDataValue,
-  //     bathrooms: option?.value,
-  //   });
-  // };
-
-  // ===== Installation type =====
-  // const onInstallmentTypeChange = (option) => {
-  //   setFiltredDataValue({
-  //     ...filtredDataValue,
-  //     installmentType: option?.label,
-  //   });
-  // };
+  useEffect(() => {
+    getCommunesByRegion(filterSearchEntry?.region);
+  }, [filterSearchEntry?.region]);
 
   // const getInstallmentTypeOptions = () => {
   //   const filtredArr = installmentType
@@ -204,8 +194,10 @@ const AdvancedSearch = () => {
     getSelects();
   }, []);
 
-  console.log(filterSearchEntry?.operationType);
-  console.log(filterSearchEntry?.typeOfProperty);
+  console.log(filterSearchEntry?.operationType); // string
+  console.log(filterSearchEntry?.typeOfProperty); // string
+  console.log(filterSearchEntry?.region); // int
+  console.log(filterSearchEntry?.commune); // string
 
   return (
     <form className="border mx-4 p-5 rounded-md bg-white">
@@ -234,10 +226,9 @@ const AdvancedSearch = () => {
       <div className="mb-3 mx-3">
         <label className="text-sm text-gray-500">Región</label>
         <RSelect
-          options={getOperationTypeOptions()}
-          // defaultValue={operationType[0]}
-          // onChange={onOperationTypeChange}
-          // className={styles.rSelect}
+          options={getRegionsOptions()}
+          defaultValue={filterSearchEntry?.region}
+          onChange={onRegionChange}
           placeholder="Seleccionar"
           className="my-2"
         />
@@ -246,10 +237,9 @@ const AdvancedSearch = () => {
       <div className="mb-3 mx-3">
         <label className="text-sm text-gray-500">Comuna</label>
         <RSelect
-          options={getOperationTypeOptions()}
-          // defaultValue={operationType[0]}
-          // onChange={onOperationTypeChange}
-          // className={styles.rSelect}
+          options={getCommunesOptions()}
+          defaultValue={filterSearchEntry?.commune}
+          onChange={onCommuneChange}
           placeholder="Seleccionar"
           className="my-2"
         />
