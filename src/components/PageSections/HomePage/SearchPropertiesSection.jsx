@@ -1,25 +1,19 @@
 import React, { useState } from 'react';
 import { Tab } from '@headlessui/react';
 import Button from '@/components/Button/Button';
-import { useForm } from 'react-hook-form';
 import { webServicesTabs } from '../../../data';
 
 const classNames = (...classes) => classes.filter(Boolean).join(' ');
 
 const SearchPropertiesSection = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
   const [categories, setCategories] = useState([...webServicesTabs]);
   const [operationType, setOperationType] = useState('');
 
-  const onSubmit = (data) => console.log(data);
+  console.log('OperationType:', operationType);
 
   return (
     <div className="bg-gray-100 rounded-2xl w-100 xl:w-3/5 mx-auto text-black p-4 xl:px-10">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form>
         <div className="grid grid-cols-1 grid-rows-1 gap-4">
           <div className="d-flex justify-start items-start pb-4">
             <Tab.Group className="m-0">
@@ -27,12 +21,14 @@ const SearchPropertiesSection = () => {
                 {Object.values(categories).map((category, idx) => (
                   <Tab
                     key={category}
-                    onClick={() => setOperationType(idx)}
+                    onClick={() => setOperationType(category)}
                     className={({ selected }) =>
                       classNames(
                         'w-full text-md font-medium leading-5 rounded-[100px] text-black focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-offset-gray-100 focus:ring-amber-400',
                         'ring-opacity-60 ring-offset-2 focus:outline-none focus:bg-amber-400 text-black p-2',
-                        selected ? 'bg-amber-400 text-black p-2' : 'text-black'
+                        selected
+                          ? 'bg-amber-400 text-white p-2'
+                          : 'text-gray-600'
                       )
                     }
                   >
@@ -46,9 +42,7 @@ const SearchPropertiesSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           <div className="mx-1">
             <select
-              {...register('propertyType', { required: false })}
               className="select select-ghost bg-white w-full max-w-xs rounded-full border-gray-300"
-              defaultValue={'DEFAULT'}
               placeholder="Tipo de Propiedad"
             >
               <option>Tipo de Propiedad</option>
@@ -60,9 +54,7 @@ const SearchPropertiesSection = () => {
 
           <div className="mx-1">
             <select
-              {...register('propertyType', { required: false })}
               className="select select-ghost bg-white w-full max-w-xs rounded-full border-gray-300"
-              defaultValue={'DEFAULT2'}
               placeholder="Region"
             >
               <option>Region</option>
@@ -74,9 +66,7 @@ const SearchPropertiesSection = () => {
 
           <div className="mx-1">
             <select
-              {...register('propertyType', { required: false })}
               className="select select-ghost bg-white w-full max-w-xs rounded-full border-gray-300"
-              defaultValue={'DEFAULT3'}
               placeholder="Comuna"
             >
               <option>Comuna</option>
