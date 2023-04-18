@@ -15,6 +15,7 @@ const SelectsProvider = ({ children }) => {
     typeOfProperty: '',
     region: '',
     commune: '',
+    surfaceM2: '',
   });
 
   const getSelects = async () => {
@@ -36,8 +37,6 @@ const SelectsProvider = ({ children }) => {
     try {
       const response = await SelectsServices.getCommunesByRegion(stateId);
       setCommunes(response);
-
-      console.log(response);
     } catch (error) {
       setErrorServerMsg(error?.response);
     }

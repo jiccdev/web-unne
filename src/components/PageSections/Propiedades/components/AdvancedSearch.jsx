@@ -81,51 +81,17 @@ const AdvancedSearch = () => {
     });
   };
 
+  /** Handle Surface options */
+  const onSurfaceChange = (ev) => {
+    setFilterSearchEntry({
+      ...filterSearchEntry,
+      surfaceM2: ev.target.value,
+    });
+  };
+
   useEffect(() => {
     getCommunesByRegion(filterSearchEntry?.region);
   }, [filterSearchEntry?.region]);
-
-  // const getInstallmentTypeOptions = () => {
-  //   const filtredArr = installmentType
-  //     ?.filter(
-  //       (installmentType) =>
-  //         installmentType.value !== 'entrega inmediata' ||
-  //         installmentType.name !== 'entrega inmediata'
-  //     )
-  //     .map((installmentType) => ({
-  //       value: installmentType.value,
-  //       label: installmentType.name,
-  //     }));
-  //   return filtredArr;
-  // };
-
-  // ===== Regions =====
-  // const getRegionOptions = () =>
-  //   regions?.map((region) => ({
-  //     value: region.id,
-  //     label: region.name,
-  //   }));
-
-  // const onRegionsChange = (option) => {
-  //   setFiltredDataValue({
-  //     ...filtredDataValue,
-  //     region: option?.value,
-  //   });
-  // };
-
-  // ===== Communes =====
-  // const getCommunesOptions = () =>
-  //   communes?.map((comune) => ({
-  //     value: comune.id,
-  //     label: comune.name,
-  //   }));
-
-  // const onCommunesChange = (comune) => {
-  //   setFiltredDataValue({
-  //     ...filtredDataValue,
-  //     commune: comune?.label,
-  //   });
-  // };
 
   // ===== From Price =====
   // const onPriceFromChange = (ev) => {
@@ -198,6 +164,7 @@ const AdvancedSearch = () => {
   console.log(filterSearchEntry?.typeOfProperty); // string
   console.log(filterSearchEntry?.region); // int
   console.log(filterSearchEntry?.commune); // string
+  console.log(filterSearchEntry?.surfaceM2); // string
 
   return (
     <form className="border mx-4 p-5 rounded-md bg-white">
@@ -249,6 +216,8 @@ const AdvancedSearch = () => {
         <label className="text-sm text-gray-500">Superficie</label>
         <input
           type="text"
+          defaultValue={filterSearchEntry?.surfaceM2}
+          onChange={onSurfaceChange}
           placeholder="100"
           className="block w-full my-2 px-3 py-1.5 rounded-md text-gray-500 focus:outline-none bg-white border border-gray-300"
         />
