@@ -8,8 +8,14 @@ const classNames = (...classes) => classes.filter(Boolean).join(' ');
 
 const SearchPropertiesSection = () => {
   const { contextData } = useContext(SelectsContext);
-  const [filterSearchEntry, setFilterSearchEntry, getSelects, selects] =
-    contextData;
+  const [
+    filterSearchEntry,
+    setFilterSearchEntry,
+    getSelects,
+    selects,
+    communes,
+    getCommunesByRegion,
+  ] = contextData;
   const [categories, setCategories] = useState([...webServicesTabs]);
 
   /** Handle Operation Type options */
@@ -32,13 +38,25 @@ const SearchPropertiesSection = () => {
   const onRegionChange = (ev) => {
     setFilterSearchEntry({
       ...filterSearchEntry,
-      region: ev.target.value,
+      region: Number(ev.target.value),
+    });
+  };
+
+  /** Handle Commune on change */
+  const onCommuneChange = (ev) => {
+    setFilterSearchEntry({
+      ...filterSearchEntry,
+      commune: ev.target.value,
     });
   };
 
   useEffect(() => {
     getSelects();
   }, []);
+
+  useEffect(() => {
+    getCommunesByRegion(filterSearchEntry?.region);
+  }, [filterSearchEntry?.region]);
 
   console.log('formData', filterSearchEntry);
 
@@ -96,7 +114,7 @@ const SearchPropertiesSection = () => {
               onChange={onRegionChange}
             >
               {selects?.regions?.map(({ id, name }) => (
-                <option key={id} value={name}>
+                <option key={id} value={id}>
                   {name}
                 </option>
               ))}
@@ -107,11 +125,14 @@ const SearchPropertiesSection = () => {
             <select
               className="select select-ghost bg-white w-full max-w-xs rounded-full border-gray-300"
               placeholder="Comuna"
+              value={filterSearchEntry?.commune}
+              onChange={onCommuneChange}
             >
-              <option>Comuna</option>
-              <option value="commune1">Commune 1</option>
-              <option value="commune2">Commune 2</option>
-              <option value="commune3">Commune 3</option>
+              {communes?.map(({ id, name }) => (
+                <option key={id} value={name}>
+                  {name}
+                </option>
+              ))}
             </select>
           </div>
 
