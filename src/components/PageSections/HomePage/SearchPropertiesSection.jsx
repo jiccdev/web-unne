@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Tab } from '@headlessui/react';
 import Button from '@/components/Button/Button';
 import { webServicesTabs } from '../../../data';
@@ -8,9 +8,11 @@ const classNames = (...classes) => classes.filter(Boolean).join(' ');
 
 const SearchPropertiesSection = () => {
   const { contextData } = useContext(SelectsContext);
-  const [filterSearchEntry, setFilterSearchEntry] = contextData;
+  const [filterSearchEntry, setFilterSearchEntry, getSelects, selects] =
+    contextData;
   const [categories, setCategories] = useState([...webServicesTabs]);
 
+  /** Handle Operation Type options */
   const onOperationTypeChange = (category) => {
     setFilterSearchEntry({
       ...filterSearchEntry,
@@ -18,7 +20,28 @@ const SearchPropertiesSection = () => {
     });
   };
 
+  /** Handle Property on change */
+  const onTypeOfPropertyChange = (ev) => {
+    setFilterSearchEntry({
+      ...filterSearchEntry,
+      typeOfProperty: ev.target.value,
+    });
+  };
+
+  /** Handle Region on change */
+  const onRegionChange = (ev) => {
+    setFilterSearchEntry({
+      ...filterSearchEntry,
+      region: ev.target.value,
+    });
+  };
+
+  useEffect(() => {
+    getSelects();
+  }, []);
+
   console.log('formData', filterSearchEntry);
+
   return (
     <div className="bg-gray-100 rounded-2xl w-100 xl:w-3/5 mx-auto text-black p-4 xl:px-10">
       <form>
@@ -29,7 +52,9 @@ const SearchPropertiesSection = () => {
                 {Object.values(categories).map((category) => (
                   <Tab
                     key={category}
-                    onClick={() => onOperationTypeChange(category)}
+                    onClick={() =>
+                      onOperationTypeChange(category.toLocaleLowerCase())
+                    }
                     className={({ selected }) =>
                       classNames(
                         'w-full text-md font-medium leading-5 rounded-[100px] text-black focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-offset-gray-100 focus:ring-amber-400',
@@ -52,11 +77,14 @@ const SearchPropertiesSection = () => {
             <select
               className="select select-ghost bg-white w-full max-w-xs rounded-full border-gray-300"
               placeholder="Tipo de Propiedad"
+              value={filterSearchEntry?.typeOfProperty}
+              onChange={onTypeOfPropertyChange}
             >
-              <option>Tipo de Propiedad</option>
-              <option value="tipo1">Tipo 1</option>
-              <option value="tipo2">Tipo 2</option>
-              <option value="tipo3">Tipo 3</option>
+              {selects?.typeOfProperty?.map(({ value, name }) => (
+                <option key={value} value={name}>
+                  {name}
+                </option>
+              ))}
             </select>
           </div>
 
@@ -64,11 +92,14 @@ const SearchPropertiesSection = () => {
             <select
               className="select select-ghost bg-white w-full max-w-xs rounded-full border-gray-300"
               placeholder="Region"
+              value={filterSearchEntry?.regions}
+              onChange={onRegionChange}
             >
-              <option>Region</option>
-              <option value="region1">Region 1</option>
-              <option value="region2">Region 2</option>
-              <option value="region3">Region 3</option>
+              {selects?.regions?.map(({ id, name }) => (
+                <option key={id} value={name}>
+                  {name}
+                </option>
+              ))}
             </select>
           </div>
 
