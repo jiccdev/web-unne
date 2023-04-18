@@ -18,7 +18,7 @@ import { TbSquareRoundedNumber2Filled } from 'react-icons/tb';
 import { TbSquareRoundedNumber3Filled } from 'react-icons/tb';
 import { TbSquareRoundedNumber4Filled } from 'react-icons/tb';
 import { FaUserAlt } from 'react-icons/fa';
-import { BsFillTelephoneFill } from 'react-icons/bs';
+import { BsFillTelephoneFill, BsSearch } from 'react-icons/bs';
 import { FiMail } from 'react-icons/fi';
 import { BsFillHouseAddFill } from 'react-icons/bs';
 import { BiBookOpen } from 'react-icons/bi';
@@ -55,4 +55,5 @@ export const iconsList = {
   BsInstagram,
   BsYoutube,
   BsCheckCircle,
+  BsSearch,
 };

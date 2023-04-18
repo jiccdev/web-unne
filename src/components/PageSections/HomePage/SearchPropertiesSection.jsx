@@ -4,6 +4,7 @@ import PropertiesContext from '@/context/properties/PropertiesContext';
 import SelectsContext from '@/context/selects/SelectsContext';
 import { Tab } from '@headlessui/react';
 import Button from '@/components/Button/Button';
+import SearchByPropertyCode from '@/components/Input/SearchByPropertyCode';
 import { webServicesTabs } from '../../../data';
 
 const classNames = (...classes) => classes.filter(Boolean).join(' ');
@@ -21,6 +22,12 @@ const SearchPropertiesSection = () => {
   ] = contextData;
   const [, , getPropertiesOnFormSubmit] = contextDataProps;
   const [categories, setCategories] = useState([...webServicesTabs]);
+  const [isOpenSearchCode, setIsOpenSearchCode] = useState(false);
+
+  const handleOpenSearchCode = (ev) => {
+    ev.preventDefault();
+    setIsOpenSearchCode(!isOpenSearchCode);
+  };
 
   /** Handle Operation Type options */
   const onOperationTypeChange = (category) => {
@@ -174,7 +181,6 @@ const SearchPropertiesSection = () => {
             <Link
               href="/propiedades"
               onClick={() => {
-               
                 onFormSubmit(
                   1,
                   1,
@@ -197,11 +203,18 @@ const SearchPropertiesSection = () => {
           </div>
         </div>
 
-        <div className="my-3">
-          <p className="text-black">
+        <div className="my-5 w-full ">
+          <p className="text-sm text-gray-600">
             Buscar por{' '}
-            <span className="text-orange-500">codigo de propiedad</span>
+            <button
+              onClick={handleOpenSearchCode}
+              className="text-orange-500 hover:text-orange-600"
+            >
+              código de propiedad
+            </button>
           </p>
+
+          {isOpenSearchCode && <SearchByPropertyCode />}
         </div>
       </form>
     </div>

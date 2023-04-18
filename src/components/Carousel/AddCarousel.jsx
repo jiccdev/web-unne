@@ -30,7 +30,7 @@ const AddCarousel = ({ data, sm, md, lg, xl }) => {
                     <Image
                         src={item.images}
                         alt="slider"
-                        className="bg-center bg-no-repeat bg-cover"
+                        className="bg-center bg-no-repeat bg-cover brightness-50"
                         width="auto"
                         height="auto"/>
                 </div>
