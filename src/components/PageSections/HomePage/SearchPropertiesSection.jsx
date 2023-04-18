@@ -1,16 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Tab } from '@headlessui/react';
 import Button from '@/components/Button/Button';
 import { webServicesTabs } from '../../../data';
+import SelectsContext from '@/context/selects/SelectsContext';
 
 const classNames = (...classes) => classes.filter(Boolean).join(' ');
 
 const SearchPropertiesSection = () => {
+  const { contextData } = useContext(SelectsContext);
+  const [filterSearchEntry, setFilterSearchEntry] = contextData;
   const [categories, setCategories] = useState([...webServicesTabs]);
-  const [operationType, setOperationType] = useState('');
 
-  console.log('OperationType:', operationType);
+  const onOperationTypeChange = (category) => {
+    setFilterSearchEntry({
+      ...filterSearchEntry,
+      operationType: category,
+    });
+  };
 
+  console.log('formData', filterSearchEntry);
   return (
     <div className="bg-gray-100 rounded-2xl w-100 xl:w-3/5 mx-auto text-black p-4 xl:px-10">
       <form>
@@ -18,10 +26,10 @@ const SearchPropertiesSection = () => {
           <div className="d-flex justify-start items-start pb-4">
             <Tab.Group className="m-0">
               <Tab.List className="flex space-x-1 w-100 rounded-[100px] text-black mb:16 bg-gray-200 mx-auto w-5/6 lg:w-3/6">
-                {Object.values(categories).map((category, idx) => (
+                {Object.values(categories).map((category) => (
                   <Tab
                     key={category}
-                    onClick={() => setOperationType(category)}
+                    onClick={() => onOperationTypeChange(category)}
                     className={({ selected }) =>
                       classNames(
                         'w-full text-md font-medium leading-5 rounded-[100px] text-black focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-offset-gray-100 focus:ring-amber-400',

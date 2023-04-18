@@ -1,11 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
+import PropertiesContext from '@/context/properties/PropertiesContext';
 import SelectsContext from '@/context/selects/SelectsContext';
-import Link from 'next/link';
-
 import RSelect from '@/components/RSelect/RSelect';
 import { parkingLotsList, bedroomsList, bathroomsList } from '@/data/selects';
-import { iconsList } from '@/components/Icons';
-import PropertiesContext from '@/context/properties/PropertiesContext';
 
 const AdvancedSearch = () => {
   const { contextDataProps } = useContext(PropertiesContext);
