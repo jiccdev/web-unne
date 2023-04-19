@@ -4,6 +4,7 @@ import PropertiesServices from '@/services/PropertiesServices';
 
 const PropertiesProvider = ({ children }) => {
   const [properties, setProperties] = useState([]);
+  const [propertyId, setPropertyId] = useState('');
   const [statusCodeMsg, setStatusCodeMsg] = useState('');
 
   /** Get Properties */

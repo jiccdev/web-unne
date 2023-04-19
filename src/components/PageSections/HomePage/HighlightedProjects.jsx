@@ -26,7 +26,7 @@ const HighlightedProjects = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center flex-col bg-gray-50 rounded-md">
+    <div className="flex justify-center items-center flex-col bg-gray-50 rounded-md pb-14">
       <HeadingSection title="Proyectos Destacados" />
 
       <AliceCarousel

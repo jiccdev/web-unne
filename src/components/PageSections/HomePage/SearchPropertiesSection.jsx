@@ -215,7 +215,7 @@ const SearchPropertiesSection = () => {
           </p>
         </div>
       </form>
-      {isOpenSearchCode && <SearchByPropertyCode />}
+      {isOpenSearchCode && <SearchByPropertyCode propertyId={1}/>}
     </div>
   );
 };

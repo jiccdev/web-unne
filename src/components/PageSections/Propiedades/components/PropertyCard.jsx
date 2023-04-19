@@ -1,18 +1,28 @@
 import React from 'react';
 import Link from 'next/link';
 import { truncateString, parseToCLPCurrency } from '@/utils';
+import NotFoundImg from '../../../../assets/img/error/not-found-img.jpg';
+import Image from 'next/image';
 
 const PropertyCard = ({ data }) => {
   const { id, title, image, address, commune, city, price } = data;
+  const errorImgServer =
+    'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg';
+
   return (
     <div className="w-full border rounded-lg bg-white border-gray-200 hover:cursor-pointer hover:shadow-xl transition duration-300 ease-in-out">
       <Link href="/">
-        <img className="rounded-t-lg" src={image} alt={`image-${title}`} />
+        <img
+          className="rounded-t-lg"
+          src={image ?? errorImgServer}
+          alt={`image-${title}`}
+        />
       </Link>
+
       <div className="p-5">
         <a href="#">
           <span className="uppercase text-orange-500">Cod: {id}</span>
-          <h5 className="mb-2 text-lg xl:text-lg font-bold text-gray-800">
+          <h5 className="mb-2 h-14 text-lg xl:text-lg font-bold text-gray-800">
             {truncateString(title, 60)}
           </h5>
         </a>
