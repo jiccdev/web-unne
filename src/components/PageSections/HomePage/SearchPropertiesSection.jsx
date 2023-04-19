@@ -3,7 +3,6 @@ import Link from 'next/link';
 import PropertiesContext from '@/context/properties/PropertiesContext';
 import SelectsContext from '@/context/selects/SelectsContext';
 import { Tab } from '@headlessui/react';
-import Button from '@/components/Button/Button';
 import SearchByPropertyCode from '@/components/Input/SearchByPropertyCode';
 import { webServicesTabs } from '../../../data';
 
@@ -20,7 +19,8 @@ const SearchPropertiesSection = () => {
     communes,
     getCommunesByRegion,
   ] = contextData;
-  const [, , getPropertiesOnFormSubmit] = contextDataProps;
+  const [, , getPropertiesOnFormSubmit, , propertyId, setPropertyId] =
+    contextDataProps;
   const [categories, setCategories] = useState([...webServicesTabs]);
   const [isOpenSearchCode, setIsOpenSearchCode] = useState(false);
 
@@ -98,8 +98,6 @@ const SearchPropertiesSection = () => {
       parkingLots
     );
   };
-
-  console.log('formData', filterSearchEntry);
 
   return (
     <div className="bg-gray-100 rounded-2xl w-100 xl:w-3/5 mx-auto text-black p-4 xl:px-10">
@@ -215,7 +213,13 @@ const SearchPropertiesSection = () => {
           </p>
         </div>
       </form>
-      {isOpenSearchCode && <SearchByPropertyCode propertyId={1}/>}
+
+      {isOpenSearchCode && (
+        <SearchByPropertyCode
+          propertyId={propertyId}
+          setPropertyId={setPropertyId}
+        />
+      )}
     </div>
   );
 };

@@ -86,6 +86,8 @@ const PropertiesProvider = ({ children }) => {
           getProperties,
           getPropertiesOnFormSubmit,
           getPropertiesByDefault,
+          propertyId,
+          setPropertyId,
         ],
       }}
     >

@@ -1,8 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { truncateString, parseToCLPCurrency } from '@/utils';
-import NotFoundImg from '../../../../assets/img/error/not-found-img.jpg';
-import Image from 'next/image';
 
 const PropertyCard = ({ data }) => {
   const { id, title, image, address, commune, city, price } = data;
@@ -22,7 +20,7 @@ const PropertyCard = ({ data }) => {
       <div className="p-5">
         <a href="#">
           <span className="uppercase text-orange-500">Cod: {id}</span>
-          <h5 className="mb-2 h-14 text-lg xl:text-lg font-bold text-gray-800">
+          <h5 className="mb-2 h-20 text-lg xl:text-lg font-bold text-gray-800">
             {truncateString(title, 60)}
           </h5>
         </a>

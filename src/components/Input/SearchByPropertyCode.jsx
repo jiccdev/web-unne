@@ -1,11 +1,13 @@
 import React, { Fragment } from 'react';
-import { iconsList } from '../Icons';
 import Link from 'next/link';
 
-const SearchByPropertyCode = ({ propertyId }) => {
-  const { BsSearch } = iconsList;
+const SearchByPropertyCode = ({ propertyId, setPropertyId }) => {
   const CLASSES =
     'block w-full my-4 text-gray-500 focus:outline-none bg-white rounded-full border border-gray-300';
+
+  const handlePropertyId = (ev) => setPropertyId(Number(ev.target.value));
+
+  console.log(propertyId);
 
   return (
     <Fragment>
@@ -29,15 +31,15 @@ const SearchByPropertyCode = ({ propertyId }) => {
             </svg>
           </div>
           <input
-            type="text"
+            type="number"
             id="search-property"
             value={propertyId}
+            onChange={handlePropertyId}
             className={`${CLASSES} p-3 pl-10 text-MD`}
             placeholder="Código: 00001"
           />
           <Link
             href={`/propiedades/${propertyId}?statusId=${1}&companyId=${1}`}
-            // onClick={() => setPropertyId()}
             className="text-white absolute pt-3 top-[0px] right-[1px] bottom-[0px] bg-gray-400 hover:bg-gray-500 py-2.5 px-4 xl:px-7 rounded-r-full"
           >
             Buscar
