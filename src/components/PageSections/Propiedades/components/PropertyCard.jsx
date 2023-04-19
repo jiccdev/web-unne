@@ -23,11 +23,12 @@ const PropertyCard = ({ data }) => {
         <p className="mb-3 font-normal text-orange-500 text-end">
           Venta: {parseToCLPCurrency(price)}
         </p>
-        <a
-          href="#"
+
+        <Link
+          href={`/propiedades/${id}?statusId=${1}&companyId=${1}`}
           className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-orange-500 rounded-lg hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300"
         >
-          Ver detalles
+          Detalles
           <svg
             aria-hidden="true"
             className="w-4 h-4 ml-2 -mr-1"
@@ -41,7 +42,7 @@ const PropertyCard = ({ data }) => {
               clipRule="evenodd"
             ></path>
           </svg>
-        </a>
+        </Link>
       </div>
     </div>
   );
