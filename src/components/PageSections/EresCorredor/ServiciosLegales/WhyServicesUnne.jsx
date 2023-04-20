@@ -1,6 +1,7 @@
 import ServicesCard from '@/components/Card/ServicesCard'
 import React from 'react'
 import { LegalServicesData } from '../../../../data';
+import ButtonProps from '@/components/Button/ButtonProps';
 
 const WhyServicesUnne = () => {
 
@@ -23,7 +24,8 @@ const WhyServicesUnne = () => {
             <div className='flex justify-center items-end flex-wrap gap-4 xl:gap-10 text-center'>
                 <h2 className='text-4xl font-bold'>Consulta por tu asesoría gratuita</h2>
                 <div className='flex justify-center pb-1 pt-5 xl:pt-0'>
-                    <button className="text-white px-16 py-3 bg-orange-600 border-none rounded-full hover:bg-orange-700">Aqui</button>
+                    {/* <button className="text-white px-16 py-3 bg-orange-600 border-none rounded-full hover:bg-orange-700">Aqui</button> */}
+                    <ButtonProps rounded title='Aqui' sizeClass='px-16 py-3' fontSize='text-base capitalize'/>
                 </div>
             </div>
             <div className='divider'></div>

@@ -31,7 +31,7 @@ const AuctionProcess = () => {
         //test test test
         <Fade delay={300} direction='right'>
             <div className=''>
-                <div className='flex flex-wrap flex-row items-center justify-center mt-24  w-full'>
+                <div className='flex flex-wrap flex-row items-center justify-center  w-full'>
                     <div className='w-full sm:w-1/3 lg:w-max mb-8 sm:mb-0 hover:scale-105 transition duration-500'>
                         <div className='max-w-xl h-50 sm:h-auto bg-white rounded-lg overflow-hidden shadow-md'>
                             <div className='p-14'>
