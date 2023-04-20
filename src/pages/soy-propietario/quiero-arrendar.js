@@ -28,7 +28,7 @@ const QuieroArrendar = () => {
           <MainCarousel data={mainCarouselLeaseData} />
         </section>
 
-        <section>
+        <section className='my-20'>
           <Fade delay={300} cascade>
             {whyUnneLeaseData?.length > 0 &&
               whyUnneLeaseData?.map((e) => (
@@ -37,7 +37,7 @@ const QuieroArrendar = () => {
           </Fade>
         </section>
         
-        <section className='mt-20 bg-gray-50 py-8'>
+        <section className='my-20 bg-gray-50 py-8'>
           <Fade delay={300} cascade>
             <CircleSection
               ubicationData={CircleArrendarData}
@@ -49,9 +49,6 @@ const QuieroArrendar = () => {
             />
           </Fade>
 
-        </section>
-        <section className="flex justify-center mt-5 mb-20">
-          <SimpleButton></SimpleButton>
         </section>
 
         <section className="my-20 xl:my-64 px-4 xl:px-32">

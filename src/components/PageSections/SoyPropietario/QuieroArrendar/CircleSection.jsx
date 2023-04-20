@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import CircleSteps from './CircleSteps';
 import SimpleButton from '@/components/Button/SimpleButton';
+import ButtonProps from '@/components/Button/ButtonProps';
 
 const CircleSection = ({ ubicationData, ColorBorder, ColorBg, ColorNumberBG, ColorTextBG, ColorText }) => {
 
@@ -10,8 +11,8 @@ const CircleSection = ({ ubicationData, ColorBorder, ColorBg, ColorNumberBG, Col
             <div className='xl:ml-20 2xl:ml-32 pb-5'>
                 <div className=' xl:max-w-md'>
                     <h2 className='my-10 text-center text-4xl md:text-5xl font-bold'>¿Como funciona?</h2>
-                    <div>
-                        <SimpleButton></SimpleButton>
+                    <div className='flex justify-center mt-5'>
+                        <ButtonProps rounded></ButtonProps>
                     </div>
                 </div>
             </div>
