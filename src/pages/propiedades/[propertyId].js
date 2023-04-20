@@ -27,9 +27,9 @@ const PropiedadId = () => {
   const queryId = query.propertyId;
   const { FaShare, AiFillPrinter } = iconsList;
 
-  console.log('queryId', String(queryId));
-  console.log('PropertyId', propertyId);
-  console.log('Property data', property);
+  // console.log('queryId', String(queryId));
+  // console.log('PropertyId', propertyId);
+  // console.log('Property data', property);
 
   useEffect(() => {
     getPropertyById(queryId, 1, 1);

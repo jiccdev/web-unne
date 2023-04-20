@@ -30,16 +30,19 @@ const Details = ({ property }) => {
       <h3 className="border-b pb-1">Empresa {company}</h3>
 
       <p className="text-sm text-gray-400 my-2">
-        Publicado por: <span className="text-gray-700">{company}</span>
+        Publicado por:{' '}
+        <span className="text-gray-700">
+          {company ?? 'Empresa no registrada'}
+        </span>
       </p>
 
       <div className="text-sm text-gray-400 my-3">
         <p className="text-gray-400">Desde</p>
         <h4 className="text-xl text-gray-700 font-semibold">
-          UF {clpToUf(price, ufCurrentValue)}
+          UF {clpToUf(price || 0, ufCurrentValue)}
         </h4>
         <h4 className="text-sm text-gray-500">
-          {parseToCLPCurrency(price || '0')}
+          {parseToCLPCurrency(price || 0)}
         </h4>
       </div>
 

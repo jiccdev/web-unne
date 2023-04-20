@@ -7,8 +7,6 @@ const SearchByPropertyCode = ({ propertyId, setPropertyId }) => {
 
   const handlePropertyId = (ev) => setPropertyId(Number(ev.target.value));
 
-  console.log(propertyId);
-
   return (
     <Fragment>
       <form>
