@@ -110,7 +110,7 @@ const AuctionObjetives = () => {
 
     <div className=''>
       <Fade delay={300} direction='left'>
-        <div className="grid grid-cols-1 md:grid-cols-1 2xl:flex flex-row mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-1 2xl:flex flex-row">
           <div className="flex items-center justify-center ml-8 hover:scale-110 transition duration-500">
             <h2 className="text-6xl font-bold text-black text-left pl-8">
               ¡Invertir es así de fácil!
