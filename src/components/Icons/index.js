@@ -4,8 +4,9 @@ import {
   BsBarChartFill,
   BsFillHouseCheckFill,
   BsCheckCircle,
+  BsFillCalendarCheckFill,
 } from 'react-icons/bs';
-import { GiMoneyStack } from 'react-icons/gi';
+import { GiMoneyStack, GiHomeGarage } from 'react-icons/gi';
 import { TbPigMoney } from 'react-icons/tb';
 import { TbArrowBigRightFilled } from 'react-icons/tb';
 import { TbArrowBigDownFilled } from 'react-icons/tb';
@@ -61,4 +62,6 @@ export const iconsList = {
   RiPencilRulerLine,
   FaBed,
   FaBath,
+  BsFillCalendarCheckFill,
+  GiHomeGarage,
 };

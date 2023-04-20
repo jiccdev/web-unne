@@ -7,6 +7,7 @@ import GalleryCarousel from '@/components/GalleryCarousel/GalleryCarousel';
 import TopInfoAddress from '@/components/PageSections/Propiedades/components/PropertyId/TopInfoAddress';
 import Details from '@/components/PageSections/Propiedades/components/PropertyId/Details';
 import SimilarProjects from '@/components/PageSections/Propiedades/components/PropertyId/SimilarProjects';
+import Characteristics from '@/components/PageSections/Propiedades/components/PropertyId/Characteristics';
 import { iconsList } from '@/components/Icons';
 
 const PropiedadId = () => {
@@ -26,7 +27,7 @@ const PropiedadId = () => {
   const queryId = query.propertyId;
   const { FaShare, AiFillPrinter } = iconsList;
 
-  console.log('queryId', Number(queryId));
+  console.log('queryId', String(queryId));
   console.log('PropertyId', propertyId);
   console.log('Property data', property);
 
@@ -60,7 +61,7 @@ const PropiedadId = () => {
               </div>
 
               <GalleryCarousel items={property} />
-              <div className="mt-40">Caractefef</div>
+              <Characteristics property={property} />
             </div>
             <div className="sm:col-span-6 col-span-3 xl:col-span-1 bg-white h-auto order-1 xl:order-2">
               <Details property={property} />

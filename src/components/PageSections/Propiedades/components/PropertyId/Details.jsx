@@ -41,7 +41,7 @@ const Details = ({ property }) => {
           <span className="text-gray-400 mr-1">
             <FaBath />
           </span>
-          {bathrooms ?? 0} dorms.
+          {bathrooms ?? 0} baños .
         </div>
       </div>
 
