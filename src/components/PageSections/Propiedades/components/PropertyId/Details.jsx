@@ -1,11 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { parseToCLPCurrency } from '@/utils';
+import { parseToCLPCurrency, clpToUf } from '@/utils';
+import ExchangeRateServices from '../../../../../services/ExchangeRateServices';
 import { iconsList } from '@/components/Icons';
 
 const Details = ({ property }) => {
+  const [ufCurrentValue, setUfCurrentValue] = useState(0);
   const { company, price, surface_m2, bedrooms, bathrooms } = property;
   const { RiPencilRulerLine, FaBed, FaBath } = iconsList;
+
+  const getExchangeRateUF = async () => {
+    try {
+      const response = await ExchangeRateServices.getExchangeRateUF();
+      const ufValue = response?.UFs[0]?.Valor;
+      const ufValueAsNumber = parseFloat(ufValue.replace(',', '.'));
+
+      setUfCurrentValue(ufValueAsNumber);
+    } catch (error) {
+      throw error.response;
+    }
+  };
+
+  useEffect(() => {
+    getExchangeRateUF();
+  }, [ufCurrentValue]);
+
   return (
     <div className="border rounded-sm p-4 xl:p-8">
       <h3 className="border-b pb-1">Empresa {company}</h3>
@@ -16,9 +35,11 @@ const Details = ({ property }) => {
 
       <div className="text-sm text-gray-400 my-3">
         <p className="text-gray-400">Desde</p>
-        <h4 className="text-xl text-gray-700 font-semibold">UF {price}</h4>
+        <h4 className="text-xl text-gray-700 font-semibold">
+          UF {clpToUf(price, ufCurrentValue)}
+        </h4>
         <h4 className="text-sm text-gray-500">
-          {parseToCLPCurrency(price || 0)}
+          {parseToCLPCurrency(price || '0')}
         </h4>
       </div>
 
