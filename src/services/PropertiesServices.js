@@ -8,6 +8,13 @@ const PropertiesServices = {
     return response.data;
   },
 
+  getProperty: async (id, statusId = 1, companyId = 1) => {
+    const response = await api.get(
+      `properties/${id}?statusId=${statusId}&companyId=${companyId}`
+    );
+    return response.data;
+  },
+
   getPropertiesOnFormSubmit: async (
     statusId = 1,
     companyId = 1,

@@ -1,10 +1,33 @@
 import React, { Fragment, useState, useContext, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import PropertiesContext from '@/context/properties/PropertiesContext';
 import HeadPage from '@/components/Head/HeadPage';
 import Layout from '@/components/Layout/Layout';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 const PropiedadId = () => {
+  const { contextDataProps } = useContext(PropertiesContext);
+  const [
+    ,
+    ,
+    ,
+    ,
+    propertyId,
+    setPropertyId,
+    getPropertyById,
+    property,
+    setProperty,
+  ] = contextDataProps;
+  const { query } = useRouter();
+  const queryId = query.propertyId;
+
+  console.log('queryId', Number(queryId));
+  console.log('PropertyId', propertyId);
+  console.log('Property data', property);
+
+  useEffect(() => {
+    getPropertyById(queryId || propertyId, 1, 1);
+  }, []);
+
   return (
     <Fragment>
       <HeadPage>

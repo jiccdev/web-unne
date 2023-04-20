@@ -4,6 +4,7 @@ import PropertiesServices from '@/services/PropertiesServices';
 
 const PropertiesProvider = ({ children }) => {
   const [properties, setProperties] = useState([]);
+  const [property, setProperty] = useState({});
   const [propertyId, setPropertyId] = useState('');
   const [statusCodeMsg, setStatusCodeMsg] = useState('');
 
@@ -16,6 +17,20 @@ const PropertiesProvider = ({ children }) => {
       );
 
       setProperties(response?.data);
+    } catch (error) {
+      const { statusCode } = error?.response?.data;
+      setStatusCodeMsg(statusCode) && new Error(error?.response?.data);
+    }
+  };
+
+  const getPropertyById = async (id, statusId, companyId) => {
+    try {
+      const response = await PropertiesServices.getProperty(
+        id,
+        statusId,
+        companyId
+      );
+      setProperty(response);
     } catch (error) {
       const { statusCode } = error?.response?.data;
       setStatusCodeMsg(statusCode) && new Error(error?.response?.data);
@@ -88,6 +103,9 @@ const PropertiesProvider = ({ children }) => {
           getPropertiesByDefault,
           propertyId,
           setPropertyId,
+          getPropertyById,
+          property,
+          setProperty,
         ],
       }}
     >
