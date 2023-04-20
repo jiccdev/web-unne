@@ -59,7 +59,6 @@ const PropiedadId = () => {
                   </span>
                 </div>
               </div>
-
               <GalleryCarousel items={property} />
               <Characteristics property={property} />
             </div>
