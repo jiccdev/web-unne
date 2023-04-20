@@ -21,7 +21,7 @@ const GalleryCarousel = ({ items }) => {
       showFullscreenButton={false}
       showBullets={false}
       showThumbnails={true}
-      thumbnailPosition="left"
+      thumbnailPosition="bottom"
       items={getImages()}
     />
   );

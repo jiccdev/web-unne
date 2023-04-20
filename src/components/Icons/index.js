@@ -1,5 +1,5 @@
 import { IoIosArrowDown } from 'react-icons/io';
-import { RiUserSearchFill } from 'react-icons/ri';
+import { RiUserSearchFill, RiPencilRulerLine } from 'react-icons/ri';
 import {
   BsBarChartFill,
   BsFillHouseCheckFill,
@@ -17,12 +17,12 @@ import { TbSquareRoundedNumber1Filled } from 'react-icons/tb';
 import { TbSquareRoundedNumber2Filled } from 'react-icons/tb';
 import { TbSquareRoundedNumber3Filled } from 'react-icons/tb';
 import { TbSquareRoundedNumber4Filled } from 'react-icons/tb';
-import { FaUserAlt } from 'react-icons/fa';
+import { FaUserAlt, FaShare, FaBed, FaBath } from 'react-icons/fa';
 import { BsFillTelephoneFill, BsSearch } from 'react-icons/bs';
 import { FiMail } from 'react-icons/fi';
 import { BsFillHouseAddFill } from 'react-icons/bs';
 import { BiBookOpen } from 'react-icons/bi';
-import { AiOutlineShareAlt } from 'react-icons/ai';
+import { AiOutlineShareAlt, AiFillPrinter } from 'react-icons/ai';
 import { AiTwotoneGold } from 'react-icons/ai';
 import { GrClose } from 'react-icons/gr';
 import { MdOutlineArrowDropDown } from 'react-icons/md';
@@ -56,4 +56,9 @@ export const iconsList = {
   BsYoutube,
   BsCheckCircle,
   BsSearch,
+  FaShare,
+  AiFillPrinter,
+  RiPencilRulerLine,
+  FaBed,
+  FaBath,
 };

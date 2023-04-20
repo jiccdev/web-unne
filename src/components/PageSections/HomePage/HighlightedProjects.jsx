@@ -29,25 +29,29 @@ const HighlightedProjects = () => {
     <div className="flex justify-center items-center flex-col bg-gray-50 rounded-md pb-14">
       <HeadingSection title="Proyectos Destacados" />
 
-      <AliceCarousel
-        mouseTracking
-        responsive={responsive}
-        controlsStrategy="alternate"
-        autoPlayStrategy="none"
-        autoPlayInterval={2500}
-        animationDuration={1000}
-        animationType="fadeout"
-        touchTracking={false}
-        disableButtonsControls
-        disableDotsControls
-        autoPlay
-        infinite
-        items={getHighlightedProperties?.map((property) => (
-          <div key={property?.id} className="m-3">
-            <PropertyCard data={property} />
-          </div>
-        ))}
-      />
+      {getHighlightedProperties.length > 0 ? (
+        <AliceCarousel
+          mouseTracking
+          responsive={responsive}
+          controlsStrategy="alternate"
+          autoPlayStrategy="none"
+          autoPlayInterval={2500}
+          animationDuration={1000}
+          animationType="fadeout"
+          touchTracking={false}
+          disableButtonsControls
+          disableDotsControls
+          autoPlay
+          infinite
+          items={getHighlightedProperties?.map((property) => (
+            <div key={property?.id} className="m-3">
+              <PropertyCard data={property} />
+            </div>
+          ))}
+        />
+      ) : (
+        <span className="text-sm text-gray-500">Cargando...</span>
+      )}
     </div>
   );
 };
