@@ -25,6 +25,7 @@ import {
   FaBath,
   FaThList,
   FaMapMarked,
+  FaMapMarkerAlt,
 } from 'react-icons/fa';
 import { BsFillTelephoneFill, BsSearch } from 'react-icons/bs';
 import { FiMail } from 'react-icons/fi';
@@ -75,4 +76,5 @@ export const iconsList = {
   BsFillGridFill,
   FaThList,
   FaMapMarked,
+  FaMapMarkerAlt,
 };

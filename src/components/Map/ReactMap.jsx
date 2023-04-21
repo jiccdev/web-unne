@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import Map, {
   Marker,
   NavigationControl,
@@ -7,11 +8,12 @@ import Map, {
   FullscreenControl,
   Popup,
 } from 'react-map-gl';
-import { parseToCLPCurrency } from '@/utils';
 import CardMap from './CardMap';
+import { iconsList } from '../Icons';
 
 const ReactMap = ({ longitudeProp, latitudeProp, property }) => {
   const mapRef = useRef(null);
+  const { asPath } = useRouter();
   const [showPopup, setShowPopup] = useState(false);
   const [viewport, setViewport] = useState({
     width: '100%',
@@ -21,6 +23,7 @@ const ReactMap = ({ longitudeProp, latitudeProp, property }) => {
     zoom: 18,
     dragPan: true,
   });
+  const { FaMapMarkerAlt } = iconsList;
 
   useEffect(() => {
     setViewport({
@@ -33,7 +36,31 @@ const ReactMap = ({ longitudeProp, latitudeProp, property }) => {
   }, [mapRef, longitudeProp, latitudeProp]);
 
   return (
-    <div className="container">
+    <div className="container my-24">
+      <div>
+        <h3>
+          <Link
+            href={`/propiedades/maps-propiedades`}
+            className="flex w-1/6 uppercase items-center justify-center rounded-lg py-2 text-lg font-medium text-center text-white bg-gray-500 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300"
+          >
+            <FaMapMarkerAlt className="mr-2" /> Ver mapa
+          </Link>
+        </h3>
+
+        <h4 className="flex ml-2 xl:ml-5 items-center my-5 text-gray-600">
+          <span>
+            <FaMapMarkerAlt className="mr-2" />
+          </span>
+          Ubicación: {property?.address || 'Dirección no registrada'} ,
+          {property?.commune || 'Comuna no registrada'},{' '}
+          {property?.city || 'Ciudad no registrada'}
+        </h4>
+
+        <Link href={asPath} className="ml-2 xl:ml-5 text-blue-500 text-sm">
+          Ver información de la zona
+        </Link>
+      </div>
+
       <Map
         {...viewport}
         ref={mapRef}

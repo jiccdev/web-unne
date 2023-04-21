@@ -65,7 +65,7 @@ const PropiedadId = () => {
             </div>
             <div className="sm:col-span-6 col-span-3 xl:col-span-1 bg-white h-auto order-1 xl:order-2">
               <Details property={property} />
-              <SimilarProjects />
+              {/* <SimilarProjects /> */}
             </div>
           </div>
 
