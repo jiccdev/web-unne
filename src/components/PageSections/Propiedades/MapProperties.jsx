@@ -26,7 +26,7 @@ const MapProperties = () => {
     <div>
       <div className="container">
         <div className="mb-10">
-          <h1>Localizacion de Propiedades</h1>
+          <h1 className="text-xl">Localización de Propiedades</h1>
           <p
             style={{
               fontSize: '1rem',
