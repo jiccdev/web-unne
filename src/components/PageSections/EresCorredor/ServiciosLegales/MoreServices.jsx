@@ -21,6 +21,9 @@ const MoreServices = () => {
         }
     }
 
+    const titleFont = 'text-3xl';
+    const listFont = '';
+
     return (
         <div>
             <div className='flex justify-center pb-1 pt-5 mb-10'>
@@ -29,7 +32,7 @@ const MoreServices = () => {
             <Fade delay={500}>
                 <div id='MoreServices' className='hidden mx-5 lg:mx-20 2xl:mx-72 mt-32 mb-20'>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-5 xl:gap-0'>
-                        {MoreServicesData?.length > 0 && MoreServicesData?.map((e) => (<ListServices key={e.id} data={e} />))}
+                        {MoreServicesData?.length > 0 && MoreServicesData?.map((e) => (<ListServices key={e.id} data={e} titleFont={titleFont} listFont={listFont}/>))}
                     </div>
                 </div>
             </Fade>

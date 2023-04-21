@@ -22,6 +22,8 @@ const ServiciosLegales = () => {
     useEffect(() => {
         getClientList();
     }, []);
+
+    
     return (
         <Fragment>
             <HeadPage>
@@ -47,7 +49,7 @@ const ServiciosLegales = () => {
                     <MoreServices />
                 </section>
                 <section className='mt-20'>
-                    <TitleSection title={"Nuestros clientes cuentan su experiencia"} />
+                    <TitleSection title={"Nuestros clientes cuentan su experiencia"} titleFont='text-3xl md:text-5xl'/>
                 </section>
 
                 <section className="relative mb-24 xl:mb-40 px-4 xl:px-56">

@@ -15,6 +15,10 @@ const MainInformation = () => {
         },
     ];
 
+    const titleFont = 'text-3xl md:text-5xl';
+    const listFont = 'text-lg';
+    const spanFont = 'text-xs';
+
     return (
         <div className='xl:mx-10 2xl:mx-48'>
 
@@ -22,7 +26,7 @@ const MainInformation = () => {
 
                 <div className='xl:col-start-1 xl:col-end-3 py-5 px-4 sm:pl-20'>
                     <Fade direction='left' delay={200} cascade>
-                        {AssociateData?.length > 0 && AssociateData?.map((e) => (<Info key={e.id} data={e} />))}
+                        {AssociateData?.length > 0 && AssociateData?.map((e) => (<Info key={e.id} data={e} titleFont={titleFont} listFont={listFont} spanFont={spanFont}/>))}
                     </Fade>
                 </div>
                 <Fade direction='right' delay={200} cascade>

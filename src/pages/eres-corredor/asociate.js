@@ -11,6 +11,7 @@ import { Fade } from 'react-awesome-reveal';
 
 const Asociate = () => {
 
+    const margin = 'my-28';
     return (
         <Fragment>
             <HeadPage>
@@ -18,20 +19,20 @@ const Asociate = () => {
             </HeadPage>
 
             <Layout>
-                <section className='mt-20'>
+                <section className={`${margin}`}>
                     <Fade delay={300} cascade>
                         <MainInformation />
                     </Fade>
                 </section>
-                <section>
+                <section className={`${margin}`}>
                     <Banner />
                 </section>
-                <section className='my-20 bg-gray-50 py-8'>
+                <section className={`${margin} bg-gray-50 py-8`}>
                     <Fade direction='left' delay={200} cascade>
                         <InfoCardSection />
                     </Fade>
                 </section>
-                <section>
+                <section className={`${margin}`}>
                     <Fade delay={300} cascade>
                         <OurPartners />
                     </Fade>

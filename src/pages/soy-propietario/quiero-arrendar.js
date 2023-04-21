@@ -16,6 +16,7 @@ import {
 import { Fade } from 'react-awesome-reveal';
 
 const QuieroArrendar = () => {
+  const margin = 'my-20';
   return (
     <Fragment>
       <HeadPage>
@@ -28,7 +29,7 @@ const QuieroArrendar = () => {
           <MainCarousel data={mainCarouselLeaseData} />
         </section>
 
-        <section className='my-20'>
+        <section className={`${margin}`}>
           <Fade delay={300} cascade>
             {whyUnneLeaseData?.length > 0 &&
               whyUnneLeaseData?.map((e) => (
@@ -37,7 +38,7 @@ const QuieroArrendar = () => {
           </Fade>
         </section>
         
-        <section className='my-20 bg-gray-50 py-8'>
+        <section className={`${margin} bg-gray-50 py-8`}>
           <Fade delay={300} cascade>
             <CircleSection
               ubicationData={CircleArrendarData}

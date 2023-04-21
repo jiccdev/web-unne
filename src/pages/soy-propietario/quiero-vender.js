@@ -12,6 +12,9 @@ import { Fade } from 'react-awesome-reveal';
 import ButtonProps from '@/components/Button/ButtonProps';
 
 const QuieroVender = () => {
+
+  const margin = 'my-20';
+
   return (
     <Fragment>
       <HeadPage>
@@ -23,13 +26,13 @@ const QuieroVender = () => {
         <section>
           <MainCarousel data={mainCarouselSellData} />
         </section>
-        <section>
+        <section className={`${margin}`}>
           <Fade delay={300} cascade>
             {whyUnneSellData?.length > 0 && whyUnneSellData?.map((e) => (<WhyUnneSection key={e.id} data={e} />))}
           </Fade>
         </section>
 
-        <section className='my-20 bg-gray-50 py-8'>
+        <section className={`${margin} bg-gray-50 py-8`}>
           <Fade delay={300} cascade>
             <CircleSection ubicationData={CircleVenderData} ColorBorder='border-[#FBB916]' ColorBg='bg-[#FBB916]' ColorNumberBG='bg-[#fb923c]' ColorTextBG='bg-[#e5e7eb]' ColorText='text-black' />
           </Fade>
