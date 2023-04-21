@@ -23,7 +23,6 @@ const UnidadesRemates = () => {
         <section className=' mt-20'>
         <AuctionObjetives/>
         </section>
-
       </Layout>
       
     </Fragment>

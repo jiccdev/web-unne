@@ -7,6 +7,8 @@ import MeetingForm from '@/components/Form/MeetingForm';
 import { Fade } from 'react-awesome-reveal';
 
 const UnidadesNuevas = () => {
+
+  const margin = 'my-20';
   return (
     <Fragment>
       <HeadPage>
@@ -15,12 +17,12 @@ const UnidadesNuevas = () => {
 
       {/* HERO SECTION */}
       <Layout>
-        <section className='my-20'>
+        <section className={`${margin}`}>
           <Fade delay={300} cascade>
             <NewProperty />
           </Fade>
         </section>
-        <section>
+        <section className={`${margin}`}>
           <Banner />
         </section>
         {/* <section className='flex justify-center py-5'>
