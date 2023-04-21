@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
-
+  reactStrictMode: true,
+  trailingSlash: true,
   images: {
     domains: [
       'reqres.in',
