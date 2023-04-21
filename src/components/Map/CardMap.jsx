@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import { parseToCLPCurrency } from '@/utils';
 
 const CardMap = ({ property }) => {
@@ -26,7 +25,8 @@ const CardMap = ({ property }) => {
           }}
         />
       </a>
-      <div className="">
+
+      <div>
         <span className="bg-orange-500 text-white px-2 py-.5 mt-1 rounded-full">
           {types?.[0] ?? 'Propiedad'}
         </span>

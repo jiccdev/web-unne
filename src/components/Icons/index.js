@@ -18,10 +18,17 @@ import { TbSquareRoundedNumber1Filled } from 'react-icons/tb';
 import { TbSquareRoundedNumber2Filled } from 'react-icons/tb';
 import { TbSquareRoundedNumber3Filled } from 'react-icons/tb';
 import { TbSquareRoundedNumber4Filled } from 'react-icons/tb';
-import { FaUserAlt, FaShare, FaBed, FaBath } from 'react-icons/fa';
+import {
+  FaUserAlt,
+  FaShare,
+  FaBed,
+  FaBath,
+  FaThList,
+  FaMapMarked,
+} from 'react-icons/fa';
 import { BsFillTelephoneFill, BsSearch } from 'react-icons/bs';
 import { FiMail } from 'react-icons/fi';
-import { BsFillHouseAddFill } from 'react-icons/bs';
+import { BsFillHouseAddFill, BsFillGridFill } from 'react-icons/bs';
 import { BiBookOpen } from 'react-icons/bi';
 import { AiOutlineShareAlt, AiFillPrinter } from 'react-icons/ai';
 import { AiTwotoneGold } from 'react-icons/ai';
@@ -30,6 +37,7 @@ import { MdOutlineArrowDropDown } from 'react-icons/md';
 import { BsFacebook } from 'react-icons/bs';
 import { BsInstagram } from 'react-icons/bs';
 import { BsYoutube } from 'react-icons/bs';
+import { MdViewList } from 'react-icons/md';
 
 export const iconsList = {
   IoIosArrowDown,
@@ -64,4 +72,7 @@ export const iconsList = {
   FaBath,
   BsFillCalendarCheckFill,
   GiHomeGarage,
+  BsFillGridFill,
+  FaThList,
+  FaMapMarked,
 };

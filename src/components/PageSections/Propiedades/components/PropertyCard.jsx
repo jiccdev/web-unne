@@ -2,16 +2,22 @@ import React from 'react';
 import Link from 'next/link';
 import { truncateString, parseToCLPCurrency } from '@/utils';
 
-const PropertyCard = ({ data }) => {
+const PropertyCard = ({ data, isList }) => {
   const { id, title, image, address, commune, city, price } = data;
   const errorImgServer =
     'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg';
 
   return (
-    <div className="w-full border rounded-lg bg-white border-gray-200 hover:cursor-pointer hover:shadow-xl transition duration-300 ease-in-out">
+    <div
+      className={`${
+        isList
+          ? 'flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row'
+          : 'w-full'
+      } border rounded-lg border-gray-200 hover:cursor-pointer hover:shadow-xl transition duration-300 ease-in-out`}
+    >
       <Link href="/">
         <img
-          className="rounded-t-lg"
+          className={isList ? 'xl:h-64' : 'rounded-t-lg'}
           src={image ?? errorImgServer}
           alt={`image-${title}`}
         />
