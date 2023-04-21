@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react';
+import Link from 'next/link';
 import PropertiesContext from '@/context/properties/PropertiesContext';
 import SelectsContext from '@/context/selects/SelectsContext';
 import PropertyCard from './PropertyCard';
@@ -62,7 +63,9 @@ const PropertiesList = () => {
             <FaThList />
           </li>
           <li className="mx-1 p-2.5 rounded-md bg-gray-200 cursor-pointer text-gray-500">
-            <FaMapMarked />
+            <Link href="propiedades/maps-propiedades">
+              <FaMapMarked />
+            </Link>
           </li>
         </ul>
       </div>

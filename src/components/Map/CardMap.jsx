@@ -5,6 +5,7 @@ const CardMap = ({ property }) => {
   const {
     title,
     types,
+    image,
     images,
     address,
     commune,
