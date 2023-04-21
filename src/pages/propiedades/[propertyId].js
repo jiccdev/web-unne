@@ -8,6 +8,7 @@ import TopInfoAddress from '@/components/PageSections/Propiedades/components/Pro
 import Details from '@/components/PageSections/Propiedades/components/PropertyId/Details';
 import SimilarProjects from '@/components/PageSections/Propiedades/components/PropertyId/SimilarProjects';
 import Characteristics from '@/components/PageSections/Propiedades/components/PropertyId/Characteristics';
+import ReactMap from '@/components/Map/ReactMap';
 import { iconsList } from '@/components/Icons';
 
 const PropiedadId = () => {
@@ -27,9 +28,9 @@ const PropiedadId = () => {
   const queryId = query.propertyId;
   const { FaShare, AiFillPrinter } = iconsList;
 
-  // console.log('queryId', String(queryId));
-  // console.log('PropertyId', propertyId);
-  // console.log('Property data', property);
+  const { LngLat } = property;
+  const lng = Number(LngLat?.match(/Lng: ([-\d.]+)/)[1]) || -70.64827;
+  const lat = Number(LngLat?.match(/Lat: ([-\d.]+)/)[1]) || -33.45694;
 
   useEffect(() => {
     getPropertyById(queryId, 1, 1);
@@ -66,6 +67,15 @@ const PropiedadId = () => {
               <Details property={property} />
               <SimilarProjects />
             </div>
+          </div>
+
+          {/* REACT MAP */}
+          <div>
+            <ReactMap
+              longitudeProp={lng}
+              latitudeProp={lat}
+              property={property}
+            />
           </div>
         </div>
       </Layout>
