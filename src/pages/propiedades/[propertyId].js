@@ -6,17 +6,13 @@ import Layout from '@/components/Layout/Layout';
 import GalleryCarousel from '@/components/GalleryCarousel/GalleryCarousel';
 import TopInfoAddress from '@/components/PageSections/Propiedades/components/PropertyId/TopInfoAddress';
 import Details from '@/components/PageSections/Propiedades/components/PropertyId/Details';
-import SimilarProjects from '@/components/PageSections/Propiedades/components/PropertyId/SimilarProjects';
 import Characteristics from '@/components/PageSections/Propiedades/components/PropertyId/Characteristics';
+import ClipboardProperty from '@/components/PageSections/Propiedades/components/PropertyId/ClipboardProperty';
 import ReactMap from '@/components/Map/ReactMap';
-import { iconsList } from '@/components/Icons';
-import VistaWeb from './VistaWeb';
 import VistaPdf from './VistaPdf';
-
 import Modal from '@/components/Modal/Modal';
-
 import { PDFViewer } from '@react-pdf/renderer';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { iconsList } from '@/components/Icons';
 
 const PropiedadId = () => {
   const { contextDataProps } = useContext(PropertiesContext);
@@ -37,7 +33,7 @@ const PropiedadId = () => {
 
   const { query } = useRouter();
   const queryId = query.propertyId;
-  const { FaShare, AiFillPrinter, HiClipboard, HiClipboardCheck } = iconsList;
+  const { FaShare, AiFillPrinter } = iconsList;
 
   const { LngLat } = property;
   const lng = Number(LngLat?.match(/Lng: ([-\d.]+)/)[1]) || -70.64827;
@@ -52,30 +48,12 @@ const PropiedadId = () => {
   const [showWeb, setShowWeb] = useState(false);
   const [showPdf, setShowPdf] = useState(false);
 
+  /** Render clipboard property modal */
   const renderContent = () => (
-    <div className="flex justify-center text-lg my-5 p-2 rounded-lg bg-gray-100">
-      <span className="flex items-center text-slate-500">
-        Copiar
-        <span className="text-slate-500 ml-2 text-2xl cursor-pointer">
-          <CopyToClipboard
-            text={`https://unne.pa/propiedades`}
-            onCopy={() => {
-              setCopied(true);
-              setTimeout(() => {
-                setCopied(false);
-              }, 3000);
-            }}
-          >
-            {!copied ? (
-              <HiClipboard className="text-slate-500" />
-            ) : (
-              <HiClipboardCheck className="text-green-600" />
-            )}
-          </CopyToClipboard>
-        </span>
-      </span>
-    </div>
+    <ClipboardProperty {...{ queryId, copied, setCopied }} />
   );
+
+  const renderContentPdf = () => <p>Pdf</p>;
 
   return (
     <Fragment>
