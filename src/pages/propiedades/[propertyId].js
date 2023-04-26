@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect } from 'react';
+import React, { Fragment, useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import PropertiesContext from '@/context/properties/PropertiesContext';
 import HeadPage from '@/components/Head/HeadPage';
@@ -10,6 +10,10 @@ import SimilarProjects from '@/components/PageSections/Propiedades/components/Pr
 import Characteristics from '@/components/PageSections/Propiedades/components/PropertyId/Characteristics';
 import ReactMap from '@/components/Map/ReactMap';
 import { iconsList } from '@/components/Icons';
+import VistaWeb from './VistaWeb';
+import VistaPdf from './VistaPdf';
+
+import { PDFViewer } from '@react-pdf/renderer';
 
 const PropiedadId = () => {
   const { contextDataProps } = useContext(PropertiesContext);
@@ -36,6 +40,11 @@ const PropiedadId = () => {
     getPropertyById(queryId, 1, 1);
   }, [queryId]);
 
+  // pdf
+  const [poema, setPoema] = useState('Este es un poema');
+  const [showWeb, setShowWeb] = useState(false);
+  const [showPdf, setShowPdf] = useState(false);
+
   return (
     <Fragment>
       <HeadPage>
@@ -43,6 +52,18 @@ const PropiedadId = () => {
       </HeadPage>
 
       <Layout>
+        {showWeb && <VistaWeb poema={poema} />}
+        {showPdf && (
+          <PDFViewer
+            style={{
+              width: '100%',
+              height: '90vh',
+            }}
+          >
+            <VistaPdf poema={poema} />
+          </PDFViewer>
+        )}
+
         <div className="my-10 px-4 xl:px-32">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mx-auto bg-red md:grid-cols-reverse">
             <div className="sm:col-span-6 col-span-3 xl:col-span-3 bg-gray-50 max-h-auto order-2 xl:order-1">
@@ -54,7 +75,10 @@ const PropiedadId = () => {
                     Compartir
                   </span>
                   <span className="mx-4 text-gray-200">|</span>
-                  <span className="flex items-center hover:text-blue-500 cursor-pointer">
+                  <span
+                    onClick={() => setShowPdf(!showPdf)}
+                    className="flex items-center hover:text-blue-500 cursor-pointer"
+                  >
                     <AiFillPrinter className="mr-1" />
                     Imprimir PDF
                   </span>
