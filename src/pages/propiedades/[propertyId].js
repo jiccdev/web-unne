@@ -16,64 +16,42 @@ import { iconsList } from '@/components/Icons';
 
 const PropiedadId = () => {
   const { contextDataProps } = useContext(PropertiesContext);
-  const [
-    ,
-    ,
-    ,
-    ,
-    propertyId,
-    setPropertyId,
-    getPropertyById,
-    property,
-    setProperty,
-  ] = contextDataProps;
+  const [, , , , propertyId, setPropertyId, getPropertyById, property] =
+    contextDataProps;
   const [showModalShare, setShowModalShare] = useState(false);
   const [showModalDetail, setShowModalDetail] = useState(false);
   const [copied, setCopied] = useState(false);
-
   const { query } = useRouter();
-  const queryId = query.propertyId;
-  const { FaShare, AiFillPrinter } = iconsList;
 
+  const queryId = query.propertyId;
   const { LngLat } = property;
+  const { FaShare, AiFillPrinter } = iconsList;
   const lng = Number(LngLat?.match(/Lng: ([-\d.]+)/)[1]) || -70.64827;
   const lat = Number(LngLat?.match(/Lat: ([-\d.]+)/)[1]) || -33.45694;
-
-  useEffect(() => {
-    getPropertyById(queryId, 1, 1);
-  }, [queryId]);
-
-  // pdf
-  const [poema, setPoema] = useState('Este es un poema');
-  const [showWeb, setShowWeb] = useState(false);
-  const [showPdf, setShowPdf] = useState(false);
 
   /** Render clipboard property modal */
   const renderContent = () => (
     <ClipboardProperty {...{ queryId, copied, setCopied }} />
   );
 
-  const renderContentPdf = () => <p>Pdf</p>;
+  /** Render Property detail */
+  const renderContentPdf = () => (
+    <PDFViewer className="w-full h-[90vh]">
+      <VistaPdf property={property} />
+    </PDFViewer>
+  );
+
+  useEffect(() => {
+    getPropertyById(queryId, 1, 1);
+  }, [queryId]);
 
   return (
     <Fragment>
       <HeadPage>
-        <title>Unne | Propiedad {queryId || 'Propiedad no encontrada'}</title>
+        <title>Unne | Detalle propiedad</title>
       </HeadPage>
 
       <Layout>
-        {showWeb && <VistaWeb poema={poema} />}
-        {showPdf && (
-          <PDFViewer
-            style={{
-              width: '100%',
-              height: '90vh',
-            }}
-          >
-            <VistaPdf poema={poema} />
-          </PDFViewer>
-        )}
-
         <div className="my-10 px-4 xl:px-32">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mx-auto bg-red md:grid-cols-reverse">
             <div className="sm:col-span-6 col-span-3 xl:col-span-3 bg-gray-50 max-h-auto order-2 xl:order-1">
@@ -89,7 +67,7 @@ const PropiedadId = () => {
                   </span>
                   <span className="mx-4 text-gray-200">|</span>
                   <span
-                    onClick={() => setShowPdf(!showPdf)}
+                    onClick={() => setShowModalDetail(true)}
                     className="flex items-center hover:text-blue-500 cursor-pointer"
                   >
                     <AiFillPrinter className="mr-1" />
@@ -116,6 +94,7 @@ const PropiedadId = () => {
           </div>
         </div>
 
+        {/* Show copy to clipboard property */}
         <Modal
           renderTrigger={() => null}
           isOpenProp={showModalShare}
@@ -125,6 +104,18 @@ const PropiedadId = () => {
             setShowModalShare(false);
           }}
           modalTitle="Compartir Propiedad"
+        />
+
+        {/* Show PDF property detail */}
+        <Modal
+          renderTrigger={() => null}
+          isOpenProp={showModalDetail}
+          renderContent={renderContentPdf}
+          contentExtraClass="max-w-[90%]"
+          onCloseModal={() => {
+            setShowModalDetail(false);
+          }}
+          modalTitle="Descargar PDF"
         />
       </Layout>
     </Fragment>
