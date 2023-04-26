@@ -17,6 +17,7 @@ const MapProperties = () => {
   const { contextDataProps } = useContext(PropertiesContext);
   const [properties, getProperties] = contextDataProps;
   const [showPopup, setShowPopup] = useState(false);
+  const [selectedProperty, setSelectedProperty] = useState(false);
 
   useEffect(() => {
     getProperties();
@@ -50,7 +51,7 @@ const MapProperties = () => {
               attributionControl: false,
               longitude: -70.64827,
               latitude: -33.45694,
-              zoom: 12,
+              zoom: 10,
               style: {
                 width: 'auto',
                 height: '80vh',
@@ -90,14 +91,20 @@ const MapProperties = () => {
                       alt="marker"
                       height={50}
                       width={50}
-                      onClick={() => setShowPopup(!showPopup)}
+                      onClick={() =>
+                        setSelectedProperty((prev) =>
+                          prev && prev.id === property.id ? false : property
+                        )
+                      }
                     />
 
-                    {showPopup && (
+
+
+                    {selectedProperty && selectedProperty.id === property.id && (
                       <Popup
                         longitude={longitude}
                         latitude={latitude}
-                        onClose={() => setShowPopup(false)}
+                        onClose={() => setSelectedProperty(true)}
                         anchor="bottom"
                         closeButton={false}
                         closeOnClick={false}
@@ -112,9 +119,8 @@ const MapProperties = () => {
                         }}
                       >
                         <Link
-                          href={`/propiedades/${
-                            property?.id
-                          }?statusId=${1}&companyId=${1}`}
+                          href={`/propiedades/${property?.id
+                            }?statusId=${1}&companyId=${1}`}
                         >
                           <div className="max-w-sm bg-white">
                             <a href="#">
