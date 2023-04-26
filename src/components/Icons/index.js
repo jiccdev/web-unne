@@ -18,6 +18,11 @@ import { TbSquareRoundedNumber1Filled } from 'react-icons/tb';
 import { TbSquareRoundedNumber2Filled } from 'react-icons/tb';
 import { TbSquareRoundedNumber3Filled } from 'react-icons/tb';
 import { TbSquareRoundedNumber4Filled } from 'react-icons/tb';
+
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
+
+
 import {
   FaUserAlt,
   FaShare,
@@ -77,4 +82,6 @@ export const iconsList = {
   FaThList,
   FaMapMarked,
   FaMapMarkerAlt,
+  IoIosArrowBack,
+  IoIosArrowForward,
 };

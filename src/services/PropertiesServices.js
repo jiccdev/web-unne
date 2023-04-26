@@ -15,6 +15,22 @@ const PropertiesServices = {
     return response.data;
   },
 
+  /* Pagination */
+  getAllProperties: async (limit, statusId = 1, companyId) => {
+    const response = await api.get(
+      `properties?limit=${limit}&statusId=${statusId}&companyId=${companyId}`
+    );
+    return response.data;
+  },
+
+  getPagination: async (limit, page, statusId = 1, companyId) => {
+    const response = await api.get(
+      `properties?limit=${limit}&page=${page}&statusId=${statusId}&companyId=${companyId}`
+    );
+    return response.data;
+  },
+
+  /*  */
   getPropertiesOnFormSubmit: async (
     statusId = 1,
     companyId = 1,
