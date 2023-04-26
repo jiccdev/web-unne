@@ -79,6 +79,16 @@ h3 {
   font-family: var(--font-poppins-bold);
 }
 
+path {
+  border: none !important;
+  outline: none !important;
+}
+
+path:focus {
+  border: none !important;
+  outline: none !important;
+}
+
 .mapboxgl-ctrl-attrib-inner {
   display: none !important;
 }

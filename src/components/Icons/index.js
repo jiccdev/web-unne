@@ -19,9 +19,9 @@ import { TbSquareRoundedNumber2Filled } from 'react-icons/tb';
 import { TbSquareRoundedNumber3Filled } from 'react-icons/tb';
 import { TbSquareRoundedNumber4Filled } from 'react-icons/tb';
 
-import { IoIosArrowBack } from "react-icons/io";
-import { IoIosArrowForward } from "react-icons/io";
-
+import { IoIosArrowBack } from 'react-icons/io';
+import { IoIosArrowForward } from 'react-icons/io';
+import { HiClipboard, HiClipboardCheck } from 'react-icons/hi';
 
 import {
   FaUserAlt,
@@ -84,4 +84,6 @@ export const iconsList = {
   FaMapMarkerAlt,
   IoIosArrowBack,
   IoIosArrowForward,
+  HiClipboard,
+  HiClipboardCheck,
 };

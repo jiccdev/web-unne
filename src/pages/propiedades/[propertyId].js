@@ -13,7 +13,10 @@ import { iconsList } from '@/components/Icons';
 import VistaWeb from './VistaWeb';
 import VistaPdf from './VistaPdf';
 
+import Modal from '@/components/Modal/Modal';
+
 import { PDFViewer } from '@react-pdf/renderer';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const PropiedadId = () => {
   const { contextDataProps } = useContext(PropertiesContext);
@@ -28,9 +31,13 @@ const PropiedadId = () => {
     property,
     setProperty,
   ] = contextDataProps;
+  const [showModalShare, setShowModalShare] = useState(false);
+  const [showModalDetail, setShowModalDetail] = useState(false);
+  const [copied, setCopied] = useState(false);
+
   const { query } = useRouter();
   const queryId = query.propertyId;
-  const { FaShare, AiFillPrinter } = iconsList;
+  const { FaShare, AiFillPrinter, HiClipboard, HiClipboardCheck } = iconsList;
 
   const { LngLat } = property;
   const lng = Number(LngLat?.match(/Lng: ([-\d.]+)/)[1]) || -70.64827;
@@ -44,6 +51,31 @@ const PropiedadId = () => {
   const [poema, setPoema] = useState('Este es un poema');
   const [showWeb, setShowWeb] = useState(false);
   const [showPdf, setShowPdf] = useState(false);
+
+  const renderContent = () => (
+    <div className="flex justify-center text-lg my-5 p-2 rounded-lg bg-gray-100">
+      <span className="flex items-center text-slate-500">
+        Copiar
+        <span className="text-slate-500 ml-2 text-2xl cursor-pointer">
+          <CopyToClipboard
+            text={`https://unne.pa/propiedades`}
+            onCopy={() => {
+              setCopied(true);
+              setTimeout(() => {
+                setCopied(false);
+              }, 3000);
+            }}
+          >
+            {!copied ? (
+              <HiClipboard className="text-slate-500" />
+            ) : (
+              <HiClipboardCheck className="text-green-600" />
+            )}
+          </CopyToClipboard>
+        </span>
+      </span>
+    </div>
+  );
 
   return (
     <Fragment>
@@ -70,7 +102,10 @@ const PropiedadId = () => {
               <div className="flex justify-between items-center py-2.5 px-5 text-xs xl:text-sm text-gray-500">
                 <TopInfoAddress property={property} />
                 <div className="flex flex-row">
-                  <span className="flex items-center hover:text-blue-500 cursor-pointer">
+                  <span
+                    onClick={() => setShowModalShare(true)}
+                    className="flex items-center hover:text-blue-500 cursor-pointer"
+                  >
                     <FaShare className="mr-1" />
                     Compartir
                   </span>
@@ -102,6 +137,17 @@ const PropiedadId = () => {
             />
           </div>
         </div>
+
+        <Modal
+          renderTrigger={() => null}
+          isOpenProp={showModalShare}
+          renderContent={renderContent}
+          contentExtraClass="max-w-2xl"
+          onCloseModal={() => {
+            setShowModalShare(false);
+          }}
+          modalTitle="Compartir Propiedad"
+        />
       </Layout>
     </Fragment>
   );
