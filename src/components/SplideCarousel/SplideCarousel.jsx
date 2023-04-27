@@ -1,4 +1,9 @@
 import { useState } from 'react';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import Logo from '../Logo/Logo';
+import Link from 'next/link';
+import Image from 'next/image';
+import { demosBasicData } from '../../data';
 
 const plans = [
   {
@@ -14,7 +19,26 @@ const plans = [
     disk: '512 GB SSD disk',
   },
   {
-    name: 'Enterprise',
+    name: 'Enterpwffrise',
+    ram: '32GB',
+    cpus: '12 CPUs',
+    disk: '1024 GB SSD disk',
+  },
+  {
+    name: 'ds',
+    ram: '32GB',
+    cpus: '12 CPUs',
+    disk: '1024 GB SSD disk',
+  },
+  {
+    name: 'Entdsdsdserprise',
+    ram: '32GB',
+    cpus: '12 CPUs',
+    disk: '1024 GB SSD disk',
+  },
+
+  {
+    name: 'Entdsdsdrgserprise',
     ram: '32GB',
     cpus: '12 CPUs',
     disk: '1024 GB SSD disk',
@@ -36,10 +60,23 @@ const SplideCarousel = () => {
   };
 
   return (
-    <div className="w-full px-4 py-16">
-      <div className="mx-auto w-full max-w-md">
-        <div className="space-y-2">
-          {plans.map((plan) => (
+    <Splide
+      options={{
+        rewind: true,
+        gap: '1rem',
+        perPage: 3,
+      }}
+      aria-label="My Favorite Images"
+    >
+      {demosBasicData.map((plan) => (
+        <SplideSlide>
+          <div className="w-full px-4 py-16">
+            <div className="flex items-center justify-center">
+              <a href={plan.href} target="_blank">
+                <Image src={plan.src} height={400} width={400} />
+              </a>
+            </div>
+
             <label
               key={plan.name}
               className={`${
@@ -61,10 +98,10 @@ const SplideCarousel = () => {
                 {plan.name}
               </span>
             </label>
-          ))}
-        </div>
-      </div>
-    </div>
+          </div>
+        </SplideSlide>
+      ))}
+    </Splide>
   );
 };
 
