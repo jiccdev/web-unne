@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import PropertiesContext from '@/context/properties/PropertiesContext';
 import SelectsContext from '@/context/selects/SelectsContext';
 import PropertyCard from './PropertyCard';
@@ -31,6 +32,7 @@ const PropertiesList = () => {
   const [filterSearchEntry] = contextData;
   const [isGrid, setIsGrid] = useState(true);
   const [isList, setIsList] = useState(false);
+  const { pathname } = useRouter();
   const { BsFillGridFill, FaThList, FaMapMarked } = iconsList;
   const paginate = (currentPage) => getPagination(limit, currentPage, 1, 15);
 
@@ -57,10 +59,21 @@ const PropertiesList = () => {
     ]
   );
 
+  const getTopTitle = (location) => {
+    switch (location) {
+      case '/propiedades':
+        return 'Propiedades';
+      case '/soy-inversionista/unidades-nuevas':
+        return 'Unidades Nuevas';
+      default:
+        break;
+    }
+  };
+
   return (
     <div className="">
       <div className="p-2 py-5 bg-gray-50 flex justify-between items-center">
-        <h1 className="text-2xl">Propiedades</h1>
+        <h1 className="text-2xl">{getTopTitle(pathname)}</h1>
         <ul className="flex items-center">
           <li
             onClick={() => {
