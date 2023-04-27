@@ -162,7 +162,8 @@ const VistaPdf = ({ property }) => {
 
             <View style={styles.topInfo}>
               <Text style={styles.topInfoDetail}>
-                <Text style={styles.lightFont}>Código de propiedad:</Text> {id}
+                <Text style={styles.lightFont}>Código de propiedad:</Text>{' '}
+                {id || 0}
               </Text>
 
               <Text style={styles.topInfoDetail}>
