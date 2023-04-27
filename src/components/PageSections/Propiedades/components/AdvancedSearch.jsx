@@ -1,4 +1,5 @@
 import React, { useEffect, useContext, useState } from 'react';
+import { useRouter } from 'next/router';
 import PropertiesContext from '@/context/properties/PropertiesContext';
 import SelectsContext from '@/context/selects/SelectsContext';
 import RSelect from '@/components/RSelect/RSelect';
@@ -15,19 +16,54 @@ const AdvancedSearch = () => {
     communes,
     getCommunesByRegion,
   ] = contextData;
-  const [, , getPropertiesOnFormSubmit] = contextDataProps;
+  const [
+    ,
+    ,
+    getPropertiesOnFormSubmit,
+    getPropertiesByDefault,
+    propertyId,
+    setPropertyId,
+    getPropertyById,
+    property,
+    setProperty,
+    limit,
+    metaData,
+    totalItems,
+    getPagination,
+    getTotalItems,
+    page,
+    cargando,
+    setCargando,
+  ] = contextDataProps;
+  const [operationTypeDefault, setOperationTypeDefault] = useState([]);
+  const router = useRouter();
 
   /** Handle Operation Type options */
-
-  const [operationTypeDefault, setOperationTypeDefault] = useState([]);
-
   const getOperationTypeOptions = () => {
-    const options = selects?.operationType?.map((type) => ({
-      value: type.value,
-      label: type.name,
-    }));
-
-    return options;
+    if (router.pathname === '/soy-inversionista/unidades-nuevas') {
+      const filtredArr = selects?.operationType
+        ?.filter(
+          (operationType) =>
+            operationType.value !== 'arriendo' &&
+            operationType.value !== 'arriendo_temporal'
+        )
+        .map((operationType) => ({
+          value: operationType.value,
+          label: operationType.name,
+        }));
+      return filtredArr;
+    } else {
+      const filtredArr2 = selects?.operationType?.map((operationType) => ({
+        value: operationType.value,
+        label: operationType.name,
+      }));
+      return filtredArr2;
+    }
+    // const options = selects?.operationType?.map((type) => ({
+    //   value: type.value,
+    //   label: type.name,
+    // }));
+    // return options;
   };
 
   const onOperationTypeChange = (option) => {
@@ -39,11 +75,37 @@ const AdvancedSearch = () => {
 
   /** Handle Property Type options */
   const getTypeOfPropertyOptions = () => {
-    const options = selects?.typeOfProperty?.map((type) => ({
-      value: type.value,
-      label: type.name,
-    }));
-    return options;
+    if (router.pathname === '/soy-inversionista/unidades-nuevas') {
+      const filtredArr = selects?.typeOfProperty
+        ?.filter(
+          (type) =>
+            type.value !== 'casa' &&
+            type.value !== 'parcela' &&
+            type.value !== 'terreno' &&
+            type.value !== 'industrial' &&
+            type.value !== 'local' &&
+            type.value !== 'oficina' &&
+            type.value !== 'sitio' &&
+            type.value !== 'Terreno En Construccion' &&
+            type.value !== 'agrícola'
+        )
+        .map((type) => ({
+          value: type.value,
+          label: type.name,
+        }));
+      return filtredArr;
+    } else {
+      const filtredArr2 = selects?.typeOfProperty?.map((type) => ({
+        value: type.value,
+        label: type.name,
+      }));
+      return filtredArr2;
+    }
+    // const options = selects?.typeOfProperty?.map((type) => ({
+    //   value: type.value,
+    //   label: type.name,
+    // }));
+    // return options;
   };
 
   const onTypeOfPropertyChange = (option) => {
@@ -327,10 +389,21 @@ const AdvancedSearch = () => {
               filterSearchEntry?.bathrooms,
               filterSearchEntry?.parkingLots
             );
+            setCargando(true);
+            setTimeout(() => {
+              setCargando(false);
+            }, 2700);
           }}
           className="block w-full text-center items-center px-3 py-2 text-sm font-medium text-white bg-orange-500 rounded-lg hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300"
         >
-          Buscar
+          {cargando ? (
+            <span>Buscando...</span>
+          ) : (
+            <span className="max-h-10">
+              Buscar
+              {/* <GoSearch /> */}
+            </span>
+          )}
         </button>
       </div>
     </form>

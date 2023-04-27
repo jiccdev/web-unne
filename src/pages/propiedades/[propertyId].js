@@ -71,7 +71,7 @@ const PropiedadId = () => {
                     className="flex items-center hover:text-blue-500 cursor-pointer"
                   >
                     <AiFillPrinter className="mr-1" />
-                    Imprimir PDF
+                    Descargar PDF /cambiar logo
                   </span>
                 </div>
               </div>

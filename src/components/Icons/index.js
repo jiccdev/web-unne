@@ -2,7 +2,6 @@ import { IoIosArrowDown } from 'react-icons/io';
 import { RiUserSearchFill, RiPencilRulerLine } from 'react-icons/ri';
 import {
   BsBarChartFill,
-  BsFillHouseCheckFill,
   BsCheckCircle,
   BsFillCalendarCheckFill,
 } from 'react-icons/bs';
@@ -44,6 +43,7 @@ import { BsFacebook } from 'react-icons/bs';
 import { BsInstagram } from 'react-icons/bs';
 import { BsYoutube } from 'react-icons/bs';
 import { MdViewList } from 'react-icons/md';
+import { GoSearch } from 'react-icons/go';
 
 export const iconsList = {
   IoIosArrowDown,
@@ -86,4 +86,5 @@ export const iconsList = {
   IoIosArrowForward,
   HiClipboard,
   HiClipboardCheck,
+  GoSearch,
 };

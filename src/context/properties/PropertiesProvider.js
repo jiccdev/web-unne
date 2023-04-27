@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import PropertiesContext from './PropertiesContext';
 import PropertiesServices from '@/services/PropertiesServices';
 
@@ -7,6 +8,8 @@ const PropertiesProvider = ({ children }) => {
   const [property, setProperty] = useState({});
   const [propertyId, setPropertyId] = useState('');
   const [statusCodeMsg, setStatusCodeMsg] = useState('');
+  const [cargando, setCargando] = useState(true);
+  const { pathname } = useRouter();
 
   /* Pagination */
   const [limit, setLimit] = useState(10);
@@ -22,12 +25,31 @@ const PropertiesProvider = ({ children }) => {
         companyId
       );
 
-      setProperties(response?.data);
+      if (pathname === '/soy-inversionista/unidades-nuevas') {
+        const filtredPropertiesBySale = response?.data?.filter((property) => {
+          return property?.operation === 'Venta';
+        });
+        setProperties(filtredPropertiesBySale);
+      } else {
+        setCargando(true);
+        setProperties(response.data);
+        setTimeout(() => {
+          setCargando(false);
+        }, 0);
+
+        // return setNewProperties(response.data) || setProperties(response.data);
+      }
+
+      // setProperties(response?.data);
     } catch (error) {
       const { statusCode } = error?.response?.data;
       setStatusCodeMsg(statusCode) && new Error(error?.response?.data);
     }
   };
+
+  useEffect(() => {
+    getProperties(1, 15);
+  }, [pathname]);
 
   const getPropertyById = async (id, statusId, companyId) => {
     try {
@@ -159,6 +181,8 @@ const PropertiesProvider = ({ children }) => {
           getPagination,
           getTotalItems,
           page,
+          cargando,
+          setCargando,
         ],
       }}
     >
