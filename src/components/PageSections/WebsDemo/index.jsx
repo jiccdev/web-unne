@@ -11,7 +11,7 @@ const WebsDemoComponent = () => {
 
   const renderContent = () => {
     return (
-      <form onSubmit="">
+      <form>
         <h4 className="text-sm pb-2">Demos seleccionados</h4>
         {selectedDemos.map((option) => (
           <div
@@ -47,14 +47,37 @@ const WebsDemoComponent = () => {
     );
   };
 
-  console.log(selectedDemos);
-
   return (
     <Fragment>
       {/* Show Basic DEMOS */}
       <section className="px-4 my-14 md:my-16 xl:my-28 xl:px-32">
         <SplideCarousel
-          title="Webs demo basica"
+          title="Webs demo básica"
+          data={demosBasicData}
+          RenderedComponent={SplideSlideComponent}
+          selectedDemos={selectedDemos}
+          setSelectedDemos={setSelectedDemos}
+        />
+
+        <div className="w-full flex justify-center items-center">
+          <ButtonPrimary
+            onClick={() => setShowBasicDemoModal(true)}
+            disabled={selectedDemos.length <= 0}
+            className={`${
+              selectedDemos.length > 0
+                ? 'bg-orange-500 text-white cursor-pointer'
+                : 'bg-orange-300 text-white cursor-default'
+            }`}
+          >
+            Solicitar Demos
+          </ButtonPrimary>
+        </div>
+      </section>
+
+      {/* Show Advanced DEMOS */}
+      <section className="px-4 my-14 md:my-16 xl:my-28 xl:px-32">
+        <SplideCarousel
+          title="Webs demo avanzada"
           data={demosBasicData}
           RenderedComponent={SplideSlideComponent}
           selectedDemos={selectedDemos}
@@ -87,6 +110,9 @@ const WebsDemoComponent = () => {
         }}
         modalTitle="Solicitar Demos"
       />
+
+      {/* Show Advanced modal DEMOS */}
+      {/* ... */}
     </Fragment>
   );
 };
