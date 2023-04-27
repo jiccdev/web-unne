@@ -28,31 +28,34 @@ const PropertiesList = () => {
     page,
   ] = contextDataProps;
 
-
   const [filterSearchEntry] = contextData;
   const [isGrid, setIsGrid] = useState(true);
   const [isList, setIsList] = useState(false);
   const { BsFillGridFill, FaThList, FaMapMarked } = iconsList;
-  const paginate = (currentPage) => getPagination(limit, currentPage, 1, 1);
+  const paginate = (currentPage) => getPagination(limit, currentPage, 1, 15);
 
   useEffect(() => {
-    getTotalItems(1, 1);
+    getTotalItems(1, 15);
   }, [metaData]);
 
   useEffect(() => {
-    getPagination(limit, page, 1, 1);
+    getPagination(limit, page, 1, 15);
   }, [limit, page]);
 
-  useEffect(() => {
-    filterSearchEntry?.operationType === 'arriendo' &&
-      filterSearchEntry?.typeOfProperty === 'departamento'
-      ? getPropertiesByDefault()
-      : null;
-  }, [
-    filterSearchEntry,
-    filterSearchEntry?.operationType,
-    filterSearchEntry?.typeOfProperty,
-  ]);
+  useEffect(
+    () => {
+      getProperties();
+      // filterSearchEntry?.operationType === 'arriendo' &&
+      //   filterSearchEntry?.typeOfProperty === 'departamento'
+      //   ? getPropertiesByDefault()
+      //   : null;
+    },
+    [
+      // filterSearchEntry,
+      // filterSearchEntry?.operationType,
+      // filterSearchEntry?.typeOfProperty,
+    ]
+  );
 
   return (
     <div className="">
@@ -64,10 +67,11 @@ const PropertiesList = () => {
               setIsGrid(true);
               setIsList(false);
             }}
-            className={`${isGrid
-              ? 'mx-1 p-2.5 rounded-md bg-orange-500 text-white cursor-pointer'
-              : 'mx-1 p-2.5 rounded-md bg-gray-200 cursor-pointer text-gray-500'
-              }`}
+            className={`${
+              isGrid
+                ? 'mx-1 p-2.5 rounded-md bg-orange-500 text-white cursor-pointer'
+                : 'mx-1 p-2.5 rounded-md bg-gray-200 cursor-pointer text-gray-500'
+            }`}
           >
             <BsFillGridFill />
           </li>
@@ -76,10 +80,11 @@ const PropertiesList = () => {
               setIsList(true);
               setIsGrid(false);
             }}
-            className={`${isList
-              ? 'mx-1 p-2.5 rounded-md bg-orange-500 text-white cursor-pointer'
-              : 'mx-1 p-2.5 rounded-md bg-gray-200 cursor-pointer text-gray-500'
-              }`}
+            className={`${
+              isList
+                ? 'mx-1 p-2.5 rounded-md bg-orange-500 text-white cursor-pointer'
+                : 'mx-1 p-2.5 rounded-md bg-gray-200 cursor-pointer text-gray-500'
+            }`}
           >
             <FaThList />
           </li>
@@ -90,10 +95,13 @@ const PropertiesList = () => {
           </li>
         </ul>
       </div>
-      <div className={`${isGrid
-        ? 'grid grid-cols-1 sm:grid-cols-3 gap-4 p-2'
-        : 'flex flex-col gap-4 p-2'
-        }`}>
+      <div
+        className={`${
+          isGrid
+            ? 'grid grid-cols-1 sm:grid-cols-3 gap-4 p-2'
+            : 'flex flex-col gap-4 p-2'
+        }`}
+      >
         {properties.length > 0 ? (
           properties?.map((property) => (
             <PropertyCard
@@ -107,7 +115,7 @@ const PropertiesList = () => {
           <p>Obteniendo propiedades</p>
         )}
       </div>
-      <div className='flex justify-center my-5'>
+      <div className="flex justify-center my-5">
         <Pagination
           itemPerPage={limit}
           paginate={paginate}

@@ -71,7 +71,7 @@ const Details = ({ property }) => {
 
       <div className="w-full">
         <Link
-          href={`/propiedades/${property?.id}?statusId=${1}&companyId=${1}`}
+          href={`/propiedades/${property?.id}?statusId=${1}&companyId=${15}`}
           className="flex w-full items-center justify-center rounded-full py-2 text-sm font-medium text-center text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300"
         >
           Cotizar

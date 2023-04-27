@@ -181,7 +181,7 @@ const SearchPropertiesSection = () => {
               onClick={() => {
                 onFormSubmit(
                   1,
-                  1,
+                  15,
                   filterSearchEntry?.operationType,
                   filterSearchEntry?.typeOfProperty,
                   filterSearchEntry?.region,

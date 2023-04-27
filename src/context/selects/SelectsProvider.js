@@ -11,8 +11,8 @@ const SelectsProvider = ({ children }) => {
   const [installmentType, setInstallmentType] = useState([]);
   const [errorServerMsg, setErrorServerMsg] = useState({});
   const [filterSearchEntry, setFilterSearchEntry] = useState({
-    operationType: 'arriendo',
-    typeOfProperty: 'departamento',
+    operationType: 'arriendo', //arriendo
+    typeOfProperty: 'departamento', //departamento
     region: '',
     commune: '',
     surfaceM2: '',

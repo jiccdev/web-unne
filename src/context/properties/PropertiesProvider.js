@@ -109,14 +109,17 @@ const PropertiesProvider = ({ children }) => {
         companyId
       );
       setMetaData(response?.meta);
-      if (pathname === '/propiedades') {
-        const filtredPropertiesBySale = response?.data?.filter((property) => {
-          return property?.operation === 'Venta';
-        });
-        setNewProperties(filtredPropertiesBySale);
-      } else {
-        return setNewProperties(response.data) || setProperties(response.data);
-      }
+
+      // if (pathname === '/propiedades') {
+      //   const filtredPropertiesBySale = response?.data?.filter((property) => {
+      //     return property?.operation === 'Venta';
+      //   });
+      //   setNewProperties(filtredPropertiesBySale);
+      // } else {
+      //   return setNewProperties(response.data) || setProperties(response.data);
+      // }
+
+      setProperties(response.data);
     } catch (error) {
       const { statusCode } = error?.response?.data;
       setStatusCodeMsg(statusCode) && new Error(error?.response?.data);

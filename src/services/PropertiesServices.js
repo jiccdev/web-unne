@@ -1,14 +1,14 @@
 import api from '@/api';
 
 const PropertiesServices = {
-  getProperties: async (statusId = 1, companyId = 1) => {
+  getProperties: async (statusId = 1, companyId = 15) => {
     const response = await api.get(
       `properties?statusId=${statusId}&companyId=${companyId}`
     );
     return response.data;
   },
 
-  getProperty: async (id, statusId = 1, companyId = 1) => {
+  getProperty: async (id, statusId = 1, companyId = 15) => {
     const response = await api.get(
       `properties/${id}?statusId=${statusId}&companyId=${companyId}`
     );
@@ -16,14 +16,14 @@ const PropertiesServices = {
   },
 
   /* Pagination */
-  getAllProperties: async (limit, statusId = 1, companyId) => {
+  getAllProperties: async (limit, statusId = 1, companyId = 15) => {
     const response = await api.get(
       `properties?limit=${limit}&statusId=${statusId}&companyId=${companyId}`
     );
     return response.data;
   },
 
-  getPagination: async (limit, page, statusId = 1, companyId) => {
+  getPagination: async (limit, page, statusId = 1, companyId = 15) => {
     const response = await api.get(
       `properties?limit=${limit}&page=${page}&statusId=${statusId}&companyId=${companyId}`
     );
@@ -33,7 +33,7 @@ const PropertiesServices = {
   /*  */
   getPropertiesOnFormSubmit: async (
     statusId = 1,
-    companyId = 1,
+    companyId = 15,
     operationType,
     typeOfProperty,
     region,
@@ -78,7 +78,7 @@ const PropertiesServices = {
 
   getPropertiesByDefault: async (
     statusId = 1,
-    companyId = 1,
+    companyId = 15,
     operationType = 'arriendo',
     typeOfProperty = 'departamento'
   ) => {

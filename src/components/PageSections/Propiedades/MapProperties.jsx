@@ -98,32 +98,31 @@ const MapProperties = () => {
                       }
                     />
 
-
-
-                    {selectedProperty && selectedProperty.id === property.id && (
-                      <Popup
-                        longitude={longitude}
-                        latitude={latitude}
-                        onClose={() => setSelectedProperty(true)}
-                        anchor="bottom"
-                        closeButton={false}
-                        closeOnClick={false}
-                        dynamicPosition={true}
-                        focusAfterOpen={false}
-                        offsetTop={-10}
-                        offsetLeft={-10}
-                        closeOnMove={false}
-                        style={{
-                          zIndex: 100,
-                          cursor: 'pointer',
-                        }}
-                      >
-                        <Link
-                          href={`/propiedades/${property?.id
-                            }?statusId=${1}&companyId=${1}`}
+                    {selectedProperty &&
+                      selectedProperty.id === property.id && (
+                        <Popup
+                          longitude={longitude}
+                          latitude={latitude}
+                          onClose={() => setSelectedProperty(true)}
+                          anchor="bottom"
+                          closeButton={false}
+                          closeOnClick={false}
+                          dynamicPosition={true}
+                          focusAfterOpen={false}
+                          offsetTop={-10}
+                          offsetLeft={-10}
+                          closeOnMove={false}
+                          style={{
+                            zIndex: 100,
+                            cursor: 'pointer',
+                          }}
                         >
-                          <div className="max-w-sm bg-white">
-                            <a href="#">
+                          <Link
+                            href={`/propiedades/${
+                              property?.id
+                            }?statusId=${1}&companyId=${15}`}
+                          >
+                            <div className="max-w-sm bg-white">
                               <img
                                 className="rounded-t-lg"
                                 src={property?.image}
@@ -132,72 +131,38 @@ const MapProperties = () => {
                                   height: '30px',
                                 }}
                               />
-                            </a>
-
-                            <div>
-                              <span className="bg-orange-500 text-white px-2 py-.5 mt-1 rounded-full">
-                                {property?.types?.[0] ?? 'Propiedad'}
-                              </span>
-                              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                {property?.address ?? 'Dirección no registrada'}{' '}
-                                , {property?.commune ?? 'Comuna no registrada'}{' '}
-                                , {property?.city ?? 'Ciudad no registrada'}
-                              </p>
 
                               <div>
-                                <span>Desde:</span>{' '}
-                                <strong>
-                                  {parseToCLPCurrency(property?.price || 0) ??
-                                    ''}
-                                </strong>
-                              </div>
-
-                              <div>
-                                <span>
-                                  {`${property?.surface_m2}`} m<sup>2</sup>{' '}
-                                  utiles -{property?.bedrooms} dorms.
+                                <span className="bg-orange-500 text-white px-2 py-.5 mt-1 rounded-full">
+                                  {property?.types?.[0] ?? 'Propiedad'}
                                 </span>
+                                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                  {property?.address ??
+                                    'Dirección no registrada'}{' '}
+                                  ,{' '}
+                                  {property?.commune ?? 'Comuna no registrada'}{' '}
+                                  , {property?.city ?? 'Ciudad no registrada'}
+                                </p>
+
+                                <div>
+                                  <span>Desde:</span>{' '}
+                                  <strong>
+                                    {parseToCLPCurrency(property?.price || 0) ??
+                                      ''}
+                                  </strong>
+                                </div>
+
+                                <div>
+                                  <span>
+                                    {`${property?.surface_m2}`} m<sup>2</sup>{' '}
+                                    utiles -{property?.bedrooms} dorms.
+                                  </span>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          {/* <CardMap property={property} /> */}
-                          {/* <Card className="">
-                            <Card.Img variant="top" src={property?.image} />
-
-                            <Card.Body>
-                              <Card.Text>
-                                <Badge pill bg="warning">
-                                  {property?.types?.[0]}
-                                </Badge>
-                              </Card.Text>
-                              <Card.Text
-                                style={{
-                                  color: 'black',
-                                  margin: '.5rem 0',
-                                }}
-                              >
-                                {property?.address ?? 'Dirección no registrada'}{' '}
-                                , {property?.commune ?? 'Comuna no registrada'}{' '}
-                                , {property?.city ?? 'Ciudad no registrada'}
-                              </Card.Text>
-                            </Card.Body>
-                            <ListGroup className="list-group-flush">
-                              <ListGroup.Item>
-                                <span>Desde:</span>{' '}
-                                <strong>
-                                  {parseToCLPCurrency(property?.price || 0) ??
-                                    'Precion no registrado'}
-                                </strong>
-                              </ListGroup.Item>
-                              <ListGroup.Item>
-                                {`${property?.surface_m2}`} m<sup>2</sup> utiles
-                                -{property?.bedrooms} dorms.
-                              </ListGroup.Item>
-                            </ListGroup>
-                          </Card> */}
-                        </Link>
-                      </Popup>
-                    )}
+                          </Link>
+                        </Popup>
+                      )}
                   </div>
                 </Marker>
               );
