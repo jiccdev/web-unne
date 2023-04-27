@@ -844,37 +844,32 @@ export const propertyTypeData = [
 export const demosBasicData = [
   {
     id: 1,
-    value: false,
     name: 'DEMO PAGINA BASICA 1',
-    src: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681074617/website-admin/windows-services/1F2937_1_wbnsul.png',
+    src: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1682631652/unne-media/images/2023-04-27_17_39_58-Inicio_-_P%C3%A1gina_b%C3%A1sica_2_z4zxnv.png',
     href: 'https://pagina-web-b2.partnersadvisers.info/',
   },
   {
     id: 2,
-    value: false,
     name: 'DEMO PAGINA BASICA 2',
-    src: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681074617/website-admin/windows-services/1F2937_1_wbnsul.png',
+    src: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1682631752/unne-media/images/2023-04-27_17_42_12-Inicio_r6c9ke.png',
     href: 'https://pagina-web-b3.partnersadvisers.info/',
   },
   {
     id: 3,
-    value: false,
     name: 'DEMO PAGINA BASICA 3',
-    src: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681074617/website-admin/windows-services/1F2937_1_wbnsul.png',
+    src: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg',
     href: 'https://pagina-web-b3.partnersadvisers.info/',
   },
   {
     id: 4,
-    value: false,
     name: 'DEMO PAGINA BASICA 4',
-    src: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681074617/website-admin/windows-services/1F2937_1_wbnsul.png',
+    src: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg',
     href: 'https://pagina-web-b3.partnersadvisers.info/',
   },
   {
     id: 5,
-    value: false,
     name: 'DEMO PAGINA BASICA 5',
-    src: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681074617/website-admin/windows-services/1F2937_1_wbnsul.png',
+    src: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg',
     href: 'https://pagina-web-b3.partnersadvisers.info/',
   },
 ];
