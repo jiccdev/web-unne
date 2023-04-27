@@ -30,6 +30,11 @@ export const navigationData = [
         name: '¿Quiénes somos?',
         href: '/quienes-somos',
       },
+      {
+        id: 3,
+        name: 'Webs DEMO',
+        href: '/webs-demo',
+      },
     ],
   },
   {
@@ -833,5 +838,38 @@ export const propertyTypeData = [
     id: 6,
     name: 'Estacionamientos',
     value: 'Estacionamientos',
+  },
+];
+
+export const demosBasicData = [
+  {
+    id: 1,
+    value: false,
+    name: 'DEMO PAGINA BASICA 1',
+    href: 'https://pagina-web-b1.partnersadvisers.info/',
+  },
+  {
+    id: 2,
+    value: false,
+    name: 'DEMO PAGINA BASICA 2',
+    href: '/',
+  },
+  {
+    id: 3,
+    value: false,
+    name: 'DEMO PAGINA BASICA 3',
+    href: '/',
+  },
+  {
+    id: 4,
+    value: false,
+    name: 'DEMO PAGINA BASICA 4',
+    href: '/',
+  },
+  {
+    id: 5,
+    value: false,
+    name: 'DEMO PAGINA BASICA 5',
+    href: '/',
   },
 ];
