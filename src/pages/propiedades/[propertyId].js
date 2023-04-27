@@ -25,7 +25,7 @@ const PropiedadId = () => {
 
   const queryId = query.propertyId;
   const { LngLat } = property;
-  const { FaShare, AiFillPrinter } = iconsList;
+  const { FaShare, MdSimCardDownload } = iconsList;
   const lng = Number(LngLat?.match(/Lng: ([-\d.]+)/)[1]) || -70.64827;
   const lat = Number(LngLat?.match(/Lat: ([-\d.]+)/)[1]) || -33.45694;
 
@@ -42,7 +42,7 @@ const PropiedadId = () => {
   );
 
   useEffect(() => {
-    getPropertyById(queryId, 1, 1);
+    getPropertyById(queryId, 1, 15);
   }, [queryId]);
 
   return (
@@ -70,8 +70,8 @@ const PropiedadId = () => {
                     onClick={() => setShowModalDetail(true)}
                     className="flex items-center hover:text-blue-500 cursor-pointer"
                   >
-                    <AiFillPrinter className="mr-1" />
-                    Descargar PDF /cambiar logo
+                    <MdSimCardDownload className="mr-1" />
+                    Descargar PDF
                   </span>
                 </div>
               </div>

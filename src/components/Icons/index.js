@@ -38,7 +38,7 @@ import { BiBookOpen } from 'react-icons/bi';
 import { AiOutlineShareAlt, AiFillPrinter } from 'react-icons/ai';
 import { AiTwotoneGold } from 'react-icons/ai';
 import { GrClose } from 'react-icons/gr';
-import { MdOutlineArrowDropDown } from 'react-icons/md';
+import { MdOutlineArrowDropDown, MdSimCardDownload } from 'react-icons/md';
 import { BsFacebook } from 'react-icons/bs';
 import { BsInstagram } from 'react-icons/bs';
 import { BsYoutube } from 'react-icons/bs';
@@ -87,4 +87,5 @@ export const iconsList = {
   HiClipboard,
   HiClipboardCheck,
   GoSearch,
+  MdSimCardDownload,
 };

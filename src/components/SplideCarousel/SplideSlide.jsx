@@ -10,7 +10,7 @@ const SplideSlideComponent = ({
   const { href, src, name } = demo;
   return (
     <SplideSlide>
-      <div className="w-full px-4 py-16">
+      <div className="w-full px-4 py-5">
         <div className="flex items-center justify-center">
           <a href={href} target="_blank">
             <Image
@@ -18,7 +18,7 @@ const SplideSlideComponent = ({
               alt={`img-demo-${name}`}
               height={250}
               width={450}
-              className="h-[250px] max-h-[250px] w-full rounded-xl mb-2"
+              className="h-[250px] max-h-[250px] object-cover w-full rounded-xl mb-2"
             />
           </a>
         </div>

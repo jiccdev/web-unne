@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Splide } from '@splidejs/react-splide';
 
 const SplideCarousel = ({
+  title,
   data,
   RenderedComponent,
   selectedDemos,
@@ -21,23 +22,28 @@ const SplideCarousel = ({
   };
 
   return (
-    <Splide
-      options={{
-        rewind: true,
-        gap: '1rem',
-        perPage: 3,
-      }}
-      aria-label="demo-splide"
-    >
-      {data.map((demo) => (
-        <RenderedComponent
-          key={demo.id}
-          demo={demo}
-          selectedDemos={selectedDemos}
-          handleCheckboxChange={handleCheckboxChange}
-        />
-      ))}
-    </Splide>
+    <Fragment>
+      <div className="uppercase border-l-4 border-orange-500 p-2">
+        <h2>{title}</h2>
+      </div>
+      <Splide
+        options={{
+          rewind: true,
+          gap: '1rem',
+          perPage: 3,
+        }}
+        aria-label="demo-splide"
+      >
+        {data.map((demo) => (
+          <RenderedComponent
+            key={demo.id}
+            demo={demo}
+            selectedDemos={selectedDemos}
+            handleCheckboxChange={handleCheckboxChange}
+          />
+        ))}
+      </Splide>
+    </Fragment>
   );
 };
 
