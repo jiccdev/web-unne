@@ -21,14 +21,13 @@ const Footer = () => (
           </div>
         </div>
       </div>
-
       <div className="w-full flex justify-center items-start flex-col sm:w-1/2 lg:w-4/12">
         <div className="w-5/6">
           <Button
             href="/"
             className="w-96 py-2 px-3 text-xl text-center my-6 bg-orange-500 hover:bg-orange-600 hover:shadow-md"
           >
-            ¿Quiénes somos?
+            Contacto
           </Button>
           <div className="h-48">
             <p className="text-md text-gray-800 mt-5">
@@ -102,18 +101,17 @@ const Footer = () => (
             Menú
           </Button>
           <div className="h-48">
+            <ul className='text-md text-gray-900 mt-5'>
+              <li><a href="#" className='hover:underline underline-offset-4 decoration-orange-500'>Soy propietario</a></li>
+              <li><a href="#" className='hover:underline underline-offset-4 decoration-orange-500'>¿Eres corredor?</a></li>
+              <li><a href="#" className='hover:underline underline-offset-4 decoration-orange-500'>Quiero invertir</a></li>
+              <li><a href="#" className='hover:underline underline-offset-4 decoration-orange-500'>Intranet</a></li>
+            </ul>
             <p className="text-md text-gray-900 mt-5">
-              Contáctanos Soy Propietario ¿Eres corredor? Quiero invertir
-              Iniciar sesión
+              Quiero saber más sobre los
+              <a href='#' className='text-orange-500 hover:text-yellow-500'> términos y condiciones</a>
             </p>
-            <p className="text-md text-gray-900 mt-5">
-            Quiero saber más sobre los
-            <a href='#' className='text-orange-500 hover:text-yellow-500'> términos y condiciones</a>
-          </p>
           </div>
-
-          
-
         </div>
       </div>
     </div>
