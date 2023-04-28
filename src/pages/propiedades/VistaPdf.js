@@ -118,21 +118,6 @@ const styles = StyleSheet.create({
 
 const VistaPdf = ({ property }) => {
   const [ufCurrentValue, setUfCurrentValue] = useState(0);
-  const {
-    id,
-    images,
-    price,
-    surface_m2,
-    bedrooms,
-    bathrooms,
-    status,
-    company,
-    address,
-    commune,
-    city,
-    title,
-    description,
-  } = property;
 
   const getExchangeRateUF = async () => {
     try {
@@ -157,13 +142,14 @@ const VistaPdf = ({ property }) => {
           <View style={styles.header}>
             <Image
               src="https://res.cloudinary.com/dbrhjc4o5/image/upload/v1682538681/unne-media/logo/logo-unne-pdf_ozphwt.png"
+              alt="img-pdf"
               style={styles.logoImg}
             />
 
             <View style={styles.topInfo}>
               <Text style={styles.topInfoDetail}>
                 <Text style={styles.lightFont}>Código de propiedad:</Text>{' '}
-                {id || 0}
+                {property?.id || 0}
               </Text>
 
               <Text style={styles.topInfoDetail}>
@@ -176,7 +162,11 @@ const VistaPdf = ({ property }) => {
           <View style={styles.mainSection}>
             <View>
               <Image
-                src={images[0] ?? images[1] ?? images[2]}
+                src={
+                  property?.images?.[0] ??
+                  property?.images?.[1] ??
+                  property?.images?.[2]
+                }
                 style={styles.image}
               />
             </View>
@@ -185,28 +175,34 @@ const VistaPdf = ({ property }) => {
               <View style={styles.containerPharagraph}>
                 <Text style={styles.lightFontXl}>Desde</Text>
                 <Text style={styles.darkFont2Xl}>
-                  UF: {clpToUf(price || 0, ufCurrentValue)}
+                  UF: {clpToUf(property?.price || 0, ufCurrentValue)}
                 </Text>
                 <Text style={styles.lightFontXl}>
-                  {parseToCLPCurrency(price || 0)}
+                  {parseToCLPCurrency(property?.price || 0)}
                 </Text>
               </View>
 
               <View style={styles.containerPropertiesInfo}>
                 <View style={styles.subContainerInfo}>
                   <Text style={styles.lightFontSm}>Superficie útil</Text>
-                  <Text style={styles.darkFontSm}>{surface_m2} m2</Text>
+                  <Text style={styles.darkFontSm}>
+                    {property?.surface_m2 || 0} m2
+                  </Text>
                 </View>
                 <View>
                   <Text style={styles.lightFontSm}>Dormitorios</Text>
-                  <Text style={styles.darkFontSm}>{bedrooms || 0}</Text>
+                  <Text style={styles.darkFontSm}>
+                    {property?.bedrooms || 0}
+                  </Text>
                 </View>
               </View>
 
               <View style={styles.containerPropertiesInfo}>
                 <View style={styles.subContainerInfo}>
                   <Text style={styles.lightFontSm}>Baños</Text>
-                  <Text style={styles.darkFontSm}>{bathrooms || 0}</Text>
+                  <Text style={styles.darkFontSm}>
+                    {property?.bathrooms || 0}
+                  </Text>
                 </View>
                 <View>
                   <Text style={styles.lightFontSm}>Fecha de entrega</Text>
@@ -217,7 +213,9 @@ const VistaPdf = ({ property }) => {
               <View style={styles.containerPropertiesInfo}>
                 <View style={styles.subContainerInfo}>
                   <Text style={styles.lightFontSm}>Estado del proyecto</Text>
-                  <Text style={styles.darkFontSm}>{status || 'Pendiente'}</Text>
+                  <Text style={styles.darkFontSm}>
+                    {property?.status || 'Pendiente'}
+                  </Text>
                 </View>
               </View>
             </View>
@@ -227,30 +225,30 @@ const VistaPdf = ({ property }) => {
             <View style={styles.subContainerInfoDown}>
               <Text style={styles.lightFontSm}>Empresa</Text>
               <Text style={styles.darkFontSm}>
-                {company || 'Compañía no registrada'}
+                {property?.company || 'Compañía no registrada'}
               </Text>
             </View>
 
             <View style={styles.subContainerInfoDown}>
               <Text style={styles.lightFontSm}>Ubicación</Text>
               <Text style={styles.darkFontSm}>
-                {address || 'Ubicación no registrada'},{' '}
-                {commune || 'Comuna no registrada'}
-                {city || 'Ciudad no registrada'}
+                {property?.address || 'Ubicación no registrada'},{' '}
+                {property?.commune || 'Comuna no registrada'}
+                {property?.city || 'Ciudad no registrada'}
               </Text>
             </View>
 
             <View style={styles.subContainerInfoDown}>
               <Text style={styles.lightFontSm}>Titulo</Text>
               <Text style={styles.darkFontSm}>
-                {title || 'Titulo no registrado'}
+                {property?.title || 'Titulo no registrado'}
               </Text>
             </View>
 
             <View style={styles.subContainerInfoDown}>
               <Text style={styles.lightFontSm}>Descripción</Text>
               <Text style={styles.darkFontSm}>
-                {description || 'Descripción no registrada'}
+                {property?.description || 'Descripción no registrada'}
               </Text>
             </View>
           </View>
