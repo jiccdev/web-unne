@@ -39,7 +39,7 @@ const PropertyCard = ({ data, isList }) => {
         </p>
 
         <Link
-          href={`/propiedades/${id}?statusId=${1}&companyId=${15}`}
+          href={`/propiedades/${id}?statusId=${1}&companyId=${1}`}
           className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-orange-500 rounded-lg hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300"
         >
           Detalles

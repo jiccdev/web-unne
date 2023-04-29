@@ -34,8 +34,18 @@ const PropertiesList = () => {
   const [isList, setIsList] = useState(false);
   const { pathname } = useRouter();
   const { BsFillGridFill, FaThList, FaMapMarked } = iconsList;
-  const paginate = (currentPage) => getPagination(limit, currentPage, 1, 15);
+  const paginate = (currentPage) => getPagination(limit, currentPage, 1, 1);
 
+  console.log(filterSearchEntry);
+
+  // useEffect(() => {
+  //   getProperties(
+  //     1,
+  //     1,
+  //     filterSearchEntry?.operationType,
+  //     filterSearchEntry?.typeOfProperty
+  //   );
+  // }, [filterSearchEntry?.operationType]);
   // useEffect(() => {
   //   getTotalItems(1, 15);
   // }, [metaData]);

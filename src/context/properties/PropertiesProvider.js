@@ -47,9 +47,9 @@ const PropertiesProvider = ({ children }) => {
     }
   };
 
-  // useEffect(() => {
-  //   getProperties(1, 15);
-  // }, [pathname]);
+  useEffect(() => {
+    getProperties(1, 15);
+  }, [pathname]);
 
   const getPropertyById = async (id, statusId, companyId) => {
     try {

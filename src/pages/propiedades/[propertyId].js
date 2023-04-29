@@ -42,7 +42,7 @@ const PropiedadId = () => {
   );
 
   useEffect(() => {
-    getPropertyById(queryId, 1, 15);
+    getPropertyById(queryId, 1, 1);
   }, [queryId]);
 
   return (

@@ -1,14 +1,21 @@
+import { useContext } from 'react';
 import api from '@/api';
 
 const PropertiesServices = {
-  getProperties: async (statusId = 1, companyId = 15) => {
+  getProperties: async (
+    statusId = 1,
+    companyId = 1,
+    operationType = 'venta',
+    typeOfProperty = 'casa'
+  ) => {
     const response = await api.get(
-      `properties?statusId=${statusId}&companyId=${companyId}`
+      `properties?statusId=${statusId}&companyId=${companyId}&operationType=${operationType}&typeOfProperty=${typeOfProperty}`
+      // `properties?statusId=${statusId}&companyId=${companyId}&operationType=venta&typeOfProperty=casa`
     );
     return response.data;
   },
 
-  getProperty: async (id, statusId = 1, companyId = 15) => {
+  getProperty: async (id, statusId = 1, companyId = 1) => {
     const response = await api.get(
       `properties/${id}?statusId=${statusId}&companyId=${companyId}`
     );
@@ -16,14 +23,14 @@ const PropertiesServices = {
   },
 
   /* Pagination */
-  getAllProperties: async (limit, statusId = 1, companyId = 15) => {
+  getAllProperties: async (limit, statusId = 1, companyId = 1) => {
     const response = await api.get(
       `properties?limit=${limit}&statusId=${statusId}&companyId=${companyId}`
     );
     return response.data;
   },
 
-  getPagination: async (limit, page, statusId = 1, companyId = 15) => {
+  getPagination: async (limit, page, statusId = 1, companyId = 1) => {
     const response = await api.get(
       `properties?limit=${limit}&page=${page}&statusId=${statusId}&companyId=${companyId}`
     );
@@ -33,9 +40,9 @@ const PropertiesServices = {
   /*  */
   getPropertiesOnFormSubmit: async (
     statusId = 1,
-    companyId = 15,
-    operationType,
-    typeOfProperty,
+    companyId = 1,
+    operationType = 'venta',
+    typeOfProperty = 'casa',
     region,
     commune,
     surfaceM2,
@@ -78,9 +85,9 @@ const PropertiesServices = {
 
   getPropertiesByDefault: async (
     statusId = 1,
-    companyId = 15,
-    operationType = 'arriendo',
-    typeOfProperty = 'departamento'
+    companyId = 1,
+    operationType = 'venta',
+    typeOfProperty = 'casa'
   ) => {
     const _statusId = `${statusId}`;
     const _companyId = `${companyId}`;

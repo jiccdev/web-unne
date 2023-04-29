@@ -377,7 +377,7 @@ const AdvancedSearch = () => {
             ev.preventDefault();
             onFormSubmit(
               1,
-              15,
+              1,
               filterSearchEntry?.operationType,
               filterSearchEntry?.typeOfProperty,
               filterSearchEntry?.region,
@@ -396,14 +396,10 @@ const AdvancedSearch = () => {
           }}
           className="block w-full text-center items-center px-3 py-2 text-sm font-medium text-white bg-orange-500 rounded-lg hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300"
         >
-          {cargando ? (
-            <span>Buscando...</span>
-          ) : (
-            <span className="max-h-10">
-              Buscar
-              {/* <GoSearch /> */}
-            </span>
-          )}
+          <span className="max-h-10">
+            Buscar
+            {/* <GoSearch /> */}
+          </span>
         </button>
       </div>
     </form>
