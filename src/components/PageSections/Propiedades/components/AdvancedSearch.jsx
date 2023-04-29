@@ -255,11 +255,11 @@ const AdvancedSearch = () => {
         <label className="text-sm text-gray-500">Tipo de operación</label>
         <RSelect
           options={getOperationTypeOptions()}
-          defaultValue={filterSearchEntry?.operationType}
-          // defaultValue={{
-          //   value: filterSearchEntry?.operationType,
-          //   label: filterSearchEntry?.operationType,
-          // }}
+          // defaultValue={filterSearchEntry?.operationType}
+          defaultValue={{
+            value: filterSearchEntry?.operationType,
+            label: filterSearchEntry?.operationType,
+          }}
           onChange={onOperationTypeChange}
           placeholder="Seleccionar"
           className="my-2"
@@ -270,11 +270,11 @@ const AdvancedSearch = () => {
         <label className="text-sm text-gray-500">Tipo de propiedad</label>
         <RSelect
           options={getTypeOfPropertyOptions()}
-          defaultValue={filterSearchEntry?.typeOfProperty}
-          // defaultValue={{
-          //   value: filterSearchEntry?.typeOfProperty,
-          //   label: filterSearchEntry?.typeOfProperty,
-          // }}
+          // defaultValue={filterSearchEntry?.typeOfProperty}
+          defaultValue={{
+            value: filterSearchEntry?.typeOfProperty,
+            label: filterSearchEntry?.typeOfProperty,
+          }}
           onChange={onTypeOfPropertyChange}
           placeholder="Seleccionar"
           className="my-2"

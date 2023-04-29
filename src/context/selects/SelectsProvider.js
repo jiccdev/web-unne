@@ -11,8 +11,8 @@ const SelectsProvider = ({ children }) => {
   const [installmentType, setInstallmentType] = useState([]);
   const [errorServerMsg, setErrorServerMsg] = useState({});
   const [filterSearchEntry, setFilterSearchEntry] = useState({
-    operationType: 'arriendo', //arriendo
-    typeOfProperty: 'departamento', //departamento
+    operationType: 'venta', //arriendo
+    typeOfProperty: 'casa', //departamento
     region: '',
     commune: '',
     surfaceM2: '',
@@ -22,6 +22,8 @@ const SelectsProvider = ({ children }) => {
     bathrooms: '',
     parkingLots: '',
   });
+
+  console.log(filterSearchEntry);
 
   const getSelects = async () => {
     try {

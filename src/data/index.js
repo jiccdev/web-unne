@@ -197,7 +197,7 @@ export const CircleVenderData = [
   },
 ];
 
-export const webServicesTabs = ['Arriendo', 'Venta ', 'Inversion'];
+export const webServicesTabs = ['Venta', 'Arriendo ', 'Inversion'];
 
 /** Company Qualities */
 export const companyQualities = [

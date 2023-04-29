@@ -36,28 +36,30 @@ const PropertiesList = () => {
   const { BsFillGridFill, FaThList, FaMapMarked } = iconsList;
   const paginate = (currentPage) => getPagination(limit, currentPage, 1, 15);
 
-  useEffect(() => {
-    getTotalItems(1, 15);
-  }, [metaData]);
+  // useEffect(() => {
+  //   getTotalItems(1, 15);
+  // }, [metaData]);
 
-  useEffect(() => {
-    getPagination(limit, page, 1, 15);
-  }, [limit, page]);
+  // useEffect(() => {
+  //   getPagination(limit, page, 1, 15);
+  // }, [limit, page]);
 
-  useEffect(
-    () => {
-      getProperties();
-      // filterSearchEntry?.operationType === 'arriendo' &&
-      //   filterSearchEntry?.typeOfProperty === 'departamento'
-      //   ? getPropertiesByDefault()
-      //   : null;
-    },
-    [
-      // filterSearchEntry,
-      // filterSearchEntry?.operationType,
-      // filterSearchEntry?.typeOfProperty,
-    ]
-  );
+  // useEffect(() => {
+  //   if (pathname === '/propiedades') {
+  //     getPropertiesByDefault();
+  //     return;
+  //   }
+
+  //   // getProperties();
+  //   // filterSearchEntry?.operationType === 'arriendo' &&
+  //   //   filterSearchEntry?.typeOfProperty === 'departamento'
+  //   //   ? getPropertiesByDefault()
+  //   //   : null;
+  // }, [
+  //   filterSearchEntry,
+  //   filterSearchEntry?.operationType,
+  //   filterSearchEntry?.typeOfProperty,
+  // ]);
 
   const getTopTitle = (location) => {
     switch (location) {

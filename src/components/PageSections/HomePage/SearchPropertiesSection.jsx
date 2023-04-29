@@ -110,7 +110,7 @@ const SearchPropertiesSection = () => {
                   <Tab
                     key={category}
                     onClick={() =>
-                      onOperationTypeChange(category.toLocaleLowerCase())
+                      onOperationTypeChange(category.toLowerCase().trim())
                     }
                     className={({ selected }) =>
                       classNames(
