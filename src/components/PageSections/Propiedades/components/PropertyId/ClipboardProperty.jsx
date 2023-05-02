@@ -2,7 +2,13 @@ import React from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { iconsList } from '@/components/Icons';
 
-const ClipboardProperty = ({ queryId, copied, setCopied }) => {
+const ClipboardProperty = ({
+  queryId,
+  copied,
+  setCopied,
+  statusId,
+  companyId,
+}) => {
   const { HiClipboard, HiClipboardCheck } = iconsList;
 
   return (
@@ -11,7 +17,7 @@ const ClipboardProperty = ({ queryId, copied, setCopied }) => {
         Copiar
         <span className="text-slate-500 ml-2 text-2xl cursor-pointer">
           <CopyToClipboard
-            text={`https://unne.pa/propiedades`}
+            text={`https://unne.pa/propiedades/${queryId}/?statusId=${statusId}&companyId=${companyId}`}
             onCopy={() => {
               setCopied(true);
               setTimeout(() => {

@@ -14,7 +14,7 @@ import Modal from '@/components/Modal/Modal';
 import { PDFViewer } from '@react-pdf/renderer';
 import { iconsList } from '@/components/Icons';
 
-const PropiedadId = () => {
+const PropiedadId = ({ statusId, companyId }) => {
   const { contextDataProps } = useContext(PropertiesContext);
   const [, , , , propertyId, setPropertyId, getPropertyById, property] =
     contextDataProps;
@@ -31,7 +31,9 @@ const PropiedadId = () => {
 
   /** Render clipboard property modal */
   const renderContent = () => (
-    <ClipboardProperty {...{ queryId, copied, setCopied }} />
+    <ClipboardProperty
+      {...{ queryId, copied, setCopied, statusId, companyId }}
+    />
   );
 
   /** Render Property detail */
@@ -42,7 +44,7 @@ const PropiedadId = () => {
   );
 
   useEffect(() => {
-    getPropertyById(queryId, 1, 1);
+    getPropertyById(queryId, statusId, companyId);
   }, [queryId]);
 
   return (
@@ -100,10 +102,10 @@ const PropiedadId = () => {
           isOpenProp={showModalShare}
           renderContent={renderContent}
           contentExtraClass="max-w-2xl"
+          modalTitle="Compartir Propiedad"
           onCloseModal={() => {
             setShowModalShare(false);
           }}
-          modalTitle="Compartir Propiedad"
         />
 
         {/* Show PDF property detail */}
@@ -112,14 +114,26 @@ const PropiedadId = () => {
           isOpenProp={showModalDetail}
           renderContent={renderContentPdf}
           contentExtraClass="max-w-[90%]"
+          modalTitle="Descargar PDF"
           onCloseModal={() => {
             setShowModalDetail(false);
           }}
-          modalTitle="Descargar PDF"
         />
       </Layout>
     </Fragment>
   );
 };
+
+export async function getServerSideProps(context) {
+  const { query } = context;
+  const { statusId, companyId } = query;
+
+  return {
+    props: {
+      statusId,
+      companyId,
+    },
+  };
+}
 
 export default PropiedadId;

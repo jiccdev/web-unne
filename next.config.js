@@ -11,6 +11,15 @@ const nextConfig = {
       'cloudinary.com',
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/propiedades/:id/:statusId/:companyId',
+        destination:
+          '/propiedades/[id]?statusId=:statusId&companyId=:companyId',
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
