@@ -29,6 +29,8 @@ const PropiedadId = ({ statusId, companyId }) => {
   const lng = Number(LngLat?.match(/Lng: ([-\d.]+)/)[1]) || -70.64827;
   const lat = Number(LngLat?.match(/Lat: ([-\d.]+)/)[1]) || -33.45694;
 
+  console.log(property);
+
   /** Render clipboard property modal */
   const renderContent = () => (
     <ClipboardProperty

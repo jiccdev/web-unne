@@ -27,12 +27,11 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'start',
-    color: 'red',
     textAlign: 'center',
     marginTop: 10,
   },
   header: {
-    backgroundColor: 'whitesmoke',
+    backgroundColor: 'white',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -59,7 +58,7 @@ const styles = StyleSheet.create({
     marginBottom: '10px',
   },
   lightFontSm: {
-    fontSize: 8,
+    fontSize: 12,
     fontWeight: 'light',
     color: '#6b7280',
   },
@@ -67,16 +66,21 @@ const styles = StyleSheet.create({
     fontSize: 10,
     fontWeight: 'bold',
     color: '#111827',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   lightFontXl: {
-    fontSize: 14,
+    fontSize: 11,
     fontWeight: 'light',
     color: '#6b7280',
   },
   darkFont2Xl: {
-    fontSize: 24,
+    fontSize: 15,
     fontWeight: 1,
     color: '#111827',
+    margin: '10px 0px',
   },
   topInfoDetail: {
     marginRight: 10,
@@ -98,8 +102,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     alignItems: 'center',
-    width: '50%',
+    width: '45%',
     marginTop: '10px',
+    margin: '0 auto',
   },
   subContainerInfo: {
     display: 'flex',
@@ -113,6 +118,44 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     marginTop: '10px',
+  },
+  corredorContainerInfo: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: '5px',
+  },
+  corredorContainerBlocks: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    marginTop: '10px',
+  },
+  corredorContainerBlocksLeft: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+    marginTop: '10px',
+  },
+  corredorBlockText: {
+    fontSize: '10px',
+  },
+  primaryColor: {
+    color: '#E85512',
+    fontWeight: 'extrabold',
+  },
+  blockUrlProperty: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    margin: '10px 0px',
+    fontSize: 10,
   },
 });
 
@@ -141,21 +184,25 @@ const VistaPdf = ({ property }) => {
         <View style={styles.section}>
           <View style={styles.header}>
             <Image
-              src="https://res.cloudinary.com/dbrhjc4o5/image/upload/v1682538681/unne-media/logo/logo-unne-pdf_ozphwt.png"
+              src="https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681665215/unne-media/logo/logo-unne_orpjju.png"
               alt="img-pdf"
               style={styles.logoImg}
             />
+          </View>
 
-            <View style={styles.topInfo}>
-              <Text style={styles.topInfoDetail}>
-                <Text style={styles.lightFont}>Código de propiedad:</Text>{' '}
-                {property?.id || 0}
+          <View style={styles.corredorContainerInfo}>
+            <View style={styles.corredorContainerBlocks}>
+              <Text style={styles.corredorBlockText}>Datos de corredor:</Text>
+              <Text style={styles.corredorBlockText}>Mauro Regna</Text>
+              <Text style={styles.corredorBlockText}>Rut: 27651553-5</Text>
+              <Text style={styles.corredorBlockText}>mauro.regna@unne.cl</Text>
+              <Text style={styles.corredorBlockText}>
+                F.: +54 9 11 3241-9458
               </Text>
-
-              <Text style={styles.topInfoDetail}>
-                <Text style={styles.lightFont}>Fecha de creación:</Text>{' '}
-                04/26/2023
-              </Text>
+            </View>
+            <View style={styles.corredorContainerBlocksLeft}>
+              <Text style={styles.primaryColor}>Cód:</Text>
+              <Text style={styles.primaryColor}>{property?.id || 0}</Text>
             </View>
           </View>
 
@@ -173,71 +220,77 @@ const VistaPdf = ({ property }) => {
 
             <View style={styles.rightInfoDetail}>
               <View style={styles.containerPharagraph}>
-                <Text style={styles.lightFontXl}>Desde</Text>
-                <Text style={styles.darkFont2Xl}>
-                  UF: {clpToUf(property?.price || 0, ufCurrentValue)}
-                </Text>
                 <Text style={styles.lightFontXl}>
+                  {property?.operation} {property?.types?.[0]}
+                </Text>
+                <Text style={styles.darkFont2Xl}>
+                  {property?.title || 'Sin titulo registrado'}
+                </Text>
+                <Text style={styles.darkFont2Xl}>
+                  UF: {clpToUf(property?.price || 0, ufCurrentValue)} / CLP:{' '}
                   {parseToCLPCurrency(property?.price || 0)}
                 </Text>
               </View>
 
               <View style={styles.containerPropertiesInfo}>
                 <View style={styles.subContainerInfo}>
-                  <Text style={styles.lightFontSm}>Superficie útil</Text>
                   <Text style={styles.darkFontSm}>
+                    <Image
+                      src="https://res.cloudinary.com/dbrhjc4o5/image/upload/v1683053043/unne-media/icons/metro-cuadrado_1_zv7akg.png"
+                      alt="icon-surfaceM2"
+                      style={styles.icon}
+                    />{' '}
                     {property?.surface_m2 || 0} m2
                   </Text>
                 </View>
                 <View>
-                  <Text style={styles.lightFontSm}>Dormitorios</Text>
                   <Text style={styles.darkFontSm}>
-                    {property?.bedrooms || 0}
-                  </Text>
-                </View>
-              </View>
-
-              <View style={styles.containerPropertiesInfo}>
-                <View style={styles.subContainerInfo}>
-                  <Text style={styles.lightFontSm}>Baños</Text>
-                  <Text style={styles.darkFontSm}>
+                    <Image
+                      src="https://res.cloudinary.com/dbrhjc4o5/image/upload/v1683053647/unne-media/icons/ducha_zfwfp2.png"
+                      alt="icon-bathrooms"
+                      style={styles.icon}
+                    />{' '}
                     {property?.bathrooms || 0}
                   </Text>
                 </View>
-                <View>
-                  <Text style={styles.lightFontSm}>Fecha de entrega</Text>
-                  <Text style={styles.darkFontSm}>No def.</Text>
-                </View>
               </View>
 
               <View style={styles.containerPropertiesInfo}>
-                <View style={styles.subContainerInfo}>
-                  <Text style={styles.lightFontSm}>Estado del proyecto</Text>
+                <View>
                   <Text style={styles.darkFontSm}>
-                    {property?.status || 'Pendiente'}
+                    <Image
+                      src="https://res.cloudinary.com/dbrhjc4o5/image/upload/v1683053647/unne-media/icons/cuarto_vpkwwf.png"
+                      alt="icon-bedrooms"
+                      style={styles.icon}
+                    />{' '}
+                    {property?.bedrooms || 0}
                   </Text>
                 </View>
+
+                <View>
+                  <Text style={styles.darkFontSm}>
+                    <Image
+                      src="https://res.cloudinary.com/dbrhjc4o5/image/upload/v1683053647/unne-media/icons/servicio-de-auto_t10nvq.png"
+                      alt="img-pdf"
+                    />{' '}
+                    {property?.coveredParkingLots || 0}
+                  </Text>
+                </View>
+              </View>
+
+              <View style={styles.blockUrlProperty}>
+                <Text style={styles}>
+                  <Image
+                    src="https://res.cloudinary.com/dbrhjc4o5/image/upload/v1683054033/unne-media/icons/globo_uqsbnj.png"
+                    alt="img-pdf"
+                  />{' '}
+                  {`https://unne.pa/propiedades/${property?.id}/?statusId=1&companyId=15`}
+                </Text>
               </View>
             </View>
           </View>
 
           <View style={styles.secondSection}>
-            <View style={styles.subContainerInfoDown}>
-              <Text style={styles.lightFontSm}>Empresa</Text>
-              <Text style={styles.darkFontSm}>
-                {property?.company || 'Compañía no registrada'}
-              </Text>
-            </View>
-
-            <View style={styles.subContainerInfoDown}>
-              <Text style={styles.lightFontSm}>Ubicación</Text>
-              <Text style={styles.darkFontSm}>
-                {property?.address || 'Ubicación no registrada'},{' '}
-                {property?.commune || 'Comuna no registrada'}
-                {property?.city || 'Ciudad no registrada'}
-              </Text>
-            </View>
-
             <View style={styles.subContainerInfoDown}>
               <Text style={styles.lightFontSm}>Titulo</Text>
               <Text style={styles.darkFontSm}>
@@ -249,6 +302,15 @@ const VistaPdf = ({ property }) => {
               <Text style={styles.lightFontSm}>Descripción</Text>
               <Text style={styles.darkFontSm}>
                 {property?.description || 'Descripción no registrada'}
+              </Text>
+            </View>
+
+            <View style={styles.subContainerInfoDown}>
+              <Text style={styles.lightFontSm}>Ubicación</Text>
+              <Text style={styles.darkFontSm}>
+                {property?.address || 'Ubicación no registrada'},{' '}
+                {property?.commune || 'Comuna no registrada'}
+                {property?.city || 'Ciudad no registrada'}
               </Text>
             </View>
           </View>

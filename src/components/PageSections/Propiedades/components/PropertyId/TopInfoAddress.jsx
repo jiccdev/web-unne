@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const TopInfoAddress = ({ property }) => {
   const { types, commune, city } = property;
-  console.log(property);
+
   return (
     <ul className="flex rounded-md">
       <li className="py-3 text-gray-800 hover:text-blue-500">

@@ -23,8 +23,6 @@ const SelectsProvider = ({ children }) => {
     parkingLots: '',
   });
 
-  console.log(filterSearchEntry);
-
   const getSelects = async () => {
     try {
       const response = await SelectsServices.getSelects();
