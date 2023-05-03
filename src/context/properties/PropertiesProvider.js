@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import PropertiesContext from './PropertiesContext';
 import PropertiesServices from '@/services/PropertiesServices';
+import { company } from '@/data/company';
 
 const PropertiesProvider = ({ children }) => {
   const [properties, setProperties] = useState([]);
@@ -10,6 +11,8 @@ const PropertiesProvider = ({ children }) => {
   const [statusCodeMsg, setStatusCodeMsg] = useState('');
   const [cargando, setCargando] = useState(true);
   const { pathname } = useRouter();
+
+  console.log('company', company);
 
   /* Pagination */
   const [limit, setLimit] = useState(10);
@@ -36,11 +39,7 @@ const PropertiesProvider = ({ children }) => {
         setTimeout(() => {
           setCargando(false);
         }, 0);
-
-        // return setNewProperties(response.data) || setProperties(response.data);
       }
-
-      // setProperties(response?.data);
     } catch (error) {
       const { statusCode } = error?.response?.data;
       setStatusCodeMsg(statusCode) && new Error(error?.response?.data);
@@ -48,7 +47,7 @@ const PropertiesProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getProperties(1, 15);
+    getProperties(company.statusId, company.companyId);
   }, [pathname]);
 
   const getPropertyById = async (id, statusId, companyId) => {

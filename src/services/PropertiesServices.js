@@ -1,10 +1,12 @@
-import { useContext } from 'react';
 import api from '@/api';
+import { company } from '../data/company.js';
+
+console.log('props in serv', company);
 
 const PropertiesServices = {
   getProperties: async (
-    statusId = 1,
-    companyId = 1,
+    statusId = company.statusId,
+    companyId = company.companyId,
     operationType = 'venta',
     typeOfProperty = 'casa'
   ) => {
@@ -15,7 +17,11 @@ const PropertiesServices = {
     return response.data;
   },
 
-  getProperty: async (id, statusId = 1, companyId = 1) => {
+  getProperty: async (
+    id,
+    statusId = company.statusId,
+    companyId = company.companyId
+  ) => {
     const response = await api.get(
       `properties/${id}?statusId=${statusId}&companyId=${companyId}`
     );
@@ -23,14 +29,23 @@ const PropertiesServices = {
   },
 
   /* Pagination */
-  getAllProperties: async (limit, statusId = 1, companyId = 1) => {
+  getAllProperties: async (
+    limit,
+    statusId = company.statusId,
+    companyId = company.companyId
+  ) => {
     const response = await api.get(
       `properties?limit=${limit}&statusId=${statusId}&companyId=${companyId}`
     );
     return response.data;
   },
 
-  getPagination: async (limit, page, statusId = 1, companyId = 1) => {
+  getPagination: async (
+    limit,
+    page,
+    statusId = company.statusId,
+    companyId = company.companyId
+  ) => {
     const response = await api.get(
       `properties?limit=${limit}&page=${page}&statusId=${statusId}&companyId=${companyId}`
     );
@@ -39,8 +54,8 @@ const PropertiesServices = {
 
   /*  */
   getPropertiesOnFormSubmit: async (
-    statusId = 1,
-    companyId = 1,
+    statusId = company.statusId,
+    companyId = company.companyId,
     operationType = 'venta',
     typeOfProperty = 'casa',
     region,
@@ -84,8 +99,8 @@ const PropertiesServices = {
   },
 
   getPropertiesByDefault: async (
-    statusId = 1,
-    companyId = 1,
+    statusId = company.statusId,
+    companyId = company.companyId,
     operationType = 'venta',
     typeOfProperty = 'casa'
   ) => {
