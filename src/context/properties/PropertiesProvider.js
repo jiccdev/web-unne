@@ -17,7 +17,7 @@ const PropertiesProvider = ({ children }) => {
   /* Pagination */
   const [limit, setLimit] = useState(10);
   const [metaData, setMetaData] = useState({});
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
   const [totalItems, setTotalItems] = useState('');
 
   /** Get Properties */
@@ -131,16 +131,16 @@ const PropertiesProvider = ({ children }) => {
       );
       setMetaData(response?.meta);
 
-      // if (pathname === '/propiedades') {
-      //   const filtredPropertiesBySale = response?.data?.filter((property) => {
-      //     return property?.operation === 'Venta';
-      //   });
-      //   setNewProperties(filtredPropertiesBySale);
-      // } else {
-      //   return setNewProperties(response.data) || setProperties(response.data);
-      // }
+      if (pathname === '/soy-inversionista/unidades-nuevas') {
+        const filtredPropertiesBySale = response?.data?.filter((property) => {
+          return property?.operation === 'Venta';
+        });
+        setProperties(filtredPropertiesBySale);
+      } else {
+        return setProperties(response.data);
+      }
 
-      setProperties(response.data);
+      // setProperties(response.data);
     } catch (error) {
       const { statusCode } = error?.response?.data;
       setStatusCodeMsg(statusCode) && new Error(error?.response?.data);

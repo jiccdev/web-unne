@@ -12,6 +12,7 @@ import Map, {
 import CardMap from '@/components/Map/CardMap';
 import MarkerIcon from '../../../assets/img/map/marker.png';
 import { parseToCLPCurrency } from '@/utils';
+import { company } from '@/data/company';
 
 const MapProperties = () => {
   const { contextDataProps } = useContext(PropertiesContext);

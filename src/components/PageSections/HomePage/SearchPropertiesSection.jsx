@@ -5,6 +5,7 @@ import SelectsContext from '@/context/selects/SelectsContext';
 import { Tab } from '@headlessui/react';
 import SearchByPropertyCode from '@/components/Input/SearchByPropertyCode';
 import { webServicesTabs } from '../../../data';
+import { company } from '@/data/company';
 
 const classNames = (...classes) => classes.filter(Boolean).join(' ');
 
@@ -180,8 +181,8 @@ const SearchPropertiesSection = () => {
               href="/propiedades"
               onClick={() => {
                 onFormSubmit(
-                  1,
-                  1,
+                  company.statusId,
+                  company.companyId,
                   filterSearchEntry?.operationType,
                   filterSearchEntry?.typeOfProperty,
                   filterSearchEntry?.region,

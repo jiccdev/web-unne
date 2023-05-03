@@ -7,12 +7,24 @@ const PropertiesServices = {
   getProperties: async (
     statusId = company.statusId,
     companyId = company.companyId,
-    operationType = 'venta',
-    typeOfProperty = 'casa'
+    operationType = '', //venta
+    typeOfProperty = '' //casa
   ) => {
     const response = await api.get(
       `properties?statusId=${statusId}&companyId=${companyId}&operationType=${operationType}&typeOfProperty=${typeOfProperty}`
       // `properties?statusId=${statusId}&companyId=${companyId}&operationType=venta&typeOfProperty=casa`
+    );
+    return response.data;
+  },
+
+  getPagination: async (
+    limit,
+    page,
+    statusId = company.statusId,
+    companyId = company.companyId
+  ) => {
+    const response = await api.get(
+      `properties?limit=${limit}&page=${page}&statusId=${statusId}&companyId=${companyId}`
     );
     return response.data;
   },
@@ -40,19 +52,6 @@ const PropertiesServices = {
     return response.data;
   },
 
-  getPagination: async (
-    limit,
-    page,
-    statusId = company.statusId,
-    companyId = company.companyId
-  ) => {
-    const response = await api.get(
-      `properties?limit=${limit}&page=${page}&statusId=${statusId}&companyId=${companyId}`
-    );
-    return response.data;
-  },
-
-  /*  */
   getPropertiesOnFormSubmit: async (
     statusId = company.statusId,
     companyId = company.companyId,

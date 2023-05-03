@@ -4,6 +4,7 @@ import PropertiesContext from '@/context/properties/PropertiesContext';
 import SelectsContext from '@/context/selects/SelectsContext';
 import RSelect from '@/components/RSelect/RSelect';
 import { parkingLotsList, bedroomsList, bathroomsList } from '@/data/selects';
+import { company } from '@/data/company';
 
 const AdvancedSearch = () => {
   const { contextDataProps } = useContext(PropertiesContext);
@@ -376,8 +377,8 @@ const AdvancedSearch = () => {
           onClick={(ev) => {
             ev.preventDefault();
             onFormSubmit(
-              1,
-              1,
+              company.statusId,
+              company.companyId,
               filterSearchEntry?.operationType,
               filterSearchEntry?.typeOfProperty,
               filterSearchEntry?.region,

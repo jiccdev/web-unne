@@ -9,6 +9,7 @@ import {
 } from '@react-pdf/renderer';
 import ExchangeRateServices from '@/services/ExchangeRateServices';
 import { parseToCLPCurrency, clpToUf } from '@/utils';
+import { company } from '@/data/company';
 
 const styles = StyleSheet.create({
   page: { backgroundColor: 'white' },
@@ -284,7 +285,7 @@ const VistaPdf = ({ property }) => {
                     src="https://res.cloudinary.com/dbrhjc4o5/image/upload/v1683054033/unne-media/icons/globo_uqsbnj.png"
                     alt="img-pdf"
                   />{' '}
-                  {`https://unne.pa/propiedades/${property?.id}/?statusId=1&companyId=15`}
+                  {`https://unne.pa/propiedades/${property?.id}/?statusId=${company?.statusId}&companyId=${company?.companyId}`}
                 </Text>
               </View>
             </View>

@@ -7,6 +7,7 @@ import PropertyCard from './PropertyCard';
 import { iconsList } from '@/components/Icons';
 import { useState } from 'react';
 import Pagination from '@/components/Pagination/Pagination';
+import { company } from '@/data/company';
 
 const PropertiesList = () => {
   const { contextDataProps } = useContext(PropertiesContext);
@@ -34,9 +35,23 @@ const PropertiesList = () => {
   const [isList, setIsList] = useState(false);
   const { pathname } = useRouter();
   const { BsFillGridFill, FaThList, FaMapMarked } = iconsList;
-  const paginate = (currentPage) => getPagination(limit, currentPage, 1, 1);
+
+  const paginate = (currentPage) =>
+    getPagination(limit, currentPage, company.statusId, company.companyId);
 
   console.log(filterSearchEntry);
+
+  useEffect(() => {
+    getTotalItems(1, 1);
+  }, [metaData]);
+
+  console.log(metaData);
+
+  console.log('limit', limit, 'page', page);
+
+  useEffect(() => {
+    getPagination(limit, page, 1, 1);
+  }, [limit, page]);
 
   // useEffect(() => {
   //   getProperties(
@@ -46,6 +61,7 @@ const PropertiesList = () => {
   //     filterSearchEntry?.typeOfProperty
   //   );
   // }, [filterSearchEntry?.operationType]);
+
   // useEffect(() => {
   //   getTotalItems(1, 15);
   // }, [metaData]);
@@ -146,6 +162,7 @@ const PropertiesList = () => {
           paginate={paginate}
           totalItems={totalItems}
           metaData={metaData}
+          currentPage={page}
         />
       </div>
     </div>
