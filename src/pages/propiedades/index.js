@@ -19,4 +19,6 @@ const Propiedades = () => {
   );
 };
 
+
+
 export default Propiedades;

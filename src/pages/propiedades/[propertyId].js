@@ -15,7 +15,7 @@ import { company } from '@/data/company';
 import { PDFViewer } from '@react-pdf/renderer';
 import { iconsList } from '@/components/Icons';
 
-const PropiedadId = ({ statusId, companyId }) => {
+const PropiedadId = ({ statusId = 1, companyId = 1 }) => {
   const { contextDataProps } = useContext(PropertiesContext);
   const [, , , , propertyId, setPropertyId, getPropertyById, property] =
     contextDataProps;
@@ -33,7 +33,12 @@ const PropiedadId = ({ statusId, companyId }) => {
   /** Render clipboard property modal */
   const renderContent = () => (
     <ClipboardProperty
-      {...{ queryId, copied, setCopied, statusId, companyId }}
+      {...{
+        queryId,
+        copied,
+        setCopied,
+        // , statusId, companyId
+      }}
     />
   );
 
@@ -47,10 +52,6 @@ const PropiedadId = ({ statusId, companyId }) => {
   useEffect(() => {
     getPropertyById(queryId, company?.statusId, company?.companyId);
   }, [queryId]);
-
-  // useEffect(() => {
-  //   getPropertyById(queryId, statusId, companyId);
-  // }, [queryId]);
 
   return (
     <Fragment>
@@ -129,7 +130,7 @@ const PropiedadId = ({ statusId, companyId }) => {
   );
 };
 
-export async function getServerSideProps(context) {
+export async function getInitialProps(context) {
   const { query } = context;
   const { statusId, companyId } = query;
 
