@@ -19,7 +19,8 @@ const ClipboardProperty = ({
         <span className="text-slate-500 ml-2 text-2xl cursor-pointer">
           <CopyToClipboard
             // text={`unne.pa/propiedades/${queryId}/?statusId=${statusId}&companyId=${companyId}`}
-            text={`https://unne.pa/propiedades/${queryId}/?statusId=${statusId}&companyId=${companyId}`}
+            // text={`https://unne.pa/propiedades/${queryId}/?statusId=${statusId}&companyId=${companyId}`}
+            text={window.location.href}
             onCopy={() => {
               setCopied(true);
               setTimeout(() => {

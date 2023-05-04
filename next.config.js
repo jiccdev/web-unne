@@ -11,12 +11,21 @@ const nextConfig = {
       'cloudinary.com',
     ],
   },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/propiedades/:id/:statusId/:companyId',
+  //       destination:
+  //         '/propiedades/[id]?statusId=:statusId&companyId=:companyId',
+  //     },
+  //   ];
+  // },
+
   async rewrites() {
     return [
       {
-        source: '/propiedades/:id/:statusId/:companyId',
-        destination:
-          '/propiedades/[id]?statusId=:statusId&companyId=:companyId',
+        source: '/propiedades/:id',
+        destination: '/propiedades/:id?statusId=1&companyId=1',
       },
     ];
   },
