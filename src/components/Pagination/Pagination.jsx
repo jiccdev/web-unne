@@ -11,8 +11,13 @@ const Pagination = ({
 }) => {
   const ClassPag =
     'bg-white hover:bg-[#E9ECEF] text-orange-500 hover:text-orange-500 border-slate-300 hover:border-slate-300';
+
+  const ClassNumberActive =
+    'mx-auto my-auto bg-orange-500 flex items-center justify-center text-gray-400 w-100 h-100 block  hover:bg-[#E9ECEF] hover:text-orange-500 border-slate-300 hover:border-slate-300';
+
   const ClassNumber =
-    'mx-auto my-auto flex items-center justify-center text-gray-400 w-100 h-100 block bg-white hover:bg-[#E9ECEF] hover:text-orange-500 border-slate-300 hover:border-slate-300';
+    'mx-auto my-auto bg-white flex items-center justify-center text-gray-400 w-100 h-100 block  hover:bg-[#E9ECEF] hover:text-orange-500 border-slate-300 hover:border-slate-300';
+
   const { IoIosArrowBack, IoIosArrowForward } = iconsList;
 
   const pageNumbers = [];
@@ -52,8 +57,8 @@ const Pagination = ({
             }}
             className={
               currentPage === item
-                ? `btn btn-md ${ClassNumber} border-x-0`
-                : `btn btn-md ${ClassNumber} border-x-0`
+                ? `btn btn-md ${ClassNumber} border`
+                : `btn btn-md ${ClassNumber} border`
             }
             key={idx}
           >

@@ -20,9 +20,9 @@ const MapProperties = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [selectedProperty, setSelectedProperty] = useState(false);
 
-  useEffect(() => {
-    getProperties();
-  }, []);
+  // useEffect(() => {
+  //   getProperties();
+  // }, []);
 
   return (
     <div>

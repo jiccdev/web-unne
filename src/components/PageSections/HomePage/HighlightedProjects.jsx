@@ -21,9 +21,9 @@ const HighlightedProjects = () => {
     (filtredProperty) => filtredProperty?.highlighted === true
   );
 
-  // useEffect(() => {
-  //   getHighlightedProperties && getProperties();
-  // }, []);
+  useEffect(() => {
+    getHighlightedProperties && getProperties();
+  }, []);
 
   return (
     <div className="flex justify-center items-center flex-col bg-gray-50 rounded-md pb-14">

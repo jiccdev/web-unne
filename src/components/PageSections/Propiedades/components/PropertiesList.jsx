@@ -39,53 +39,13 @@ const PropertiesList = () => {
   const paginate = (currentPage) =>
     getPagination(limit, currentPage, company.statusId, company.companyId);
 
-  console.log(filterSearchEntry);
-
   useEffect(() => {
     getTotalItems(1, 1);
   }, [metaData]);
 
-  console.log(metaData);
-
-  console.log('limit', limit, 'page', page);
-
   useEffect(() => {
     getPagination(limit, page, 1, 1);
   }, [limit, page]);
-
-  // useEffect(() => {
-  //   getProperties(
-  //     1,
-  //     1,
-  //     filterSearchEntry?.operationType,
-  //     filterSearchEntry?.typeOfProperty
-  //   );
-  // }, [filterSearchEntry?.operationType]);
-
-  // useEffect(() => {
-  //   getTotalItems(1, 15);
-  // }, [metaData]);
-
-  // useEffect(() => {
-  //   getPagination(limit, page, 1, 15);
-  // }, [limit, page]);
-
-  // useEffect(() => {
-  //   if (pathname === '/propiedades') {
-  //     getPropertiesByDefault();
-  //     return;
-  //   }
-
-  //   // getProperties();
-  //   // filterSearchEntry?.operationType === 'arriendo' &&
-  //   //   filterSearchEntry?.typeOfProperty === 'departamento'
-  //   //   ? getPropertiesByDefault()
-  //   //   : null;
-  // }, [
-  //   filterSearchEntry,
-  //   filterSearchEntry?.operationType,
-  //   filterSearchEntry?.typeOfProperty,
-  // ]);
 
   const getTopTitle = (location) => {
     switch (location) {
@@ -99,7 +59,7 @@ const PropertiesList = () => {
   };
 
   return (
-    <div className="">
+    <div id="properties-section" className="relative">
       <div className="p-2 py-5 bg-gray-50 flex justify-between items-center">
         <h1 className="text-2xl">{getTopTitle(pathname)}</h1>
         <ul className="flex items-center">

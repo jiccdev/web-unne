@@ -1,17 +1,13 @@
 import api from '@/api';
 import { company } from '../data/company.js';
 
-console.log('props in serv', company);
-
 const PropertiesServices = {
   getProperties: async (
     statusId = company.statusId,
-    companyId = company.companyId,
-    operationType = '', //venta
-    typeOfProperty = '' //casa
+    companyId = company.companyId
   ) => {
     const response = await api.get(
-      `properties?statusId=${statusId}&companyId=${companyId}&operationType=${operationType}&typeOfProperty=${typeOfProperty}`
+      `properties?statusId=${statusId}&companyId=${companyId}`
       // `properties?statusId=${statusId}&companyId=${companyId}&operationType=venta&typeOfProperty=casa`
     );
     return response.data;
@@ -55,8 +51,8 @@ const PropertiesServices = {
   getPropertiesOnFormSubmit: async (
     statusId = company.statusId,
     companyId = company.companyId,
-    operationType = 'venta',
-    typeOfProperty = 'casa',
+    operationType = '', //venta
+    typeOfProperty = '', //casa
     region,
     commune,
     surfaceM2,

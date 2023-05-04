@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { parseToCLPCurrency, clpToUf } from '@/utils';
 import ExchangeRateServices from '../../../../../services/ExchangeRateServices';
+import { company } from '@/data/company';
 import { iconsList } from '@/components/Icons';
 
 const Details = ({ property }) => {
@@ -71,7 +72,7 @@ const Details = ({ property }) => {
 
       <div className="w-full">
         <Link
-          href={`/propiedades/${property?.id}?statusId=${1}&companyId=${1}`}
+          href="/soy-inversionista/unidades-nuevas/#meeting-section"
           className="flex w-full items-center justify-center rounded-full py-2 text-sm font-medium text-center text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300"
         >
           Cotizar

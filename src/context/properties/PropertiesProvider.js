@@ -12,8 +12,6 @@ const PropertiesProvider = ({ children }) => {
   const [cargando, setCargando] = useState(true);
   const { pathname } = useRouter();
 
-  console.log('company', company);
-
   /* Pagination */
   const [limit, setLimit] = useState(10);
   const [metaData, setMetaData] = useState({});
@@ -33,12 +31,9 @@ const PropertiesProvider = ({ children }) => {
           return property?.operation === 'Venta';
         });
         setProperties(filtredPropertiesBySale);
+        return;
       } else {
-        setCargando(true);
         setProperties(response.data);
-        setTimeout(() => {
-          setCargando(false);
-        }, 0);
       }
     } catch (error) {
       const { statusCode } = error?.response?.data;
@@ -140,7 +135,7 @@ const PropertiesProvider = ({ children }) => {
         return setProperties(response.data);
       }
 
-      // setProperties(response.data);
+      setProperties(response.data);
     } catch (error) {
       const { statusCode } = error?.response?.data;
       setStatusCodeMsg(statusCode) && new Error(error?.response?.data);

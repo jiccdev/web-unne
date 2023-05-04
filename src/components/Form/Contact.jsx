@@ -33,7 +33,7 @@ const Contact = ({ }) => {
 
   const sendEmail = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    // console.log(formData);
     if (!termsCheck) {
       showToastErrorMsg('Debe aceptar los terminos y condiciones');
       return;
