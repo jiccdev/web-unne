@@ -23,7 +23,6 @@ const PropiedadId = ({ statusId = 1, companyId = 1 }) => {
   const [showModalDetail, setShowModalDetail] = useState(false);
   const [copied, setCopied] = useState(false);
   const { query } = useRouter();
-
   const queryId = query.propertyId;
   const { LngLat } = property;
   const { FaShare, MdSimCardDownload } = iconsList;
@@ -37,7 +36,7 @@ const PropiedadId = ({ statusId = 1, companyId = 1 }) => {
         queryId,
         copied,
         setCopied,
-        // , statusId, companyId
+        queryId,
       }}
     />
   );
@@ -129,17 +128,5 @@ const PropiedadId = ({ statusId = 1, companyId = 1 }) => {
     </Fragment>
   );
 };
-
-export async function getInitialProps(context) {
-  const { query } = context;
-  const { statusId, companyId } = query;
-
-  return {
-    props: {
-      statusId,
-      companyId,
-    },
-  };
-}
 
 export default PropiedadId;

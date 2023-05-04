@@ -121,12 +121,12 @@ const ContactForm = ({ title, subtitle, DataEmail }) => {
         publickey
       );
       const responseStatus = await response;
-      console.log(responseStatus.status)
+      // console.log(responseStatus.status)
       responseStatus.status === 200 &&
       showToastSuccessMsg(
           `Mensaje enviado con éxito, revise el correo | ${formData.email}`
         );
-      console.log('Enviando...');
+      // console.log('Enviando...');
 
     } catch (error) {
       showToastErrorMsg('Ha ocurrido un error al enviar el formulario');
