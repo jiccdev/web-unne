@@ -10,13 +10,13 @@ const Pagination = ({
   currentPage,
 }) => {
   const ClassPag =
-    'bg-white hover:bg-[#E9ECEF] text-orange-500 hover:text-orange-500 border-slate-300 hover:border-slate-300';
+    'bg-white hover:bg-[#E9ECEF] text-orange-500 hover:text-orange-500 border-slate-300 hover:border-slate-300 mx-[1px]';
 
   const ClassNumberActive =
     'mx-auto my-auto bg-orange-500 flex items-center justify-center text-gray-400 w-100 h-100 block  hover:bg-[#E9ECEF] hover:text-orange-500 border-slate-300 hover:border-slate-300';
 
   const ClassNumber =
-    'mx-auto my-auto bg-white flex items-center justify-center text-gray-400 w-100 h-100 block  hover:bg-[#E9ECEF] hover:text-orange-500 border-slate-300 hover:border-slate-300';
+    'mx-auto my-auto bg-white flex items-center justify-center text-gray-400 w-100 h-100 block hover:bg-orange-500 hover:text-white hover:text-orange-500 border-slate-300 hover:border-slate-300 mx-[1px] font-light';
 
   const { IoIosArrowBack, IoIosArrowForward } = iconsList;
 

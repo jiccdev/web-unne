@@ -9,7 +9,7 @@ const PropertiesProvider = ({ children }) => {
   const [property, setProperty] = useState({});
   const [propertyId, setPropertyId] = useState('');
   const [statusCodeMsg, setStatusCodeMsg] = useState('');
-  const [cargando, setCargando] = useState(true);
+  const [loading, setLoading] = useState(false);
   const { pathname } = useRouter();
 
   /* Pagination */
@@ -34,6 +34,34 @@ const PropertiesProvider = ({ children }) => {
         return;
       } else {
         setProperties(response.data);
+      }
+    } catch (error) {
+      const { statusCode } = error?.response?.data;
+      setStatusCodeMsg(statusCode) && new Error(error?.response?.data);
+    }
+  };
+
+  /** Advanced filters for properties */
+  // Type of property
+  const getPropertiesByTypeOfProperty = async (
+    statusId,
+    companyId,
+    typeOfProperty
+  ) => {
+    try {
+      const response = await PropertiesServices.getPropertiesByTypeOfProperty(
+        statusId,
+        companyId,
+        typeOfProperty
+      );
+
+      if (pathname === '/soy-inversionista/unidades-nuevas') {
+        const filtredPropertiesBySale = response?.data?.filter((property) => {
+          return property?.operation === 'Venta';
+        });
+        setProperties(filtredPropertiesBySale);
+      } else {
+        return setProperties(response.data);
       }
     } catch (error) {
       const { statusCode } = error?.response?.data;
@@ -74,6 +102,7 @@ const PropertiesProvider = ({ children }) => {
     parkingLots
   ) => {
     try {
+      setLoading(true);
       const response = await PropertiesServices.getPropertiesOnFormSubmit(
         statusId,
         companyId,
@@ -89,6 +118,7 @@ const PropertiesProvider = ({ children }) => {
         parkingLots
       );
       setProperties(response?.data);
+      setLoading(false);
     } catch (error) {
       const { statusCode } = error?.response?.data;
       setStatusCodeMsg(statusCode) && new Error(error?.response?.data);
@@ -175,8 +205,9 @@ const PropertiesProvider = ({ children }) => {
           getPagination,
           getTotalItems,
           page,
-          cargando,
-          setCargando,
+          loading,
+          setLoading,
+          getPropertiesByTypeOfProperty,
         ],
       }}
     >

@@ -30,22 +30,11 @@ const PropertiesList = () => {
     page,
   ] = contextDataProps;
 
-  const [filterSearchEntry] = contextData;
+  const router = useRouter();
   const [isGrid, setIsGrid] = useState(true);
   const [isList, setIsList] = useState(false);
   const { pathname } = useRouter();
   const { BsFillGridFill, FaThList, FaMapMarked } = iconsList;
-
-  const paginate = (currentPage) =>
-    getPagination(limit, currentPage, company.statusId, company.companyId);
-
-  useEffect(() => {
-    getTotalItems(1, 1);
-  }, [metaData]);
-
-  useEffect(() => {
-    getPagination(limit, page, 1, 1);
-  }, [limit, page]);
 
   const getTopTitle = (location) => {
     switch (location) {
@@ -59,7 +48,7 @@ const PropertiesList = () => {
   };
 
   return (
-    <div id="properties-section" className="relative">
+    <div id="properties-section" className="relative mb-24">
       <div className="p-2 py-5 bg-gray-50 flex justify-between items-center">
         <h1 className="text-2xl">{getTopTitle(pathname)}</h1>
         <ul className="flex items-center">
@@ -113,17 +102,26 @@ const PropertiesList = () => {
             />
           ))
         ) : (
-          <p>Obteniendo propiedades</p>
+          <div
+            className="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4 w-[98%] absolute"
+            role="alert"
+          >
+            <p className="font-bold">Propiedad o propiedades no econtradas</p>
+            <p>
+              Las propiedades no coincide con tu búsqueda{' '}
+              <Link
+                href={router.pathname}
+                as={router.pathname}
+                onClick={() => {
+                  window.location.reload();
+                }}
+                className="text-blue-500 text"
+              >
+                Reiniciar Busqueda
+              </Link>
+            </p>
+          </div>
         )}
-      </div>
-      <div className="flex justify-center my-5">
-        <Pagination
-          itemPerPage={limit}
-          paginate={paginate}
-          totalItems={totalItems}
-          metaData={metaData}
-          currentPage={page}
-        />
       </div>
     </div>
   );

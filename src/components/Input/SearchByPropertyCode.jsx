@@ -37,7 +37,7 @@ const SearchByPropertyCode = ({ propertyId, setPropertyId }) => {
             placeholder="Código: 00001"
           />
           <Link
-            href={`/propiedades/${propertyId}?statusId=${1}&companyId=${15}`}
+            href={`/propiedades/${propertyId}?statusId=${1}&companyId=${1}`}
             className="text-white absolute pt-3 top-[0px] right-[1px] bottom-[0px] bg-gray-400 hover:bg-gray-500 py-2.5 px-4 xl:px-7 rounded-r-full"
           >
             Buscar

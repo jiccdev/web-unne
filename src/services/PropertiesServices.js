@@ -13,6 +13,17 @@ const PropertiesServices = {
     return response.data;
   },
 
+  getPropertiesByTypeOfProperty: async (
+    statusId = company.statusId,
+    companyId = company.companyId,
+    typeOfProperty
+  ) => {
+    const response = await api.get(
+      `properties?statusId=${statusId}&companyId=${companyId}&typeOfProperty=${typeOfProperty}`
+    );
+    return response.data;
+  },
+
   getPagination: async (
     limit,
     page,

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { truncateString, parseToCLPCurrency } from '@/utils';
 
 const PropertyCard = ({ data, isList }) => {
-  const { id, title, image, address, commune, city, price } = data;
+  const { id, title, image, address, commune, city, price, types } = data;
   const errorImgServer =
     'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg';
 
@@ -35,7 +35,7 @@ const PropertyCard = ({ data, isList }) => {
         </p>
 
         <p className="mb-3 font-normal text-orange-500 text-end">
-          Venta: {parseToCLPCurrency(price)}
+          {types?.[0]}: {parseToCLPCurrency(price)}
         </p>
 
         <Link
