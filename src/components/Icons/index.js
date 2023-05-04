@@ -35,7 +35,7 @@ import { BsFillTelephoneFill, BsSearch } from 'react-icons/bs';
 import { FiMail } from 'react-icons/fi';
 import { BsFillHouseAddFill, BsFillGridFill } from 'react-icons/bs';
 import { BiBookOpen } from 'react-icons/bi';
-import { AiOutlineShareAlt, AiFillPrinter } from 'react-icons/ai';
+import { AiOutlineShareAlt, AiFillPrinter,AiOutlinePlus,AiOutlineWhatsApp,AiFillPhone } from 'react-icons/ai';
 import { AiTwotoneGold } from 'react-icons/ai';
 import { GrClose } from 'react-icons/gr';
 import { MdOutlineArrowDropDown, MdSimCardDownload } from 'react-icons/md';
@@ -88,4 +88,7 @@ export const iconsList = {
   HiClipboardCheck,
   GoSearch,
   MdSimCardDownload,
+  AiOutlinePlus,
+  AiOutlineWhatsApp,
+  AiFillPhone,
 };
