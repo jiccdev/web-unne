@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import Link from 'next/link';
 import { propertyManagmentData } from '@/data';
 import Button from '@/components/Button/Button';
 
@@ -22,14 +23,14 @@ const PropertyManagmentSteps = () => {
         ))}
       </div>
 
-      <div className="d-flex flex-center items-center text-center mt-10">
+      {/* <div className="d-flex flex-center items-center text-center mt-10">
         <Button
-          href="/"
+          href="#plans-section"
           className="px-5 py-3 capitalize font-medium text-gray-800 bg-amber-400 hover:bg-amber-500"
         >
           Ver planes
         </Button>
-      </div>
+      </div> */}
     </Fragment>
   );
 };

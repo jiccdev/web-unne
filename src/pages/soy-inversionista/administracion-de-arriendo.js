@@ -39,7 +39,7 @@ const AdministracionDeArriendo = () => {
           <InvestmentInfo />
         </section>
 
-        <section className="relative my-10 xl:mt-16 px-4 py-16 xl:px-56 bg-gray-50">
+        <section className="relative my-10 xl:mt-16 px-4 py-16 xl:px-56">
           <PropertyManagmentSteps />
         </section>
 

@@ -12,7 +12,7 @@ import { parseToCLPCurrency, clpToUf } from '@/utils';
 import { company } from '@/data/company';
 
 const styles = StyleSheet.create({
-  page: { backgroundColor: 'white' },
+  page: { backgroundColor: 'white', width: '80%' },
   section: { color: '#000', textAlign: 'center', margin: 30 },
   mainSection: {
     display: 'flex',
@@ -158,6 +158,10 @@ const styles = StyleSheet.create({
     margin: '10px 0px',
     fontSize: 10,
   },
+
+  containerView: {
+    width: '80%',
+  },
 });
 
 const VistaPdf = ({ property }) => {
@@ -180,7 +184,7 @@ const VistaPdf = ({ property }) => {
   }, [ufCurrentValue]);
 
   return (
-    <Document>
+    <Document style={styles.containerView}>
       <Page size="A4" style={styles.page}>
         <View style={styles.section}>
           <View style={styles.header}>
